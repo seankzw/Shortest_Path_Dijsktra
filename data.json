@@ -1,13 +1,6 @@
 {
   "Larkin Terminal": {
-    "buses": [
-      "P101-loop",
-      "P101-loop",
-      "P211-01",
-      "P211-02",
-      "P411-01",
-      "P411-02"
-    ],
+    "buses": ["P101-loop", "P211-01", "P211-02", "P411-01", "P411-02"],
     "coordinates": [1.4964559999542668, 103.74374661113058]
   },
   "Pejabat Daerah Tanah Johor Bahru": {
