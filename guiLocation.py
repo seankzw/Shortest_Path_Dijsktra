@@ -29,12 +29,14 @@ label1 = tkinter.Label (window, text="Route Finder")
 label1.grid(column=0, row=0)
 
 def getLatLong():
-    location = geolocator.geocode(userInputLocation.get())
+    location = geolocator.geocode(userInputLocation.get() + " JB MY")
+    print(userInputLocation.get() + " JB MY")
     label3 = tkinter.Label (window, text=location.latitude)
     label3.grid(column=0, row=3)
     label4 = tkinter.Label (window, text=location.longitude)
     label4.grid(column=1, row=3)
     tkinter.messagebox.showinfo('Location',location.address)
+    print(str(location.latitude) + ", " + str(location.longitude))
 
 label2 = tkinter.Label (window, text="Enter your start location")
 label2.grid(column=0, row=1)
