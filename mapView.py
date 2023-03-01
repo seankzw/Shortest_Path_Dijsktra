@@ -37,11 +37,20 @@ def getLatLong():
     label_long.pack()
     messagebox.showinfo('Location', location.address)
     print(str(location.latitude) + ", " + str(location.longitude))
+
+    # create marker with custom colors and font
+    mapview.set_marker(location.latitude, location.longitude, text_color="red",
+                                 marker_color_circle="white", marker_color_outside="red", font=("Helvetica Bold", 10))
+
+
+    
+
     
 
 # Create the "Enter" button
 button = tk.Button(left_frame, text="Enter", command=getLatLong)
 button.grid(column=1, row=1)
+
 
 
 # Create the right column for the map
@@ -52,6 +61,8 @@ right_frame.rowconfigure(0, weight=1)
 
 # Create mapview
 mapview = tkmv.TkinterMapView(right_frame, width=800, height=600, corner_radius=0)
+mapview.set_address("JB, MY")
+mapview.set_zoom(12)
 mapview.grid(row=0, column=0, sticky="nsew")
 
 
