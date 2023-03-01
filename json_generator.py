@@ -4,6 +4,7 @@ import pandas as pd
 xl = pd.ExcelFile("./datas/bus_stops.xlsx")
 
 dict = {}
+listOfBus = xl.sheet_names
 
 for eachSheetIdx in range(len(xl.sheet_names)):
     sheetName = xl.sheet_names[eachSheetIdx]
@@ -22,8 +23,12 @@ for eachSheetIdx in range(len(xl.sheet_names)):
 
             }
         else:
-            dict[row["Bus stop"]]["buses"] += [sheetName]
+            if sheetName not in dict[row["Bus stop"]]["buses"]:
+                dict[row["Bus stop"]]["buses"] += [sheetName]
 
-with open("data.json", "w") as outfile:
+with open("bus_route.json", "w") as outfile:
     json.dump(dict, outfile)
+
+with open("bus_number.py", "w") as outfile:
+    json.dump(listOfBus, outfile)
 
