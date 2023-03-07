@@ -2,14 +2,17 @@ import json
 import geocoder
 from math import radians, cos, sin, asin, sqrt
 
-def distance(lat1, lat2, lon1, lon2):
+from Coordinates import Coordinates
+
+def distanceBetween(currLoc, userLoc):
 
     # The math module contains a function named
 	# radians which converts from degrees to radians.
-	lon1 = radians(lon1)
-	lon2 = radians(lon2)
-	lat1 = radians(lat1)
-	lat2 = radians(lat2)
+	lat1 = radians(currLoc.getLat())
+	lon1 = radians(currLoc.getLng())
+
+	lat2 = radians(userLoc.getLat())
+	lon2 = radians(userLoc.getLng())
 
 	# Haversine formula
 	dlon = lon2 - lon1
@@ -25,7 +28,7 @@ def distance(lat1, lat2, lon1, lon2):
 	return(c * r)
 
 # Find nearest location to busstop from User Location
-def findStartBus(userLoc):
+def findNearestStop(userLoc):
     # try:
 	f = open("bus_route.json")
 	data = json.load(f)
@@ -35,10 +38,12 @@ def findStartBus(userLoc):
 	minLng = 100000
 	for i in data:
 		#if distance(data[i]["lat"], userLoc[0], data[i]["lng"], userLoc[1])< shortestDistance:
-		if distance(data[i]["lat"], userLoc.getLat(), data[i]["lng"], userLoc.getLng())< shortestDistance:
+		dataCoord = Coordinates(data[i]["lat"],data[i]["lng"])
+		#if distanceFromTo(data[i]["lat"], userLoc.getLat(), data[i]["lng"], userLoc.getLng())< shortestDistance:
+		if distanceBetween(dataCoord, userLoc) < shortestDistance:
 			minLat = data[i]["lat"]
 			minLng = data[i]["lng"]
-			shortestDistance = distance(data[i]["lat"], userLoc.getLat(), data[i]["lng"], userLoc.getLng())
+			shortestDistance = distanceBetween(dataCoord ,userLoc)
 			index = i
 
 		# if data[i]["coordinates"][0] < minLat : minLat = data[i]["coordinates"][0]
@@ -61,10 +66,10 @@ def findStartBus(userLoc):
 # Taking in coordinates of busstops
 #print(data)
 
-# User Location
-g = geocoder.ip('me')
-userLoc = g.latlng
-print(userLoc)
+## User Location
+#g = geocoder.ip('me')
+#userLoc = g.latlng
+#print(userLoc)
 
 # Nearest busstop to user
 #print("The nearest busstop is " + findStartBus(data, userLoc))

@@ -2,7 +2,7 @@ import json
 from geopy import distance
 
 from Coordinates import Coordinates
-from inputLocations import findStartBus
+from brain import findNearestStop
 
 def dijkstra():
     # Start location : 1.4964559999542668, 103.74374661113058 (Larkin Terminal)
@@ -13,7 +13,7 @@ def dijkstra():
     location3 = Coordinates(1.4860478,103.7544695)
     #print(findStartBus(start_loc))
     #print(findStartBus(end_loc))
-    print(findStartBus(location3))
+    print(findNearestStop(location3))
 
 
 
