@@ -1,11 +1,9 @@
 import json
+from geopy import distance
 
-print("Welcome to SYJPV navigation.")
-print("Please enter your end location")
-endLocation = input("")
-print(endLocation)
+from Coordinates import Coordinates
 
-'''def dijkstra():
+def dijkstra():
     f = open("data.json")
     data = json.load(f)
     print(data)
