@@ -2,7 +2,7 @@ import pandas as pd
 import tkinter as tk
 from geopy.geocoders import Nominatim
 from geopy import distance
-from tkinter import messagebox 
+from tkinter import messagebox
 import tkintermapview as tkmv
 
 
@@ -43,9 +43,9 @@ def getLatLong():
                                  marker_color_circle="white", marker_color_outside="red", font=("Helvetica Bold", 10))
 
 
-    
 
-    
+
+
 
 # Create the "Enter" button
 button = tk.Button(left_frame, text="Enter", command=getLatLong)
@@ -69,6 +69,6 @@ mapview.grid(row=0, column=0, sticky="nsew")
 
 
 
-    
+
 # Start the main loop
 windows.mainloop()
