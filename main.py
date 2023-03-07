@@ -1,6 +1,11 @@
 import json
 
-def dijkstra():
+print("Welcome to SYJPV navigation.")
+print("Please enter your end location")
+endLocation = input("")
+print(endLocation)
+
+'''def dijkstra():
     f = open("data.json")
     data = json.load(f)
     print(data)
@@ -15,4 +20,4 @@ def distanceFromXtoB(latx, lngx, latb, lngb):
 def distanceFromBusStop(latCurr, lngCurr, latb, lngb):
     pass
 
-dijkstra()
+dijkstra()'''
