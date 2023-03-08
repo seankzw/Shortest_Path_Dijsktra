@@ -3,8 +3,6 @@ import pandas as pd
 from Coordinates import Coordinates
 from brain import distanceBetween
 
-
-
 xl = pd.ExcelFile("bus_stops.xlsx")
 
 
@@ -14,7 +12,7 @@ def generateBusDict():
         json.dump(listOfBus, outfile)
 
 
-def generateRoutesDict():
+def collate_data():
     dict = {}
     for eachSheetIdx in range(len(xl.sheet_names)):
         sheetName = xl.sheet_names[eachSheetIdx]
@@ -37,42 +35,58 @@ def generateRoutesDict():
                 if sheetName not in dict[row["Bus stop"]]["buses"]:
                     dict[row["Bus stop"]]["buses"] += [sheetName]
 
-    with open("bus_route.json", "w") as outfile:
+    with open("collated_data.json", "w") as outfile:
         json.dump(dict, outfile)
 
-def busExists(a,b):
-    res = True
-    for i in range(len(a)):
-        if a[i] not in b:
-           res = False
-    return res
 
-def generateNearestStop():
-    f = open("bus_route.json")
+def generateSourcetoDestination():
+    f = open("collated_data.json")
     data = json.load(f)
 
-    newDict = {
-        'source': [],
-        'destination':[],
-        'distance':[]
-    }
+    newDict = {}
 
     for i in data:
-        currDataCoord = Coordinates(data[i]["lat"], data[i]["lng"])
+        currCoord = Coordinates(data[i]["lat"], data[i]["lng"])
+        temp = {}
         for j in data:
-            nextDataCoord = Coordinates(data[j]["lat"], data[j]["lng"])
-            if(distanceBetween(currDataCoord, nextDataCoord) != 0):
-                #if busExists(data[i]["buses"], data[j]["buses"]):
-                newDict["source"].append(i)
-                newDict["destination"].append(j)
-                newDict["distance"].append(distanceBetween(currDataCoord, nextDataCoord))
+            nextCoord = Coordinates(data[j]["lat"], data[j]["lng"])
+            if j != i:
+                if checkBusExists(data[i]["buses"], data[j]["buses"]):
+                    temp.update({
+                         j: distanceBetween(currCoord, nextCoord)
+                    })
+
+        newDict[i] = temp
+
+    print("len = {}".format(len(newDict)))
+    with open("source_to_destination.json", "w") as outfile:
+        json.dump(newDict, outfile)
+
+def checkBusExists(locationA, locationB):
+    for i in range(len(locationA)):
+        if locationA[i] in locationB:
+            return True
+
+    return False
 
 
-    df = pd.DataFrame(newDict)
-    df.to_csv("bus_routes.csv")
-    #with open("nearest_stops.json", "w") as outfile:
-    #    json.dump(newDict, outfile)
+def test():
+    df = pd.read_csv("bus_routes.csv")
+    mainDict = {}
+    for idx, row in df.iterrows():
+        if  row["source"] not in mainDict:
+            mainDict[row["source"]] = {}
 
+        mainDict[row["source"]][row["destination"]] = row["distance"]
+        #if shortestRoute > row["distance"] :
+        #    name = row["destination"]
+
+    df = pd.DataFrame(mainDict)
+    with open("test.json","w") as outfile:
+        json.dump(mainDict, outfile)
+        #    shortestRoute = row["distance"]
+
+    #print(mainDict)
 
 def reader(source):
     df = pd.read_csv("bus_routes.csv")
@@ -89,8 +103,20 @@ def reader(source):
 
     return ("Shorterst stop from {} is {} at {}km".format(source, name, shortestRoute))
 
-print(reader("Opp Shell Kiosk @ Taman Sri Putri"))
+
+def busExists(a,b):
+    res = True
+    for i in range(len(a)):
+        if a[i] not in b:
+           res = False
+    return res
+
+#print(reader("Opp Shell Kiosk @ Taman Sri Putri"))
+#test2()
+#test()
 #generateNearestStop()
 #generateBusDict()
 #generateRoutesDict()
 
+generateSourcetoDestination()
+#collate_data()
