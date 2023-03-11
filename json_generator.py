@@ -6,37 +6,86 @@ from brain import distanceBetween
 xl = pd.ExcelFile("bus_stops.xlsx")
 
 
-def generateBusDict():
-    listOfBus = xl.sheet_names
-    with open("bus_number.py", "w") as outfile:
-        json.dump(listOfBus, outfile)
-
-
 def collate_data():
-    dict = {}
-    for eachSheetIdx in range(len(xl.sheet_names)):
-        sheetName = xl.sheet_names[eachSheetIdx]
-        eachSheetData = xl.parse(sheetName)
-        df = pd.DataFrame(eachSheetData)
-        for index, row in df.iterrows():
-            location = row["GPS Location"]
-            coordinatesVal = (0,0)
-            if location != "NIL":
-                coordinatesVal = (float(location.split(",")[0]), float(location.split(",")[1]))
+    dict={}
 
-            if row["Bus stop"] not in dict:
-                dict[row["Bus stop"]] = {
-                    "buses" : [sheetName],
-                    "lat": coordinatesVal[0],
-                    "lng": coordinatesVal[1]
+#    for eachBusNumber in xl.sheet_names:
+#        eachBusRoute = xl.parse(eachBusNumber)
+#        df = pd.DataFrame(eachBusRoute)
+#        currIndex = 0
+    for eachBusNumber in xl.sheet_names:
+        data = xl.parse(eachBusNumber)
+        df = pd.DataFrame(data)
+        for eachIndex, currStop in df.iterrows():
+            total_len = len(df.index)
+            gps_location = currStop["GPS Location"].split(",")
+            currStopCoord = Coordinates(float(gps_location[0]),float(gps_location[1]))
+            destination = []
+            curr_bus_number = []
 
-                }
-            else:
-                if sheetName not in dict[row["Bus stop"]]["buses"]:
-                    dict[row["Bus stop"]]["buses"] += [sheetName]
+            if currStop["Bus stop"] in dict:
+                curr_bus_number = dict[currStop["Bus stop"]]["bus_number"]
+                destination = dict[currStop["Bus stop"]]["destination"]
+
+
+            # next and previous stop are not out of range
+            if eachIndex - 1 >= 0 :
+                # store next and prev route to a var
+                prevStop = df.iloc[eachIndex-1]
+                prevStopGPS = prevStop["GPS Location"].split(",")
+                prevStopCoord = Coordinates(float(prevStopGPS[0]), float(prevStopGPS[1]))
+                # Add previous stop
+                destination.append({
+                    "bus_stop":prevStop["Bus stop"],
+                    "distance": distanceBetween(currStopCoord,prevStopCoord)
+                })
+
+            if eachIndex + 1 < total_len:
+                # Add next stop
+                nextStop = df.iloc[eachIndex+1]
+                nextStopGPS = nextStop["GPS Location"].split(",")
+                nextStopCoord = Coordinates(float(nextStopGPS[0]), float(nextStopGPS[1]))
+
+                destination.append({
+                    "bus_stop": nextStop["Bus stop"],
+                    "distance":distanceBetween(currStopCoord,nextStopCoord)
+                })
+
+
+            curr_bus_number.append(eachBusNumber)
+            dict[currStop["Bus stop"]] = {
+                "bus_number": curr_bus_number,
+                "destination":destination
+            }
 
     with open("collated_data.json", "w") as outfile:
         json.dump(dict, outfile)
+
+#    dict = {}
+
+#    for eachBusNumber in xl.sheet_names:
+#        eachBusRoute = xl.parse(eachBusNumber)
+#        df = pd.DataFrame(eachBusRoute)
+#        currIndex = 0
+#        for index, row in df.iterrows():
+#            coordinatesOfBusStop = Coordinates(float(row["GPS Location"].split(",")[0]),float(row["GPS Location"].split(",")[1]))
+#            if row["Bus stop"] not in dict:
+#                coordinateOfNextBusStop = Coordinates(float(df.iloc[currIndex+1]["GPS Location"].split(",")[0]),float(df.iloc[currIndex+1]["GPS Location"].split(",")[1]))
+#                dict[row["Bus stop"]] = {
+#                    "bus_number": [eachBusNumber],
+#                    "destination":[
+#                        {
+#                            "bus_stop":df.iloc[currIndex+1]["Bus stop"],
+#                            "distance": distanceBetween(coordinatesOfBusStop, coordinateOfNextBusStop)
+#                        }
+#                    ]
+#                }
+
+#            currIndex+=1
+
+
+#    with open("collated_data.json", "w") as outfile:
+#        json.dump(dict, outfile)
 
 
 def generateSourcetoDestination():
@@ -63,10 +112,13 @@ def generateSourcetoDestination():
         json.dump(newDict, outfile)
 
 def checkBusExists(locationA, locationB):
+    print(locationA, locationB)
     for i in range(len(locationA)):
         if locationA[i] in locationB:
+            print("locationA in locationB")
             return True
 
+    print('======')
     return False
 
 
@@ -112,11 +164,6 @@ def busExists(a,b):
     return res
 
 #print(reader("Opp Shell Kiosk @ Taman Sri Putri"))
-#test2()
-#test()
-#generateNearestStop()
-#generateBusDict()
-#generateRoutesDict()
 
-generateSourcetoDestination()
-#collate_data()
+#generateSourcetoDestination()
+collate_data()
