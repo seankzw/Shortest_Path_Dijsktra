@@ -20,12 +20,12 @@ def collate_data():
             total_len = len(df.index)
             gps_location = currStop["GPS Location"].split(",")
             currStopCoord = Coordinates(float(gps_location[0]),float(gps_location[1]))
-            destination = []
+            destination = {}
             curr_bus_number = []
 
             if currStop["Bus stop"] in dict:
                 curr_bus_number = dict[currStop["Bus stop"]]["bus_number"]
-                destination = dict[currStop["Bus stop"]]["destination"]
+                destination = dict[currStop["Bus stop"]]["edgeTo"]
 
 
             if eachIndex + 1 < total_len:
@@ -34,20 +34,21 @@ def collate_data():
                 nextStopGPS = nextStop["GPS Location"].split(",")
                 nextStopCoord = Coordinates(float(nextStopGPS[0]), float(nextStopGPS[1]))
 
-                newDestination = {
-                        "bus_stop": nextStop["Bus stop"],
-                        "distance":distanceBetween(currStopCoord,nextStopCoord)
-                }
+                if nextStop["Bus stop"] not in destination:
+                    destination[nextStop["Bus stop"]] = distanceBetween(currStopCoord,nextStopCoord)
 
-                if newDestination not in destination:
-                    destination.append(newDestination)
+                #newDestination = {
+                #        "bus_stop": nextStop["Bus stop"],
+                #        "distance":distanceBetween(currStopCoord,nextStopCoord)
+                #}
+
 
             if eachBusNumber not in curr_bus_number:
                 curr_bus_number.append(eachBusNumber)
 
             dict[currStop["Bus stop"]] = {
                 "bus_number": curr_bus_number,
-                "destination":destination
+                "edgeTo":destination
             }
 
     with open("collated_data.json", "w") as outfile:
