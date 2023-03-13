@@ -28,31 +28,23 @@ def collate_data():
                 destination = dict[currStop["Bus stop"]]["destination"]
 
 
-            # next and previous stop are not out of range
-            if eachIndex - 1 >= 0 :
-                # store next and prev route to a var
-                prevStop = df.iloc[eachIndex-1]
-                prevStopGPS = prevStop["GPS Location"].split(",")
-                prevStopCoord = Coordinates(float(prevStopGPS[0]), float(prevStopGPS[1]))
-                # Add previous stop
-                destination.append({
-                    "bus_stop":prevStop["Bus stop"],
-                    "distance": distanceBetween(currStopCoord,prevStopCoord)
-                })
-
             if eachIndex + 1 < total_len:
                 # Add next stop
                 nextStop = df.iloc[eachIndex+1]
                 nextStopGPS = nextStop["GPS Location"].split(",")
                 nextStopCoord = Coordinates(float(nextStopGPS[0]), float(nextStopGPS[1]))
 
-                destination.append({
-                    "bus_stop": nextStop["Bus stop"],
-                    "distance":distanceBetween(currStopCoord,nextStopCoord)
-                })
+                newDestination = {
+                        "bus_stop": nextStop["Bus stop"],
+                        "distance":distanceBetween(currStopCoord,nextStopCoord)
+                }
 
+                if newDestination not in destination:
+                    destination.append(newDestination)
 
-            curr_bus_number.append(eachBusNumber)
+            if eachBusNumber not in curr_bus_number:
+                curr_bus_number.append(eachBusNumber)
+
             dict[currStop["Bus stop"]] = {
                 "bus_number": curr_bus_number,
                 "destination":destination

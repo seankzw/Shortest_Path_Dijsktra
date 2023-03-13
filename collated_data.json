@@ -1,34 +1,7 @@
 {
   "Larkin Terminal": {
-    "bus_number": [
-      "P101-loop",
-      "P101-loop",
-      "P211-01",
-      "P211-02",
-      "P411-01",
-      "P411-02"
-    ],
+    "bus_number": ["P101-loop", "P211-01", "P211-02", "P411-01", "P411-02"],
     "destination": [
-      {
-        "bus_stop": "Pejabat Daerah Tanah Johor Bahru",
-        "distance": 0.603560773124298
-      },
-      {
-        "bus_stop": "Opp Yayasan Bandaraya Johor Bahru",
-        "distance": 1.4788349682970334
-      },
-      {
-        "bus_stop": "Opp Shell Kiosk @ Jalan Tun Abdul Razak",
-        "distance": 1.9829373103741064
-      },
-      {
-        "bus_stop": "Pejabat Daerah Tanah Johor Bahru",
-        "distance": 0.6126638381461361
-      },
-      {
-        "bus_stop": "Opp Shell Kiosk @ Jalan Tun Abdul Razak",
-        "distance": 1.9829373103741064
-      },
       {
         "bus_stop": "Pejabat Daerah Tanah Johor Bahru",
         "distance": 0.6126638381461361
@@ -38,17 +11,10 @@
   "Pejabat Daerah Tanah Johor Bahru": {
     "bus_number": ["P101-loop", "P211-02", "P411-02"],
     "destination": [
-      { "bus_stop": "Larkin Terminal", "distance": 0.603560773124298 },
       {
         "bus_stop": "RTM Jabatan Penyiaran Negeri Johor",
-        "distance": 1.3735650440697862
+        "distance": 1.3623090694305515
       },
-      { "bus_stop": "Larkin Terminal", "distance": 0.6126638381461361 },
-      {
-        "bus_stop": "aft Shell Kiosk @ Jalan Tun Abdul Razak",
-        "distance": 1.5226946083365058
-      },
-      { "bus_stop": "Larkin Terminal", "distance": 0.6126638381461361 },
       {
         "bus_stop": "aft Shell Kiosk @ Jalan Tun Abdul Razak",
         "distance": 1.5226946083365058
@@ -58,20 +24,12 @@
   "RTM Jabatan Penyiaran Negeri Johor": {
     "bus_number": ["P101-loop"],
     "destination": [
-      {
-        "bus_stop": "Pejabat Daerah Tanah Johor Bahru",
-        "distance": 1.3735650440697862
-      },
       { "bus_stop": "Opp Masjid Kolam Ayer", "distance": 1.2440942282655219 }
     ]
   },
   "Opp Masjid Kolam Ayer": {
     "bus_number": ["P101-loop"],
     "destination": [
-      {
-        "bus_stop": "RTM Jabatan Penyiaran Negeri Johor",
-        "distance": 1.2440942282655219
-      },
       {
         "bus_stop": "Opp Jabatan Pendidikan Johor",
         "distance": 0.16124101251866904
@@ -81,7 +39,6 @@
   "Opp Jabatan Pendidikan Johor": {
     "bus_number": ["P101-loop"],
     "destination": [
-      { "bus_stop": "Opp Masjid Kolam Ayer", "distance": 0.16124101251866904 },
       {
         "bus_stop": "Maktab Sultan Abu Bakar (English College",
         "distance": 0.6251616665725007
@@ -91,44 +48,30 @@
   "Maktab Sultan Abu Bakar (English College": {
     "bus_number": ["P101-loop"],
     "destination": [
-      {
-        "bus_stop": "Opp Jabatan Pendidikan Johor",
-        "distance": 0.6251616665725007
-      },
       { "bus_stop": "Hospital Sultanah Aminah", "distance": 0.9725036112526834 }
     ]
   },
   "Hospital Sultanah Aminah": {
     "bus_number": ["P101-loop"],
     "destination": [
-      {
-        "bus_stop": "Maktab Sultan Abu Bakar (English College",
-        "distance": 0.9725036112526834
-      },
       { "bus_stop": "Johor Islamic Complex", "distance": 0.3115150578418135 }
     ]
   },
   "Johor Islamic Complex": {
     "bus_number": ["P101-loop"],
     "destination": [
-      {
-        "bus_stop": "Hospital Sultanah Aminah",
-        "distance": 0.3115150578418135
-      },
       { "bus_stop": "Bangunan Sultan Ibrahim", "distance": 1.461395241348077 }
     ]
   },
   "Bangunan Sultan Ibrahim": {
     "bus_number": ["P101-loop"],
     "destination": [
-      { "bus_stop": "Johor Islamic Complex", "distance": 1.461395241348077 },
       { "bus_stop": "Wisma Persekutuan", "distance": 0.4980034148729299 }
     ]
   },
   "Wisma Persekutuan": {
     "bus_number": ["P101-loop"],
     "destination": [
-      { "bus_stop": "Bangunan Sultan Ibrahim", "distance": 0.4980034148729299 },
       {
         "bus_stop": "Majlis Bandaraya Johor Bahru",
         "distance": 0.7401776212247033
@@ -138,36 +81,22 @@
   "Majlis Bandaraya Johor Bahru": {
     "bus_number": ["P101-loop", "P102-01", "P102-02"],
     "destination": [
-      { "bus_stop": "Wisma Persekutuan", "distance": 0.7401776212247033 },
-      { "bus_stop": "JB Sentral Terminal", "distance": 0.9561784350845917 },
-      { "bus_stop": "R&F Mall", "distance": 1.00308595992918 },
       { "bus_stop": "JB Sentral Terminal", "distance": 0.9561784350845917 }
     ]
   },
   "JB Sentral Terminal": {
     "bus_number": ["P101-loop", "P102-02"],
     "destination": [
-      {
-        "bus_stop": "Majlis Bandaraya Johor Bahru",
-        "distance": 0.9561784350845917
-      },
-      { "bus_stop": "Menara MSC Cyberport", "distance": 0.7899709376300169 },
-      {
-        "bus_stop": "Majlis Bandaraya Johor Bahru",
-        "distance": 0.9561784350845917
-      },
       { "bus_stop": "Menara MSC Cyberport", "distance": 0.7899709376300169 }
     ]
   },
   "Menara MSC Cyberport": {
     "bus_number": ["P101-loop", "P102-02"],
     "destination": [
-      { "bus_stop": "JB Sentral Terminal", "distance": 0.7899709376300169 },
       {
         "bus_stop": "Opp Sekolah Kebangsaan Perempuan Jalan Yahya Awal",
         "distance": 2.8291533130602824
       },
-      { "bus_stop": "JB Sentral Terminal", "distance": 0.7899709376300169 },
       {
         "bus_stop": "Sekolah Menengah Foon Yew",
         "distance": 1.0076816574442207
@@ -177,7 +106,6 @@
   "Opp Sekolah Kebangsaan Perempuan Jalan Yahya Awal": {
     "bus_number": ["P101-loop"],
     "destination": [
-      { "bus_stop": "Menara MSC Cyberport", "distance": 2.8291533130602824 },
       {
         "bus_stop": "Petronas Kiosk @ Jalan Yahya Awal",
         "distance": 0.29652508970235336
@@ -188,10 +116,6 @@
     "bus_number": ["P101-loop"],
     "destination": [
       {
-        "bus_stop": "Opp Sekolah Kebangsaan Perempuan Jalan Yahya Awal",
-        "distance": 0.29652508970235336
-      },
-      {
         "bus_stop": "Opp SJK (T) Jalan Yahya Awal",
         "distance": 0.37672609564921294
       }
@@ -200,20 +124,12 @@
   "Opp SJK (T) Jalan Yahya Awal": {
     "bus_number": ["P101-loop"],
     "destination": [
-      {
-        "bus_stop": "Petronas Kiosk @ Jalan Yahya Awal",
-        "distance": 0.37672609564921294
-      },
       { "bus_stop": "aft Jalan Tasek Utara", "distance": 0.2561859127338462 }
     ]
   },
   "aft Jalan Tasek Utara": {
     "bus_number": ["P101-loop"],
     "destination": [
-      {
-        "bus_stop": "Opp SJK (T) Jalan Yahya Awal",
-        "distance": 0.2561859127338462
-      },
       {
         "bus_stop": "Opp Yayasan Bandaraya Johor Bahru",
         "distance": 0.42287964374180753
@@ -223,29 +139,22 @@
   "Opp Yayasan Bandaraya Johor Bahru": {
     "bus_number": ["P101-loop"],
     "destination": [
-      { "bus_stop": "aft Jalan Tasek Utara", "distance": 0.42287964374180753 },
       { "bus_stop": "Larkin Terminal", "distance": 1.4788349682970334 }
     ]
   },
   "Hub PPR Sri Stulang": {
-    "bus_number": ["P102-01", "P102-02", "P106-loop", "P106-loop"],
+    "bus_number": ["P102-01", "P102-02", "P106-loop"],
     "destination": [
       {
         "bus_stop": "bef Jalan Sultanah Aminah",
         "distance": 0.4482316401854532
       },
-      { "bus_stop": "PPR Sri Stulang", "distance": 0.18282674995029927 },
-      {
-        "bus_stop": "aft Jalan Pasir Pelangi",
-        "distance": 0.40393054524288347
-      },
-      { "bus_stop": "PPR Sri Stulang", "distance": 0.18282674995029927 }
+      { "bus_stop": "aft Jalan Pasir Pelangi", "distance": 0.40393054524288347 }
     ]
   },
   "bef Jalan Sultanah Aminah": {
     "bus_number": ["P102-01"],
     "destination": [
-      { "bus_stop": "Hub PPR Sri Stulang", "distance": 0.4482316401854532 },
       {
         "bus_stop": "Shell Kiosk @ Jalan Pasir Pelangi",
         "distance": 0.1509889928848856
@@ -255,34 +164,22 @@
   "Shell Kiosk @ Jalan Pasir Pelangi": {
     "bus_number": ["P102-01"],
     "destination": [
-      {
-        "bus_stop": "bef Jalan Sultanah Aminah",
-        "distance": 0.1509889928848856
-      },
       { "bus_stop": "Stulang Walk", "distance": 2.050229645620517 }
     ]
   },
   "Stulang Walk": {
     "bus_number": ["P102-01"],
-    "destination": [
-      {
-        "bus_stop": "Shell Kiosk @ Jalan Pasir Pelangi",
-        "distance": 2.050229645620517
-      },
-      { "bus_stop": "Block 18", "distance": 0.2627878202784135 }
-    ]
+    "destination": [{ "bus_stop": "Block 18", "distance": 0.2627878202784135 }]
   },
   "Block 18": {
     "bus_number": ["P102-01"],
     "destination": [
-      { "bus_stop": "Stulang Walk", "distance": 0.2627878202784135 },
       { "bus_stop": "Opp De' Stulang", "distance": 0.2050716849334619 }
     ]
   },
   "Opp De' Stulang": {
     "bus_number": ["P102-01"],
     "destination": [
-      { "bus_stop": "Block 18", "distance": 0.2050716849334619 },
       {
         "bus_stop": "Opp Sekolah Menengah Foon Yew",
         "distance": 0.4039888352965673
@@ -291,18 +188,11 @@
   },
   "Opp Sekolah Menengah Foon Yew": {
     "bus_number": ["P102-01"],
-    "destination": [
-      { "bus_stop": "Opp De' Stulang", "distance": 0.4039888352965673 },
-      { "bus_stop": "R&F Mall", "distance": 1.287466651886635 }
-    ]
+    "destination": [{ "bus_stop": "R&F Mall", "distance": 1.287466651886635 }]
   },
   "R&F Mall": {
     "bus_number": ["P102-01"],
     "destination": [
-      {
-        "bus_stop": "Opp Sekolah Menengah Foon Yew",
-        "distance": 1.287466651886635
-      },
       {
         "bus_stop": "Majlis Bandaraya Johor Bahru",
         "distance": 1.00308595992918
@@ -312,24 +202,18 @@
   "Sekolah Menengah Foon Yew": {
     "bus_number": ["P102-02"],
     "destination": [
-      { "bus_stop": "Menara MSC Cyberport", "distance": 1.0076816574442207 },
       { "bus_stop": "De' Stulang", "distance": 0.33676409592128514 }
     ]
   },
   "De' Stulang": {
     "bus_number": ["P102-02"],
     "destination": [
-      {
-        "bus_stop": "Sekolah Menengah Foon Yew",
-        "distance": 0.33676409592128514
-      },
       { "bus_stop": "Opp Istana Pasir Pelangi", "distance": 0.9479790735398148 }
     ]
   },
   "Opp Istana Pasir Pelangi": {
     "bus_number": ["P102-02"],
     "destination": [
-      { "bus_stop": "De' Stulang", "distance": 0.9479790735398148 },
       {
         "bus_stop": "The Mall, Mid Valley Southkey",
         "distance": 2.550121988497376
@@ -339,22 +223,12 @@
   "The Mall, Mid Valley Southkey": {
     "bus_number": ["P102-02"],
     "destination": [
-      { "bus_stop": "Opp Istana Pasir Pelangi", "distance": 2.550121988497376 },
       { "bus_stop": "aft Jalan Pasir Pelangi", "distance": 0.9588324178600677 }
     ]
   },
   "aft Jalan Pasir Pelangi": {
     "bus_number": ["P102-02", "P106-loop"],
     "destination": [
-      {
-        "bus_stop": "The Mall, Mid Valley Southkey",
-        "distance": 0.9588324178600677
-      },
-      {
-        "bus_stop": "Petronas Kiosk @ Taman Bayu Puteri",
-        "distance": 0.6053304749785229
-      },
-      { "bus_stop": "Hub PPR Sri Stulang", "distance": 0.40393054524288347 },
       {
         "bus_stop": "Petronas Kiosk @ Taman Bayu Puteri",
         "distance": 0.6053304749785229
@@ -364,12 +238,10 @@
   "Petronas Kiosk @ Taman Bayu Puteri": {
     "bus_number": ["P102-02", "P106-loop"],
     "destination": [
-      { "bus_stop": "aft Jalan Pasir Pelangi", "distance": 0.6053304749785229 },
       {
         "bus_stop": "Opp Petronas Kiosk @ Taman Bayu Puteri",
         "distance": 0.035798215619255544
       },
-      { "bus_stop": "aft Jalan Pasir Pelangi", "distance": 0.6053304749785229 },
       {
         "bus_stop": "BHPetrol Kiosk @ Permas Jaya",
         "distance": 2.61864003724716
@@ -379,50 +251,24 @@
   "Opp Petronas Kiosk @ Taman Bayu Puteri": {
     "bus_number": ["P102-02", "P106-loop"],
     "destination": [
-      {
-        "bus_stop": "Petronas Kiosk @ Taman Bayu Puteri",
-        "distance": 0.035798215619255544
-      },
-      { "bus_stop": "PPR Sri Stulang", "distance": 0.18638098057059485 },
-      {
-        "bus_stop": "bef Shell Kiosk @ Permas Jaya",
-        "distance": 1.7871951007142912
-      },
       { "bus_stop": "PPR Sri Stulang", "distance": 0.18638098057059485 }
     ]
   },
   "PPR Sri Stulang": {
     "bus_number": ["P102-02", "P106-loop"],
     "destination": [
-      {
-        "bus_stop": "Opp Petronas Kiosk @ Taman Bayu Puteri",
-        "distance": 0.18638098057059485
-      },
-      { "bus_stop": "Hub PPR Sri Stulang", "distance": 0.18282674995029927 },
-      {
-        "bus_stop": "Opp Petronas Kiosk @ Taman Bayu Puteri",
-        "distance": 0.18638098057059485
-      },
       { "bus_stop": "Hub PPR Sri Stulang", "distance": 0.18282674995029927 }
     ]
   },
   "BHPetrol Kiosk @ Permas Jaya": {
     "bus_number": ["P106-loop"],
     "destination": [
-      {
-        "bus_stop": "Petronas Kiosk @ Taman Bayu Puteri",
-        "distance": 2.61864003724716
-      },
       { "bus_stop": "AEON Permas Jaya", "distance": 0.7801894106231692 }
     ]
   },
   "AEON Permas Jaya": {
     "bus_number": ["P106-loop"],
     "destination": [
-      {
-        "bus_stop": "BHPetrol Kiosk @ Permas Jaya",
-        "distance": 0.7801894106231692
-      },
       {
         "bus_stop": "Dewan Serbaguna Permas Jaya",
         "distance": 0.5283376743351985
@@ -432,38 +278,30 @@
   "Dewan Serbaguna Permas Jaya": {
     "bus_number": ["P106-loop"],
     "destination": [
-      { "bus_stop": "AEON Permas Jaya", "distance": 0.5283376743351985 },
       { "bus_stop": "Mon Glori Apartment", "distance": 0.345403994421343 }
     ]
   },
   "Mon Glori Apartment": {
     "bus_number": ["P106-loop"],
     "destination": [
-      {
-        "bus_stop": "Dewan Serbaguna Permas Jaya",
-        "distance": 0.345403994421343
-      },
       { "bus_stop": "Opp Best Ku Motor", "distance": 2.335374272311074 }
     ]
   },
   "Opp Best Ku Motor": {
     "bus_number": ["P106-loop"],
     "destination": [
-      { "bus_stop": "Mon Glori Apartment", "distance": 2.335374272311074 },
       { "bus_stop": "Opp Kia Motors", "distance": 0.7277507141398378 }
     ]
   },
   "Opp Kia Motors": {
     "bus_number": ["P106-loop"],
     "destination": [
-      { "bus_stop": "Opp Best Ku Motor", "distance": 0.7277507141398378 },
       { "bus_stop": "bef Jalan Masai Baru", "distance": 0.5203253177219737 }
     ]
   },
   "bef Jalan Masai Baru": {
     "bus_number": ["P106-loop"],
     "destination": [
-      { "bus_stop": "Opp Kia Motors", "distance": 0.5203253177219737 },
       {
         "bus_stop": "Lotus Plentong (Tesco Extra)",
         "distance": 0.3692005742717797
@@ -473,24 +311,18 @@
   "Lotus Plentong (Tesco Extra)": {
     "bus_number": ["P106-loop"],
     "destination": [
-      { "bus_stop": "bef Jalan Masai Baru", "distance": 0.3692005742717797 },
       { "bus_stop": "aft Jalan Masai Baru", "distance": 0.3979562698711105 }
     ]
   },
   "aft Jalan Masai Baru": {
     "bus_number": ["P106-loop"],
     "destination": [
-      {
-        "bus_stop": "Lotus Plentong (Tesco Extra)",
-        "distance": 0.3979562698711105
-      },
       { "bus_stop": "Giant Plentong", "distance": 0.6280573960802642 }
     ]
   },
   "Giant Plentong": {
     "bus_number": ["P106-loop"],
     "destination": [
-      { "bus_stop": "aft Jalan Masai Baru", "distance": 0.6280573960802642 },
       {
         "bus_stop": "Hse No. 1 Jalan Seroja 22",
         "distance": 0.38791125747842936
@@ -500,31 +332,24 @@
   "Hse No. 1 Jalan Seroja 22": {
     "bus_number": ["P106-loop"],
     "destination": [
-      { "bus_stop": "Giant Plentong", "distance": 0.38791125747842936 },
       { "bus_stop": "Opp Jalan Keembong 43", "distance": 1.0124860672997043 }
     ]
   },
   "Opp Jalan Keembong 43": {
     "bus_number": ["P106-loop"],
     "destination": [
-      {
-        "bus_stop": "Hse No. 1 Jalan Seroja 22",
-        "distance": 1.0124860672997043
-      },
       { "bus_stop": "Jalan Seroja 54", "distance": 0.7664088814526379 }
     ]
   },
   "Jalan Seroja 54": {
     "bus_number": ["P106-loop"],
     "destination": [
-      { "bus_stop": "Opp Jalan Keembong 43", "distance": 0.7664088814526379 },
       { "bus_stop": "Jalan Bakawali 86", "distance": 0.17360764312726293 }
     ]
   },
   "Jalan Bakawali 86": {
     "bus_number": ["P106-loop"],
     "destination": [
-      { "bus_stop": "Jalan Seroja 54", "distance": 0.17360764312726293 },
       {
         "bus_stop": "Opp Pasar Awam Johor Jaya",
         "distance": 0.6588472938995806
@@ -534,52 +359,42 @@
   "Opp Pasar Awam Johor Jaya": {
     "bus_number": ["P106-loop"],
     "destination": [
-      { "bus_stop": "Jalan Bakawali 86", "distance": 0.6588472938995806 },
       { "bus_stop": "AEON Tebrau City", "distance": 0.872785639540195 }
     ]
   },
   "AEON Tebrau City": {
     "bus_number": ["P106-loop"],
     "destination": [
-      {
-        "bus_stop": "Opp Pasar Awam Johor Jaya",
-        "distance": 0.872785639540195
-      },
       { "bus_stop": "Hospital Sultan Ismail", "distance": 0.7254166703186111 }
     ]
   },
   "Hospital Sultan Ismail": {
     "bus_number": ["P106-loop"],
     "destination": [
-      { "bus_stop": "AEON Tebrau City", "distance": 0.7254166703186111 },
       { "bus_stop": "Hospital Sultan Ismail 2", "distance": 0.4451414937961116 }
     ]
   },
   "Hospital Sultan Ismail 2": {
     "bus_number": ["P106-loop"],
     "destination": [
-      { "bus_stop": "Hospital Sultan Ismail", "distance": 0.4451414937961116 },
       { "bus_stop": "Opp Suntoyo Enterprise", "distance": 2.1464366585026 }
     ]
   },
   "Opp Suntoyo Enterprise": {
     "bus_number": ["P106-loop"],
     "destination": [
-      { "bus_stop": "Hospital Sultan Ismail 2", "distance": 2.1464366585026 },
       { "bus_stop": "Kia Motors", "distance": 1.6736638845647842 }
     ]
   },
   "Kia Motors": {
     "bus_number": ["P106-loop"],
     "destination": [
-      { "bus_stop": "Opp Suntoyo Enterprise", "distance": 1.6736638845647842 },
       { "bus_stop": "Best Ku Motor", "distance": 0.6862282885862134 }
     ]
   },
   "Best Ku Motor": {
     "bus_number": ["P106-loop"],
     "destination": [
-      { "bus_stop": "Kia Motors", "distance": 0.6862282885862134 },
       {
         "bus_stop": "House No. 63 Jalan Permas 1/1",
         "distance": 0.7653606675452971
@@ -589,17 +404,12 @@
   "House No. 63 Jalan Permas 1/1": {
     "bus_number": ["P106-loop"],
     "destination": [
-      { "bus_stop": "Best Ku Motor", "distance": 0.7653606675452971 },
       { "bus_stop": "Jalan Permas 5/6", "distance": 1.2254575220996733 }
     ]
   },
   "Jalan Permas 5/6": {
     "bus_number": ["P106-loop"],
     "destination": [
-      {
-        "bus_stop": "House No. 63 Jalan Permas 1/1",
-        "distance": 1.2254575220996733
-      },
       {
         "bus_stop": "Sekolah Kebangsaan Taman Permas Jaya 3",
         "distance": 0.5120198281319914
@@ -608,25 +418,17 @@
   },
   "Sekolah Kebangsaan Taman Permas Jaya 3": {
     "bus_number": ["P106-loop"],
-    "destination": [
-      { "bus_stop": "Jalan Permas 5/6", "distance": 0.5120198281319914 },
-      { "bus_stop": "Pan Vista", "distance": 0.1921433396779205 }
-    ]
+    "destination": [{ "bus_stop": "Pan Vista", "distance": 0.1921433396779205 }]
   },
   "Pan Vista": {
     "bus_number": ["P106-loop"],
     "destination": [
-      {
-        "bus_stop": "Sekolah Kebangsaan Taman Permas Jaya 3",
-        "distance": 0.1921433396779205
-      },
       { "bus_stop": "aft Jalan Permas 8/14", "distance": 0.4095937813441458 }
     ]
   },
   "aft Jalan Permas 8/14": {
     "bus_number": ["P106-loop"],
     "destination": [
-      { "bus_stop": "Pan Vista", "distance": 0.4095937813441458 },
       {
         "bus_stop": "Opp BHPetrol Kiosk @ Permas Jaya",
         "distance": 1.5809739295336087
@@ -636,7 +438,6 @@
   "Opp BHPetrol Kiosk @ Permas Jaya": {
     "bus_number": ["P106-loop"],
     "destination": [
-      { "bus_stop": "aft Jalan Permas 8/14", "distance": 1.5809739295336087 },
       {
         "bus_stop": "bef Shell Kiosk @ Permas Jaya",
         "distance": 0.9280732230173286
@@ -647,50 +448,30 @@
     "bus_number": ["P106-loop"],
     "destination": [
       {
-        "bus_stop": "Opp BHPetrol Kiosk @ Permas Jaya",
-        "distance": 0.9280732230173286
-      },
-      {
         "bus_stop": "Opp Petronas Kiosk @ Taman Bayu Puteri",
         "distance": 1.7871951007142912
       }
     ]
   },
   "Taman Universiti Terminal": {
-    "bus_number": ["P202-loop", "P202-loop", "P211-01", "P211-02"],
+    "bus_number": ["P202-loop", "P211-01", "P211-02"],
     "destination": [
       {
         "bus_stop": "opp Sekolah Kebangsaan Taman Universiti 4",
         "distance": 0.5112035155284891
       },
-      {
-        "bus_stop": "Jalan Kebudayaan 27 / 24 Intersection",
-        "distance": 0.325887129082397
-      },
-      { "bus_stop": "Aeon Taman Universiti", "distance": 0.43232913566197173 },
-      {
-        "bus_stop": "Opp AEON Taman Universiti",
-        "distance": 0.3836896416905215
-      }
+      { "bus_stop": "Aeon Taman Universiti", "distance": 0.43232913566197173 }
     ]
   },
   "opp Sekolah Kebangsaan Taman Universiti 4": {
     "bus_number": ["P202-loop"],
     "destination": [
-      {
-        "bus_stop": "Taman Universiti Terminal",
-        "distance": 0.5112035155284891
-      },
       { "bus_stop": "Surau As Syakirin", "distance": 0.5269012566007739 }
     ]
   },
   "Surau As Syakirin": {
     "bus_number": ["P202-loop"],
     "destination": [
-      {
-        "bus_stop": "opp Sekolah Kebangsaan Taman Universiti 4",
-        "distance": 0.5269012566007739
-      },
       {
         "bus_stop": "Opp SMK Taman Mutiara Rini",
         "distance": 0.9015760480178284
@@ -700,38 +481,28 @@
   "Opp SMK Taman Mutiara Rini": {
     "bus_number": ["P202-loop"],
     "destination": [
-      { "bus_stop": "Surau As Syakirin", "distance": 0.9015760480178284 },
       { "bus_stop": "Opp Jalan Utama 34", "distance": 0.5287226672222655 }
     ]
   },
   "Opp Jalan Utama 34": {
     "bus_number": ["P202-loop"],
     "destination": [
-      {
-        "bus_stop": "Opp SMK Taman Mutiara Rini",
-        "distance": 0.5287226672222655
-      },
       { "bus_stop": "KFC (Road side)", "distance": 11523.50370477848 }
     ]
   },
   "KFC (Road side)": {
     "bus_number": ["P202-loop"],
-    "destination": [
-      { "bus_stop": "Opp Jalan Utama 34", "distance": 11523.50370477848 },
-      { "bus_stop": "Tesco Lotus (Road side)", "distance": 0.0 }
-    ]
+    "destination": [{ "bus_stop": "Tesco Lotus (Road side)", "distance": 0.0 }]
   },
   "Tesco Lotus (Road side)": {
     "bus_number": ["P202-loop"],
     "destination": [
-      { "bus_stop": "KFC (Road side)", "distance": 0.0 },
       { "bus_stop": "Opp Hutan Bandar MBIP", "distance": 11523.109984419212 }
     ]
   },
   "Opp Hutan Bandar MBIP": {
     "bus_number": ["P202-loop"],
     "destination": [
-      { "bus_stop": "Tesco Lotus (Road side)", "distance": 11523.109984419212 },
       {
         "bus_stop": "Shop No. 81 Jalan Seri Orkid 17",
         "distance": 0.85857988191509
@@ -741,7 +512,6 @@
   "Shop No. 81 Jalan Seri Orkid 17": {
     "bus_number": ["P202-loop"],
     "destination": [
-      { "bus_stop": "Opp Hutan Bandar MBIP", "distance": 0.85857988191509 },
       {
         "bus_stop": "Opp Bahagian Teknologi Pendidikan Negeri Johor",
         "distance": 1.1307440118351617
@@ -750,21 +520,11 @@
   },
   "Opp Bahagian Teknologi Pendidikan Negeri Johor": {
     "bus_number": ["P202-loop"],
-    "destination": [
-      {
-        "bus_stop": "Shop No. 81 Jalan Seri Orkid 17",
-        "distance": 1.1307440118351617
-      },
-      { "bus_stop": "Union Inn", "distance": 0.9094246135779089 }
-    ]
+    "destination": [{ "bus_stop": "Union Inn", "distance": 0.9094246135779089 }]
   },
   "Union Inn": {
     "bus_number": ["P202-loop"],
     "destination": [
-      {
-        "bus_stop": "Opp Bahagian Teknologi Pendidikan Negeri Johor",
-        "distance": 0.9094246135779089
-      },
       {
         "bus_stop": "Shophouses @ Jalan Nakhoda 2",
         "distance": 0.31213711202121075
@@ -774,31 +534,24 @@
   "Shophouses @ Jalan Nakhoda 2": {
     "bus_number": ["P202-loop"],
     "destination": [
-      { "bus_stop": "Union Inn", "distance": 0.31213711202121075 },
       { "bus_stop": "bef Terminal TUTA", "distance": 0.2794627012317497 }
     ]
   },
   "bef Terminal TUTA": {
     "bus_number": ["P202-loop"],
     "destination": [
-      {
-        "bus_stop": "Shophouses @ Jalan Nakhoda 2",
-        "distance": 0.2794627012317497
-      },
       { "bus_stop": "Polilkinik Yap", "distance": 0.4171823921478712 }
     ]
   },
   "Polilkinik Yap": {
     "bus_number": ["P202-loop"],
     "destination": [
-      { "bus_stop": "bef Terminal TUTA", "distance": 0.4171823921478712 },
       { "bus_stop": "bef Jalan Tun Teja", "distance": 0.2703699358491234 }
     ]
   },
   "bef Jalan Tun Teja": {
     "bus_number": ["P202-loop"],
     "destination": [
-      { "bus_stop": "Polilkinik Yap", "distance": 0.2703699358491234 },
       {
         "bus_stop": "Shophouses @ Jalan Perwira 9",
         "distance": 0.36456740759343964
@@ -808,7 +561,6 @@
   "Shophouses @ Jalan Perwira 9": {
     "bus_number": ["P202-loop"],
     "destination": [
-      { "bus_stop": "bef Jalan Tun Teja", "distance": 0.36456740759343964 },
       {
         "bus_stop": "Sin Kok Soon Motor (JB) Sdn Bhd",
         "distance": 0.22399132358457766
@@ -818,70 +570,24 @@
   "Sin Kok Soon Motor (JB) Sdn Bhd": {
     "bus_number": ["P202-loop"],
     "destination": [
-      {
-        "bus_stop": "Shophouses @ Jalan Perwira 9",
-        "distance": 0.22399132358457766
-      },
       { "bus_stop": "aft Jalan Patin", "distance": 0.6104018995414094 }
     ]
   },
   "aft Jalan Patin": {
     "bus_number": ["P202-loop", "P211-02", "P411-02", "P403-loop"],
     "destination": [
-      {
-        "bus_stop": "Sin Kok Soon Motor (JB) Sdn Bhd",
-        "distance": 0.6104018995414094
-      },
-      { "bus_stop": "SJK(C) Pu Sze", "distance": 0.21922186994387688 },
-      { "bus_stop": "SJK (C) Kuo Kuang", "distance": 1.0051016200640812 },
-      { "bus_stop": "SJK(C) Pu Sze", "distance": 0.21922186994387688 },
-      { "bus_stop": "SJK (C) Kuo Kuang", "distance": 1.0051016200640812 },
-      { "bus_stop": "SJK(C) Pu Sze", "distance": 0.21922186994387688 },
-      { "bus_stop": "Skudai Parade", "distance": 0.9246191382413775 },
       { "bus_stop": "SJK(C) Pu Sze", "distance": 0.21922186994387688 }
     ]
   },
   "SJK(C) Pu Sze": {
     "bus_number": ["P202-loop", "P211-02", "P411-02", "P403-loop"],
     "destination": [
-      { "bus_stop": "aft Jalan Patin", "distance": 0.21922186994387688 },
-      {
-        "bus_stop": "aft Shell Kiosk - Skudai",
-        "distance": 0.4827498834430719
-      },
-      { "bus_stop": "aft Jalan Patin", "distance": 0.21922186994387688 },
-      {
-        "bus_stop": "aft Shell Kiosk - Skudai",
-        "distance": 0.4827498834430719
-      },
-      { "bus_stop": "aft Jalan Patin", "distance": 0.21922186994387688 },
-      {
-        "bus_stop": "aft Shell Kiosk - Skudai",
-        "distance": 0.4827498834430719
-      },
-      { "bus_stop": "aft Jalan Patin", "distance": 0.21922186994387688 },
       { "bus_stop": "aft Shell Kiosk - Skudai", "distance": 0.4827498834430719 }
     ]
   },
   "aft Shell Kiosk - Skudai": {
     "bus_number": ["P202-loop", "P211-02", "P411-02", "P403-loop"],
     "destination": [
-      { "bus_stop": "SJK(C) Pu Sze", "distance": 0.4827498834430719 },
-      {
-        "bus_stop": "Shell Kiosk @ Taman Sri Putri",
-        "distance": 0.6783921929283199
-      },
-      { "bus_stop": "SJK(C) Pu Sze", "distance": 0.4827498834430719 },
-      {
-        "bus_stop": "Shell Kiosk @ Taman Sri Putri",
-        "distance": 0.6783921929283199
-      },
-      { "bus_stop": "SJK(C) Pu Sze", "distance": 0.4827498834430719 },
-      {
-        "bus_stop": "Shell Kiosk @ Taman Sri Putri",
-        "distance": 0.6783921929283199
-      },
-      { "bus_stop": "SJK(C) Pu Sze", "distance": 0.4827498834430719 },
       {
         "bus_stop": "Shell Kiosk @ Taman Sri Putri",
         "distance": 0.6783921929283199
@@ -891,28 +597,8 @@
   "Shell Kiosk @ Taman Sri Putri": {
     "bus_number": ["P202-loop", "P211-02", "P411-02", "P403-loop"],
     "destination": [
-      {
-        "bus_stop": "aft Shell Kiosk - Skudai",
-        "distance": 0.6783921929283199
-      },
       { "bus_stop": "Masjid Abidin", "distance": 0.7450411619228269 },
-      {
-        "bus_stop": "aft Shell Kiosk - Skudai",
-        "distance": 0.6783921929283199
-      },
       { "bus_stop": "aft Jalan Sri Skudai", "distance": 0.5606400378083336 },
-      {
-        "bus_stop": "aft Shell Kiosk - Skudai",
-        "distance": 0.6783921929283199
-      },
-      {
-        "bus_stop": "aft Tenaga Nasional Bhd Substation",
-        "distance": 1.0328929118377985
-      },
-      {
-        "bus_stop": "aft Shell Kiosk - Skudai",
-        "distance": 0.6783921929283199
-      },
       {
         "bus_stop": "aft Tenaga Nasional Bhd Substation",
         "distance": 1.0328929118377985
@@ -923,10 +609,6 @@
     "bus_number": ["P202-loop"],
     "destination": [
       {
-        "bus_stop": "Shell Kiosk @ Taman Sri Putri",
-        "distance": 0.7450411619228269
-      },
-      {
         "bus_stop": "Shophouses along Jalan Tembaga Kuning 4",
         "distance": 0.3000458467859518
       }
@@ -935,7 +617,6 @@
   "Shophouses along Jalan Tembaga Kuning 4": {
     "bus_number": ["P202-loop"],
     "destination": [
-      { "bus_stop": "Masjid Abidin", "distance": 0.3000458467859518 },
       {
         "bus_stop": "Shophouses @ Jalan Suasa 1",
         "distance": 0.5348562156011618
@@ -945,22 +626,13 @@
   "Shophouses @ Jalan Suasa 1": {
     "bus_number": ["P202-loop", "P211-02"],
     "destination": [
-      {
-        "bus_stop": "Shophouses along Jalan Tembaga Kuning 4",
-        "distance": 0.5348562156011618
-      },
       { "bus_stop": "bef Jalan Hamoni 14", "distance": 1.0366235258155259 },
-      { "bus_stop": "aft Jalan Sri Skudai", "distance": 0.2783660564661862 },
       { "bus_stop": "UTM Fakulti Alam Bina", "distance": 2.1972724975494575 }
     ]
   },
   "bef Jalan Hamoni 14": {
     "bus_number": ["P202-loop"],
     "destination": [
-      {
-        "bus_stop": "Shophouses @ Jalan Suasa 1",
-        "distance": 1.0366235258155259
-      },
       {
         "bus_stop": "Opp Apartment Pasti Asli",
         "distance": 0.48085162913472806
@@ -970,17 +642,12 @@
   "Opp Apartment Pasti Asli": {
     "bus_number": ["P202-loop"],
     "destination": [
-      { "bus_stop": "bef Jalan Hamoni 14", "distance": 0.48085162913472806 },
       { "bus_stop": "Opp Surau As Syakirin", "distance": 1.8433550344735776 }
     ]
   },
   "Opp Surau As Syakirin": {
     "bus_number": ["P202-loop"],
     "destination": [
-      {
-        "bus_stop": "Opp Apartment Pasti Asli",
-        "distance": 1.8433550344735776
-      },
       {
         "bus_stop": "Sekolah Kebangsaan Taman Universiti 4",
         "distance": 0.5788317521963042
@@ -990,7 +657,6 @@
   "Sekolah Kebangsaan Taman Universiti 4": {
     "bus_number": ["P202-loop"],
     "destination": [
-      { "bus_stop": "Opp Surau As Syakirin", "distance": 0.5788317521963042 },
       {
         "bus_stop": "Jalan Kebudayaan 27 / 24 Intersection",
         "distance": 0.18477525536974937
@@ -1000,53 +666,30 @@
   "Jalan Kebudayaan 27 / 24 Intersection": {
     "bus_number": ["P202-loop"],
     "destination": [
-      {
-        "bus_stop": "Sekolah Kebangsaan Taman Universiti 4",
-        "distance": 0.18477525536974937
-      },
       { "bus_stop": "Taman Universiti Terminal", "distance": 0.325887129082397 }
     ]
   },
   "Aeon Taman Universiti": {
     "bus_number": ["P211-01"],
     "destination": [
-      {
-        "bus_stop": "Taman Universiti Terminal",
-        "distance": 0.43232913566197173
-      },
       { "bus_stop": "UTM Fakulti Alam Bina", "distance": 2.0243943293976128 }
     ]
   },
   "UTM Fakulti Alam Bina": {
     "bus_number": ["P211-01", "P211-02"],
     "destination": [
-      { "bus_stop": "Aeon Taman Universiti", "distance": 2.0243943293976128 },
-      { "bus_stop": "Opp Block D10", "distance": 0.3729820752738702 },
-      {
-        "bus_stop": "Shophouses @ Jalan Suasa 1",
-        "distance": 2.1972724975494575
-      },
       { "bus_stop": "Opp Block D10", "distance": 0.3729820752738702 }
     ]
   },
   "Opp Block D10": {
     "bus_number": ["P211-01", "P211-02"],
     "destination": [
-      { "bus_stop": "UTM Fakulti Alam Bina", "distance": 0.3729820752738702 },
-      { "bus_stop": "Opp C.I.C.T.", "distance": 0.29991812847106636 },
-      { "bus_stop": "UTM Fakulti Alam Bina", "distance": 0.3729820752738702 },
       { "bus_stop": "Opp C.I.C.T.", "distance": 0.29991812847106636 }
     ]
   },
   "Opp C.I.C.T.": {
     "bus_number": ["P211-01", "P211-02"],
     "destination": [
-      { "bus_stop": "Opp Block D10", "distance": 0.29991812847106636 },
-      {
-        "bus_stop": "Block P07 - Fakulti Kejuruteraan Elektrik",
-        "distance": 0.3733748095502121
-      },
-      { "bus_stop": "Opp Block D10", "distance": 0.29991812847106636 },
       {
         "bus_stop": "Block P07 - Fakulti Kejuruteraan Elektrik",
         "distance": 0.3733748095502121
@@ -1056,12 +699,6 @@
   "Block P07 - Fakulti Kejuruteraan Elektrik": {
     "bus_number": ["P211-01", "P211-02"],
     "destination": [
-      { "bus_stop": "Opp C.I.C.T.", "distance": 0.3733748095502121 },
-      {
-        "bus_stop": "aft Block P19A - Fakulti Kejuruteraan Elektrik",
-        "distance": 0.2999436171976393
-      },
-      { "bus_stop": "Opp C.I.C.T.", "distance": 0.3733748095502121 },
       {
         "bus_stop": "aft Block P19A - Fakulti Kejuruteraan Elektrik",
         "distance": 0.2999436171976393
@@ -1071,32 +708,19 @@
   "aft Block P19A - Fakulti Kejuruteraan Elektrik": {
     "bus_number": ["P211-01", "P211-02"],
     "destination": [
-      {
-        "bus_stop": "Block P07 - Fakulti Kejuruteraan Elektrik",
-        "distance": 0.2999436171976393
-      },
       { "bus_stop": "UTM Equine Park", "distance": 0.3267672728892514 },
-      {
-        "bus_stop": "Block P07 - Fakulti Kejuruteraan Elektrik",
-        "distance": 0.2999436171976393
-      },
       { "bus_stop": "bef UTM Main Gate", "distance": 0.2847171002478053 }
     ]
   },
   "UTM Equine Park": {
     "bus_number": ["P211-01"],
     "destination": [
-      {
-        "bus_stop": "aft Block P19A - Fakulti Kejuruteraan Elektrik",
-        "distance": 0.3267672728892514
-      },
       { "bus_stop": "UTM Rumah Alumni", "distance": 0.2946598087665299 }
     ]
   },
   "UTM Rumah Alumni": {
     "bus_number": ["P211-01"],
     "destination": [
-      { "bus_stop": "UTM Equine Park", "distance": 0.2946598087665299 },
       {
         "bus_stop": "Opp Shell Kiosk @ Taman Sri Putri",
         "distance": 1.9342855225740008
@@ -1106,85 +730,43 @@
   "Opp Shell Kiosk @ Taman Sri Putri": {
     "bus_number": ["P211-01", "P411-01", "P403-loop"],
     "destination": [
-      { "bus_stop": "UTM Rumah Alumni", "distance": 1.9342855225740008 },
-      { "bus_stop": "Skudai Parade", "distance": 0.3933129993917878 },
-      {
-        "bus_stop": "aft Lebuhraya Utara-Selatan",
-        "distance": 2.963212903378566
-      },
-      { "bus_stop": "Skudai Parade", "distance": 0.3933129993917878 },
-      {
-        "bus_stop": "aft Lebuhraya Utara-Selatan",
-        "distance": 2.963212903378566
-      },
       { "bus_stop": "Skudai Parade", "distance": 0.3933129993917878 }
     ]
   },
   "Skudai Parade": {
     "bus_number": ["P211-01", "P411-01", "P403-loop"],
     "destination": [
-      {
-        "bus_stop": "Opp Shell Kiosk @ Taman Sri Putri",
-        "distance": 0.3933129993917878
-      },
       { "bus_stop": "Opp SJK (C) Kuo Kuang", "distance": 1.9528152281376352 },
-      {
-        "bus_stop": "Opp Shell Kiosk @ Taman Sri Putri",
-        "distance": 0.3933129993917878
-      },
-      { "bus_stop": "Opp SJK (C) Kuo Kuang", "distance": 1.9528152281376352 },
-      {
-        "bus_stop": "Opp Shell Kiosk @ Taman Sri Putri",
-        "distance": 0.3933129993917878
-      },
       { "bus_stop": "aft Jalan Patin", "distance": 0.9246191382413775 }
     ]
   },
   "Opp SJK (C) Kuo Kuang": {
     "bus_number": ["P211-01", "P411-01"],
     "destination": [
-      { "bus_stop": "Skudai Parade", "distance": 1.9528152281376352 },
-      { "bus_stop": "bef Jalan Kempas Lama", "distance": 11527.13503048852 },
-      { "bus_stop": "Skudai Parade", "distance": 1.9528152281376352 },
       { "bus_stop": "bef Jalan Kempas Lama", "distance": 11527.13503048852 }
     ]
   },
   "bef Jalan Kempas Lama": {
     "bus_number": ["P211-01", "P411-01"],
     "destination": [
-      { "bus_stop": "Opp SJK (C) Kuo Kuang", "distance": 11527.13503048852 },
-      { "bus_stop": "bef Paradigm Mall", "distance": 11528.374526374546 },
-      { "bus_stop": "Opp SJK (C) Kuo Kuang", "distance": 11527.13503048852 },
       { "bus_stop": "bef Paradigm Mall", "distance": 11528.374526374546 }
     ]
   },
   "bef Paradigm Mall": {
     "bus_number": ["P211-01", "P411-01"],
     "destination": [
-      { "bus_stop": "bef Jalan Kempas Lama", "distance": 11528.374526374546 },
-      { "bus_stop": "Paradigm Mall", "distance": 0.6074149500176637 },
-      { "bus_stop": "bef Jalan Kempas Lama", "distance": 11528.374526374546 },
       { "bus_stop": "Paradigm Mall", "distance": 0.6074149500176637 }
     ]
   },
   "Paradigm Mall": {
     "bus_number": ["P211-01", "P411-01"],
     "destination": [
-      { "bus_stop": "bef Paradigm Mall", "distance": 0.6074149500176637 },
-      { "bus_stop": "Opp Saksama Otomobil", "distance": 0.3602979803645203 },
-      { "bus_stop": "bef Paradigm Mall", "distance": 0.6074149500176637 },
       { "bus_stop": "Opp Saksama Otomobil", "distance": 0.3602979803645203 }
     ]
   },
   "Opp Saksama Otomobil": {
     "bus_number": ["P211-01", "P411-01"],
     "destination": [
-      { "bus_stop": "Paradigm Mall", "distance": 0.3602979803645203 },
-      {
-        "bus_stop": "Opp Petron Kiosk @ Taman Tampoi Indah",
-        "distance": 0.44053855693769006
-      },
-      { "bus_stop": "Paradigm Mall", "distance": 0.3602979803645203 },
       {
         "bus_stop": "Opp Petron Kiosk @ Taman Tampoi Indah",
         "distance": 0.44053855693769006
@@ -1194,12 +776,6 @@
   "Opp Petron Kiosk @ Taman Tampoi Indah": {
     "bus_number": ["P211-01", "P411-01"],
     "destination": [
-      { "bus_stop": "Opp Saksama Otomobil", "distance": 0.44053855693769006 },
-      {
-        "bus_stop": "Kompleks Pekan Rabu Johor Bahru",
-        "distance": 1.1581424450022744
-      },
-      { "bus_stop": "Opp Saksama Otomobil", "distance": 0.44053855693769006 },
       {
         "bus_stop": "Kompleks Pekan Rabu Johor Bahru",
         "distance": 1.1581424450022744
@@ -1209,42 +785,18 @@
   "Kompleks Pekan Rabu Johor Bahru": {
     "bus_number": ["P211-01", "P411-01"],
     "destination": [
-      {
-        "bus_stop": "Opp Petron Kiosk @ Taman Tampoi Indah",
-        "distance": 1.1581424450022744
-      },
-      { "bus_stop": "Giant Tampoi", "distance": 0.38938543958956146 },
-      {
-        "bus_stop": "Opp Petron Kiosk @ Taman Tampoi Indah",
-        "distance": 1.1581424450022744
-      },
       { "bus_stop": "Giant Tampoi", "distance": 0.38938543958956146 }
     ]
   },
   "Giant Tampoi": {
     "bus_number": ["P211-01", "P411-01"],
     "destination": [
-      {
-        "bus_stop": "Kompleks Pekan Rabu Johor Bahru",
-        "distance": 0.38938543958956146
-      },
-      { "bus_stop": "aft Lorong Betik", "distance": 0.3917927695342619 },
-      {
-        "bus_stop": "Kompleks Pekan Rabu Johor Bahru",
-        "distance": 0.38938543958956146
-      },
       { "bus_stop": "aft Lorong Betik", "distance": 0.3917927695342619 }
     ]
   },
   "aft Lorong Betik": {
     "bus_number": ["P211-01", "P411-01"],
     "destination": [
-      { "bus_stop": "Giant Tampoi", "distance": 0.3917927695342619 },
-      {
-        "bus_stop": "Batu 5 Johor Street Market",
-        "distance": 0.2344924915302492
-      },
-      { "bus_stop": "Giant Tampoi", "distance": 0.3917927695342619 },
       {
         "bus_stop": "Batu 5 Johor Street Market",
         "distance": 0.2344924915302492
@@ -1254,27 +806,12 @@
   "Batu 5 Johor Street Market": {
     "bus_number": ["P211-01", "P411-01"],
     "destination": [
-      { "bus_stop": "aft Lorong Betik", "distance": 0.2344924915302492 },
-      { "bus_stop": "Plaza Angsana", "distance": 0.30043500856495475 },
-      { "bus_stop": "aft Lorong Betik", "distance": 0.2344924915302492 },
       { "bus_stop": "Plaza Angsana", "distance": 0.30043500856495475 }
     ]
   },
   "Plaza Angsana": {
     "bus_number": ["P211-01", "P411-01"],
     "destination": [
-      {
-        "bus_stop": "Batu 5 Johor Street Market",
-        "distance": 0.30043500856495475
-      },
-      {
-        "bus_stop": "Klinik Utama @ Jalan Padi 1",
-        "distance": 0.8795133605344527
-      },
-      {
-        "bus_stop": "Batu 5 Johor Street Market",
-        "distance": 0.30043500856495475
-      },
       {
         "bus_stop": "Klinik Utama @ Jalan Padi 1",
         "distance": 0.8795133605344527
@@ -1284,27 +821,12 @@
   "Klinik Utama @ Jalan Padi 1": {
     "bus_number": ["P211-01", "P411-01"],
     "destination": [
-      { "bus_stop": "Plaza Angsana", "distance": 0.8795133605344527 },
-      { "bus_stop": "Opp Amitabha Centre", "distance": 1.3828936236851819 },
-      { "bus_stop": "Plaza Angsana", "distance": 0.8795133605344527 },
       { "bus_stop": "Opp Amitabha Centre", "distance": 1.3828936236851819 }
     ]
   },
   "Opp Amitabha Centre": {
     "bus_number": ["P211-01", "P411-01"],
     "destination": [
-      {
-        "bus_stop": "Klinik Utama @ Jalan Padi 1",
-        "distance": 1.3828936236851819
-      },
-      {
-        "bus_stop": "Opp Shell Kiosk @ Jalan Tun Abdul Razak",
-        "distance": 0.406336626090415
-      },
-      {
-        "bus_stop": "Klinik Utama @ Jalan Padi 1",
-        "distance": 1.3828936236851819
-      },
       {
         "bus_stop": "Opp Shell Kiosk @ Jalan Tun Abdul Razak",
         "distance": 0.406336626090415
@@ -1314,60 +836,28 @@
   "Opp Shell Kiosk @ Jalan Tun Abdul Razak": {
     "bus_number": ["P211-01", "P411-01"],
     "destination": [
-      { "bus_stop": "Opp Amitabha Centre", "distance": 0.406336626090415 },
-      { "bus_stop": "Larkin Terminal", "distance": 1.9829373103741064 },
-      { "bus_stop": "Opp Amitabha Centre", "distance": 0.406336626090415 },
       { "bus_stop": "Larkin Terminal", "distance": 1.9829373103741064 }
     ]
   },
   "aft Shell Kiosk @ Jalan Tun Abdul Razak": {
     "bus_number": ["P211-02", "P411-02"],
     "destination": [
-      {
-        "bus_stop": "Pejabat Daerah Tanah Johor Bahru",
-        "distance": 1.5226946083365058
-      },
-      { "bus_stop": "Amitabha Centre", "distance": 0.4138181061182026 },
-      {
-        "bus_stop": "Pejabat Daerah Tanah Johor Bahru",
-        "distance": 1.5226946083365058
-      },
       { "bus_stop": "Amitabha Centre", "distance": 0.4138181061182026 }
     ]
   },
   "Amitabha Centre": {
     "bus_number": ["P211-02", "P411-02"],
-    "destination": [
-      {
-        "bus_stop": "aft Shell Kiosk @ Jalan Tun Abdul Razak",
-        "distance": 0.4138181061182026
-      },
-      { "bus_stop": "CIMB Bank", "distance": 1.3402301112151993 },
-      {
-        "bus_stop": "aft Shell Kiosk @ Jalan Tun Abdul Razak",
-        "distance": 0.4138181061182026
-      },
-      { "bus_stop": "CIMB Bank", "distance": 1.3402301112151993 }
-    ]
+    "destination": [{ "bus_stop": "CIMB Bank", "distance": 1.3402301112151993 }]
   },
   "CIMB Bank": {
     "bus_number": ["P211-02", "P411-02"],
     "destination": [
-      { "bus_stop": "Amitabha Centre", "distance": 1.3402301112151993 },
-      { "bus_stop": "Klinik Kesihatan Tampoi", "distance": 0.7195547144155205 },
-      { "bus_stop": "Amitabha Centre", "distance": 1.3402301112151993 },
       { "bus_stop": "Klinik Kesihatan Tampoi", "distance": 0.7195547144155205 }
     ]
   },
   "Klinik Kesihatan Tampoi": {
     "bus_number": ["P211-02", "P411-02"],
     "destination": [
-      { "bus_stop": "CIMB Bank", "distance": 0.7195547144155205 },
-      {
-        "bus_stop": "bef Shell Kiosk @ Kampung Pasir",
-        "distance": 0.001813556557718257
-      },
-      { "bus_stop": "CIMB Bank", "distance": 0.7195547144155205 },
       {
         "bus_stop": "bef Shell Kiosk @ Kampung Pasir",
         "distance": 0.001813556557718257
@@ -1377,85 +867,48 @@
   "bef Shell Kiosk @ Kampung Pasir": {
     "bus_number": ["P211-02", "P411-02"],
     "destination": [
-      {
-        "bus_stop": "Klinik Kesihatan Tampoi",
-        "distance": 0.001813556557718257
-      },
-      { "bus_stop": "SK Kampung Pasir", "distance": 1.2352465614714285 },
-      {
-        "bus_stop": "Klinik Kesihatan Tampoi",
-        "distance": 0.001813556557718257
-      },
       { "bus_stop": "SK Kampung Pasir", "distance": 1.2352465614714285 }
     ]
   },
   "SK Kampung Pasir": {
     "bus_number": ["P211-02", "P411-02"],
     "destination": [
-      {
-        "bus_stop": "bef Shell Kiosk @ Kampung Pasir",
-        "distance": 1.2352465614714285
-      },
-      { "bus_stop": "Opp Pulai View Condo", "distance": 0.369718039937839 },
-      {
-        "bus_stop": "bef Shell Kiosk @ Kampung Pasir",
-        "distance": 1.2352465614714285
-      },
       { "bus_stop": "Opp Pulai View Condo", "distance": 0.369718039937839 }
     ]
   },
   "Opp Pulai View Condo": {
     "bus_number": ["P211-02", "P411-02"],
     "destination": [
-      { "bus_stop": "SK Kampung Pasir", "distance": 0.369718039937839 },
-      { "bus_stop": "bef KIP Mart", "distance": 1.061681572184007 },
-      { "bus_stop": "SK Kampung Pasir", "distance": 0.369718039937839 },
       { "bus_stop": "bef KIP Mart", "distance": 1.061681572184007 }
     ]
   },
   "bef KIP Mart": {
     "bus_number": ["P211-02", "P411-02"],
     "destination": [
-      { "bus_stop": "Opp Pulai View Condo", "distance": 1.061681572184007 },
-      { "bus_stop": "Opp Paradigm Mall", "distance": 1.092703209444441 },
-      { "bus_stop": "Opp Pulai View Condo", "distance": 1.061681572184007 },
       { "bus_stop": "Opp Paradigm Mall", "distance": 1.092703209444441 }
     ]
   },
   "Opp Paradigm Mall": {
     "bus_number": ["P211-02", "P411-02"],
     "destination": [
-      { "bus_stop": "bef KIP Mart", "distance": 1.092703209444441 },
-      { "bus_stop": "bef McDonald's", "distance": 0.9128528319174697 },
-      { "bus_stop": "bef KIP Mart", "distance": 1.092703209444441 },
       { "bus_stop": "bef McDonald's", "distance": 0.9128528319174697 }
     ]
   },
   "bef McDonald's": {
     "bus_number": ["P211-02", "P411-02"],
     "destination": [
-      { "bus_stop": "Opp Paradigm Mall", "distance": 0.9128528319174697 },
-      { "bus_stop": "SJK (C) Kuo Kuang", "distance": 1.0936018941611845 },
-      { "bus_stop": "Opp Paradigm Mall", "distance": 0.9128528319174697 },
       { "bus_stop": "SJK (C) Kuo Kuang", "distance": 1.0936018941611845 }
     ]
   },
   "SJK (C) Kuo Kuang": {
     "bus_number": ["P211-02", "P411-02"],
     "destination": [
-      { "bus_stop": "bef McDonald's", "distance": 1.0936018941611845 },
-      { "bus_stop": "aft Jalan Patin", "distance": 1.0051016200640812 },
-      { "bus_stop": "bef McDonald's", "distance": 1.0936018941611845 },
       { "bus_stop": "aft Jalan Patin", "distance": 1.0051016200640812 }
     ]
   },
   "aft Jalan Sri Skudai": {
     "bus_number": ["P211-02"],
     "destination": [
-      {
-        "bus_stop": "Shell Kiosk @ Taman Sri Putri",
-        "distance": 0.5606400378083336
-      },
       {
         "bus_stop": "Shophouses @ Jalan Suasa 1",
         "distance": 0.2783660564661862
@@ -1465,24 +918,18 @@
   "bef UTM Main Gate": {
     "bus_number": ["P211-02"],
     "destination": [
-      {
-        "bus_stop": "aft Block P19A - Fakulti Kejuruteraan Elektrik",
-        "distance": 0.2847171002478053
-      },
       { "bus_stop": "UTM Main Gate (Exit)", "distance": 0.0801366531273453 }
     ]
   },
   "UTM Main Gate (Exit)": {
     "bus_number": ["P211-02"],
     "destination": [
-      { "bus_stop": "bef UTM Main Gate", "distance": 0.0801366531273453 },
       { "bus_stop": "Opp AEON Taman Universiti", "distance": 1.854466976543814 }
     ]
   },
   "Opp AEON Taman Universiti": {
     "bus_number": ["P211-02"],
     "destination": [
-      { "bus_stop": "UTM Main Gate (Exit)", "distance": 1.854466976543814 },
       {
         "bus_stop": "Taman Universiti Terminal",
         "distance": 0.3836896416905215
@@ -1492,14 +939,12 @@
   "Kulai Terminal": {
     "bus_number": ["P411-01", "P411-02"],
     "destination": [
-      { "bus_stop": "Kulai Centre Point", "distance": 0.5571779614110575 },
-      { "bus_stop": "Opp Arked Kulai", "distance": 0.6252240887254624 }
+      { "bus_stop": "Kulai Centre Point", "distance": 0.5571779614110575 }
     ]
   },
   "Kulai Centre Point": {
     "bus_number": ["P411-01"],
     "destination": [
-      { "bus_stop": "Kulai Terminal", "distance": 0.5571779614110575 },
       {
         "bus_stop": "Opp SBS Enterprises (M) Sdn Bhd",
         "distance": 1.0398932308710604
@@ -1509,7 +954,6 @@
   "Opp SBS Enterprises (M) Sdn Bhd": {
     "bus_number": ["P411-01"],
     "destination": [
-      { "bus_stop": "Kulai Centre Point", "distance": 1.0398932308710604 },
       {
         "bus_stop": "Opp Public Bank @ Jalan Susur Kulai 2",
         "distance": 0.4111571298287339
@@ -1520,10 +964,6 @@
     "bus_number": ["P411-01"],
     "destination": [
       {
-        "bus_stop": "Opp SBS Enterprises (M) Sdn Bhd",
-        "distance": 0.4111571298287339
-      },
-      {
         "bus_stop": "Opp Pertubuhan Peladang Kawasan Kulai",
         "distance": 0.8414448560925443
       }
@@ -1533,10 +973,6 @@
     "bus_number": ["P411-01"],
     "destination": [
       {
-        "bus_stop": "Opp Public Bank @ Jalan Susur Kulai 2",
-        "distance": 0.8414448560925443
-      },
-      {
         "bus_stop": "Opp Hospital Temenggong Seri Maharaja Tun Ibrahim Kulaijaya",
         "distance": 1.0907751436098498
       }
@@ -1545,20 +981,12 @@
   "Opp Hospital Temenggong Seri Maharaja Tun Ibrahim Kulaijaya": {
     "bus_number": ["P411-01"],
     "destination": [
-      {
-        "bus_stop": "Opp Pertubuhan Peladang Kawasan Kulai",
-        "distance": 1.0907751436098498
-      },
       { "bus_stop": "Opp Jalan Cermai", "distance": 0.7266747921726827 }
     ]
   },
   "Opp Jalan Cermai": {
     "bus_number": ["P411-01"],
     "destination": [
-      {
-        "bus_stop": "Opp Hospital Temenggong Seri Maharaja Tun Ibrahim Kulaijaya",
-        "distance": 0.7266747921726827
-      },
       {
         "bus_stop": "Opp Stor JKR (D) Kulaijaya",
         "distance": 0.5134761962623433
@@ -1568,7 +996,6 @@
   "Opp Stor JKR (D) Kulaijaya": {
     "bus_number": ["P411-01"],
     "destination": [
-      { "bus_stop": "Opp Jalan Cermai", "distance": 0.5134761962623433 },
       {
         "bus_stop": "Opp Wang Loo Motor Sdn Bhd",
         "distance": 0.7028402938659479
@@ -1579,10 +1006,6 @@
     "bus_number": ["P411-01"],
     "destination": [
       {
-        "bus_stop": "Opp Stor JKR (D) Kulaijaya",
-        "distance": 0.7028402938659479
-      },
-      {
         "bus_stop": "Opp Pejabat Lembaga Lebuhraya Malaysia",
         "distance": 1.2857955213062966
       }
@@ -1591,25 +1014,12 @@
   "Opp Pejabat Lembaga Lebuhraya Malaysia": {
     "bus_number": ["P411-01"],
     "destination": [
-      {
-        "bus_stop": "Opp Wang Loo Motor Sdn Bhd",
-        "distance": 1.2857955213062966
-      },
       { "bus_stop": "Medan Selera Senai", "distance": 2.114217466634089 }
     ]
   },
   "Medan Selera Senai": {
     "bus_number": ["P411-01", "P403-loop"],
     "destination": [
-      {
-        "bus_stop": "Opp Pejabat Lembaga Lebuhraya Malaysia",
-        "distance": 2.114217466634089
-      },
-      {
-        "bus_stop": "Opp Sekolah Kebangsaan Senai",
-        "distance": 0.516003940214883
-      },
-      { "bus_stop": "Taman Mewah", "distance": 1.569570247215223 },
       {
         "bus_stop": "Opp Sekolah Kebangsaan Senai",
         "distance": 0.516003940214883
@@ -1619,12 +1029,6 @@
   "Opp Sekolah Kebangsaan Senai": {
     "bus_number": ["P411-01", "P403-loop"],
     "destination": [
-      { "bus_stop": "Medan Selera Senai", "distance": 0.516003940214883 },
-      {
-        "bus_stop": "Opp BHPetrol Kiosk @ Taman Aman",
-        "distance": 0.6910262923449502
-      },
-      { "bus_stop": "Medan Selera Senai", "distance": 0.516003940214883 },
       {
         "bus_stop": "Opp BHPetrol Kiosk @ Taman Aman",
         "distance": 0.6910262923449502
@@ -1635,18 +1039,6 @@
     "bus_number": ["P411-01", "P403-loop"],
     "destination": [
       {
-        "bus_stop": "Opp Sekolah Kebangsaan Senai",
-        "distance": 0.6910262923449502
-      },
-      {
-        "bus_stop": "aft Lebuhraya Utara-Selatan",
-        "distance": 2.64613384759101
-      },
-      {
-        "bus_stop": "Opp Sekolah Kebangsaan Senai",
-        "distance": 0.6910262923449502
-      },
-      {
         "bus_stop": "aft Lebuhraya Utara-Selatan",
         "distance": 2.64613384759101
       }
@@ -1655,18 +1047,6 @@
   "aft Lebuhraya Utara-Selatan": {
     "bus_number": ["P411-01", "P403-loop"],
     "destination": [
-      {
-        "bus_stop": "Opp BHPetrol Kiosk @ Taman Aman",
-        "distance": 2.64613384759101
-      },
-      {
-        "bus_stop": "Opp Shell Kiosk @ Taman Sri Putri",
-        "distance": 2.963212903378566
-      },
-      {
-        "bus_stop": "Opp BHPetrol Kiosk @ Taman Aman",
-        "distance": 2.64613384759101
-      },
       {
         "bus_stop": "Opp Shell Kiosk @ Taman Sri Putri",
         "distance": 2.963212903378566
@@ -1677,18 +1057,6 @@
     "bus_number": ["P411-02", "P403-loop"],
     "destination": [
       {
-        "bus_stop": "Shell Kiosk @ Taman Sri Putri",
-        "distance": 1.0328929118377985
-      },
-      {
-        "bus_stop": "bef BHPetrol Kiosk @ Taman Aman",
-        "distance": 4.242939477459811
-      },
-      {
-        "bus_stop": "Shell Kiosk @ Taman Sri Putri",
-        "distance": 1.0328929118377985
-      },
-      {
         "bus_stop": "bef BHPetrol Kiosk @ Taman Aman",
         "distance": 4.242939477459811
       }
@@ -1698,18 +1066,6 @@
     "bus_number": ["P411-02", "P403-loop"],
     "destination": [
       {
-        "bus_stop": "aft Tenaga Nasional Bhd Substation",
-        "distance": 4.242939477459811
-      },
-      {
-        "bus_stop": "bef Sekolah Kebangsaan Senai",
-        "distance": 0.6339684933878348
-      },
-      {
-        "bus_stop": "aft Tenaga Nasional Bhd Substation",
-        "distance": 4.242939477459811
-      },
-      {
         "bus_stop": "bef Sekolah Kebangsaan Senai",
         "distance": 0.6339684933878348
       }
@@ -1718,15 +1074,6 @@
   "bef Sekolah Kebangsaan Senai": {
     "bus_number": ["P411-02", "P403-loop"],
     "destination": [
-      {
-        "bus_stop": "bef BHPetrol Kiosk @ Taman Aman",
-        "distance": 0.6339684933878348
-      },
-      { "bus_stop": "Opp Medan Selera Senai", "distance": 0.4928663301346548 },
-      {
-        "bus_stop": "bef BHPetrol Kiosk @ Taman Aman",
-        "distance": 0.6339684933878348
-      },
       { "bus_stop": "Opp Medan Selera Senai", "distance": 0.4928663301346548 }
     ]
   },
@@ -1734,16 +1081,8 @@
     "bus_number": ["P411-02", "P403-loop"],
     "destination": [
       {
-        "bus_stop": "bef Sekolah Kebangsaan Senai",
-        "distance": 0.4928663301346548
-      },
-      {
         "bus_stop": "Masjid Jamek Pekan Senai",
         "distance": 0.7146647801485004
-      },
-      {
-        "bus_stop": "bef Sekolah Kebangsaan Senai",
-        "distance": 0.4928663301346548
       },
       { "bus_stop": "bef Econsave @ Senai", "distance": 1.7804347705531218 }
     ]
@@ -1751,17 +1090,12 @@
   "Masjid Jamek Pekan Senai": {
     "bus_number": ["P411-02"],
     "destination": [
-      { "bus_stop": "Opp Medan Selera Senai", "distance": 0.7146647801485004 },
       { "bus_stop": "Opp Deway Motor Trading", "distance": 0.8095319014300277 }
     ]
   },
   "Opp Deway Motor Trading": {
     "bus_number": ["P411-02"],
     "destination": [
-      {
-        "bus_stop": "Masjid Jamek Pekan Senai",
-        "distance": 0.8095319014300277
-      },
       {
         "bus_stop": "Pejabat Lembaga Lebuhraya Malaysia",
         "distance": 0.8620406586200263
@@ -1771,38 +1105,28 @@
   "Pejabat Lembaga Lebuhraya Malaysia": {
     "bus_number": ["P411-02"],
     "destination": [
-      { "bus_stop": "Opp Deway Motor Trading", "distance": 0.8620406586200263 },
       { "bus_stop": "aft Jalan Kelah", "distance": 1.3660669953235813 }
     ]
   },
   "aft Jalan Kelah": {
     "bus_number": ["P411-02"],
     "destination": [
-      {
-        "bus_stop": "Pejabat Lembaga Lebuhraya Malaysia",
-        "distance": 1.3660669953235813
-      },
       { "bus_stop": "Stor JKR (D) Kulaijaya", "distance": 0.5231942951590135 }
     ]
   },
   "Stor JKR (D) Kulaijaya": {
     "bus_number": ["P411-02"],
-    "destination": [
-      { "bus_stop": "aft Jalan Kelah", "distance": 0.5231942951590135 },
-      { "bus_stop": "TJ Mart", "distance": 0.1494772877116911 }
-    ]
+    "destination": [{ "bus_stop": "TJ Mart", "distance": 0.1494772877116911 }]
   },
   "TJ Mart": {
     "bus_number": ["P411-02"],
     "destination": [
-      { "bus_stop": "Stor JKR (D) Kulaijaya", "distance": 0.1494772877116911 },
       { "bus_stop": "aft Jalan Cermai 7", "distance": 0.3269666096142337 }
     ]
   },
   "aft Jalan Cermai 7": {
     "bus_number": ["P411-02"],
     "destination": [
-      { "bus_stop": "TJ Mart", "distance": 0.3269666096142337 },
       {
         "bus_stop": "bef Hospital Temenggong Seri Maharaja Tun Ibrahim Kulaijaya",
         "distance": 0.7561620603415922
@@ -1812,17 +1136,12 @@
   "bef Hospital Temenggong Seri Maharaja Tun Ibrahim Kulaijaya": {
     "bus_number": ["P411-02"],
     "destination": [
-      { "bus_stop": "aft Jalan Cermai 7", "distance": 0.7561620603415922 },
       { "bus_stop": "SMK Kulai Besar", "distance": 1.2040808247918058 }
     ]
   },
   "SMK Kulai Besar": {
     "bus_number": ["P411-02"],
     "destination": [
-      {
-        "bus_stop": "bef Hospital Temenggong Seri Maharaja Tun Ibrahim Kulaijaya",
-        "distance": 1.2040808247918058
-      },
       {
         "bus_stop": "aft Persiaran Indahpura 4",
         "distance": 0.3300153195940746
@@ -1832,17 +1151,12 @@
   "aft Persiaran Indahpura 4": {
     "bus_number": ["P411-02"],
     "destination": [
-      { "bus_stop": "SMK Kulai Besar", "distance": 0.3300153195940746 },
       { "bus_stop": "Persatuan Hokkien Kulai", "distance": 0.5149755565769519 }
     ]
   },
   "Persatuan Hokkien Kulai": {
     "bus_number": ["P411-02"],
     "destination": [
-      {
-        "bus_stop": "aft Persiaran Indahpura 4",
-        "distance": 0.5149755565769519
-      },
       {
         "bus_stop": "SBS Enterprises (M) Sdn Bhd",
         "distance": 0.3587772067624917
@@ -1852,44 +1166,33 @@
   "SBS Enterprises (M) Sdn Bhd": {
     "bus_number": ["P411-02"],
     "destination": [
-      { "bus_stop": "Persatuan Hokkien Kulai", "distance": 0.3587772067624917 },
       { "bus_stop": "Opp Arked Kulai", "distance": 0.9365027764167596 }
     ]
   },
   "Opp Arked Kulai": {
     "bus_number": ["P411-02"],
     "destination": [
-      {
-        "bus_stop": "SBS Enterprises (M) Sdn Bhd",
-        "distance": 0.9365027764167596
-      },
       { "bus_stop": "Kulai Terminal", "distance": 0.6252240887254624 }
     ]
   },
   "Econsave Senai": {
-    "bus_number": ["P403-loop", "P403-loop"],
+    "bus_number": ["P403-loop"],
     "destination": [
       {
         "bus_stop": "Opp Pusat Hemodialisis Rotary Kulai",
         "distance": 0.26660240779139494
-      },
-      { "bus_stop": "bef Econsave @ Senai", "distance": 0.13098092352258628 }
+      }
     ]
   },
   "Opp Pusat Hemodialisis Rotary Kulai": {
     "bus_number": ["P403-loop"],
     "destination": [
-      { "bus_stop": "Econsave Senai", "distance": 0.26660240779139494 },
       { "bus_stop": "Opp Taman Bintang", "distance": 0.2305220255652751 }
     ]
   },
   "Opp Taman Bintang": {
     "bus_number": ["P403-loop"],
     "destination": [
-      {
-        "bus_stop": "Opp Pusat Hemodialisis Rotary Kulai",
-        "distance": 0.2305220255652751
-      },
       {
         "bus_stop": "Kawasan Perindustrian Senai 3",
         "distance": 1.3123093940875448
@@ -1899,45 +1202,34 @@
   "Kawasan Perindustrian Senai 3": {
     "bus_number": ["P403-loop"],
     "destination": [
-      { "bus_stop": "Opp Taman Bintang", "distance": 1.3123093940875448 },
       { "bus_stop": "Senai Airport Terminal", "distance": 1.4804292657829552 }
     ]
   },
   "Senai Airport Terminal": {
     "bus_number": ["P403-loop"],
-    "destination": [
-      {
-        "bus_stop": "Kawasan Perindustrian Senai 3",
-        "distance": 1.4804292657829552
-      },
-      { "bus_stop": "NSTP Senai", "distance": 1.273785305203168 }
-    ]
+    "destination": [{ "bus_stop": "NSTP Senai", "distance": 1.273785305203168 }]
   },
   "NSTP Senai": {
     "bus_number": ["P403-loop"],
     "destination": [
-      { "bus_stop": "Senai Airport Terminal", "distance": 1.273785305203168 },
       { "bus_stop": "Taman Bintang", "distance": 1.4423553454862552 }
     ]
   },
   "Taman Bintang": {
     "bus_number": ["P403-loop"],
     "destination": [
-      { "bus_stop": "NSTP Senai", "distance": 1.4423553454862552 },
       { "bus_stop": "Taman Mewah", "distance": 0.727880213688231 }
     ]
   },
   "Taman Mewah": {
     "bus_number": ["P403-loop"],
     "destination": [
-      { "bus_stop": "Taman Bintang", "distance": 0.727880213688231 },
       { "bus_stop": "Medan Selera Senai", "distance": 1.569570247215223 }
     ]
   },
   "bef Econsave @ Senai": {
     "bus_number": ["P403-loop"],
     "destination": [
-      { "bus_stop": "Opp Medan Selera Senai", "distance": 1.7804347705531218 },
       { "bus_stop": "Econsave Senai", "distance": 0.13098092352258628 }
     ]
   }
