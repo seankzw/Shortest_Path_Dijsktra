@@ -4,10 +4,10 @@ class Coordinates:
         self.lng = lng
 
     def getLat(self):
-        return self.lat
+        return float(self.lat)
 
     def getLng(self):
-        return self.lng
+        return float(self.lng)
 
     def setLat(self, lat):
         self.lat = lat;

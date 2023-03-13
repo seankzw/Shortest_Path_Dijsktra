@@ -1,24 +1,28 @@
 import json
 from geopy import distance
+from CollatedDataHelper import CollatedDataHelper
 
 from Coordinates import Coordinates
+from PriorityQueue import PriorityQueue
 from brain import findNearestStop
 
+def getData():
+   with open("collated_data.json") as busDatas:
+       return busDatas.read()
+
+
 def dijkstra():
+    cd = CollatedDataHelper()
     # Start location : 1.4964559999542668, 103.74374661113058 (Larkin Terminal)
     #End Location : 1.456742090233385, 103.74938268472616 Johor Islamic Complex
     start_loc = Coordinates(1.4964559999542668, 103.74374661113058)
     end_loc = Coordinates(1.456742090233385, 103.74938268472616)
 
-    location3 = Coordinates(1.4860478,103.7544695)
-    #print(findStartBus(start_loc))
     #print(findStartBus(end_loc))
-    print(findNearestStop(location3))
-
-
-
-
-
+    start_bus_stop = findNearestStop(start_loc)
+    end_bus_stop = findNearestStop(end_loc)
+    distanceTo = edgeTo = marked = []
+    pq = PriorityQueue()
 
 
     pass

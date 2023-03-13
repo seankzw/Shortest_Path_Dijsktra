@@ -30,7 +30,7 @@ def distanceBetween(currLoc, userLoc):
 # Find nearest location to busstop from User Location
 def findNearestStop(userLoc):
     # try:
-	f = open("bus_route.json")
+	f = open("excel_overview.json")
 	data = json.load(f)
 
 	shortestDistance = 1000
