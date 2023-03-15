@@ -50,9 +50,9 @@ def findNearestStop(userLoc):
 		# if data[i]["coordinates"][1] < minLng : minLng = data[i]["coordinates"][1]
 	# return min(data, key=lambda p: distance(userLoc[0],p['coordinates',[0]],userLoc[1],p['coordinates',[1]]))
 	startBus = index
-	print (startBus)
-	print(minLat, minLng)
-	print("Distance = ", round(shortestDistance) , "km")
+	#print (startBus)
+	#print(minLat, minLng)
+	#print("Distance = ", round(shortestDistance) , "km")
 	return (startBus)
 
 	# except TypeError:

@@ -3,7 +3,7 @@ import json
 
 class CollatedDataHelper:
     def __init__(self):
-        f = open("excel_overview.json")
+        f = open("collated_data.json")
         self.data = json.load(f)
 
     def getBusStop(self,bus_stop_name):
