@@ -103,11 +103,11 @@ def createPath():
     previous_node, shortest_path = dijkstra(start_bus_stop)
     path_to_destination = getShortestPath(previous_node, shortest_path, start_bus_stop, end_bus_stop)
 
-    path_list.append(start_bus_stop)
+    path_list.append(location)
     for eachStop in path_to_destination:
         #print(eachStop["coordinates"])
         path_list.append((float(eachStop["coordinates"][0]),float(eachStop["coordinates"][1])))
-    path_list.append(end_bus_stop)
+    path_list.append(location2)
 
     path = mapview.set_path(path_list)
     path.set_color("blue")
