@@ -1,3 +1,4 @@
+
 import pandas as pd
 import tkinter as tk
 from geopy.geocoders import Nominatim
@@ -9,12 +10,13 @@ from Coordinates import Coordinates
 from brain import findNearestStop
 from main import dijkstra, getShortestPath
 
-#Create Window
+# Create Window
 windows = tk.Tk()
 windows.geometry("800x600")
 windows.title("Maps")
 
 geolocator = Nominatim(user_agent="myApp")
+
 
 # Create the left column for the input/label field
 left_frame = tk.Frame(windows)
@@ -41,6 +43,7 @@ userInputLocation2.grid(column=1, row=1, padx=10, pady=10)
 # start_lat, start_long = None, None
 # end_lat, end_long = None, None
 
+
 def getStartLatLong():
     # global start_lat, start_long
     if userInputLocation.get() == '':
@@ -54,11 +57,11 @@ def getStartLatLong():
         label_long = tk.Label(windows, text=startLocation.longitude)
         label_long.pack()
         messagebox.showinfo('LWHwqeewqewqewqeqewewqewq', startLocation.address)
-        print(str(startLocation.latitude) + ", " + str(startLocation.longitude))
+        print(str(startLocation.latitude) +
+              ", " + str(startLocation.longitude))
 
         # create marker with custom colors and font
-        mapview.set_marker(startLocation.latitude, startLocation.longitude, text_color="red",
-                                 marker_color_circle="white", marker_color_outside="red", font=("Helvetica Bold", 10))
+        mapview.set_marker(startLocation.latitude, startLocation.longitude)
 
     return (startLocation.latitude, startLocation.longitude)
         # store latitude and longitude in global variables
@@ -89,7 +92,12 @@ def getEndLatLong():
          # store latitude and longitude in global variables
         # end_lat, end_long = location.latitude, location.longitude
 
+
+
+
 def createPath():
+
+   
     location = getStartLatLong()
     location2 = getEndLatLong()
     path_list = []
@@ -107,6 +115,11 @@ def createPath():
     for eachStop in path_to_destination:
         #print(eachStop["coordinates"])
         path_list.append((float(eachStop["coordinates"][0]),float(eachStop["coordinates"][1])))
+    #  create marker with custom colors and font for this stop
+        mapview.set_marker(eachStop["coordinates"][0],eachStop["coordinates"][1], text_color="red",
+                                 marker_color_circle="white", marker_color_outside="red", font=("Helvetica Bold", 10))
+
+    
     path_list.append(location2)
 
     path = mapview.set_path(path_list)
