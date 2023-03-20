@@ -29,48 +29,46 @@ def distanceBetween(currLoc, userLoc):
 
 # Find nearest location to busstop from User Location
 def findNearestStop(userLoc):
-    # try:
 	f = open("excel_overview.json")
 	data = json.load(f)
 
 	shortestDistance = 1000
-	minLat = 10000
-	minLng = 100000
 	for i in data:
-		#if distance(data[i]["lat"], userLoc[0], data[i]["lng"], userLoc[1])< shortestDistance:
 		dataCoord = Coordinates(data[i]["lat"],data[i]["lng"])
-		#if distanceFromTo(data[i]["lat"], userLoc.getLat(), data[i]["lng"], userLoc.getLng())< shortestDistance:
 		if distanceBetween(dataCoord, userLoc) < shortestDistance:
-			minLat = data[i]["lat"]
-			minLng = data[i]["lng"]
 			shortestDistance = distanceBetween(dataCoord ,userLoc)
 			index = i
 
-		# if data[i]["coordinates"][0] < minLat : minLat = data[i]["coordinates"][0]
-		# if data[i]["coordinates"][1] < minLng : minLng = data[i]["coordinates"][1]
-	# return min(data, key=lambda p: distance(userLoc[0],p['coordinates',[0]],userLoc[1],p['coordinates',[1]]))
 	startBus = index
-	#print (startBus)
-	#print(minLat, minLng)
-	#print("Distance = ", round(shortestDistance) , "km")
 	return (startBus)
 
-	# except TypeError:
-		# print('Not a list or not a number.')
+# Find nearest location to busstop from User Location
+def findNearestStopWithData(userLoc, data):
+	shortestDistance = 1000
+	for i in data:
+		dataCoord = Coordinates(data[i]["lat"],data[i]["lng"])
+		if distanceBetween(dataCoord, userLoc) < shortestDistance:
+			shortestDistance = distanceBetween(dataCoord ,userLoc)
+			index = i
+	startBus = index
+	return startBus
 
-# Location closest to End Location (TEST)
+def findNearest5Stop(userLoc):
+	f = open("excel_overview.json")
+	all_bus_stops = json.load(f)
+	counter = 0
+	shortest5=[]
 
+	while counter < 5:
+		nearest_stop = findNearestStopWithData(userLoc, all_bus_stops)
+		shortest5.append(nearest_stop)
+		del all_bus_stops[nearest_stop]
+		counter +=1
 
-# Function Test
+	return shortest5
 
-# Taking in coordinates of busstops
-#print(data)
-
-## User Location
-#g = geocoder.ip('me')
-#userLoc = g.latlng
-#print(userLoc)
-
-# Nearest busstop to user
-#print("The nearest busstop is " + findStartBus(data, userLoc))
-# print(data['coordinates',[0]])
+def userLocation():
+	# User Location
+	g = geocoder.ip('me')
+	userLoc = g.latlng
+	print(userLoc)

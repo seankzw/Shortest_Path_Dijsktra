@@ -5,7 +5,7 @@ from geopy import distance
 from CollatedDataHelper import CollatedDataHelper
 
 from Coordinates import Coordinates
-from brain import findNearestStop
+from brain import findNearest5Stop, findNearestStop
 
 def getCollatedData():
     f = open("collated_data.json")
@@ -48,14 +48,6 @@ def dijkstra(start_node):
 
 
         unvisited_nodes.remove(curr_shortest_route)
-
-
-    #print("Previous node = {}".format(previous_nodes))
-    #print("shortest path = {}".format(shortest_path))
-
-
-
-
     return previous_nodes, shortest_path
 
 
@@ -64,10 +56,7 @@ def getShortestPath(previous_nodes, shortest_path, start, end):
     path = []
     destination = end
     data = getOverviewData()
-    endCoord = Coordinates(data[end]["lat"], data[end]["lng"])
-
     while destination != start:
-        eachDestCoor = Coordinates(data[destination]["lat"], data[destination]["lng"])
         path.append({
             "bus_stop_name": destination,
             "coordinates" : (data[destination]["lat"], data[destination]["lng"]),
@@ -85,28 +74,35 @@ def getShortestPath(previous_nodes, shortest_path, start, end):
     return path
 
 
+def getShortestPathFromList(previous_nodes, start, end_stops):
+    data = getOverviewData()
+    collated_data = getCollatedData()
+    shortest_length = float('inf')
+    shortest_path = []
 
+    for i in range(len(end_stops)):
+        destination = end_stops[i]
+        curr_length = 0
+        path = []
+        while destination != start:
+            path.append({
+                "bus_stop_name": destination,
+                "coordinates" : (data[destination]["lat"], data[destination]["lng"]),
+                "bus": data[destination]["operating_buses"]
+            })
 
+            prev_dest = previous_nodes[destination]
+            curr_length+= collated_data[prev_dest]["edgeTo"][destination]
+            destination = previous_nodes[destination]
 
-# Start location : 1.4964559999542668, 103.74374661113058 (Larkin Terminal)
-#End Location : 1.456742090233385, 103.74938268472616 Johor Islamic Complex
-#start_loc = Coordinates(1.4964559999542668, 103.74374661113058)
-#end_loc = Coordinates(1.456742090233385, 103.74938268472616)
+        if shortest_length > curr_length:
+            shortest_length = curr_length
+            shortest_path= path
 
-#Start location : CIMB BANK : 1.4888638795941063, 103.71242062086549
-#END LOCATION : bef Econsave @ Senai" : 1.6102010601670786, 103.65715287633772
-paradigm_mall = Coordinates(1.514813892563429,103.6852375606564)
-larkin_terminal = Coordinates(1.4964559999542668,103.74374661113058)
+    shortest_path.append({
+        "bus_stop_name": start,
+        "coordinates" : (data[start]["lat"], data[start]["lng"]),
+        "bus": data[start]["operating_buses"],
+    })
 
-end_bus_stop= findNearestStop(paradigm_mall)
-start_node= findNearestStop(larkin_terminal)
-
-previous_node, shortest_path = dijkstra(start_node)
-path = getShortestPath(previous_node, shortest_path, start_node, end_bus_stop)
-
-path.reverse()
-
-for i in path:
-    print(i["bus_stop_name"])
-    print(i["bus"])
-    print("--")
+    return (shortest_path,shortest_length)
