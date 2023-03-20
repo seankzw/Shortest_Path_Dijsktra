@@ -64,8 +64,10 @@ def getShortestPath(previous_nodes, shortest_path, start, end):
     path = []
     destination = end
     data = getOverviewData()
+    endCoord = Coordinates(data[end]["lat"], data[end]["lng"])
 
     while destination != start:
+        eachDestCoor = Coordinates(data[destination]["lat"], data[destination]["lng"])
         path.append({
             "bus_stop_name": destination,
             "coordinates" : (data[destination]["lat"], data[destination]["lng"]),
@@ -93,12 +95,18 @@ def getShortestPath(previous_nodes, shortest_path, start, end):
 
 #Start location : CIMB BANK : 1.4888638795941063, 103.71242062086549
 #END LOCATION : bef Econsave @ Senai" : 1.6102010601670786, 103.65715287633772
-#start_loc = Coordinates(1.5423777121603113, 103.62969894227055) #AEON
-#end_loc = Coordinates(1.6349379250179437, 103.66630691168017) # Senai Airport Terminal
+paradigm_mall = Coordinates(1.514813892563429,103.6852375606564)
+larkin_terminal = Coordinates(1.4964559999542668,103.74374661113058)
 
-#start_node = findNearestStop(start_loc)
-#end_bus_stop = findNearestStop(end_loc)
+end_bus_stop= findNearestStop(paradigm_mall)
+start_node= findNearestStop(larkin_terminal)
 
-#previous_node, shortest_path = dijkstra(start_node)
-#path = getShortestPath(previous_node, shortest_path, start_node, end_bus_stop)
-#print(path)
+previous_node, shortest_path = dijkstra(start_node)
+path = getShortestPath(previous_node, shortest_path, start_node, end_bus_stop)
+
+path.reverse()
+
+for i in path:
+    print(i["bus_stop_name"])
+    print(i["bus"])
+    print("--")
