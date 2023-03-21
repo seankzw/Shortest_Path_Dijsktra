@@ -7,8 +7,8 @@ from tkinter import messagebox
 import tkintermapview as tkmv
 
 from Coordinates import Coordinates
-from brain import findNearestStop
-from main import dijkstra, getShortestPath
+from brain import findNearest5Stop, findNearestStop
+from main import dijkstra, getShortestPath, getShortestPath2
 
 # Create Window
 windows = tk.Tk()
@@ -106,10 +106,15 @@ def createPath():
     #end_loc = Coordinates(1.6349379250179437, 103.66630691168017) # Senai Airport Terminal
 
     start_bus_stop = findNearestStop(Coordinates(location[0], location[1]))
-    end_bus_stop = findNearestStop(Coordinates(location2[0],location2[1]))
+    #end_bus_stop = findNearestStop(Coordinates(location2[0],location2[1]))
+    end_bus_stops = findNearest5Stop(Coordinates(location2[0],location2[1]))
 
     previous_node, shortest_path = dijkstra(start_bus_stop)
-    path_to_destination = getShortestPath(previous_node, shortest_path, start_bus_stop, end_bus_stop)
+
+    #Original code :
+    #path_to_destination = getShortestPath(previous_node, shortest_path, start_bus_stop, end_bus_stop)
+
+    path_to_destination, length = getShortestPath2(previous_node,start_bus_stop, end_bus_stops)
 
     path_list.append(location)
     for eachStop in path_to_destination:
@@ -121,6 +126,7 @@ def createPath():
 
     
     path_list.append(location2)
+    print("Length is {}".format(length))
 
     path = mapview.set_path(path_list)
     path.set_color("blue")
