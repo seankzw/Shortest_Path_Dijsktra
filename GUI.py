@@ -119,15 +119,22 @@ def createPath(left_frame):
 
     path_to_destination, length = getShortestPathFromList(previous_node,start_bus_stop, end_bus_stops, Coordinates(location2[0],location2[1]))
 
+<<<<<<< Updated upstream
     routes = Text()
     #routes.grid(column=0, row=2, pady=10)
+=======
+    routes = tk.Text(left_frame)
+    routes.place(x=10, y=115)
+    routes.rowconfigure(2, weight=1)
+    routes.columnconfigure(1, weight=1)
+>>>>>>> Stashed changes
     for i in path_to_destination:
         busToTake = i["bus_stop_name"] + "\n"
         routes.insert(END, busToTake)
 
 
         #listbox.insert(counter, i["bus_stop_name"])
-    routes.pack()
+    routes["state"] = tk.DISABLED
     #print(listbox)
     #listbox.pack()
 
@@ -168,7 +175,7 @@ def createPath(left_frame):
 # Create the "Create Path" button to create the path
 action_with_arg = partial(createPath, left_frame)
 button3 = tk.Button(left_frame, text="Create Path", command=action_with_arg)
-button3.grid(column=0, row=3)
+button3.grid(column=0, row=2)
 
 # Create the right column for the map
 right_frame = tk.Frame(windows)
