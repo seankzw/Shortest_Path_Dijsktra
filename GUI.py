@@ -1,9 +1,10 @@
 
+from functools import partial
 import pandas as pd
 import tkinter as tk
 from geopy.geocoders import Nominatim
 from geopy import distance
-from tkinter import messagebox
+from tkinter import BOTH, END, YES, Listbox, Text, messagebox
 import tkintermapview as tkmv
 
 from Coordinates import Coordinates
@@ -21,7 +22,7 @@ geolocator = Nominatim(user_agent="myApp")
 # Create the left column for the input/label field
 left_frame = tk.Frame(windows)
 left_frame.pack(side="left", fill="both", expand=True, padx=10, pady=10)
-left_frame.rowconfigure(2, weight=1)
+left_frame.rowconfigure(3, weight=1)
 
 # Create the label and input field for Start Location
 label = tk.Label(left_frame, text="Enter your start location:")
@@ -39,10 +40,11 @@ label2.grid(column=0, row=1, pady=10)
 userInputLocation2 = tk.Entry(left_frame, width=20)
 userInputLocation2.grid(column=1, row=1, padx=10, pady=10)
 
+# Create the label and input field for End Location
+
 # # define global variables to store latitude and longitude
 # start_lat, start_long = None, None
 # end_lat, end_long = None, None
-
 
 def getStartLatLong():
     # global start_lat, start_long
@@ -95,9 +97,7 @@ def getEndLatLong():
 
 
 
-def createPath():
-
-   
+def createPath(left_frame):
     location = getStartLatLong()
     location2 = getEndLatLong()
     path_list = []
@@ -115,22 +115,36 @@ def createPath():
     #path_to_destination = getShortestPath(previous_node, shortest_path, start_bus_stop, end_bus_stop)
 
     path_to_destination, length = getShortestPathFromList(previous_node,start_bus_stop, end_bus_stops)
-    print(path_to_destination)
+
+    routes = Text(left_frame, state="disabled")
+    #routes.grid(column=0, row=2, pady=10)
+    for i in path_to_destination:
+        busToTake = i["bus_stop_name"] + "\n"
+        routes.insert(END, busToTake)
+
+
+        #listbox.insert(counter, i["bus_stop_name"])
+    routes.pack()
+    #print(listbox)
+    #listbox.pack()
 
     path_list.append(location)
     for eachStop in path_to_destination:
         #print(eachStop["coordinates"])
         path_list.append((float(eachStop["coordinates"][0]),float(eachStop["coordinates"][1])))
     #  create marker with custom colors and font for this stop
-        mapview.set_marker(eachStop["coordinates"][0],eachStop["coordinates"][1], text_color="red",
-                                 marker_color_circle="white", marker_color_outside="red", font=("Helvetica Bold", 10))
+        #mapview.set_marker(eachStop["coordinates"][0],eachStop["coordinates"][1], text_color="red",
+        #                         marker_color_circle="white", marker_color_outside="red", font=("Helvetica Bold", 10))
+        mapview.set_polygon([(eachStop["coordinates"][0], eachStop["coordinates"][1]), (eachStop["coordinates"][0], eachStop["coordinates"][1])],
+            outline_color="red")
 
-    
+
     path_list.append(location2)
     print("Length is {}".format(length))
 
-    path = mapview.set_path(path_list)
-    path.set_color("blue")
+    #path = mapview.set_path(path_list)
+    #mapview.set_path(path_list)
+    #path.set_color("blue")
 
     #if location and location2:
     #    path = mapview.set_path([location, location2])
@@ -149,8 +163,9 @@ def createPath():
 
 
 # Create the "Create Path" button to create the path
-button3 = tk.Button(left_frame, text="Create Path", command=createPath)
-button3.grid(column=0, row=2)
+action_with_arg = partial(createPath, left_frame)
+button3 = tk.Button(left_frame, text="Create Path", command=action_with_arg)
+button3.grid(column=0, row=3)
 
 # Create the right column for the map
 right_frame = tk.Frame(windows)
