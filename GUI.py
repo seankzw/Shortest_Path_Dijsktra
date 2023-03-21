@@ -55,7 +55,7 @@ def getStartLatLong():
         print(userInputLocation.get() + " JB MY")
         if(startLocation == None):
             messagebox.showinfo("showinfo", "Unable to find location, please try another location")
-        else: 
+        else:
             label_lat = tk.Label(windows, text=startLocation.latitude)
             label_lat.pack()
             label_long = tk.Label(windows, text=startLocation.longitude)

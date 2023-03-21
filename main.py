@@ -5,7 +5,7 @@ from geopy import distance
 from CollatedDataHelper import CollatedDataHelper
 
 from Coordinates import Coordinates
-from brain import findNearest5Stop, findNearestStop
+from brain import distanceBetween, findNearest5Stop, findNearestStop
 
 def getCollatedData():
     f = open("collated_data.json")
@@ -74,17 +74,20 @@ def getShortestPath(previous_nodes, shortest_path, start, end):
     return path
 
 
-def getShortestPathFromList(previous_nodes, start, end_stops):
+def getShortestPathFromList(previous_nodes, start, end_stops, toReach):
     data = getOverviewData()
     collated_data = getCollatedData()
     shortest_length = float('inf')
     shortest_path = []
+    distance_to_end = float('inf')
 
     for i in range(len(end_stops)):
         destination = end_stops[i]
         curr_length = 0
         path = []
+        eachDestCoord = (0,0)
         while destination != start:
+            eachDestCoord = Coordinates(data[destination]["lat"], data[destination]["lng"])
             path.append({
                 "bus_stop_name": destination,
                 "coordinates" : (data[destination]["lat"], data[destination]["lng"]),
@@ -95,8 +98,9 @@ def getShortestPathFromList(previous_nodes, start, end_stops):
             curr_length+= collated_data[prev_dest]["edgeTo"][destination]
             destination = previous_nodes[destination]
 
-        if shortest_length > curr_length:
+        if shortest_length > curr_length and distanceBetween(eachDestCoord, toReach) < distance_to_end:
             shortest_length = curr_length
+            distance_to_end = distanceBetween(eachDestCoord, toReach)
             shortest_path= path
 
     shortest_path.append({

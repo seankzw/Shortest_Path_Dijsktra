@@ -1,9 +1,13 @@
 from Coordinates import Coordinates
 from brain import findNearest5Stop, findNearestStop
-from main import dijkstra, getShortestPath, getShortestPathFromList
+from main import dijkstra, getOverviewData, getShortestPath, getShortestPathFromList
 
+
+overview_data = getOverviewData()
 paradigm_mall = Coordinates(1.514813892563429,103.6852375606564)
 larkin_terminal = Coordinates(1.4964559999542668,103.74374661113058)
+johor_islamic_complex = Coordinates(overview_data["Johor Islamic Complex"]["lat"], overview_data["Johor Islamic Complex"]["lng"])
+
 
 def oldAlgoTestCase():
     end_bus_stop= findNearestStop(paradigm_mall)
@@ -13,10 +17,11 @@ def oldAlgoTestCase():
     printPath(path)
 
 def newAlgoTestCase():
-    start_node= findNearestStop(larkin_terminal)
+    start_node= findNearestStop(johor_islamic_complex)
     previous_node, shortest_path = dijkstra(start_node)
-    end_bus_stops = findNearest5Stop(paradigm_mall)
-    path2, length = getShortestPathFromList(previous_node, start_node, end_bus_stops)
+    end_bus_stops = findNearest5Stop(larkin_terminal)
+    print(end_bus_stops)
+    path2, length = getShortestPathFromList(previous_node, start_node, end_bus_stops, larkin_terminal)
     printPath(path2)
 
 
