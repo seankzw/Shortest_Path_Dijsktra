@@ -98,7 +98,7 @@ def getShortestPathFromList(previous_nodes, start, end_stops, toReach):
             curr_length+= collated_data[prev_dest]["edgeTo"][destination]
             destination = previous_nodes[destination]
 
-        if shortest_length > curr_length and distanceBetween(eachDestCoord, toReach) < distance_to_end:
+        if shortest_length > curr_length or distanceBetween(eachDestCoord, toReach) < distance_to_end:
             shortest_length = curr_length
             distance_to_end = distanceBetween(eachDestCoord, toReach)
             shortest_path= path

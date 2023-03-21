@@ -1,5 +1,6 @@
 
 from functools import partial
+import re
 import pandas as pd
 import tkinter as tk
 from geopy.geocoders import Nominatim
@@ -8,8 +9,8 @@ from tkinter import BOTH, END, YES, Listbox, Text, messagebox
 import tkintermapview as tkmv
 
 from Coordinates import Coordinates
-from brain import findNearest5Stop, findNearestStop
-from main import dijkstra, getShortestPathFromList
+from brain import distanceBetween, findNearest5Stop, findNearestStop
+from main import dijkstra, getOverviewData, getShortestPathFromList
 
 # Create Window
 windows = tk.Tk()
@@ -54,17 +55,17 @@ def getStartLatLong():
     else:
         startLocation = geolocator.geocode(userLoc + " JB MY")
         #startLocLatLng = [startLocation.latitude, startLocation.longitude]
-        
+
         if(startLocation == None):
             messagebox.showinfo("showinfo", "Unable to find start location, please try another location")
         if(float(startLocation.latitude) > 1.6800) or (float(startLocation.longitude) > 104.0687) or (float(startLocation.latitude) < 1.3272) or (float(startLocation.longitude) < 103.4301):
             messagebox.showinfo("showinfo", "Unable to find start location, please try another location")
         else:
-            label_lat = tk.Label(windows, text=startLocation.latitude)
-            label_lat.pack()
-            label_long = tk.Label(windows, text=startLocation.longitude)
-            label_long.pack()
-            messagebox.showinfo('LWHwqeewqewqewqeqewewqewq', startLocation.address)
+            #label_lat = tk.Label(windows, text=startLocation.latitude)
+            #label_lat.pack()
+            #label_long = tk.Label(windows, text=startLocation.longitude)
+            #label_long.pack()
+            #messagebox.showinfo('LWHwqeewqewqewqeqewewqewq', startLocation.address)
             print(str(startLocation.latitude) +
                 ", " + str(startLocation.longitude))
 
@@ -85,13 +86,13 @@ def getEndLatLong():
         print(userInputLocation2.get() + " JB MY")
         if(location == None):
             messagebox.showinfo("showinfo", "Unable to find end location, please try another location")
-        else: 
-            label_lat = tk.Label(windows, text=location.latitude)
-            label_lat.pack()
-            label_long = tk.Label(windows, text=location.longitude)
-            label_long.pack()
-            messagebox.showinfo('Location', location.address)
-            print(str(location.latitude) + ", " + str(location.longitude))
+        else:
+            #label_lat = tk.Label(windows, text=location.latitude)
+            #label_lat.pack()
+            #label_long = tk.Label(windows, text=location.longitude)
+            #label_long.pack()
+            #messagebox.showinfo('Location', location.address)
+            #print(str(location.latitude) + ", " + str(location.longitude))
 
             # create marker with custom colors and font
             mapview.set_marker(location.latitude, location.longitude, text_color="green",
@@ -107,6 +108,7 @@ def getEndLatLong():
 def createPath(left_frame):
     location = getStartLatLong()
     location2 = getEndLatLong()
+    overviewData = getOverviewData()
     path_list = []
 
     #start_loc = Coordinates(1.5423777121603113, 103.62969894227055) #AEON
@@ -131,14 +133,37 @@ def createPath(left_frame):
         busToTake = i["bus_stop_name"] + "\n"
         routes.insert(END, busToTake)
 
+    distanceFromLocToStop = distanceBetween(Coordinates(location[0], location[1]), Coordinates(overviewData[start_bus_stop]["lat"], overviewData[start_bus_stop]["lng"]))
+    routes.insert(END, "Walk {:.2f}km to {} \n\n".format(distanceFromLocToStop, start_bus_stop))
+
+    #eachKeys = path_to_destination.keys()
+    print(len(path_to_destination))
+
+    #for i in path_to_destination:
+    #    buses=i["bus"]
+    #    for eachBusOfStop in range(len(i["bus"])):
+    #        if eachBusOfStop not in buses:
+    #            del eachBusOfStop
+
+    #    busToTake = i["bus_stop_name"] + str(buses) + "\n\n"
+    #    routes.insert(END, busToTake)
+
 
         #listbox.insert(counter, i["bus_stop_name"])
-    routes["state"] = tk.DISABLED
     #print(listbox)
     #listbox.pack()
 
+    print(len(path_to_destination))
     path_list.append(location)
     for eachStop in path_to_destination:
+        buses = eachStop["bus"]
+        for eachBusOfStop in range(len(buses)):
+            if eachBusOfStop not in buses:
+                del eachBusOfStop
+
+        res, test = re.subn("[\[\]\']","",str(buses))
+        busToTake = eachStop["bus_stop_name"] + " via \n " + res + "\n\n"
+        routes.insert(END, busToTake)
         #print(eachStop["coordinates"])
         path_list.append((float(eachStop["coordinates"][0]),float(eachStop["coordinates"][1])))
     #  create marker with custom colors and font for this stop
@@ -148,6 +173,7 @@ def createPath(left_frame):
             outline_color="red")
 
 
+    routes["state"] = tk.DISABLED
     path_list.append(location2)
     print("Length is {}".format(length))
 
