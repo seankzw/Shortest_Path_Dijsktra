@@ -117,7 +117,7 @@ def createPath(left_frame):
 
     path_to_destination, length = getShortestPathFromList(previous_node,start_bus_stop, end_bus_stops)
 
-    routes = Text(left_frame, state="disabled")
+    routes = Text()
     #routes.grid(column=0, row=2, pady=10)
     for i in path_to_destination:
         busToTake = i["bus_stop_name"] + "\n"
