@@ -50,21 +50,22 @@ def getStartLatLong():
     # global start_lat, start_long
     if userInputLocation.get() == '':
         messagebox.showinfo("showinfo", "Enter Start Location")
-
     else:
         startLocation = geolocator.geocode(userInputLocation.get() + " JB MY")
         print(userInputLocation.get() + " JB MY")
-        label_lat = tk.Label(windows, text=startLocation.latitude)
-        label_lat.pack()
-        label_long = tk.Label(windows, text=startLocation.longitude)
-        label_long.pack()
-        messagebox.showinfo('LWHwqeewqewqewqeqewewqewq', startLocation.address)
-        print(str(startLocation.latitude) +
-              ", " + str(startLocation.longitude))
+        if(startLocation == None):
+            messagebox.showinfo("showinfo", "Unable to find location, please try another location")
+        else: 
+            label_lat = tk.Label(windows, text=startLocation.latitude)
+            label_lat.pack()
+            label_long = tk.Label(windows, text=startLocation.longitude)
+            label_long.pack()
+            messagebox.showinfo('LWHwqeewqewqewqeqewewqewq', startLocation.address)
+            print(str(startLocation.latitude) +
+                ", " + str(startLocation.longitude))
 
-        # create marker with custom colors and font
-        mapview.set_marker(startLocation.latitude, startLocation.longitude)
-
+            # create marker with custom colors and font
+            mapview.set_marker(startLocation.latitude, startLocation.longitude)
     return (startLocation.latitude, startLocation.longitude)
         # store latitude and longitude in global variables
         # start_lat, start_long = startLocation.latitude, startLocation.longitude
