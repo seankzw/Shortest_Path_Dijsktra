@@ -8,7 +8,7 @@ import tkintermapview as tkmv
 
 from Coordinates import Coordinates
 from brain import findNearest5Stop, findNearestStop
-from main import dijkstra, getShortestPath, getShortestPath2
+from main import dijkstra, getShortestPathFromList
 
 # Create Window
 windows = tk.Tk()
@@ -114,7 +114,8 @@ def createPath():
     #Original code :
     #path_to_destination = getShortestPath(previous_node, shortest_path, start_bus_stop, end_bus_stop)
 
-    path_to_destination, length = getShortestPath2(previous_node,start_bus_stop, end_bus_stops)
+    path_to_destination, length = getShortestPathFromList(previous_node,start_bus_stop, end_bus_stops)
+    print(path_to_destination)
 
     path_list.append(location)
     for eachStop in path_to_destination:

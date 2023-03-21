@@ -105,4 +105,5 @@ def getShortestPathFromList(previous_nodes, start, end_stops):
         "bus": data[start]["operating_buses"],
     })
 
+    shortest_path.reverse()
     return (shortest_path,shortest_length)
