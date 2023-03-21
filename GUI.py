@@ -54,7 +54,7 @@ def getStartLatLong():
         startLocation = geolocator.geocode(userInputLocation.get() + " JB MY")
         print(userInputLocation.get() + " JB MY")
         if(startLocation == None):
-            messagebox.showinfo("showinfo", "Unable to find location, please try another location")
+            messagebox.showinfo("showinfo", "Unable to find start location, please try another location")
         else:
             label_lat = tk.Label(windows, text=startLocation.latitude)
             label_lat.pack()
@@ -77,18 +77,20 @@ def getEndLatLong():
         messagebox.showinfo("showinfo", "Enter End Location")
 
     else:
-
         location = geolocator.geocode(userInputLocation2.get() + " JB MY")
         print(userInputLocation2.get() + " JB MY")
-        label_lat = tk.Label(windows, text=location.latitude)
-        label_lat.pack()
-        label_long = tk.Label(windows, text=location.longitude)
-        label_long.pack()
-        messagebox.showinfo('Location', location.address)
-        print(str(location.latitude) + ", " + str(location.longitude))
+        if(location == None):
+            messagebox.showinfo("showinfo", "Unable to find end location, please try another location")
+        else: 
+            label_lat = tk.Label(windows, text=location.latitude)
+            label_lat.pack()
+            label_long = tk.Label(windows, text=location.longitude)
+            label_long.pack()
+            messagebox.showinfo('Location', location.address)
+            print(str(location.latitude) + ", " + str(location.longitude))
 
-        # create marker with custom colors and font
-        mapview.set_marker(location.latitude, location.longitude, text_color="green",
+            # create marker with custom colors and font
+            mapview.set_marker(location.latitude, location.longitude, text_color="green",
                                  marker_color_circle="white", marker_color_outside="green", font=("Helvetica Bold", 10))
 
     return (location.latitude, location.longitude)
@@ -115,7 +117,7 @@ def createPath(left_frame):
     #Original code :
     #path_to_destination = getShortestPath(previous_node, shortest_path, start_bus_stop, end_bus_stop)
 
-    path_to_destination, length = getShortestPathFromList(previous_node,start_bus_stop, end_bus_stops)
+    path_to_destination, length = getShortestPathFromList(previous_node,start_bus_stop, end_bus_stops, Coordinates(location2[0],location2[1]))
 
     routes = Text()
     #routes.grid(column=0, row=2, pady=10)
