@@ -47,13 +47,17 @@ userInputLocation2.grid(column=1, row=1, padx=10, pady=10)
 # end_lat, end_long = None, None
 
 def getStartLatLong():
+    userLoc = userInputLocation.get()
     # global start_lat, start_long
-    if userInputLocation.get() == '':
-        messagebox.showinfo("showinfo", "Enter Start Location")
+    if userLoc == '':
+        messagebox.showinfo("showinfo", "Please enter Start Location")
     else:
-        startLocation = geolocator.geocode(userInputLocation.get() + " JB MY")
-        print(userInputLocation.get() + " JB MY")
+        startLocation = geolocator.geocode(userLoc + " JB MY")
+        #startLocLatLng = [startLocation.latitude, startLocation.longitude]
+        
         if(startLocation == None):
+            messagebox.showinfo("showinfo", "Unable to find start location, please try another location")
+        if(float(startLocation.latitude) > 1.6800) or (float(startLocation.longitude) > 104.0687) or (float(startLocation.latitude) < 1.3272) or (float(startLocation.longitude) < 103.4301):
             messagebox.showinfo("showinfo", "Unable to find start location, please try another location")
         else:
             label_lat = tk.Label(windows, text=startLocation.latitude)
@@ -119,15 +123,10 @@ def createPath(left_frame):
 
     path_to_destination, length = getShortestPathFromList(previous_node,start_bus_stop, end_bus_stops, Coordinates(location2[0],location2[1]))
 
-<<<<<<< Updated upstream
-    routes = Text()
-    #routes.grid(column=0, row=2, pady=10)
-=======
     routes = tk.Text(left_frame)
     routes.place(x=10, y=115)
     routes.rowconfigure(2, weight=1)
     routes.columnconfigure(1, weight=1)
->>>>>>> Stashed changes
     for i in path_to_destination:
         busToTake = i["bus_stop_name"] + "\n"
         routes.insert(END, busToTake)
