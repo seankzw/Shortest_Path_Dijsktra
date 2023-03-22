@@ -53,7 +53,7 @@ def getStartLatLong():
     if userLoc == '':
         messagebox.showinfo("showinfo", "Please enter Start Location")
     else:
-        startLocation = geolocator.geocode(userLoc + " JB MY")
+        startLocation = geolocator.geocode(userLoc, country_codes="MY")
         #startLocLatLng = [startLocation.latitude, startLocation.longitude]
 
         if(startLocation == None):
@@ -78,12 +78,13 @@ def getStartLatLong():
 
 def getEndLatLong():
     # global end_lat, end_long
-    if userInputLocation2.get() == '':
+    userLoc = userInputLocation2.get()
+    if userLoc == '':
         messagebox.showinfo("showinfo", "Enter End Location")
 
     else:
-        location = geolocator.geocode(userInputLocation2.get() + " JB MY")
-        print(userInputLocation2.get() + " JB MY")
+        location = geolocator.geocode(userLoc, country_codes="MY")
+        print(userLoc + " JB MY")
         if(location == None):
             messagebox.showinfo("showinfo", "Unable to find end location, please try another location")
         else:
