@@ -53,7 +53,7 @@ def getStartLatLong():
     if userLoc == '':
         messagebox.showinfo("showinfo", "Please enter Start Location")
     else:
-        startLocation = geolocator.geocode(userLoc + " JB MY")
+        startLocation = geolocator.geocode(userLoc, country_codes="MY")
         #startLocLatLng = [startLocation.latitude, startLocation.longitude]
 
         if(startLocation == None):  # When user enters in an non-existent place
@@ -80,14 +80,14 @@ def getStartLatLong():
 def getEndLatLong():
     userLoc2 = userInputLocation.get()
     # global end_lat, end_long
-    if userLoc2 == '':
+    userLoc = userInputLocation2.get()
+    if userLoc == '':
         messagebox.showinfo("showinfo", "Enter End Location")
 
     else:
-        endLocation = geolocator.geocode(userLoc2 + " JB MY")
-        print(userLoc2 + " JB MY")
-        
-        if(endLocation == None):
+        location = geolocator.geocode(userLoc, country_codes="MY")
+        print(userLoc + " JB MY")
+        if(location == None):
             messagebox.showinfo("showinfo", "Unable to find end location, please try another location")
         if(endLocation.latitude == 1.4525798 and endLocation.longitude == 103.769116):  # When user enters in Singapore
             messagebox.showinfo("showinfo", "Please enter a location in Johor Bahru")
