@@ -56,18 +56,19 @@ def getStartLatLong():
         startLocation = geolocator.geocode(userLoc, country_codes="MY")
         #startLocLatLng = [startLocation.latitude, startLocation.longitude]
 
-        if(startLocation == None):
+        if(startLocation == None):  # When user enters in an non-existent place
             messagebox.showinfo("showinfo", "Unable to find start location, please try another location")
-        if(float(startLocation.latitude) > 1.6800) or (float(startLocation.longitude) > 104.0687) or (float(startLocation.latitude) < 1.3272) or (float(startLocation.longitude) < 103.4301):
-            messagebox.showinfo("showinfo", "Unable to find start location, please try another location")
+        if(startLocation.latitude == 1.4525798 and startLocation.longitude == 103.769116):  # When user enters in Singapore
+            messagebox.showinfo("showinfo", "Please enter a location in Johor Bahru")
+        # if(float(startLocation.latitude) > 1.6800) or (float(startLocation.longitude) > 104.0687) or (float(startLocation.latitude) < 1.3272) or (float(startLocation.longitude) < 103.4301):
+        #     messagebox.showinfo("showinfo", "Please enter a location within Johor Bahru")
         else:
             #label_lat = tk.Label(windows, text=startLocation.latitude)
             #label_lat.pack()
             #label_long = tk.Label(windows, text=startLocation.longitude)
             #label_long.pack()
             #messagebox.showinfo('LWHwqeewqewqewqeqewewqewq', startLocation.address)
-            print(str(startLocation.latitude) +
-                ", " + str(startLocation.longitude))
+            print(str(startLocation.latitude) + ", " + str(startLocation.longitude))
 
             # create marker with custom colors and font
             mapview.set_marker(startLocation.latitude, startLocation.longitude)
@@ -77,6 +78,7 @@ def getStartLatLong():
 
 
 def getEndLatLong():
+    userLoc2 = userInputLocation.get()
     # global end_lat, end_long
     userLoc = userInputLocation2.get()
     if userLoc == '':
@@ -87,6 +89,8 @@ def getEndLatLong():
         print(userLoc + " JB MY")
         if(location == None):
             messagebox.showinfo("showinfo", "Unable to find end location, please try another location")
+        if(endLocation.latitude == 1.4525798 and endLocation.longitude == 103.769116):  # When user enters in Singapore
+            messagebox.showinfo("showinfo", "Please enter a location in Johor Bahru")
         else:
             #label_lat = tk.Label(windows, text=location.latitude)
             #label_lat.pack()
@@ -96,10 +100,10 @@ def getEndLatLong():
             #print(str(location.latitude) + ", " + str(location.longitude))
 
             # create marker with custom colors and font
-            mapview.set_marker(location.latitude, location.longitude, text_color="green",
+            mapview.set_marker(endLocation.latitude, endLocation.longitude, text_color="green",
                                  marker_color_circle="white", marker_color_outside="green", font=("Helvetica Bold", 10))
 
-    return (location.latitude, location.longitude)
+    return (endLocation.latitude, endLocation.longitude)
          # store latitude and longitude in global variables
         # end_lat, end_long = location.latitude, location.longitude
 
@@ -107,6 +111,10 @@ def getEndLatLong():
 
 
 def createPath(left_frame):
+    # delete all markers and points whenever createPath is invoked
+    mapview.delete_all_marker()
+    mapview.delete_all_polygon()
+
     location = getStartLatLong()
     location2 = getEndLatLong()
     overviewData = getOverviewData()
