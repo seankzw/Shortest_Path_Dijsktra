@@ -1,16 +1,13 @@
 
 from functools import partial
 import re
-import pandas as pd
 import tkinter as tk
 from geopy.geocoders import Nominatim
 from geopy import distance
-from tkinter import BOTH, END, YES, Listbox, Text, messagebox
+from tkinter import BOTH, END, YES, messagebox
 import tkintermapview as tkmv
-
 from Coordinates import Coordinates
-from brain import distanceBetween, findNearest5Stop, findNearestStop, getBoundingBox
-from main import dijkstra, getOverviewData, getShortestPathFromList
+from brain import *
 
 # Create Window
 windows = tk.Tk()
@@ -110,43 +107,50 @@ def createPath(left_frame):
     #end_bus_stop = findNearestStop(Coordinates(location2[0],location2[1]))
     end_bus_stops = findNearest5Stop(Coordinates(location2[0],location2[1]))
 
-    previous_node, shortest_path = dijkstra(start_bus_stop)
+    distBetweenLoc = distanceBetween(Coordinates(location[0], location[1]), Coordinates(location2[0], location2[1]))
+    distBetweenStartAndStop = distanceBetween(Coordinates(location[0],location[1]), getCoordFromBusStopName(start_bus_stop))
+    print("Distance between locations = {} \n distance between start and bus stop = {}".format(distBetweenLoc, distBetweenStartAndStop))
 
-    #Original code :
-    #path_to_destination = getShortestPath(previous_node, shortest_path, start_bus_stop, end_bus_stop)
+    if distBetweenLoc > distBetweenStartAndStop:
+        print("============ Running Dijkstra ! ============")
+    #if True:
+        previous_node, shortest_path = dijkstra(start_bus_stop)
 
-    path_to_destination, length = getShortestPathFromList(previous_node,start_bus_stop, end_bus_stops, Coordinates(location2[0],location2[1]))
+        #Original code :
+        #path_to_destination = getShortestPath(previous_node, shortest_path, start_bus_stop, end_bus_stop)
 
-    boundingBox = getBoundingBox(location, location2)
-    mapview.fit_bounding_box(boundingBox[0],boundingBox[1])
-    #mapview.fit_bounding_box(location2, location)
+        path_to_destination, length = getShortestPathFromList(previous_node,start_bus_stop, end_bus_stops, Coordinates(location2[0],location2[1]))
 
-    routes = tk.Text(left_frame)
-    routes.place(x=10, y=115)
-    routes.rowconfigure(2, weight=1)
-    routes.columnconfigure(1, weight=1)
+        boundingBox = getBoundingBox(location, location2)
+        mapview.fit_bounding_box(boundingBox[0],boundingBox[1])
+        #mapview.fit_bounding_box(location2, location)
 
-    distanceFromLocToStop = distanceBetween(Coordinates(location[0], location[1]), Coordinates(overviewData[start_bus_stop]["lat"], overviewData[start_bus_stop]["lng"]))
-    routes.insert(END, "Walk {:.2f}km to {} \n\n".format(distanceFromLocToStop, start_bus_stop))
+        routes = tk.Text(left_frame)
+        routes.place(x=10, y=115)
+        routes.rowconfigure(2, weight=1)
+        routes.columnconfigure(1, weight=1)
 
-    path_list.append(location)
-    for eachStop in path_to_destination:
-        buses = eachStop["bus"]
-        for eachBusOfStop in range(len(buses)):
-            if eachBusOfStop not in buses:
-                del eachBusOfStop
+        distanceFromLocToStop = distanceBetween(Coordinates(location[0], location[1]), Coordinates(overviewData[start_bus_stop]["lat"], overviewData[start_bus_stop]["lng"]))
+        routes.insert(END, "Walk {:.2f}km to {} \n\n".format(distanceFromLocToStop, start_bus_stop))
 
-        res, test = re.subn("[\[\]\']","",str(buses))
-        busToTake = eachStop["bus_stop_name"] + " via \n " + res + "\n\n"
-        routes.insert(END, busToTake)
-        path_list.append((float(eachStop["coordinates"][0]),float(eachStop["coordinates"][1])))
+        path_list.append(location)
+        for eachStop in path_to_destination:
+            buses = eachStop["bus"]
+            for eachBusOfStop in range(len(buses)):
+                if eachBusOfStop not in buses:
+                    del eachBusOfStop
 
-        # create marker with custom colors and font for this stop
-        mapview.set_polygon([(eachStop["coordinates"][0], eachStop["coordinates"][1]), (eachStop["coordinates"][0], eachStop["coordinates"][1])], outline_color="red", border_width=12, command=polygonClicked, name=eachStop["bus_stop_name"])
+            res, test = re.subn("[\[\]\']","",str(buses))
+            busToTake = eachStop["bus_stop_name"] + " via \n " + res + "\n\n"
+            routes.insert(END, busToTake)
+            path_list.append((float(eachStop["coordinates"][0]),float(eachStop["coordinates"][1])))
+
+            # create marker with custom colors and font for this stop
+            mapview.set_polygon([(eachStop["coordinates"][0], eachStop["coordinates"][1]), (eachStop["coordinates"][0], eachStop["coordinates"][1])], outline_color="red", border_width=12, command=polygonClicked, name=eachStop["bus_stop_name"])
 
 
-    routes["state"] = tk.DISABLED
-    path_list.append(location2)
+        routes["state"] = tk.DISABLED
+        path_list.append(location2)
 
 
 def add_start_loc(coord):
