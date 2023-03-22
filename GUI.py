@@ -171,8 +171,8 @@ def createPath(left_frame):
         # WALK TO DESTINATION
         endstop = geolocator.geocode(location2, country_codes="MY")
         routes.insert(END, "Walk {:.2f}km to {} \n\n".format(distBetweenStartAndStop, location2 if endstop == None else endstop))
-
-    routes["state"] = tk.DISABLED
+    
+    routes.configure(state=tk.DISABLED)
 
 
 def add_start_loc(coord):
@@ -227,6 +227,8 @@ mapview.grid(row=0, column=0, sticky="nsew")
 
 
 
+# prevent the resize of window
+windows.resizable(0,0)
 
 # Start the main loop
 windows.mainloop()
