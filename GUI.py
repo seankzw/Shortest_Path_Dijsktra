@@ -4,7 +4,7 @@ import re
 import tkinter as tk
 from geopy.geocoders import Nominatim
 from geopy import distance
-from tkinter import BOTH, END, YES, messagebox
+from tkinter import BOTH, BOTTOM, END, RIGHT, YES, Scrollbar, messagebox
 import tkintermapview as tkmv
 from Coordinates import Coordinates
 from brain import *
@@ -117,7 +117,7 @@ def createPath(left_frame):
 
     # To display the paths
     routes = tk.Text(left_frame)
-    routes.place(x=10, y=115)
+    routes.place(x=10, y=150)
     routes.rowconfigure(2, weight=1)
     routes.columnconfigure(1, weight=1)
 
@@ -130,18 +130,20 @@ def createPath(left_frame):
 
     distBetweenLoc = distanceBetween(Coordinates(location[0], location[1]), Coordinates(location2[0], location2[1]))
     distBetweenStartAndStop = distanceBetween(Coordinates(location[0],location[1]), getCoordFromBusStopName(start_bus_stop))
-    print("Distance between locations = {} \n distance between start and bus stop = {}".format(distBetweenLoc, distBetweenStartAndStop))
+    print("Distance between locations = {} \nDistance between start and bus stop = {}".format(distBetweenLoc, distBetweenStartAndStop))
 
-    if distBetweenLoc > distBetweenStartAndStop:
-        print("============ Running Dijkstra ! ============")
-    #if True:
-        previous_node, shortest_path = dijkstra(start_bus_stop)
+    #if distBetweenLoc > 1:
+    print("============ Running Dijkstra ! ============")
+#if True:
+    previous_node, shortest_path = dijkstra(start_bus_stop)
 
-        #Original code :
-        #path_to_destination = getShortestPath(previous_node, shortest_path, start_bus_stop, end_bus_stop)
+    #Original code :
+    #path_to_destination = getShortestPath(previous_node, shortest_path, start_bus_stop, end_bus_stop)
 
-        path_to_destination, length = getShortestPathFromList(previous_node,start_bus_stop, end_bus_stops, Coordinates(location2[0],location2[1]))
+    path_to_destination, length = getShortestPathFromList(previous_node,start_bus_stop, end_bus_stops, Coordinates(location2[0],location2[1]))
+    endBusStopCoordinate = getCoordFromBusStopName(path_to_destination[-1]["bus_stop_name"])
 
+    if distBetweenLoc < distBetweenStartAndStop or distBetweenLoc > distanceBetween(endBusStopCoordinate, Coordinates(location2[0], location2[1])):
         boundingBox = getBoundingBox(location, location2)
         mapview.fit_bounding_box(boundingBox[0],boundingBox[1])
         #mapview.fit_bounding_box(location2, location)
@@ -172,6 +174,7 @@ def createPath(left_frame):
 
         path_list.append(location2)
     else:
+        print("=========== Walk is nearer ===============")
         # WALK TO DESTINATION
         endstop = geolocator.geocode(location2, country_codes="MY")
         routes.insert(END, "Walk {:.2f}km to {} \n\n".format(distBetweenStartAndStop, location2 if endstop == None else endstop))
