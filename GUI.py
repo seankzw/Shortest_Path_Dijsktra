@@ -156,7 +156,7 @@ def createPath(left_frame):
                     del eachBusOfStop
 
             res, test = re.subn("[\[\]\']","",str(buses))
-            busToTake = eachStop["bus_stop_name"] + " via \n " + res + "\n\n"
+            busToTake = eachStop["bus_stop_name"] + " via \n" + res + "\n\n"
             routes.insert(END, busToTake)
             path_list.append((float(eachStop["coordinates"][0]),float(eachStop["coordinates"][1])))
 
