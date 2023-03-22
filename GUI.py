@@ -88,6 +88,9 @@ def getEndLatLong():
     return (location.latitude, location.longitude)
 
 
+def polygonClicked(polygon):
+    print(polygon.name)
+
 
 
 def createPath(left_frame):
@@ -115,10 +118,6 @@ def createPath(left_frame):
     path_to_destination, length = getShortestPathFromList(previous_node,start_bus_stop, end_bus_stops, Coordinates(location2[0],location2[1]))
 
     boundingBox = getBoundingBox(location, location2)
-    print("Start coord = {}".format(location))
-    print("End coord = {}".format(location2))
-    print("Top Left = {}".format(boundingBox[0]))
-    print("Bottom right = {}".format(boundingBox[1]))
     mapview.fit_bounding_box(boundingBox[0],boundingBox[1])
     #mapview.fit_bounding_box(location2, location)
 
@@ -141,12 +140,24 @@ def createPath(left_frame):
         busToTake = eachStop["bus_stop_name"] + " via \n " + res + "\n\n"
         routes.insert(END, busToTake)
         path_list.append((float(eachStop["coordinates"][0]),float(eachStop["coordinates"][1])))
-    #  create marker with custom colors and font for this stop
-        mapview.set_polygon([(eachStop["coordinates"][0], eachStop["coordinates"][1]), (eachStop["coordinates"][0], eachStop["coordinates"][1])],
-            outline_color="red")
+
+        # create marker with custom colors and font for this stop
+        mapview.set_polygon([(eachStop["coordinates"][0], eachStop["coordinates"][1]), (eachStop["coordinates"][0], eachStop["coordinates"][1])], outline_color="red", border_width=12, command=polygonClicked, name=eachStop["bus_stop_name"])
+
 
     routes["state"] = tk.DISABLED
     path_list.append(location2)
+
+
+def add_start_loc(coord):
+    userInputLocation.delete(0,END)
+    userInputLocation.insert(0,(str(coord[0]) + "," + str(coord[1])))
+    return
+
+def add_end_loc(coord):
+    userInputLocation2.delete(0,END)
+    userInputLocation2.insert(0,(str(coord[0]) + "," + str(coord[1])))
+    return
 
 
 
@@ -163,6 +174,8 @@ right_frame.rowconfigure(0, weight=1)
 
 # Create mapview
 mapview = tkmv.TkinterMapView(right_frame, width=800, height=600, corner_radius=0)
+mapview.add_right_click_menu_command(label="Add start location", command=add_start_loc, pass_coords=True)
+mapview.add_right_click_menu_command(label="Add end location", command=add_end_loc, pass_coords=True)
 mapview.set_address("JB, MY")
 mapview.set_zoom(12)
 mapview.grid(row=0, column=0, sticky="nsew")
