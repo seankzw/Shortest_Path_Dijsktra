@@ -100,6 +100,12 @@ def createPath(left_frame):
     overviewData = getOverviewData()
     path_list = []
 
+    # To display the paths
+    routes = tk.Text(left_frame)
+    routes.place(x=10, y=115)
+    routes.rowconfigure(2, weight=1)
+    routes.columnconfigure(1, weight=1)
+
     #start_loc = Coordinates(1.5423777121603113, 103.62969894227055) #AEON
     #end_loc = Coordinates(1.6349379250179437, 103.66630691168017) # Senai Airport Terminal
 
@@ -125,10 +131,10 @@ def createPath(left_frame):
         mapview.fit_bounding_box(boundingBox[0],boundingBox[1])
         #mapview.fit_bounding_box(location2, location)
 
-        routes = tk.Text(left_frame)
-        routes.place(x=10, y=115)
-        routes.rowconfigure(2, weight=1)
-        routes.columnconfigure(1, weight=1)
+        #routes = tk.Text(left_frame)
+        #routes.place(x=10, y=115)
+        #routes.rowconfigure(2, weight=1)
+        #routes.columnconfigure(1, weight=1)
 
         distanceFromLocToStop = distanceBetween(Coordinates(location[0], location[1]), Coordinates(overviewData[start_bus_stop]["lat"], overviewData[start_bus_stop]["lng"]))
         routes.insert(END, "Walk {:.2f}km to {} \n\n".format(distanceFromLocToStop, start_bus_stop))
@@ -149,8 +155,13 @@ def createPath(left_frame):
             mapview.set_polygon([(eachStop["coordinates"][0], eachStop["coordinates"][1]), (eachStop["coordinates"][0], eachStop["coordinates"][1])], outline_color="red", border_width=12, command=polygonClicked, name=eachStop["bus_stop_name"])
 
 
-        routes["state"] = tk.DISABLED
         path_list.append(location2)
+    else:
+        # WALK TO DESTINATION
+        endstop = geolocator.geocode(location2, country_codes="MY")
+        routes.insert(END, "Walk {:.2f}km to {} \n\n".format(distBetweenStartAndStop, location2 if endstop == None else endstop))
+
+    routes["state"] = tk.DISABLED
 
 
 def add_start_loc(coord):
