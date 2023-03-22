@@ -4,7 +4,7 @@ import re
 import tkinter as tk
 from geopy.geocoders import Nominatim
 from geopy import distance
-from tkinter import BOTH, BOTTOM, END, RIGHT, YES, Scrollbar, messagebox
+from tkinter import BOTH, BOTTOM, END, RIGHT, YES, Image, Scrollbar, messagebox
 import tkintermapview as tkmv
 from Coordinates import Coordinates
 from brain import *
@@ -12,7 +12,8 @@ from brain import *
 # Create Window
 windows = tk.Tk()
 windows.geometry("800x600")
-windows.title("Maps")
+windows.title("CSC1108 Johor Bahru Maps")
+windows.iconphoto(False, tk.PhotoImage(file="compass.png"))
 
 geolocator = Nominatim(user_agent="myApp")
 
