@@ -1,16 +1,13 @@
 
 from functools import partial
 import re
-import pandas as pd
 import tkinter as tk
 from geopy.geocoders import Nominatim
 from geopy import distance
-from tkinter import BOTH, END, YES, Listbox, Text, messagebox
+from tkinter import BOTH, END, YES, messagebox
 import tkintermapview as tkmv
-
 from Coordinates import Coordinates
-from brain import distanceBetween, findNearest5Stop, findNearestStop
-from main import dijkstra, getOverviewData, getShortestPathFromList
+from brain import *
 
 # Create Window
 windows = tk.Tk()
@@ -53,8 +50,7 @@ def getStartLatLong():
     if userLoc == '':
         messagebox.showinfo("showinfo", "Please enter Start Location")
     else:
-        startLocation = geolocator.geocode(userLoc + " JB MY")
-        #startLocLatLng = [startLocation.latitude, startLocation.longitude]
+        startLocation = geolocator.geocode(userLoc, country_codes="MY")
 
         if(startLocation == None):  # When user enters in an non-existent place
             messagebox.showinfo("showinfo", "Unable to find start location, please try another location")
@@ -68,7 +64,8 @@ def getStartLatLong():
             #label_long = tk.Label(windows, text=startLocation.longitude)
             #label_long.pack()
             #messagebox.showinfo('LWHwqeewqewqewqeqewewqewq', startLocation.address)
-            print(str(startLocation.latitude) + ", " + str(startLocation.longitude))
+            print(str(startLocation.latitude) +
+                ", " + str(startLocation.longitude))
 
             # create marker with custom colors and font
             mapview.set_marker(startLocation.latitude, startLocation.longitude)
@@ -80,14 +77,13 @@ def getStartLatLong():
 def getEndLatLong():
     userLoc2 = userInputLocation.get()
     # global end_lat, end_long
-    if userLoc2 == '':
+    if userInputLocation2.get() == '':
         messagebox.showinfo("showinfo", "Enter End Location")
 
     else:
-        endLocation = geolocator.geocode(userLoc2 + " JB MY")
-        print(userLoc2 + " JB MY")
-        
-        if(endLocation == None):
+        location = geolocator.geocode(userInputLocation2.get() + " JB MY")
+        print(userInputLocation2.get() + " JB MY")
+        if(location == None):
             messagebox.showinfo("showinfo", "Unable to find end location, please try another location")
         if(endLocation.latitude == 1.4525798 and endLocation.longitude == 103.769116):  # When user enters in Singapore
             messagebox.showinfo("showinfo", "Please enter a location in Johor Bahru")
@@ -100,21 +96,30 @@ def getEndLatLong():
             #print(str(location.latitude) + ", " + str(location.longitude))
 
             # create marker with custom colors and font
-            mapview.set_marker(endLocation.latitude, endLocation.longitude, text_color="green",
+            mapview.set_marker(location.latitude, location.longitude, text_color="green",
                                  marker_color_circle="white", marker_color_outside="green", font=("Helvetica Bold", 10))
 
-    return (endLocation.latitude, endLocation.longitude)
+    return (location.latitude, location.longitude)
          # store latitude and longitude in global variables
         # end_lat, end_long = location.latitude, location.longitude
 
 
 
-
 def createPath(left_frame):
+    # remove all existing markers and points whenever createPath() is invoked
+    mapview.delete_all_marker()
+    mapview.delete_all_polygon()
+
     location = getStartLatLong()
     location2 = getEndLatLong()
     overviewData = getOverviewData()
     path_list = []
+
+    # To display the paths
+    routes = tk.Text(left_frame)
+    routes.place(x=10, y=115)
+    routes.rowconfigure(2, weight=1)
+    routes.columnconfigure(1, weight=1)
 
     #start_loc = Coordinates(1.5423777121603113, 103.62969894227055) #AEON
     #end_loc = Coordinates(1.6349379250179437, 103.66630691168017) # Senai Airport Terminal
@@ -123,82 +128,66 @@ def createPath(left_frame):
     #end_bus_stop = findNearestStop(Coordinates(location2[0],location2[1]))
     end_bus_stops = findNearest5Stop(Coordinates(location2[0],location2[1]))
 
-    previous_node, shortest_path = dijkstra(start_bus_stop)
+    distBetweenLoc = distanceBetween(Coordinates(location[0], location[1]), Coordinates(location2[0], location2[1]))
+    distBetweenStartAndStop = distanceBetween(Coordinates(location[0],location[1]), getCoordFromBusStopName(start_bus_stop))
+    print("Distance between locations = {} \n distance between start and bus stop = {}".format(distBetweenLoc, distBetweenStartAndStop))
 
-    #Original code :
-    #path_to_destination = getShortestPath(previous_node, shortest_path, start_bus_stop, end_bus_stop)
+    if distBetweenLoc > distBetweenStartAndStop:
+        print("============ Running Dijkstra ! ============")
+    #if True:
+        previous_node, shortest_path = dijkstra(start_bus_stop)
 
-    path_to_destination, length = getShortestPathFromList(previous_node,start_bus_stop, end_bus_stops, Coordinates(location2[0],location2[1]))
+        #Original code :
+        #path_to_destination = getShortestPath(previous_node, shortest_path, start_bus_stop, end_bus_stop)
 
-    routes = tk.Text(left_frame)
-    routes.place(x=10, y=115)
-    routes.rowconfigure(2, weight=1)
-    routes.columnconfigure(1, weight=1)
-    for i in path_to_destination:
-        busToTake = i["bus_stop_name"] + "\n"
-        routes.insert(END, busToTake)
+        path_to_destination, length = getShortestPathFromList(previous_node,start_bus_stop, end_bus_stops, Coordinates(location2[0],location2[1]))
 
-    distanceFromLocToStop = distanceBetween(Coordinates(location[0], location[1]), Coordinates(overviewData[start_bus_stop]["lat"], overviewData[start_bus_stop]["lng"]))
-    routes.insert(END, "Walk {:.2f}km to {} \n\n".format(distanceFromLocToStop, start_bus_stop))
+        boundingBox = getBoundingBox(location, location2)
+        mapview.fit_bounding_box(boundingBox[0],boundingBox[1])
+        #mapview.fit_bounding_box(location2, location)
 
-    #eachKeys = path_to_destination.keys()
-    print(len(path_to_destination))
+        #routes = tk.Text(left_frame)
+        #routes.place(x=10, y=115)
+        #routes.rowconfigure(2, weight=1)
+        #routes.columnconfigure(1, weight=1)
 
-    #for i in path_to_destination:
-    #    buses=i["bus"]
-    #    for eachBusOfStop in range(len(i["bus"])):
-    #        if eachBusOfStop not in buses:
-    #            del eachBusOfStop
+        distanceFromLocToStop = distanceBetween(Coordinates(location[0], location[1]), Coordinates(overviewData[start_bus_stop]["lat"], overviewData[start_bus_stop]["lng"]))
+        routes.insert(END, "Walk {:.2f}km to {} \n\n".format(distanceFromLocToStop, start_bus_stop))
 
-    #    busToTake = i["bus_stop_name"] + str(buses) + "\n\n"
-    #    routes.insert(END, busToTake)
+        path_list.append(location)
+        for eachStop in path_to_destination:
+            buses = eachStop["bus"]
+            for eachBusOfStop in range(len(buses)):
+                if eachBusOfStop not in buses:
+                    del eachBusOfStop
+
+            res, test = re.subn("[\[\]\']","",str(buses))
+            busToTake = eachStop["bus_stop_name"] + " via \n " + res + "\n\n"
+            routes.insert(END, busToTake)
+            path_list.append((float(eachStop["coordinates"][0]),float(eachStop["coordinates"][1])))
+
+            # create marker with custom colors and font for this stop
+            mapview.set_polygon([(eachStop["coordinates"][0], eachStop["coordinates"][1]), (eachStop["coordinates"][0], eachStop["coordinates"][1])], outline_color="red", border_width=12, command=polygonClicked, name=eachStop["bus_stop_name"])
 
 
-        #listbox.insert(counter, i["bus_stop_name"])
-    #print(listbox)
-    #listbox.pack()
-
-    print(len(path_to_destination))
-    path_list.append(location)
-    for eachStop in path_to_destination:
-        buses = eachStop["bus"]
-        for eachBusOfStop in range(len(buses)):
-            if eachBusOfStop not in buses:
-                del eachBusOfStop
-
-        res, test = re.subn("[\[\]\']","",str(buses))
-        busToTake = eachStop["bus_stop_name"] + " via \n " + res + "\n\n"
-        routes.insert(END, busToTake)
-        #print(eachStop["coordinates"])
-        path_list.append((float(eachStop["coordinates"][0]),float(eachStop["coordinates"][1])))
-    #  create marker with custom colors and font for this stop
-        #mapview.set_marker(eachStop["coordinates"][0],eachStop["coordinates"][1], text_color="red",
-        #                         marker_color_circle="white", marker_color_outside="red", font=("Helvetica Bold", 10))
-        mapview.set_polygon([(eachStop["coordinates"][0], eachStop["coordinates"][1]), (eachStop["coordinates"][0], eachStop["coordinates"][1])],
-            outline_color="red")
-
+        path_list.append(location2)
+    else:
+        # WALK TO DESTINATION
+        endstop = geolocator.geocode(location2, country_codes="MY")
+        routes.insert(END, "Walk {:.2f}km to {} \n\n".format(distBetweenStartAndStop, location2 if endstop == None else endstop))
 
     routes["state"] = tk.DISABLED
-    path_list.append(location2)
-    print("Length is {}".format(length))
 
-    #path = mapview.set_path(path_list)
-    #mapview.set_path(path_list)
-    #path.set_color("blue")
 
-    #if location and location2:
-    #    path = mapview.set_path([location, location2])
-    #    path.set_color("blue")
+def add_start_loc(coord):
+    userInputLocation.delete(0,END)
+    userInputLocation.insert(0,(str(coord[0]) + "," + str(coord[1])))
+    return
 
-# def createPath():
-#     # call getStartLatLong() and getEndLatLong() to set global variables
-#     getStartLatLong()
-#     getEndLatLong()
-
-#     # access global variables to set the path
-#     if start_lat and start_long and end_lat and end_long:
-#         path = mapview.set_path([(start_lat, start_long), (end_lat, end_long)])
-#         path.set_color("blue")
+def add_end_loc(coord):
+    userInputLocation2.delete(0,END)
+    userInputLocation2.insert(0,(str(coord[0]) + "," + str(coord[1])))
+    return
 
 
 
@@ -215,6 +204,8 @@ right_frame.rowconfigure(0, weight=1)
 
 # Create mapview
 mapview = tkmv.TkinterMapView(right_frame, width=800, height=600, corner_radius=0)
+mapview.add_right_click_menu_command(label="Add start location", command=add_start_loc, pass_coords=True)
+mapview.add_right_click_menu_command(label="Add end location", command=add_end_loc, pass_coords=True)
 mapview.set_address("JB, MY")
 mapview.set_zoom(12)
 mapview.grid(row=0, column=0, sticky="nsew")
