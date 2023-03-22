@@ -85,7 +85,7 @@ def getEndLatLong():
         # end_lat, end_long = location.latitude, location.longitude
 
 def polygonClicked(polygon):
-    print(polygon.name)
+    messagebox.showinfo("showinfo", polygon.name)
 
 
 def createPath(left_frame):
@@ -152,7 +152,8 @@ def createPath(left_frame):
             path_list.append((float(eachStop["coordinates"][0]),float(eachStop["coordinates"][1])))
 
             # create marker with custom colors and font for this stop
-            mapview.set_polygon([(eachStop["coordinates"][0], eachStop["coordinates"][1]), (eachStop["coordinates"][0], eachStop["coordinates"][1])], outline_color="red", border_width=12, command=polygonClicked, name=eachStop["bus_stop_name"])
+            polygon_name = eachStop["bus_stop_name"] + "\n" + res
+            mapview.set_polygon([(eachStop["coordinates"][0], eachStop["coordinates"][1]), (eachStop["coordinates"][0], eachStop["coordinates"][1])], outline_color="red", border_width=12, command=polygonClicked, name=polygon_name)
 
 
         path_list.append(location2)
