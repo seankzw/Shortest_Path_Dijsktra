@@ -2,6 +2,7 @@
 from functools import partial
 import re
 import tkinter as tk
+import customtkinter as ctk
 from geopy.geocoders import Nominatim
 from geopy import distance
 from tkinter import BOTH, BOTTOM, END, RIGHT, YES, Image, Scrollbar, messagebox
@@ -10,34 +11,38 @@ from Coordinates import Coordinates
 from brain import *
 
 # Create Window
-windows = tk.Tk()
+ctk.set_appearance_mode("dark")
+ctk.set_default_color_theme("green")
+
+
+windows = ctk.CTk()
 windows.geometry("800x600")
 windows.title("CSC1108 Johor Bahru Maps")
 windows.iconphoto(False, tk.PhotoImage(file="compass.png"))
+ctk.CTkFont("Helvetica")
 
 geolocator = Nominatim(user_agent="myApp")
 
 
 # Create the left column for the input/label field
-left_frame = tk.Frame(windows)
+left_frame = ctk.CTkFrame(windows)
 left_frame.pack(side="left", fill="both", expand=True, padx=10, pady=10)
-left_frame.rowconfigure(3, weight=1)
 
 # Create the label and input field for Start Location
-label = tk.Label(left_frame, text="Enter your start location:")
-label.grid(column=0, row=0, pady=10)
+label = ctk.CTkLabel(left_frame, justify="left", text="Enter your start location:")
+label.grid(column=0, row=0)
 
 # Create the input field for Start Location
-userInputLocation = tk.Entry(left_frame, width=20)
-userInputLocation.grid(column=1, row=0, padx=10, pady=10)
+userInputLocation = ctk.CTkEntry(left_frame, placeholder_text="Johor Zoo", width=250)
+userInputLocation.grid(column=0, row=1, padx=10, pady=10)
 
 # Create the label and input field for End Location
-label2 = tk.Label(left_frame, text="Enter your end location:")
-label2.grid(column=0, row=1, pady=10)
+label2 = ctk.CTkLabel(left_frame, justify="left",text="Enter your end location:")
+label2.grid(column=0, row=2)
 
 # Create the input field for End Location
-userInputLocation2 = tk.Entry(left_frame, width=20)
-userInputLocation2.grid(column=1, row=1, padx=10, pady=10)
+userInputLocation2 = ctk.CTkEntry(left_frame, placeholder_text="Paradigm Mall", width=250)
+userInputLocation2.grid(column=0, row=3, padx=10, pady=10)
 
 # Create the label and input field for End Location
 
@@ -100,10 +105,13 @@ def createPath(left_frame):
     path_list = []
 
     # To display the paths
-    routes = tk.Text(left_frame)
-    routes.place(x=10, y=150)
-    routes.rowconfigure(2, weight=1)
-    routes.columnconfigure(1, weight=1)
+    label = ctk.CTkLabel(left_frame, justify="left", text="Directions:")
+    label.grid(column=0, row=7)
+    routes = ctk.CTkTextbox(left_frame, width=250, height=350, scrollbar_button_color="white", )
+    routes.grid(column=0, row=8)
+    #routes.place(x=10, y=200)
+    #routes.rowconfigure(5, weight=1)
+    #routes.columnconfigure(1, weight=1)
 
     #start_loc = Coordinates(1.5423777121603113, 103.62969894227055) #AEON
     #end_loc = Coordinates(1.6349379250179437, 103.66630691168017) # Senai Airport Terminal
@@ -132,7 +140,7 @@ def createPath(left_frame):
         mapview.fit_bounding_box(boundingBox[0],boundingBox[1])
         #mapview.fit_bounding_box(location2, location)
 
-        #routes = tk.Text(left_frame)
+        #routes = ctk.CTkTextbox(left_frame)
         #routes.place(x=10, y=115)
         #routes.rowconfigure(2, weight=1)
         #routes.columnconfigure(1, weight=1)
@@ -181,8 +189,8 @@ def add_end_loc(coord):
 
 # Create the "Create Path" button to create the path
 action_with_arg = partial(createPath, left_frame)
-button3 = tk.Button(left_frame, text="Create Path", command=action_with_arg)
-button3.grid(column=0, row=2)
+button3 = ctk.CTkButton(left_frame, text="Create Path", command=action_with_arg)
+button3.grid(column=0, row=5)
 
 # Create the right column for the map
 right_frame = tk.Frame(windows)
