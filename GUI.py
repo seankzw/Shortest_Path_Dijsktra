@@ -9,7 +9,7 @@ from tkinter import BOTH, END, YES, Listbox, Text, messagebox
 import tkintermapview as tkmv
 
 from Coordinates import Coordinates
-from brain import distanceBetween, findNearest5Stop, findNearestStop
+from brain import distanceBetween, findNearest5Stop, findNearestStop, getBoundingBox
 from main import dijkstra, getOverviewData, getShortestPathFromList
 
 # Create Window
@@ -54,18 +54,12 @@ def getStartLatLong():
         messagebox.showinfo("showinfo", "Please enter Start Location")
     else:
         startLocation = geolocator.geocode(userLoc, country_codes="MY")
-        #startLocLatLng = [startLocation.latitude, startLocation.longitude]
 
         if(startLocation == None):
             messagebox.showinfo("showinfo", "Unable to find start location, please try another location")
         if(float(startLocation.latitude) > 1.6800) or (float(startLocation.longitude) > 104.0687) or (float(startLocation.latitude) < 1.3272) or (float(startLocation.longitude) < 103.4301):
             messagebox.showinfo("showinfo", "Unable to find start location, please try another location")
         else:
-            #label_lat = tk.Label(windows, text=startLocation.latitude)
-            #label_lat.pack()
-            #label_long = tk.Label(windows, text=startLocation.longitude)
-            #label_long.pack()
-            #messagebox.showinfo('LWHwqeewqewqewqeqewewqewq', startLocation.address)
             print(str(startLocation.latitude) +
                 ", " + str(startLocation.longitude))
 
@@ -88,20 +82,10 @@ def getEndLatLong():
         if(location == None):
             messagebox.showinfo("showinfo", "Unable to find end location, please try another location")
         else:
-            #label_lat = tk.Label(windows, text=location.latitude)
-            #label_lat.pack()
-            #label_long = tk.Label(windows, text=location.longitude)
-            #label_long.pack()
-            #messagebox.showinfo('Location', location.address)
-            #print(str(location.latitude) + ", " + str(location.longitude))
-
-            # create marker with custom colors and font
             mapview.set_marker(location.latitude, location.longitude, text_color="green",
                                  marker_color_circle="white", marker_color_outside="green", font=("Helvetica Bold", 10))
 
     return (location.latitude, location.longitude)
-         # store latitude and longitude in global variables
-        # end_lat, end_long = location.latitude, location.longitude
 
 
 
@@ -130,35 +114,22 @@ def createPath(left_frame):
 
     path_to_destination, length = getShortestPathFromList(previous_node,start_bus_stop, end_bus_stops, Coordinates(location2[0],location2[1]))
 
+    boundingBox = getBoundingBox(location, location2)
+    print("Start coord = {}".format(location))
+    print("End coord = {}".format(location2))
+    print("Top Left = {}".format(boundingBox[0]))
+    print("Bottom right = {}".format(boundingBox[1]))
+    mapview.fit_bounding_box(boundingBox[0],boundingBox[1])
+    #mapview.fit_bounding_box(location2, location)
+
     routes = tk.Text(left_frame)
     routes.place(x=10, y=115)
     routes.rowconfigure(2, weight=1)
     routes.columnconfigure(1, weight=1)
-    for i in path_to_destination:
-        busToTake = i["bus_stop_name"] + "\n"
-        routes.insert(END, busToTake)
 
     distanceFromLocToStop = distanceBetween(Coordinates(location[0], location[1]), Coordinates(overviewData[start_bus_stop]["lat"], overviewData[start_bus_stop]["lng"]))
     routes.insert(END, "Walk {:.2f}km to {} \n\n".format(distanceFromLocToStop, start_bus_stop))
 
-    #eachKeys = path_to_destination.keys()
-    print(len(path_to_destination))
-
-    #for i in path_to_destination:
-    #    buses=i["bus"]
-    #    for eachBusOfStop in range(len(i["bus"])):
-    #        if eachBusOfStop not in buses:
-    #            del eachBusOfStop
-
-    #    busToTake = i["bus_stop_name"] + str(buses) + "\n\n"
-    #    routes.insert(END, busToTake)
-
-
-        #listbox.insert(counter, i["bus_stop_name"])
-    #print(listbox)
-    #listbox.pack()
-
-    print(len(path_to_destination))
     path_list.append(location)
     for eachStop in path_to_destination:
         buses = eachStop["bus"]
@@ -169,36 +140,13 @@ def createPath(left_frame):
         res, test = re.subn("[\[\]\']","",str(buses))
         busToTake = eachStop["bus_stop_name"] + " via \n " + res + "\n\n"
         routes.insert(END, busToTake)
-        #print(eachStop["coordinates"])
         path_list.append((float(eachStop["coordinates"][0]),float(eachStop["coordinates"][1])))
     #  create marker with custom colors and font for this stop
-        #mapview.set_marker(eachStop["coordinates"][0],eachStop["coordinates"][1], text_color="red",
-        #                         marker_color_circle="white", marker_color_outside="red", font=("Helvetica Bold", 10))
         mapview.set_polygon([(eachStop["coordinates"][0], eachStop["coordinates"][1]), (eachStop["coordinates"][0], eachStop["coordinates"][1])],
             outline_color="red")
 
-
     routes["state"] = tk.DISABLED
     path_list.append(location2)
-    print("Length is {}".format(length))
-
-    #path = mapview.set_path(path_list)
-    #mapview.set_path(path_list)
-    #path.set_color("blue")
-
-    #if location and location2:
-    #    path = mapview.set_path([location, location2])
-    #    path.set_color("blue")
-
-# def createPath():
-#     # call getStartLatLong() and getEndLatLong() to set global variables
-#     getStartLatLong()
-#     getEndLatLong()
-
-#     # access global variables to set the path
-#     if start_lat and start_long and end_lat and end_long:
-#         path = mapview.set_path([(start_lat, start_long), (end_lat, end_long)])
-#         path.set_color("blue")
 
 
 

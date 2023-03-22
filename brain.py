@@ -72,3 +72,16 @@ def userLocation():
 	g = geocoder.ip('me')
 	userLoc = g.latlng
 	print(userLoc)
+
+def getBoundingBox(loc1, loc2):
+	x1 = loc1[0]
+	y1 = loc1[1]
+	x2 = loc2[0]
+	y2 = loc2[1]
+
+	topLeftX = max(x1,x2)
+	topLeftY = min(y1,y2)
+	botRightX = min(x1,x2)
+	botRightY = max(y1,y2)
+
+	return (topLeftX, topLeftY),(botRightX, botRightY)
