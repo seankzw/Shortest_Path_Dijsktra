@@ -106,6 +106,10 @@ def getEndLatLong():
 
 
 def createPath(left_frame):
+    # delete all markers and points whenever createPath is invoked
+    mapview.delete_all_marker()
+    mapview.delete_all_polygon()
+    
     location = getStartLatLong()
     location2 = getEndLatLong()
     overviewData = getOverviewData()
