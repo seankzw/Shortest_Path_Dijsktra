@@ -60,6 +60,8 @@ def getStartLatLong():
 
         if(startLocation == None):  # When user enters in an non-existent place
             messagebox.showinfo("showinfo", "Unable to find start location, please try another location")
+        if((startLocation.latitude>=1.6800 or startLocation.latitude<=1.3272)or(startLocation.longitude>=104.0687 or startLocation.longitude<=103.4301)):
+            raise Exception(messagebox.showinfo("showinfo", "Location is not in Johor Bahru"))
         else:
             print(str(startLocation.latitude) +
                 ", " + str(startLocation.longitude))
@@ -76,17 +78,19 @@ def getEndLatLong():
         messagebox.showinfo("showinfo", "Enter End Location")
 
     else:
-        location = geolocator.geocode(userLoc2, country_codes="MY")
+        endLocation = geolocator.geocode(userLoc2, country_codes="MY")
 
         print(userLoc2 + " JB MY")
-        if(location == None):
+        if(endLocation == None):
             messagebox.showinfo("showinfo", "Unable to find end location, please try another location")
+        if((endLocation.latitude>=1.6800 or endLocation.latitude<=1.3272)or(endLocation.longitude>=104.0687 or endLocation.longitude<=103.4301)):
+            raise Exception(messagebox.showinfo("showinfo", "Location is not in Johor Bahru"))
         else:
             # create marker with custom colors and font
-            mapview.set_marker(location.latitude, location.longitude, text_color="green",
+            mapview.set_marker(endLocation.latitude, endLocation.longitude, text_color="green",
                                  marker_color_circle="white", marker_color_outside="green", font=("Helvetica Bold", 10))
 
-    return (location.latitude, location.longitude)
+    return (endLocation.latitude, endLocation.longitude)
          # store latitude and longitude in global variables
         # end_lat, end_long = location.latitude, location.longitude
 
