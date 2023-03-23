@@ -87,7 +87,7 @@ def getEndLatLong():
             raise Exception(messagebox.showinfo("showinfo", "Location is not in Johor Bahru"))
         else:
             # create marker with custom colors and font
-            mapview.set_marker(endLocation.latitude, endLocation.longitude, text_color="green",
+            mapview.set_marker(endLocation.latitude, endLocation.longitude, text_color="red",
                                  marker_color_circle="white", marker_color_outside="green", font=("Helvetica Bold", 10))
 
     return (endLocation.latitude, endLocation.longitude)
@@ -139,6 +139,7 @@ def createPath(left_frame):
     path_to_destination, length = getShortestPathFromList(previous_node,start_bus_stop, end_bus_stops, Coordinates(location2[0],location2[1]))
     endBusStopCoordinate = getCoordFromBusStopName(path_to_destination[-1]["bus_stop_name"])
 
+    
     if distBetweenLoc < distBetweenStartAndStop or distBetweenLoc > distanceBetween(endBusStopCoordinate, Coordinates(location2[0], location2[1])):
         boundingBox = getBoundingBox(location, location2)
         mapview.fit_bounding_box(boundingBox[0],boundingBox[1])
@@ -166,8 +167,12 @@ def createPath(left_frame):
 
             # create marker with custom colors and font for this stop
             polygon_name = eachStop["bus_stop_name"] + "\n" + res
+            print(path_to_destination[-1])
+            
             mapview.set_polygon([(eachStop["coordinates"][0], eachStop["coordinates"][1]), (eachStop["coordinates"][0], eachStop["coordinates"][1])], outline_color="red", border_width=12, command=polygonClicked, name=polygon_name)
-
+            
+            mapview.set_marker(path_to_destination[0]["coordinates"][0], path_to_destination[0]["coordinates"][1], "Walk to " + path_to_destination[0]["bus_stop_name"], marker_color_circle="white", marker_color_outside="blue" )
+            mapview.set_marker(path_to_destination[-1]["coordinates"][0], path_to_destination[-1]["coordinates"][1], "Walk to " + userInputLocation2.get(), marker_color_circle="white", marker_color_outside="blue")
 
         path_list.append(location2)
     else:
