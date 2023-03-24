@@ -163,17 +163,16 @@ def getShortestPath(previous_nodes, shortest_path, start, end):
 def getShortestPathFromList(previous_nodes, start, end_stops, toReach):
     data = getOverviewData()
     collated_data = getCollatedData()
-    shortest_length = float('inf')
     shortest_path = []
+    shortest_length = float('inf')
     distance_to_end = float('inf')
 
     for i in range(len(end_stops)):
         destination = end_stops[i]
         curr_length = 0
         path = []
-        eachDestCoord = (0,0)
+        eachDestCoord = Coordinates(data[destination]["lat"], data[destination]["lng"])
         while destination != start:
-            eachDestCoord = Coordinates(data[destination]["lat"], data[destination]["lng"])
             path.append({
                 "bus_stop_name": destination,
                 "coordinates" : (data[destination]["lat"], data[destination]["lng"]),
@@ -186,6 +185,7 @@ def getShortestPathFromList(previous_nodes, start, end_stops, toReach):
 
         if shortest_length > curr_length or distanceBetween(eachDestCoord, toReach) < distance_to_end:
             shortest_length = curr_length
+            print("getShotrtestPathFromList method; eachDestCoord = {}, toReach = {}".format(eachDestCoord, toReach))
             distance_to_end = distanceBetween(eachDestCoord, toReach)
             shortest_path= path
 
