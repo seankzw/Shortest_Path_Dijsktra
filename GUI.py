@@ -96,13 +96,42 @@ def createPath(left_frame):
     overviewData = getOverviewData() # To gather all the data for retrieval
     path_list = [] # Contains the path to show in the routes display
 
-    # To display the paths
-    label = ctk.CTkLabel(left_frame, justify="left", text="Directions:")
-    label.grid(column=0, row=8, sticky="w", padx=10)
+    # Create three tabviews to switch between different routes
+    routes_tabview = ctk.CTkTabview(left_frame)
+    routes_tabview.grid(column=0, row=9, padx=10, pady=10, sticky="nsew")
 
-    # Show routes
-    routes = ctk.CTkTextbox(left_frame, width=250, height=350, scrollbar_button_color="white", )
-    routes.grid(column=0, row=9)
+    # Tab 1 - Route 1
+    tab1 = routes_tabview.add("Least Walk")
+    label1 = ctk.CTkLabel(tab1, justify="left", text="Directions for Least Walk:")
+    label1.grid(column=0, row=8, sticky="w", padx=10)
+    routes = ctk.CTkTextbox(tab1, width=280, height=350, scrollbar_button_color="white")
+    routes.grid(column=0, row=9, sticky="nsew")
+
+
+    # Tab 2 - Route 2
+    tab2 = routes_tabview.add("Least Transfer")
+    label2 = ctk.CTkLabel(tab2, justify="left", text="Directions for Least Transfer:")
+    label2.grid(column=0, row=8, sticky="w", padx=10)
+    routes2 = ctk.CTkTextbox(tab2, width=280, height=350, scrollbar_button_color="white")
+    routes2.grid(column=0, row=9)
+
+
+    # Tab 3 - Route 3
+    tab3 = routes_tabview.add("Fastest")
+    label3 = ctk.CTkLabel(tab3, justify="left", text="Directions for Fastest:")
+    label3.grid(column=0, row=8, sticky="w", padx=10)
+    routes3 = ctk.CTkTextbox(tab3, width=280, height=350, scrollbar_button_color="white")
+    routes3.grid(column=0, row=9)
+
+
+
+    # # To display the paths
+    # label = ctk.CTkLabel(left_frame, justify="left", text="Directions:")
+    # label.grid(column=0, row=8, sticky="w", padx=10)
+
+    # # Show routes
+    # routes = ctk.CTkTextbox(left_frame, width=250, height=350, scrollbar_button_color="white", )
+    # routes.grid(column=0, row=9)
 
     print("location = {}".format(startLocation))
     print("location2 = {}".format(endLocation))
@@ -201,19 +230,19 @@ def initWindows():
     label = ctk.CTkLabel(left_frame,justify="left", text="Enter your start location:")
     label.grid(column=0, row=0, padx=10, sticky="w")
 
-    userStartInputField.grid(column=0, row=1, padx=10, pady=10) # Pack and position userInputField (Start Location)
+    userStartInputField.grid(column=0, row=1, padx=10, pady=10, sticky="w") # Pack and position userInputField (Start Location)
 
     # Create the label End Location
     label2 = ctk.CTkLabel(left_frame, justify="left",text="Enter your end location:")
     label2.grid(column=0, row=2, padx=10, sticky="w")
 
     # Create the input field for End Location
-    userEndInputField.grid(column=0, row=3, padx=10, pady=10)
+    userEndInputField.grid(column=0, row=3, padx=10, pady=10, sticky="w")
 
     # Toggle button for apperance mode
     toggleAndPath= ctk.CTkSwitch(left_frame, text="Dark Mode",command=change_appearance_mode, variable=switch_var, onvalue="dark",offvalue="light")
     toggleAndPath.grid(row=5, column=0, sticky="w", padx=10, pady=10)
-
+    
     #Create path button
     action_with_arg= partial(createPath, left_frame)
     button3 = ctk.CTkButton(left_frame, text="Create Path", command=action_with_arg)
