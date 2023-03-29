@@ -117,7 +117,7 @@ def createPath(left_frame):
     tab1 = routes_tabview.add("Least Walk")
     label1 = ctk.CTkLabel(tab1, justify="left", text="Directions for Least Walk:")
     label1.grid(column=0, row=8, sticky="w", padx=10)
-    routes = ctk.CTkTextbox(tab1, width=280, height=350, scrollbar_button_color="white")
+    routes = ctk.CTkTextbox(tab1, width=280, height=300, scrollbar_button_color="white")
     routes.grid(column=0, row=9, sticky="nsew")
 
 
@@ -125,7 +125,7 @@ def createPath(left_frame):
     tab2 = routes_tabview.add("Least Transfer")
     label2 = ctk.CTkLabel(tab2, justify="left", text="Directions for Least Transfer:")
     label2.grid(column=0, row=8, sticky="w", padx=10)
-    routes2 = ctk.CTkTextbox(tab2, width=280, height=350, scrollbar_button_color="white")
+    routes2 = ctk.CTkTextbox(tab2, width=280, height=300, scrollbar_button_color="white")
     routes2.grid(column=0, row=9)
 
 
@@ -133,7 +133,7 @@ def createPath(left_frame):
     tab3 = routes_tabview.add("Fastest")
     label3 = ctk.CTkLabel(tab3, justify="left", text="Directions for Fastest:")
     label3.grid(column=0, row=8, sticky="w", padx=10)
-    routes3 = ctk.CTkTextbox(tab3, width=280, height=350, scrollbar_button_color="white")
+    routes3 = ctk.CTkTextbox(tab3, width=280, height=300, scrollbar_button_color="white")
     routes3.grid(column=0, row=9)
 
 
@@ -151,7 +151,7 @@ def createPath(left_frame):
     print("location coord= {}".format(startLocation[0]))
 
     start_bus_stop = findNearestStop(Coordinates(startLocation[0], startLocation[1])) # Get nearest bus stop from start location
-    end_bus_stops = findNearest5Stop(Coordinates(endLocation[0],endLocation[1])) # Get 5 nearest bus stop from end location
+    end_bus_stops = findNearest5Stop(Coordinates(endLocation[0],endLocation[1])) # Get nearest bus stop from end location
 
     # Get distance between start and end
     distBetweenLoc = distanceBetween(Coordinates(startLocation[0], startLocation[1]), Coordinates(endLocation[0], endLocation[1]))
@@ -204,6 +204,12 @@ def createPath(left_frame):
             mapview.set_marker(path_to_destination[0]["coordinates"][0], path_to_destination[0]["coordinates"][1], "Walk to " + path_to_destination[0]["bus_stop_name"], marker_color_circle="white", marker_color_outside="blue" )
             mapview.set_marker(path_to_destination[-1]["coordinates"][0], path_to_destination[-1]["coordinates"][1], "Walk to " + userEndInputField.get(), marker_color_circle="white", marker_color_outside="blue")
 
+        # Distance between bus stop and end location
+        distanceFromStopToDest = distanceBetween(Coordinates(path_to_destination[-1]['coordinates'][0], path_to_destination[-1]['coordinates'][1]), Coordinates(endLocation[0], endLocation[1]))
+        routes.insert(END, "Walk {:.2f}km to {}".format(distanceFromStopToDest, path_to_destination[-1]["bus_stop_name"]))
+        totalTimeTaken = getTimeTaken(distanceFromLocToStop, 5.0) + getTimeTaken(length, 50.0) + getTimeTaken(distanceFromStopToDest, 5.0)
+        labelTime = ctk.CTkLabel(tab1, justify="right", text=totalTimeTaken * 60)
+        labelTime.grid(column=0, row=8, sticky="e", padx=10)
         path_list.append(endLocation)
     else:
         print("=============== Walk is nearer ===============")
