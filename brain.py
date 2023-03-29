@@ -197,3 +197,7 @@ def getShortestPathFromList(previous_nodes, start, end_stops, toReach):
 
     shortest_path.reverse()
     return (shortest_path,shortest_length)
+
+def getTimeTaken(distance, speed):
+    return distance / speed
+    
