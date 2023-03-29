@@ -221,6 +221,14 @@ def createPath(left_frame):
     # set routes to be disabled state so text field cannot be edited
     routes.configure(state=tk.DISABLED)
 
+def button_event():
+    busTiming = getBusTiming()
+    for i in busTiming:
+        print("Bus timing for " + i + " : " + ", ".join(busTiming[i]) + "\n")
+    top = ctk.CTkToplevel()
+    label = ctk.CTkLabel(top, text="Hello World")
+    label.grid(column=0, row=0, padx=10, sticky="w")
+
 #Initialising Windows Configuration
 def initWindows():
     #windows = ctk.CTk()
@@ -261,6 +269,10 @@ def initWindows():
     action_with_arg= partial(createPath, left_frame)
     button3 = ctk.CTkButton(left_frame, text="Create Path", command=action_with_arg)
     button3.grid(column=0, row=5, columnspan=10,sticky="e")
+
+    # Button for bus timings
+    button = ctk.CTkButton(master=windows, text="Bus Timings", command=button_event, width=120, height=32, border_width=0, corner_radius=8)
+    button.place(relx=0.9, rely=0.05, anchor=tk.CENTER)
 
     # Map view configurations
     mapview.add_right_click_menu_command(label="Add start location", command=add_start_loc, pass_coords=True)

@@ -104,6 +104,11 @@ def getOverviewData():
     data = json.loads(f.read())
     return data
 
+def getBusTiming():
+     f = open("bus_timings.json")
+     data = json.loads(f.read())
+     return data
+
 def dijkstra(start_node):
     data = getCollatedData()
     unvisited_nodes = list(data.keys())
