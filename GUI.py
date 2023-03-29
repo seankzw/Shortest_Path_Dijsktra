@@ -31,6 +31,7 @@ geolocator = Nominatim(user_agent="myApp") # For map
 
 #? ===== Global variables =====
 switch_var = ctk.StringVar(value="dark") # For switching appearance mode
+chosenFromMap = False
 
 #? ===== Helper method for the buttons =====
 # This method is a helper for the toggle button
@@ -43,12 +44,18 @@ def polygonClicked(polygon):
 
 # This method is a helper for the right click add start location
 def add_start_loc(coord):
+    clearMap()
+    mapview.set_marker(coord[0],coord[1], text_color="red",
+                                 marker_color_circle="white", marker_color_outside="green", font=("Helvetica Bold", 10))
     userStartInputField.delete(0,END)
     userStartInputField.insert(0,(str(coord[0]) + "," + str(coord[1])))
     return
 
 # This method is a helper for the right click add end location
 def add_end_loc(coord):
+    clearMap()
+    mapview.set_marker(coord[0],coord[1], text_color="red",
+                                 marker_color_circle="white", marker_color_outside="blue", font=("Helvetica Bold", 10))
     userEndInputField.delete(0,END)
     userEndInputField.insert(0,(str(coord[0]) + "," + str(coord[1])))
     return
@@ -78,17 +85,23 @@ def getLatLngFromUserInput(textField, isStartLocation):
             raise Exception(messagebox.showinfo("showinfo", "Location is not in Johor Bahru"))
         else:
             # create marker with custom colors and font
+            color = "green"
+            if not isStartLocation :
+                color = "red"
             mapview.set_marker(inputLocation.latitude, inputLocation.longitude, text_color="red",
-                                 marker_color_circle="white", marker_color_outside="green", font=("Helvetica Bold", 10))
+                                 marker_color_circle="white", marker_color_outside=color, font=("Helvetica Bold", 10))
 
     return (inputLocation.latitude, inputLocation.longitude)
 
 
-# THis meh
-def createPath(left_frame):
-    #Clear markers and polygons on map
+def clearMap():
     mapview.delete_all_marker()
     mapview.delete_all_polygon()
+
+
+def createPath(left_frame):
+    #Clear markers and polygons on map
+    clearMap()
 
     startLocation = getLatLngFromUserInput(userStartInputField, True) # get start location from input field
     endLocation = getLatLngFromUserInput(userEndInputField, False) # Get end location from input field
@@ -153,12 +166,14 @@ def createPath(left_frame):
     # path_to_destination contains shortest path to end bus stop
     # length contains the total distance travelled
     path_to_destination, length = getShortestPathFromList(previous_node,start_bus_stop, end_bus_stops, Coordinates(endLocation[0],endLocation[1]))
+    print("LENGTH IS = {}".format(length))
+
+    boundingBox = getBoundingBox(startLocation, endLocation)
+    mapview.fit_bounding_box(boundingBox[0],boundingBox[1])
 
     # if distance between the start and end is more then 2, then consider taking bus
     if distBetweenLoc > 2:
         print("=============== Retrieving shortest bus route ===============")
-        boundingBox = getBoundingBox(startLocation, endLocation)
-        mapview.fit_bounding_box(boundingBox[0],boundingBox[1])
 
         # Distance from start location to bus stop
         distanceFromLocToStop = distanceBetween(Coordinates(startLocation[0], startLocation[1]), Coordinates(overviewData[start_bus_stop]["lat"], overviewData[start_bus_stop]["lng"]))
@@ -181,7 +196,6 @@ def createPath(left_frame):
 
             # create marker with custom colors and font for this stop
             polygon_name = eachStop["bus_stop_name"] + "\n" + res
-            print(path_to_destination[-1])
 
             # Set polygon markers for all bus stops
             mapview.set_polygon([(eachStop["coordinates"][0], eachStop["coordinates"][1]), (eachStop["coordinates"][0], eachStop["coordinates"][1])], outline_color="red", border_width=12, command=polygonClicked, name=polygon_name)
