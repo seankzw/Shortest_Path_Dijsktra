@@ -1,3 +1,4 @@
+from collections import deque
 import json
 import sys
 import geocoder
@@ -142,6 +143,19 @@ def getShortestPath(previous_nodes, shortest_path, start, end):
     path = []
     destination = end
     data = getOverviewData()
+    collated_data = getCollatedData()
+
+    while destination != start:
+        path.append({
+            "bus_stop_name": destination,
+            "coordinates" : (data[destination]["lat"], data[destination]["lng"]),
+            "bus": data[destination]["operating_buses"]
+        })
+
+        prev_dest = previous_nodes[destination]
+        curr_length+= collated_data[prev_dest]["edgeTo"][destination]
+        destination = previous_nodes[destination]
+
     while destination != start:
         path.append({
             "bus_stop_name": destination,
@@ -185,7 +199,46 @@ def getShortestPathFromList(previous_nodes, start, end_stops, toReach):
 
         if shortest_length > curr_length or distanceBetween(eachDestCoord, toReach) < distance_to_end:
             shortest_length = curr_length
-            print("getShotrtestPathFromList method; eachDestCoord = {}, toReach = {}".format(eachDestCoord, toReach))
+            #print("getShotrtestPathFromList method; eachDestCoord = {}, toReach = {}".format(eachDestCoord, toReach))
+            distance_to_end = distanceBetween(eachDestCoord, toReach)
+            shortest_path= path
+
+    shortest_path.append({
+        "bus_stop_name": start,
+        "coordinates" : (data[start]["lat"], data[start]["lng"]),
+        "bus": data[start]["operating_buses"],
+    })
+
+    shortest_path.reverse()
+    return (shortest_path,shortest_length)
+
+def getLeastTransferFromList(previous_nodes, start, end_stops, toReach):
+    data = getOverviewData()
+    collated_data = getCollatedData()
+    shortest_path = []
+    shortest_length = float('inf')
+    distance_to_end = float('inf')
+
+    for i in range(len(end_stops)):
+        destination = end_stops[i]
+        curr_length = 0
+        path = []
+        visited = set()
+        eachDestCoord = Coordinates(data[destination]["lat"], data[destination]["lng"])
+        while destination != start:
+            path.append({
+                "bus_stop_name": destination,
+                "coordinates" : (data[destination]["lat"], data[destination]["lng"]),
+                "bus": data[destination]["operating_buses"]
+            })
+
+            prev_dest = previous_nodes[destination]
+            curr_length+= collated_data[prev_dest]["edgeTo"][destination]
+            destination = previous_nodes[destination]
+
+        if shortest_length > curr_length or distanceBetween(eachDestCoord, toReach) < distance_to_end:
+            shortest_length = curr_length
+            #print("getShotrtestPathFromList method; eachDestCoord = {}, toReach = {}".format(eachDestCoord, toReach))
             distance_to_end = distanceBetween(eachDestCoord, toReach)
             shortest_path= path
 
@@ -201,3 +254,9 @@ def getShortestPathFromList(previous_nodes, start, end_stops, toReach):
 def getTimeTaken(distance, speed):
     return distance / speed
     
+
+def getAmountOfTrf(path):
+    for i in path:
+         print(i["bus"])
+         print("---")
+
