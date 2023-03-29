@@ -28,19 +28,11 @@ def printPath(path):
     for i in path:
         print(i["bus_stop_name"], "->")
 
-def testForMapLocationInput():
-    location = 1.4745767226376423,103.72922994853508
-    location2 =1.4714878389579569,103.73506643535148
-    startCoord = Coordinates(1.4745767226376423,103.72922994853508)
-    endCoord = Coordinates(1.4714878389579569,103.73506643535148)
+def getAmountOfTransfer():
+    start_node= findNearestStop(johor_islamic_complex)
+    previous_node, shortest_path = dijkstra(start_node)
+    end_bus_stops = findNearest5Stop(paradigm_mall)
+    path2, length = getShortestPathFromList(previous_node, start_node, end_bus_stops, larkin_terminal)
+    getAmountOfTrf(path2)
 
-    start_bus_stop = findNearestStop(startCoord)
-    end_bus_stops = findNearest5Stop(endCoord)
-
-    previous_node, shortest_path = dijkstra(start_bus_stop)
-
-    path_to_destination, length = getShortestPathFromList(previous_node,start_bus_stop, end_bus_stops, Coordinates(location2[0],location2[1]))
-    print(path_to_destination)
-
-testForMapLocationInput()
-
+getAmountOfTransfer()
