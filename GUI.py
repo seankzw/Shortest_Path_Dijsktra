@@ -32,6 +32,7 @@ geolocator = Nominatim(user_agent="myApp") # For map
 #? ===== Global variables =====
 switch_var = ctk.StringVar(value="dark") # For switching appearance mode
 chosenFromMap = False
+counter = 1
 
 #? ===== Helper method for the buttons =====
 # This method is a helper for the toggle button
@@ -66,9 +67,9 @@ def getLatLngFromUserInput(textField, isStartLocation):
     if inputField == '':
         # Show error message if empty
         if isStartLocation :
-            messagebox.showinfo("showinfo", "Enter Start Location")
+            messagebox.showinfo("Error", "Enter Start Location")
         else:
-            messagebox.showinfo("showinfo", "Enter End Location")
+            messagebox.showinfo("Error", "Enter End Location")
     elif re.match("^-?[0-9].+$",inputField):
         return tuple(float(x) for x in inputField.split(","))
     else:
@@ -78,11 +79,11 @@ def getLatLngFromUserInput(textField, isStartLocation):
 
         #Unable to find location
         if(inputLocation == None):
-            messagebox.showinfo("showinfo", "Unable to find end location, please try another location")
+            messagebox.showinfo("Error", "Unable to find location, please try another location")
 
         # Location is out of boundary (Johor Bahru)
         if((inputLocation.latitude>=1.6800 or inputLocation.latitude<=1.3272)or(inputLocation.longitude>=104.0687 or inputLocation.longitude<=103.4301)):
-            raise Exception(messagebox.showinfo("showinfo", "Location is not in Johor Bahru"))
+            raise Exception(messagebox.showinfo("Error", "Location is not in Johor Bahru"))
         else:
             # create marker with custom colors and font
             color = "green"
@@ -228,12 +229,20 @@ def createPath(left_frame):
     routes.configure(state=tk.DISABLED)
 
 def button_event():
-    busTiming = getBusTiming()
-    for i in busTiming:
-        print("Bus timing for " + i + " : " + ", ".join(busTiming[i]) + "\n")
-    top = ctk.CTkToplevel()
-    label = ctk.CTkLabel(top, text="Hello World")
-    label.grid(column=0, row=0, padx=10, sticky="w")
+    global counter
+    if counter < 5:
+        busTiming = getBusTiming()
+        displayTime = "Bus timing of the first bus stop of every bus number\n\n"
+        for i in busTiming:
+            displayTime += i + " : " + ", ".join(busTiming[i]) + "\n\n"
+        top = ctk.CTkToplevel()
+        top.title('Bus Timings')
+        label = ctk.CTkLabel(top, text=displayTime)
+        label.grid(column=0, row=0, padx=10, sticky="w")
+
+        counter += 1
+    else:
+        messagebox.showinfo("Error", "You have opened too many windows")
 
 #Initialising Windows Configuration
 def initWindows():
