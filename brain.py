@@ -293,9 +293,9 @@ def TimeFormatter(totalTime):
 
     if hours != 0:
         if hours > 1:
-            timeFormatter += str(hours) + " hrs"
+            timeFormatter += str(hours) + " hrs "
         else:
-            timeFormatter += str(hours) + " hr"
+            timeFormatter += str(hours) + " hr "
 
     if minutes != 0:
         if minutes > 1:

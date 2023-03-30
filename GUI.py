@@ -213,7 +213,7 @@ def createPath(left_frame):
         routes.insert(END, "Walk {:.2f}km from {} to {}".format(distanceFromStopToDest, path_to_destination[-1]["bus_stop_name"], Desintation[0]))
 
         # calculate the time taken for the route
-        totalTimeTaken = getTimeTaken(distanceFromLocToStop, 5.0) + getTimeTaken(length, 50.0) + getTimeTaken(distanceFromStopToDest, 5.0)
+        totalTimeTaken = getTimeTaken(distanceFromLocToStop, 5.0) + getTimeTaken(length, 20.5) + getTimeTaken(distanceFromStopToDest, 5.0)
         timeTakenFormat = TimeFormatter(totalTimeTaken)
         labelTimeTaken = ctk.CTkLabel(tab1, justify="left", text="Time taken: " + timeTakenFormat)
         labelTimeTaken.grid(column=0, row=9, sticky="w", padx=10)
