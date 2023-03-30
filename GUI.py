@@ -156,7 +156,49 @@ def clearMap():
     mapview.delete_all_marker()
     mapview.delete_all_polygon()
 
+# What I tried 
+# def createPath(left_frame):
+#     #Clear markers and polygons on map
+#     clearMap()
 
+#     routesHeight = 280
+#     routesWidth = 550
+#     startLocation = getLatLngFromUserInput(userStartInputField, True) # get start location from input field
+#     endLocation = getLatLngFromUserInput(userEndInputField, False) # Get end location from input field
+
+#     overviewData = getCollatedData() # To gather all the data for retrieval
+#     path_list = [] # Contains the path to show in the routes display
+
+#     # Create three tabviews to switch between different routes
+#     routes_tabview = ctk.CTkTabview(left_frame)
+#     routes_tabview.grid(column=0, row=9, padx=10, pady=10, sticky="nsew")
+
+#     def add_route_tab(tab):
+#         label = ctk.CTkLabel(tab, justify="left", text=f"Directions for")
+#         label.grid(column=0, row=8, sticky="w", padx=10)
+#         routes = ctk.CTkTextbox(tab, width=routesHeight, height=routesWidth, scrollbar_button_color="white")
+#         routes.grid(column=0, row=10)
+#         routes.tag_config("path", foreground="#00e5ff" if switch_var.get() == "dark" else "#01434a")
+#         routes.tag_config("buses", foreground="#d9c702" if switch_var.get() == "dark" else "#7a050f")
+#         routes.tag_config("walk", foreground="#ffbd66" if switch_var.get()== "dark" else "#5c5240")
+#         routes.tag_config("arrow", foreground="#a19c97" if switch_var.get() == "dark" else "#211f3b")
+
+#     # Tab 1 - Route 1
+#     tab1 = routes_tabview.add("Least Walk")
+#     add_route_tab(tab1)
+
+#     # Tab 2 - Route 2
+#     tab2 = routes_tabview.add("Least Transfer")
+#     add_route_tab(tab2)
+
+#     # Tab 3 - Route 3
+#     tab3 = routes_tabview.add("Fastest")
+#     add_route_tab(tab3)
+
+#     # Add createPath method to both tab1 and tab2
+#     for tab in [tab1, tab2]:
+#         btn = ctk.CTkButton(tab, text="Get Directions", command=createPath)
+#         btn.grid(column=0, row=9, sticky="e", padx=10, pady=10)
 def createPath(left_frame):
     #Clear markers and polygons on map
     clearMap()
@@ -286,7 +328,7 @@ def initWindows():
     #windows = ctk.CTk()
     windows.geometry("1200x900") # Size of window
     windows.title("CSC1108 Johor Bahru Maps") # Title of the window
-    windows.resizable(0,0) # prevent the resize of window
+    # windows.resizable(0,0) # prevent the resize of window
     windows.iconphoto(False, tk.PhotoImage(file="compass.png")) # Custom image icon for the project
     ctk.CTkFont("Helvetica") # Font of the window
 
