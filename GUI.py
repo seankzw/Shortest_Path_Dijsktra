@@ -122,6 +122,9 @@ def createPath(left_frame):
     label1.grid(column=0, row=8, sticky="w", padx=10)
     routes = ctk.CTkTextbox(tab1, width=routesHeight, height=routesWidth, scrollbar_button_color="white")
     routes.grid(column=0, row=10, sticky="nsew")
+    routes.tag_config("path", foreground="#f51b55")
+    routes.tag_config("buses", foreground="yellow")
+    routes.tag_config("arrow", foreground="")
 
 
     # Tab 2 - Route 2
@@ -196,8 +199,15 @@ def createPath(left_frame):
 
             #res, test = re.subn("[\[\]\']","",str(buses))
             #print("EAch stop is : {}".format(eachStop))
-            busToTake = eachStop["bus_stop_name"] + " via \n" + " , ".join(buses)+ "\n\n"
-            routes.insert(END, busToTake)
+            busToTake = eachStop["bus_stop_name"] + "\n" + " / ".join(buses)+ "\n↓\n"
+            #routes.insert(END, busToTake,"path")
+
+            bus = eachStop["bus_stop_name"]
+            routes.insert(END, bus, "path")
+            routes.insert(END, "\n" + "/".join(buses), "buses")
+
+            routes.insert(END, "\n↓\n", "arrow")
+
             path_list.append((float(eachStop["coordinates"][0]),float(eachStop["coordinates"][1])))
 
             # create marker with custom colors and font for this stop

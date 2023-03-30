@@ -219,14 +219,21 @@ def getShortestPathFromList(previous_nodes, start, end_stops, toReach):
             eachEdgesOfNode = collated_data[previous_nodes[destination]]["edges"]
             for eachEdges in range(len(eachEdgesOfNode)):
                  if destination in eachEdgesOfNode[eachEdges]:
-                    #Check what bus you can take
+
+                    #Check what bus can take
+                    transportChoice = eachEdgesOfNode[eachEdges]["modeOfTransport"]
+                    if len(transportChoice) > 1 and "Walk" in transportChoice:
+                        transportChoice.remove("Walk")
+
+
                     path.append({
                         "bus_stop_name": destination,
                         "coordinates" : (collated_data[destination]["lat"], collated_data[destination]["lng"]),
-                        "bus": eachEdgesOfNode[eachEdges]["modeOfTransport"]
+                        "bus": transportChoice
                     })
                     curr_length += eachEdgesOfNode[eachEdges][destination]
 
+            # Change destination to the next destination (Working backwords)
             destination = previous_nodes[destination]
 
         if shortest_length > curr_length and distanceBetween(eachDestCoord, toReach) < distance_to_end:
