@@ -1,5 +1,3 @@
-
-from functools import partial
 import re
 import tkinter as tk
 import customtkinter as ctk
@@ -8,6 +6,8 @@ from tkinter import END, messagebox
 import tkintermapview as tkmv
 from Coordinates import Coordinates
 from brain import *
+from CollatedDataHelper import *
+
 
 
 #? ===== Windows =====
@@ -157,7 +157,7 @@ def clearMap():
     mapview.delete_all_polygon()
 
 
-def createPath(left_frame):
+def createPath():
     #Clear markers and polygons on map
     clearMap()
 
@@ -198,7 +198,7 @@ def createPath(left_frame):
     distBetweenLoc = distanceBetween(Coordinates(startLocation[0], startLocation[1]), Coordinates(endLocation[0], endLocation[1]))
 
     #Get distance between start location and start bus stop
-    distBetweenStartAndStop = distanceBetween(Coordinates(startLocation[0],startLocation[1]), getCoordFromBusStopName(start_bus_stop))
+    distBetweenStartAndStop = distanceBetween(Coordinates(startLocation[0],startLocation[1]), CollatedDataHelper.getCoordFromBusStopName(start_bus_stop))
     print("Distance between locations = {} \nDistance between start and bus stop = {}".format(distBetweenLoc, distBetweenStartAndStop))
 
     print("============ Running Dijkstra ! ============")
@@ -217,7 +217,7 @@ def createPath(left_frame):
         print("=============== Retrieving shortest bus route ===============")
 
         # Distance from start location to bus stop
-        distanceFromLocToStop = distanceBetween(Coordinates(startLocation[0], startLocation[1]), Coordinates(overviewData[start_bus_stop]["lat"], overviewData[start_bus_stop]["lng"]))
+        distanceFromLocToStop = distanceBetween(Coordinates(startLocation[0], startLocation[1]), CollatedDataHelper.getCoordFromBusStopName(start_bus_stop))
         routes.insert(END, "Walk {:.2f}km to {} \n↓\n".format(distanceFromLocToStop, start_bus_stop), "walk")
 
         # Push the start location in the path list first
@@ -320,8 +320,7 @@ def initWindows():
     toggleAndPath.grid(row=5, column=0, sticky="w", padx=10, pady=10)
 
     #Create path button
-    action_with_arg= partial(createPath, left_frame)
-    button3 = ctk.CTkButton(left_frame, text="Create Path", command=action_with_arg)
+    button3 = ctk.CTkButton(left_frame, text="Create Path", command=createPath)
     button3.grid(column=0, row=5, columnspan=8,sticky="e", padx=10)
 
     # Button to resetView

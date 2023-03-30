@@ -1,6 +1,8 @@
 {
     "python.analysis.extraPaths": [
-        "./models"
+        "./models",
+        "./classes",
+        "./common"
     ],
     "python.testing.pytestArgs": [
         "__pycache__"

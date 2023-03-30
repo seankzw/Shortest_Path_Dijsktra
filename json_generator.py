@@ -1,5 +1,6 @@
 import json
 import pandas as pd
+from CollatedDataHelper import CollatedDataHelper
 from Coordinates import Coordinates
 from brain import *
 
@@ -56,11 +57,11 @@ def collate_datav2():
 
             # Initialise the data if the busStopName is not in the dictionary
             if busStopName not in dict:
-                nearestStop = findNearestStopTest(currStopCoord)
+                nearestStop = findNearestStopDiffFromGiven(currStopCoord)
                 #nearestStops = findNearest5StopV2(currStopCoord)
 
                 edges.append({
-                    nearestStop : distanceBetween(currStopCoord, getCoordFromBusStopName(nearestStop)),
+                    nearestStop : distanceBetween(currStopCoord, CollatedDataHelper.getCoordFromBusStopName(nearestStop)),
                     "modeOfTransport": ["Walk"]
                 })
 
