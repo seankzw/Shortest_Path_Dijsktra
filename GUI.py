@@ -130,6 +130,10 @@ def createPath(left_frame):
     label1.grid(column=0, row=8, sticky="w", padx=10)
     routes = ctk.CTkTextbox(tab1, width=routesHeight, height=routesWidth, scrollbar_button_color="white")
     routes.grid(column=0, row=10, sticky="nsew")
+    routes.tag_config("path", foreground="#00e5ff" if switch_var.get() == "dark" else "#01434a")
+    routes.tag_config("buses", foreground="#d9c702" if switch_var.get() == "dark" else "#7a050f")
+    routes.tag_config("walk", foreground="#ffbd66" if switch_var.get()== "dark" else "#5c5240")
+    routes.tag_config("arrow", foreground="#a19c97" if switch_var.get() == "dark" else "#211f3b")
 
 
     # Tab 2 - Route 2
@@ -190,7 +194,7 @@ def createPath(left_frame):
 
         # Distance from start location to bus stop
         distanceFromLocToStop = distanceBetween(Coordinates(startLocation[0], startLocation[1]), Coordinates(overviewData[start_bus_stop]["lat"], overviewData[start_bus_stop]["lng"]))
-        routes.insert(END, "Walk {:.2f}km to {} \n\n".format(distanceFromLocToStop, start_bus_stop))
+        routes.insert(END, "Walk {:.2f}km to {} \n↓\n".format(distanceFromLocToStop, start_bus_stop), "walk")
 
         # Push the start location in the path list first
         path_list.append(startLocation)
@@ -204,8 +208,15 @@ def createPath(left_frame):
 
             #res, test = re.subn("[\[\]\']","",str(buses))
             #print("EAch stop is : {}".format(eachStop))
-            busToTake = eachStop["bus_stop_name"] + " via \n" + " , ".join(buses)+ "\n\n"
-            routes.insert(END, busToTake)
+            busToTake = eachStop["bus_stop_name"] + "\n" + " / ".join(buses)+ "\n↓\n"
+            #routes.insert(END, busToTake,"path")
+
+            bus = eachStop["bus_stop_name"]
+            routes.insert(END, bus, "path")
+            routes.insert(END, "\n" + "/".join(buses), "buses")
+
+            routes.insert(END, "\n↓\n", "arrow")
+
             path_list.append((float(eachStop["coordinates"][0]),float(eachStop["coordinates"][1])))
 
             # create marker with custom colors and font for this stop
@@ -222,7 +233,7 @@ def createPath(left_frame):
 
         # Distance between bus stop and end location
         distanceFromStopToDest = distanceBetween(Coordinates(path_to_destination[-1]['coordinates'][0], path_to_destination[-1]['coordinates'][1]), Coordinates(endLocation[0], endLocation[1]))
-        routes.insert(END, "Walk {:.2f}km from {} to {}".format(distanceFromStopToDest, path_to_destination[-1]["bus_stop_name"], endDestinationAddress[0]))
+        routes.insert(END, "Walk {:.2f}km from {} to {}".format(distanceFromStopToDest, path_to_destination[-1]["bus_stop_name"], endDestinationAddress[0]),"walk")
 
         # calculate the time taken for the route
         totalTimeTaken = getTimeTaken(distanceFromLocToStop, 5.0) + getTimeTaken(length, 20.5) + getTimeTaken(distanceFromStopToDest, 5.0)
@@ -242,26 +253,30 @@ def createPath(left_frame):
             walkTo = endstop
 
         # Set marker from start and end location to start and end bus stop
-        routes.insert(END, "Walk {:.2f}km to {} \n\n".format(distBetweenStartAndStop, walkTo))
+        routes.insert(END, "Walk {:.2f}km to {} \n\n".format(distBetweenStartAndStop, walkTo), "walk")
 
     # set routes to be disabled state so text field cannot be edited
     routes.configure(state=tk.DISABLED)
 
 def button_event():
-    global counter
-    if counter < 5:
-        busTiming = getBusTiming()
-        displayTime = "Bus timing of the first bus stop of every bus number\n\n"
-        for i in busTiming:
-            displayTime += i + " : " + ", ".join(busTiming[i]) + "\n\n"
-        top = ctk.CTkToplevel()
-        top.title('Bus Timings')
-        label = ctk.CTkLabel(top, text=displayTime)
-        label.grid(column=0, row=0, padx=10, sticky="w")
+    mapview.set_address("JB, MY")
+    mapview.set_zoom(12)
+    #global counter
+    #if counter < 5:
+    #    busTiming = getBusTiming()
+    #    displayTime = "Bus timing of the first bus stop of every bus number\n\n"
+    #    for i in busTiming:
+    #        displayTime += i + " : " + ", ".join(busTiming[i]) + "\n\n"
+    #    top = ctk.CTkToplevel()
+    #    top.title('Bus Timings')
+    #    label = ctk.CTkLabel(top, text=displayTime)
+    #    label.grid(column=0, row=0, padx=10, sticky="w")
 
-        counter += 1
-    else:
-        messagebox.showinfo("Error", "You have opened too many windows")
+    #    counter += 1
+
+
+    #else:
+    #    messagebox.showinfo("Error", "You have opened too many windows")
 
 #Initialising Windows Configuration
 def initWindows():
@@ -298,7 +313,7 @@ def initWindows():
     userEndInputField.grid(column=0, row=3, padx=10, pady=10, sticky="w")
 
     # Toggle button for apperance mode
-    toggleAndPath= ctk.CTkSwitch(left_frame, text="Dark Mode",command=change_appearance_mode, variable=switch_var, onvalue="dark",offvalue="light")
+    toggleAndPath= ctk.CTkSwitch(left_frame, state="disabled", text="Dark Mode",command=change_appearance_mode, variable=switch_var, onvalue="dark",offvalue="light")
     toggleAndPath.grid(row=5, column=0, sticky="w", padx=10, pady=10)
 
     #Create path button
@@ -307,7 +322,7 @@ def initWindows():
     button3.grid(column=0, row=5, columnspan=8,sticky="e")
 
     # Button for bus timings
-    button = ctk.CTkButton(master=windows, text="Bus Timings", command=button_event, width=120, height=32, border_width=0, corner_radius=8)
+    button = ctk.CTkButton(master=windows, text="Reset view", command=button_event, width=120, height=32, border_width=0, corner_radius=8)
     button.place(relx=0.9, rely=0.05, anchor=tk.CENTER)
 
     # Map view configurations
