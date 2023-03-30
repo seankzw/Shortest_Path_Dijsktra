@@ -1,7 +1,8 @@
 import json
 import pandas as pd
 from Coordinates import Coordinates
-from brain import distanceBetween
+from brain import *
+
 
 xl = pd.ExcelFile("bus_stops.xlsx")
 
@@ -36,10 +37,6 @@ def collate_data():
             currStopCoord = Coordinates(float(gps_location[0]),float(gps_location[1]))
             destination = {}
             curr_bus_number = []
-
-            if currStop["Bus stop"] in dict:
-                curr_bus_number = dict[currStop["Bus stop"]]["bus_number"]
-                destination = dict[currStop["Bus stop"]]["edgeTo"]
 
 
             if eachIndex + 1 < total_len:
@@ -83,7 +80,52 @@ def reader(source):
 
     return ("Shorterst stop from {} is {} at {}km".format(source, name, shortestRoute))
 
+def collate_datav2():
+    dict={}
+    for eachBusNumber in xl.sheet_names:
+        data = xl.parse(eachBusNumber)
+        df = pd.DataFrame(data)
+        for eachIndex, currStop in df.iterrows():
+            total_len = len(df.index)
+            gps_location = currStop["GPS Location"].split(",")
+            currStopCoord = Coordinates(float(gps_location[0]),float(gps_location[1]))
+            destination = {}
+            curr_bus_number = []
 
+            nearestBusStop = findNearestStopTest(currStopCoord)
+            destination[nearestBusStop] = distanceBetween(currStopCoord, getCoordFromBusStopName(nearestBusStop))
+            curr_bus_number.append("Walk")
+
+
+            if eachIndex + 1 < total_len:
+                # Add next stop
+                nextStop = df.iloc[eachIndex+1]
+                nextStopGPS = nextStop["GPS Location"].split(",")
+                nextStopCoord = Coordinates(float(nextStopGPS[0]), float(nextStopGPS[1]))
+
+                if nextStop["Bus stop"] not in destination:
+                    destination[nextStop["Bus stop"]] = distanceBetween(currStopCoord,nextStopCoord)
+
+
+
+                #newDestination = {
+                #        "bus_stop": nextStop["Bus stop"],
+                #        "distance":distanceBetween(currStopCoord,nextStopCoord)
+                #}
+
+            if eachBusNumber not in curr_bus_number:
+                curr_bus_number.append(eachBusNumber)
+
+            dict[currStop["Bus stop"]] = {
+                "bus_number": curr_bus_number,
+                "edgeTo": destination
+            }
+
+    with open("collated_datav2.json", "w") as outfile:
+        json.dump(dict, outfile)
+
+
+collate_datav2()
 #print(reader("Opp Shell Kiosk @ Taman Sri Putri"))
 #collate_data()
-generate_excel_overview()
+#generate_excel_overview()

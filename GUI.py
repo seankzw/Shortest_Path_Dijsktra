@@ -20,7 +20,7 @@ buttonFrame=ctk.CTkFrame(windows) # Buttom frame for Toggle and Create Path
 right_frame = tk.Frame(windows) # Create the right column for the map
 
 # Create mapview with right click options
-mapview = tkmv.TkinterMapView(right_frame, width=800, height=600, corner_radius=0)
+mapview = tkmv.TkinterMapView(right_frame, width=800, height=900, corner_radius=0)
 
 #? ===== Labels =====
 userStartInputField = ctk.CTkEntry(left_frame, placeholder_text="Johor Zoo", width=250)
@@ -32,6 +32,7 @@ geolocator = Nominatim(user_agent="myApp") # For map
 #? ===== Global variables =====
 switch_var = ctk.StringVar(value="dark") # For switching appearance mode
 chosenFromMap = False
+counter = 1
 
 #? ===== Helper method for the buttons =====
 # This method is a helper for the toggle button
@@ -66,9 +67,9 @@ def getLatLngFromUserInput(textField, isStartLocation):
     if inputField == '':
         # Show error message if empty
         if isStartLocation :
-            messagebox.showinfo("showinfo", "Enter Start Location")
+            messagebox.showinfo("Error", "Enter Start Location")
         else:
-            messagebox.showinfo("showinfo", "Enter End Location")
+            messagebox.showinfo("Error", "Enter End Location")
     elif re.match("^-?[0-9].+$",inputField):
         return tuple(float(x) for x in inputField.split(","))
     else:
@@ -78,11 +79,11 @@ def getLatLngFromUserInput(textField, isStartLocation):
 
         #Unable to find location
         if(inputLocation == None):
-            messagebox.showinfo("showinfo", "Unable to find end location, please try another location")
+            messagebox.showinfo("Error", "Unable to find location, please try another location")
 
         # Location is out of boundary (Johor Bahru)
         if((inputLocation.latitude>=1.6800 or inputLocation.latitude<=1.3272)or(inputLocation.longitude>=104.0687 or inputLocation.longitude<=103.4301)):
-            raise Exception(messagebox.showinfo("showinfo", "Location is not in Johor Bahru"))
+            raise Exception(messagebox.showinfo("Error", "Location is not in Johor Bahru"))
         else:
             # create marker with custom colors and font
             color = "green"
@@ -234,11 +235,26 @@ def createPath(left_frame):
     # set routes to be disabled state so text field cannot be edited
     routes.configure(state=tk.DISABLED)
 
+def button_event():
+    global counter
+    if counter < 5:
+        busTiming = getBusTiming()
+        displayTime = "Bus timing of the first bus stop of every bus number\n\n"
+        for i in busTiming:
+            displayTime += i + " : " + ", ".join(busTiming[i]) + "\n\n"
+        top = ctk.CTkToplevel()
+        top.title('Bus Timings')
+        label = ctk.CTkLabel(top, text=displayTime)
+        label.grid(column=0, row=0, padx=10, sticky="w")
+
+        counter += 1
+    else:
+        messagebox.showinfo("Error", "You have opened too many windows")
+
 #Initialising Windows Configuration
 def initWindows():
     #windows = ctk.CTk()
-    windows.attributes('-fullscreen', True)
-    # windows.geometry("800x600") # Size of window
+    windows.geometry("900x1000") # Size of window
     windows.title("CSC1108 Johor Bahru Maps") # Title of the window
     windows.resizable(0,0) # prevent the resize of window
     windows.iconphoto(False, tk.PhotoImage(file="compass.png")) # Custom image icon for the project
@@ -270,11 +286,15 @@ def initWindows():
     # Toggle button for apperance mode
     toggleAndPath= ctk.CTkSwitch(left_frame, text="Dark Mode",command=change_appearance_mode, variable=switch_var, onvalue="dark",offvalue="light")
     toggleAndPath.grid(row=5, column=0, sticky="w", padx=10, pady=10)
-    
+
     #Create path button
     action_with_arg= partial(createPath, left_frame)
     button3 = ctk.CTkButton(left_frame, text="Create Path", command=action_with_arg)
     button3.grid(column=0, row=5, columnspan=10,sticky="e")
+
+    # Button for bus timings
+    button = ctk.CTkButton(master=windows, text="Bus Timings", command=button_event, width=120, height=32, border_width=0, corner_radius=8)
+    button.place(relx=0.9, rely=0.05, anchor=tk.CENTER)
 
     # Map view configurations
     mapview.add_right_click_menu_command(label="Add start location", command=add_start_loc, pass_coords=True)
