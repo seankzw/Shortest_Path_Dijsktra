@@ -35,7 +35,7 @@ def distanceBetween(currLoc, userLoc):
 
 # Find nearest location to busstop from User Location
 def findNearestStop(userLoc):
-	f = open("excel_overview.json")
+	f = open("collated_datav2.json")
 	data = json.load(f)
 
 	shortestDistance = 1000
@@ -50,7 +50,7 @@ def findNearestStop(userLoc):
 
 # Find nearest location to busstop from User Location
 def findNearestStopTest(userLoc):
-    f = open("excel_overview.json")
+    f = open("collated_datav2.json")
     data = json.load(f)
     index = ""
     shortestDistance = 1000
@@ -76,7 +76,7 @@ def findNearestStopWithData(userLoc, data):
 	return startBus
 
 def findNearest5Stop(userLoc):
-	f = open("excel_overview.json")
+	f = open("collated_datav2.json")
 	all_bus_stops = json.load(f)
 	counter = 0
 	shortest5=[]
@@ -90,7 +90,7 @@ def findNearest5Stop(userLoc):
 	return shortest5
 
 def getCoordFromBusStopName(busStopName):
-	data = getOverviewData()
+	data = getCollatedData()
 	coord = Coordinates(data[busStopName]["lat"], data[busStopName]["lng"])
 	return coord
 
@@ -113,13 +113,9 @@ def getBoundingBox(loc1, loc2):
 	botRightY = max(y1,y2)
 
 	return (topLeftX, topLeftY),(botRightX, botRightY)
+
 def getCollatedData():
     f = open("collated_datav2.json")
-    data = json.loads(f.read())
-    return data
-
-def getOverviewData():
-    f = open("excel_overview.json")
     data = json.loads(f.read())
     return data
 
@@ -335,7 +331,7 @@ def findNearestStopWithDatav2(userLoc, data):
     return startBus
 
 def findNearest5StopV2(userLoc):
-	f = open("excel_overview.json")
+	f = open("collated_datav2.json")
 	all_bus_stops = json.load(f)
 	counter = 0
 	shortest5=[]
@@ -350,7 +346,7 @@ def findNearest5StopV2(userLoc):
 
 # Find nearest location to busstop from User Location
 def findNearestStopV2(userLoc):
-    f = open("excel_overview.json")
+    f = open("collated_datav2.json")
     data = json.load(f)
     index = ""
     shortestDistance = 1000

@@ -109,7 +109,7 @@ def createPath(left_frame):
     startLocation = getLatLngFromUserInput(userStartInputField, True) # get start location from input field
     endLocation = getLatLngFromUserInput(userEndInputField, False) # Get end location from input field
 
-    overviewData = getOverviewData() # To gather all the data for retrieval
+    overviewData = getCollatedData() # To gather all the data for retrieval
     path_list = [] # Contains the path to show in the routes display
 
     # Create three tabviews to switch between different routes
