@@ -163,6 +163,7 @@ def dijkstra(start_node):
 
 
         unvisited_nodes.remove(curr_shortest_route)
+
     return previous_nodes, shortest_path
 
 
@@ -203,39 +204,32 @@ def getShortestPath(previous_nodes, shortest_path, start, end):
 
 
 def getShortestPathFromList(previous_nodes, start, end_stops, toReach):
-    data = getOverviewData()
     collated_data = getCollatedData()
     shortest_path = []
     shortest_length = float('inf')
     distance_to_end = float('inf')
 
-    print(end_stops)
+    # Loops through 5 bus stop (Given as argument as end_stops)
     for i in range(len(end_stops)):
         destination = end_stops[i]
         curr_length = 0
         path = []
-        eachDestCoord = Coordinates(data[destination]["lat"], data[destination]["lng"])
+        eachDestCoord = Coordinates(collated_data[destination]["lat"], collated_data[destination]["lng"])
         while destination != start:
-            path.append({
-                "bus_stop_name": destination,
-                "coordinates" : (data[destination]["lat"], data[destination]["lng"]),
-                "bus": data[destination]["operating_buses"]
-            })
+            # append start bus stop, coordinates and buses to path
+            #print("destination = {}".format(destination))
+            #print("Collated data destination = {}".format(collated_data[previous_nodes[destination]]["edges"]))
 
-            prev_dest = previous_nodes[destination]
-            edges = collated_data[prev_dest]["edges"]
-            shortestCost = 0
-            for eachEdgesIndex in range (len(edges)):
-                if eachEdgesIndex == 0:
-                    for index, (destinationName, distanceCost) in enumerate(edges[eachEdgesIndex].items()):
-                        if index == 0:
-                            shortestCost = distanceCost
-                else:
-                    for index, (destinationName, distanceCost) in enumerate(edges[eachEdgesIndex].items()):
-                        if index == 0 and distanceCost < shortestCost:
-                            shortestCost = distanceCost
-                        
-            curr_length+= shortestCost
+            eachEdgesOfNode = collated_data[previous_nodes[destination]]["edges"]
+            for eachEdges in range(len(eachEdgesOfNode)):
+                 if destination in eachEdgesOfNode[eachEdges]:
+                    path.append({
+                        "bus_stop_name": destination,
+                        "coordinates" : (collated_data[destination]["lat"], collated_data[destination]["lng"]),
+                        "bus": eachEdgesOfNode[eachEdges]["modeOfTransport"]
+                    })
+                    curr_length += eachEdgesOfNode[eachEdges][destination]
+
             destination = previous_nodes[destination]
 
         if shortest_length > curr_length and distanceBetween(eachDestCoord, toReach) < distance_to_end:
@@ -244,10 +238,11 @@ def getShortestPathFromList(previous_nodes, start, end_stops, toReach):
             distance_to_end = distanceBetween(eachDestCoord, toReach)
             shortest_path= path
 
+    # Aadd in the ending bus stop
     shortest_path.append({
         "bus_stop_name": start,
-        "coordinates" : (data[start]["lat"], data[start]["lng"]),
-        "bus": data[start]["operating_buses"],
+        "coordinates" : (collated_data[start]["lat"], collated_data[start]["lng"]),
+        "bus": collated_data[start]["operating_buses"],
     })
 
     shortest_path.reverse()
@@ -300,7 +295,7 @@ def TimeFormatter(totalTime):
     # converting hours to seconds
     totalTime *= 3600
     # from seconds, convert to hours, minutes and seconds (if needed)
-    hours = int(totalTime // 3600) # getting the hours 
+    hours = int(totalTime // 3600) # getting the hours
     seconds = totalTime % 3600
     minutes = int(seconds // 60) # getting the minutes
     seconds %= 60 # getting the seconds

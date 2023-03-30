@@ -3,3655 +3,2255 @@
     "edges": [
       {
         "Pejabat Daerah Tanah Johor Bahru": 0.6126638381461361,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Opp Yayasan Bandaraya Johor Bahru": 1.4788349682970334,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "aft Jalan Tasek Utara": 1.7616607113663671,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "RTM Jabatan Penyiaran Negeri Johor": 1.9666806003942678,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Opp Shell Kiosk @ Jalan Tun Abdul Razak": 1.9829373103741064,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Pejabat Daerah Tanah Johor Bahru": 0.6126638381461361,
-        "modeOfTransport": "P101-loop"
-      },
-      {
-        "Pejabat Daerah Tanah Johor Bahru": 0.6126638381461361,
-        "modeOfTransport": "P211-02"
-      },
-      {
-        "Pejabat Daerah Tanah Johor Bahru": 0.6126638381461361,
-        "modeOfTransport": "P411-02"
+        "modeOfTransport": ["Walk", "P101-loop", "P211-02", "P411-02"]
       }
-    ]
+    ],
+    "lat": 1.4964559999542668,
+    "lng": 103.74374661113058,
+    "operating_buses": ["P101-loop", "P211-01", "P211-02", "P411-01", "P411-02"]
   },
   "Pejabat Daerah Tanah Johor Bahru": {
     "edges": [
-      { "Larkin Terminal": 0.6126638381461361, "modeOfTransport": "Walk" },
-      {
-        "Opp Yayasan Bandaraya Johor Bahru": 1.2377406103845676,
-        "modeOfTransport": "Walk"
-      },
+      { "Larkin Terminal": 0.6126638381461361, "modeOfTransport": ["Walk"] },
       {
         "RTM Jabatan Penyiaran Negeri Johor": 1.3623090694305515,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "aft Jalan Tasek Utara": 1.3894266971294633,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Opp Shell Kiosk @ Jalan Tun Abdul Razak": 1.511305146164644,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "RTM Jabatan Penyiaran Negeri Johor": 1.3623090694305515,
-        "modeOfTransport": "P101-loop"
+        "modeOfTransport": ["P101-loop"]
       },
       {
         "aft Shell Kiosk @ Jalan Tun Abdul Razak": 1.5226946083365058,
-        "modeOfTransport": "P211-02"
-      },
-      {
-        "aft Shell Kiosk @ Jalan Tun Abdul Razak": 1.5226946083365058,
-        "modeOfTransport": "P411-02"
+        "modeOfTransport": ["P211-02", "P411-02"]
       }
-    ]
+    ],
+    "lat": 1.4917281528123314,
+    "lng": 103.7409162392451,
+    "operating_buses": ["P101-loop", "P211-02", "P411-02"]
   },
   "RTM Jabatan Penyiaran Negeri Johor": {
     "edges": [
-      { "aft Jalan Tasek Utara": 1.178564286771807, "modeOfTransport": "Walk" },
       {
-        "Opp SJK (T) Jalan Yahya Awal": 1.2017794431854973,
-        "modeOfTransport": "Walk"
+        "aft Jalan Tasek Utara": 1.178564286771807,
+        "modeOfTransport": ["Walk"]
       },
       {
         "Opp Masjid Kolam Ayer": 1.2440942282655219,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Petronas Kiosk @ Jalan Yahya Awal": 1.3456278429815773,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Pejabat Daerah Tanah Johor Bahru": 1.3623090694305515,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Opp Masjid Kolam Ayer": 1.2440942282655219,
-        "modeOfTransport": "P101-loop"
+        "modeOfTransport": ["P101-loop"]
       }
-    ]
+    ],
+    "lat": 1.4801823177394162,
+    "lng": 103.7368168221016,
+    "operating_buses": ["P101-loop"]
   },
   "Opp Masjid Kolam Ayer": {
     "edges": [
       {
         "Opp Jabatan Pendidikan Johor": 0.16124101251866904,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Maktab Sultan Abu Bakar (English College)": 0.7602183582160408,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "RTM Jabatan Penyiaran Negeri Johor": 1.2440942282655219,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Opp Sekolah Kebangsaan Perempuan Jalan Yahya Awal": 1.3994983114959108,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Petronas Kiosk @ Jalan Yahya Awal": 1.4184041315372198,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Opp Jabatan Pendidikan Johor": 0.16124101251866904,
-        "modeOfTransport": "P101-loop"
+        "modeOfTransport": ["Walk", "P101-loop"]
       }
-    ]
+    ],
+    "lat": 1.4689940555974177,
+    "lng": 103.7368740086021,
+    "operating_buses": ["P101-loop"]
   },
   "Opp Jabatan Pendidikan Johor": {
     "edges": [
       {
         "Opp Masjid Kolam Ayer": 0.16124101251866904,
-        "modeOfTransport": "Walk"
+        "modeOfTransport": ["Walk"]
       },
       {
         "Maktab Sultan Abu Bakar (English College)": 0.6251616665725007,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "RTM Jabatan Penyiaran Negeri Johor": 1.4045647349803303,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Opp Sekolah Kebangsaan Perempuan Jalan Yahya Awal": 1.4714998549758849,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Petronas Kiosk @ Jalan Yahya Awal": 1.5180693516497648,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Maktab Sultan Abu Bakar (English College)": 0.6251616665725007,
-        "modeOfTransport": "P101-loop"
+        "modeOfTransport": ["P101-loop"]
       }
-    ]
+    ],
+    "lat": 1.4675510557185905,
+    "lng": 103.73673088953657,
+    "operating_buses": ["P101-loop"]
   },
   "Maktab Sultan Abu Bakar (English College)": {
     "edges": [
       {
         "Opp Jabatan Pendidikan Johor": 0.6251616665725007,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Opp Masjid Kolam Ayer": 0.7602183582160408,
-        "modeOfTransport": "Walk"
+        "modeOfTransport": ["Walk"]
       },
       {
         "Hospital Sultanah Aminah": 0.9725036112526834,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Johor Islamic Complex": 1.2711316652225797,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Opp Sekolah Kebangsaan Perempuan Jalan Yahya Awal": 1.5209384614188868,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Hospital Sultanah Aminah": 0.9725036112526834,
-        "modeOfTransport": "P101-loop"
+        "modeOfTransport": ["P101-loop"]
       }
-    ]
+    ],
+    "lat": 1.4627466510403129,
+    "lng": 103.73965194475493,
+    "operating_buses": ["P101-loop"]
   },
   "Hospital Sultanah Aminah": {
     "edges": [
       {
         "Johor Islamic Complex": 0.3115150578418135,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Maktab Sultan Abu Bakar (English College)": 0.9725036112526834,
-        "modeOfTransport": "Walk"
-      },
-      { "Wisma Persekutuan": 1.2920386337536007, "modeOfTransport": "Walk" },
-      {
-        "Opp Jabatan Pendidikan Johor": 1.5685540723622473,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Opp Masjid Kolam Ayer": 1.6754348546663858,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Johor Islamic Complex": 0.3115150578418135,
-        "modeOfTransport": "P101-loop"
+        "modeOfTransport": ["Walk", "P101-loop"]
       }
-    ]
+    ],
+    "lat": 1.4575742843315376,
+    "lng": 103.74670675307506,
+    "operating_buses": ["P101-loop"]
   },
   "Johor Islamic Complex": {
     "edges": [
       {
         "Hospital Sultanah Aminah": 0.3115150578418135,
-        "modeOfTransport": "Walk"
-      },
-      { "Wisma Persekutuan": 1.0492257368839355, "modeOfTransport": "Walk" },
-      {
-        "Maktab Sultan Abu Bakar (English College)": 1.2711316652225797,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Majlis Bandaraya Johor Bahru": 1.3826889522249384,
-        "modeOfTransport": "Walk"
+        "modeOfTransport": ["Walk"]
       },
       {
         "Bangunan Sultan Ibrahim": 1.461395241348077,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Bangunan Sultan Ibrahim": 1.461395241348077,
-        "modeOfTransport": "P101-loop"
+        "modeOfTransport": ["P101-loop"]
       }
-    ]
+    ],
+    "lat": 1.456742090233385,
+    "lng": 103.74938268472616,
+    "operating_buses": ["P101-loop"]
   },
   "Bangunan Sultan Ibrahim": {
     "edges": [
       {
         "Majlis Bandaraya Johor Bahru": 0.47293063482433717,
-        "modeOfTransport": "Walk"
+        "modeOfTransport": ["Walk"]
       },
-      { "Wisma Persekutuan": 0.4980034148729299, "modeOfTransport": "Walk" },
-      { "JB Sentral Terminal": 0.5214714131924264, "modeOfTransport": "Walk" },
-      { "R&F Mall": 0.8074247776302941, "modeOfTransport": "Walk" },
-      { "Menara MSC Cyberport": 1.1241641913472098, "modeOfTransport": "Walk" },
       {
         "Wisma Persekutuan": 0.4980034148729299,
-        "modeOfTransport": "P101-loop"
+        "modeOfTransport": ["P101-loop"]
       }
-    ]
+    ],
+    "lat": 1.4598336266506124,
+    "lng": 103.76216068221784,
+    "operating_buses": ["P101-loop"]
   },
   "Wisma Persekutuan": {
     "edges": [
       {
         "Bangunan Sultan Ibrahim": 0.4980034148729299,
-        "modeOfTransport": "Walk"
+        "modeOfTransport": ["Walk"]
       },
       {
         "Majlis Bandaraya Johor Bahru": 0.7401776212247033,
-        "modeOfTransport": "Walk"
-      },
-      { "JB Sentral Terminal": 0.848284284386454, "modeOfTransport": "Walk" },
-      {
-        "Johor Islamic Complex": 1.0492257368839355,
-        "modeOfTransport": "Walk"
-      },
-      { "R&F Mall": 1.2882638006431266, "modeOfTransport": "Walk" },
-      {
-        "Majlis Bandaraya Johor Bahru": 0.7401776212247033,
-        "modeOfTransport": "P101-loop"
+        "modeOfTransport": ["P101-loop"]
       }
-    ]
+    ],
+    "lat": 1.4609620562865593,
+    "lng": 103.75782511045665,
+    "operating_buses": ["P101-loop"]
   },
   "Majlis Bandaraya Johor Bahru": {
     "edges": [
       {
         "Bangunan Sultan Ibrahim": 0.47293063482433717,
-        "modeOfTransport": "Walk"
-      },
-      { "Wisma Persekutuan": 0.7401776212247033, "modeOfTransport": "Walk" },
-      { "JB Sentral Terminal": 0.9561784350845917, "modeOfTransport": "Walk" },
-      { "R&F Mall": 1.00308595992918, "modeOfTransport": "Walk" },
-      { "Menara MSC Cyberport": 1.3548896933389383, "modeOfTransport": "Walk" },
-      {
-        "JB Sentral Terminal": 0.9561784350845917,
-        "modeOfTransport": "P101-loop"
+        "modeOfTransport": ["Walk"]
       },
       {
         "JB Sentral Terminal": 0.9561784350845917,
-        "modeOfTransport": "P102-02"
+        "modeOfTransport": ["P101-loop", "P102-02"]
       }
-    ]
+    ],
+    "lat": 1.4555985388016415,
+    "lng": 103.76176881099856,
+    "operating_buses": ["P101-loop", "P102-01", "P102-02"]
   },
   "JB Sentral Terminal": {
     "edges": [
       {
         "Bangunan Sultan Ibrahim": 0.5214714131924264,
-        "modeOfTransport": "Walk"
-      },
-      { "R&F Mall": 0.6025168877935805, "modeOfTransport": "Walk" },
-      { "Menara MSC Cyberport": 0.7899709376300169, "modeOfTransport": "Walk" },
-      { "Wisma Persekutuan": 0.848284284386454, "modeOfTransport": "Walk" },
-      {
-        "Majlis Bandaraya Johor Bahru": 0.9561784350845917,
-        "modeOfTransport": "Walk"
+        "modeOfTransport": ["Walk"]
       },
       {
         "Menara MSC Cyberport": 0.7899709376300169,
-        "modeOfTransport": "P101-loop"
-      },
-      {
-        "Menara MSC Cyberport": 0.7899709376300169,
-        "modeOfTransport": "P102-02"
+        "modeOfTransport": ["P101-loop", "P102-02"]
       }
-    ]
+    ],
+    "lat": 1.4635691591027955,
+    "lng": 103.76499694129318,
+    "operating_buses": ["P101-loop", "P102-02"]
   },
   "Menara MSC Cyberport": {
     "edges": [
-      { "R&F Mall": 0.352231843135015, "modeOfTransport": "Walk" },
-      { "JB Sentral Terminal": 0.7899709376300169, "modeOfTransport": "Walk" },
-      {
-        "Opp Sekolah Menengah Foon Yew": 0.9352515500415046,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Sekolah Menengah Foon Yew": 1.0076816574442207,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Bangunan Sultan Ibrahim": 1.1241641913472098,
-        "modeOfTransport": "Walk"
-      },
+      { "R&F Mall": 0.352231843135015, "modeOfTransport": ["Walk"] },
       {
         "Opp Sekolah Kebangsaan Perempuan Jalan Yahya Awal": 2.8291533130602824,
-        "modeOfTransport": "P101-loop"
+        "modeOfTransport": ["P101-loop"]
       },
       {
         "Sekolah Menengah Foon Yew": 1.0076816574442207,
-        "modeOfTransport": "P102-02"
+        "modeOfTransport": ["P102-02"]
       }
-    ]
+    ],
+    "lat": 1.4622515143439279,
+    "lng": 103.77198033612271,
+    "operating_buses": ["P101-loop", "P102-02"]
   },
   "Opp Sekolah Kebangsaan Perempuan Jalan Yahya Awal": {
     "edges": [
       {
         "Petronas Kiosk @ Jalan Yahya Awal": 0.29652508970235336,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Opp SJK (T) Jalan Yahya Awal": 0.6685382104630517,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "aft Jalan Tasek Utara": 0.9224162974022132,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Opp Yayasan Bandaraya Johor Bahru": 1.2770569944076426,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Opp Masjid Kolam Ayer": 1.3994983114959108,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Petronas Kiosk @ Jalan Yahya Awal": 0.29652508970235336,
-        "modeOfTransport": "P101-loop"
+        "modeOfTransport": ["Walk", "P101-loop"]
       }
-    ]
+    ],
+    "lat": 1.4728712972429236,
+    "lng": 103.74885185047674,
+    "operating_buses": ["P101-loop"]
   },
   "Petronas Kiosk @ Jalan Yahya Awal": {
     "edges": [
       {
         "Opp Sekolah Kebangsaan Perempuan Jalan Yahya Awal": 0.29652508970235336,
-        "modeOfTransport": "Walk"
+        "modeOfTransport": ["Walk"]
       },
       {
         "Opp SJK (T) Jalan Yahya Awal": 0.37672609564921294,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "aft Jalan Tasek Utara": 0.6326982193598572,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Opp Yayasan Bandaraya Johor Bahru": 1.0090926137200251,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "RTM Jabatan Penyiaran Negeri Johor": 1.3456278429815773,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Opp SJK (T) Jalan Yahya Awal": 0.37672609564921294,
-        "modeOfTransport": "P101-loop"
+        "modeOfTransport": ["P101-loop"]
       }
-    ]
+    ],
+    "lat": 1.4753718119884702,
+    "lng": 103.7479248341084,
+    "operating_buses": ["P101-loop"]
   },
   "Opp SJK (T) Jalan Yahya Awal": {
     "edges": [
       {
         "aft Jalan Tasek Utara": 0.2561859127338462,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Petronas Kiosk @ Jalan Yahya Awal": 0.37672609564921294,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Opp Yayasan Bandaraya Johor Bahru": 0.6527495020874726,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Opp Sekolah Kebangsaan Perempuan Jalan Yahya Awal": 0.6685382104630517,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "RTM Jabatan Penyiaran Negeri Johor": 1.2017794431854973,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "aft Jalan Tasek Utara": 0.2561859127338462,
-        "modeOfTransport": "P101-loop"
+        "modeOfTransport": ["Walk", "P101-loop"]
       }
-    ]
+    ],
+    "lat": 1.478736856876273,
+    "lng": 103.74753116069688,
+    "operating_buses": ["P101-loop"]
   },
   "aft Jalan Tasek Utara": {
     "edges": [
       {
         "Opp SJK (T) Jalan Yahya Awal": 0.2561859127338462,
-        "modeOfTransport": "Walk"
+        "modeOfTransport": ["Walk"]
       },
       {
         "Opp Yayasan Bandaraya Johor Bahru": 0.42287964374180753,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Petronas Kiosk @ Jalan Yahya Awal": 0.6326982193598572,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Opp Sekolah Kebangsaan Perempuan Jalan Yahya Awal": 0.9224162974022132,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "RTM Jabatan Penyiaran Negeri Johor": 1.178564286771807,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Opp Yayasan Bandaraya Johor Bahru": 0.42287964374180753,
-        "modeOfTransport": "P101-loop"
+        "modeOfTransport": ["P101-loop"]
       }
-    ]
+    ],
+    "lat": 1.4810361535128787,
+    "lng": 103.74738498637815,
+    "operating_buses": ["P101-loop"]
   },
   "Opp Yayasan Bandaraya Johor Bahru": {
     "edges": [
       {
         "aft Jalan Tasek Utara": 0.42287964374180753,
-        "modeOfTransport": "Walk"
+        "modeOfTransport": ["Walk"]
       },
       {
-        "Opp SJK (T) Jalan Yahya Awal": 0.6527495020874726,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Petronas Kiosk @ Jalan Yahya Awal": 1.0090926137200251,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Pejabat Daerah Tanah Johor Bahru": 1.2377406103845676,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Opp Sekolah Kebangsaan Perempuan Jalan Yahya Awal": 1.2770569944076426,
-        "modeOfTransport": "Walk"
-      },
-      { "Larkin Terminal": 1.4788349682970334, "modeOfTransport": "P101-loop" }
-    ]
+        "Larkin Terminal": 1.4788349682970334,
+        "modeOfTransport": ["P101-loop"]
+      }
+    ],
+    "lat": 1.4843491421227393,
+    "lng": 103.74925303801986,
+    "operating_buses": ["P101-loop"]
   },
   "Hub PPR Sri Stulang": {
     "edges": [
-      { "PPR Sri Stulang": 0.18282674995029927, "modeOfTransport": "Walk" },
+      { "PPR Sri Stulang": 0.18282674995029927, "modeOfTransport": ["Walk"] },
       {
-        "Opp Petronas Kiosk @ Taman Bayu Puteri": 0.2845711267980498,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Petronas Kiosk @ Taman Bayu Puteri": 0.3169677120177577,
-        "modeOfTransport": "Walk"
+        "bef Jalan Sultanah Aminah": 0.4482316401854532,
+        "modeOfTransport": ["P102-01"]
       },
       {
         "aft Jalan Pasir Pelangi": 0.40393054524288347,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "bef Jalan Sultanah Aminah": 0.4482316401854532,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "bef Jalan Sultanah Aminah": 0.4482316401854532,
-        "modeOfTransport": "P102-01"
-      },
-      {
-        "aft Jalan Pasir Pelangi": 0.40393054524288347,
-        "modeOfTransport": "P106-loop"
+        "modeOfTransport": ["P106-loop"]
       }
-    ]
+    ],
+    "lat": 1.495066778509724,
+    "lng": 103.78766489813552,
+    "operating_buses": ["P102-01", "P102-02", "P106-loop"]
   },
   "bef Jalan Sultanah Aminah": {
     "edges": [
       {
         "Shell Kiosk @ Jalan Pasir Pelangi": 0.1509889928848856,
-        "modeOfTransport": "Walk"
-      },
-      { "Hub PPR Sri Stulang": 0.4482316401854532, "modeOfTransport": "Walk" },
-      {
-        "aft Jalan Pasir Pelangi": 0.49629092135988884,
-        "modeOfTransport": "Walk"
-      },
-      { "PPR Sri Stulang": 0.5871863840066468, "modeOfTransport": "Walk" },
-      {
-        "Opp Petronas Kiosk @ Taman Bayu Puteri": 0.7312740006697476,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Shell Kiosk @ Jalan Pasir Pelangi": 0.1509889928848856,
-        "modeOfTransport": "P102-01"
+        "modeOfTransport": ["Walk", "P102-01"]
       }
-    ]
+    ],
+    "lat": 1.4918540438972152,
+    "lng": 103.78522939384607,
+    "operating_buses": ["P102-01"]
   },
   "Shell Kiosk @ Jalan Pasir Pelangi": {
     "edges": [
       {
         "bef Jalan Sultanah Aminah": 0.1509889928848856,
-        "modeOfTransport": "Walk"
+        "modeOfTransport": ["Walk"]
       },
-      { "Hub PPR Sri Stulang": 0.5293147457676451, "modeOfTransport": "Walk" },
-      { "PPR Sri Stulang": 0.6344285639065373, "modeOfTransport": "Walk" },
-      {
-        "aft Jalan Pasir Pelangi": 0.6433115073476106,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Opp Petronas Kiosk @ Taman Bayu Puteri": 0.7995216372958317,
-        "modeOfTransport": "Walk"
-      },
-      { "Stulang Walk": 2.050229645620517, "modeOfTransport": "P102-01" }
-    ]
+      { "Stulang Walk": 2.050229645620517, "modeOfTransport": ["P102-01"] }
+    ],
+    "lat": 1.490657221092022,
+    "lng": 103.7858710502786,
+    "operating_buses": ["P102-01"]
   },
   "Stulang Walk": {
     "edges": [
-      { "Block 18": 0.2627878202784135, "modeOfTransport": "Walk" },
-      { "De' Stulang": 0.4536925936872802, "modeOfTransport": "Walk" },
-      { "Opp De' Stulang": 0.4604460536140504, "modeOfTransport": "Walk" },
-      {
-        "Opp Istana Pasir Pelangi": 0.5457144879870351,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Sekolah Menengah Foon Yew": 0.6261906211304777,
-        "modeOfTransport": "Walk"
-      },
-      { "Block 18": 0.2627878202784135, "modeOfTransport": "P102-01" }
-    ]
+      { "Block 18": 0.2627878202784135, "modeOfTransport": ["Walk", "P102-01"] }
+    ],
+    "lat": 1.473219175868682,
+    "lng": 103.77987903309756,
+    "operating_buses": ["P102-01"]
   },
   "Block 18": {
     "edges": [
-      { "De' Stulang": 0.1973879440504389, "modeOfTransport": "Walk" },
-      { "Opp De' Stulang": 0.2050716849334619, "modeOfTransport": "Walk" },
-      { "Stulang Walk": 0.2627878202784135, "modeOfTransport": "Walk" },
-      {
-        "Sekolah Menengah Foon Yew": 0.45649727901059206,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Opp Sekolah Menengah Foon Yew": 0.5323671588524094,
-        "modeOfTransport": "Walk"
-      },
-      { "Opp De' Stulang": 0.2050716849334619, "modeOfTransport": "P102-01" }
-    ]
+      { "De' Stulang": 0.1973879440504389, "modeOfTransport": ["Walk"] },
+      { "Opp De' Stulang": 0.2050716849334619, "modeOfTransport": ["P102-01"] }
+    ],
+    "lat": 1.4712543517887378,
+    "lng": 103.78119274105374,
+    "operating_buses": ["P102-01"]
   },
   "Opp De' Stulang": {
     "edges": [
-      { "De' Stulang": 0.008644763207306293, "modeOfTransport": "Walk" },
-      { "Block 18": 0.2050716849334619, "modeOfTransport": "Walk" },
-      {
-        "Sekolah Menengah Foon Yew": 0.32992314820563884,
-        "modeOfTransport": "Walk"
-      },
+      { "De' Stulang": 0.008644763207306293, "modeOfTransport": ["Walk"] },
       {
         "Opp Sekolah Menengah Foon Yew": 0.4039888352965673,
-        "modeOfTransport": "Walk"
-      },
-      { "Stulang Walk": 0.4604460536140504, "modeOfTransport": "Walk" },
-      {
-        "Opp Sekolah Menengah Foon Yew": 0.4039888352965673,
-        "modeOfTransport": "P102-01"
+        "modeOfTransport": ["P102-01"]
       }
-    ]
+    ],
+    "lat": 1.4694586265386058,
+    "lng": 103.7816131693062,
+    "operating_buses": ["P102-01"]
   },
   "Opp Sekolah Menengah Foon Yew": {
     "edges": [
       {
         "Sekolah Menengah Foon Yew": 0.0764973215907968,
-        "modeOfTransport": "Walk"
+        "modeOfTransport": ["Walk"]
       },
-      { "Opp De' Stulang": 0.4039888352965673, "modeOfTransport": "Walk" },
-      { "De' Stulang": 0.4110879813015562, "modeOfTransport": "Walk" },
-      { "Block 18": 0.5323671588524094, "modeOfTransport": "Walk" },
-      { "Stulang Walk": 0.6937555313873148, "modeOfTransport": "Walk" },
-      { "R&F Mall": 1.287466651886635, "modeOfTransport": "P102-01" }
-    ]
+      { "R&F Mall": 1.287466651886635, "modeOfTransport": ["P102-01"] }
+    ],
+    "lat": 1.4670599696628617,
+    "lng": 103.77888348421564,
+    "operating_buses": ["P102-01"]
   },
   "R&F Mall": {
     "edges": [
-      { "Menara MSC Cyberport": 0.352231843135015, "modeOfTransport": "Walk" },
-      { "JB Sentral Terminal": 0.6025168877935805, "modeOfTransport": "Walk" },
       {
-        "Bangunan Sultan Ibrahim": 0.8074247776302941,
-        "modeOfTransport": "Walk"
+        "Menara MSC Cyberport": 0.352231843135015,
+        "modeOfTransport": ["Walk"]
       },
       {
         "Majlis Bandaraya Johor Bahru": 1.00308595992918,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Opp Sekolah Menengah Foon Yew": 1.287466651886635,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Majlis Bandaraya Johor Bahru": 1.00308595992918,
-        "modeOfTransport": "P102-01"
+        "modeOfTransport": ["P102-01"]
       }
-    ]
+    ],
+    "lat": 1.4604109500292848,
+    "lng": 103.76940139190562,
+    "operating_buses": ["P102-01"]
   },
   "Sekolah Menengah Foon Yew": {
     "edges": [
       {
         "Opp Sekolah Menengah Foon Yew": 0.0764973215907968,
-        "modeOfTransport": "Walk"
+        "modeOfTransport": ["Walk"]
       },
-      { "Opp De' Stulang": 0.32992314820563884, "modeOfTransport": "Walk" },
-      { "De' Stulang": 0.33676409592128514, "modeOfTransport": "Walk" },
-      { "Block 18": 0.45649727901059206, "modeOfTransport": "Walk" },
-      { "Stulang Walk": 0.6261906211304777, "modeOfTransport": "Walk" },
-      { "De' Stulang": 0.33676409592128514, "modeOfTransport": "P102-02" }
-    ]
+      { "De' Stulang": 0.33676409592128514, "modeOfTransport": ["P102-02"] }
+    ],
+    "lat": 1.4676191769542326,
+    "lng": 103.77928432996893,
+    "operating_buses": ["P102-02"]
   },
   "De' Stulang": {
     "edges": [
-      { "Opp De' Stulang": 0.008644763207306293, "modeOfTransport": "Walk" },
-      { "Block 18": 0.1973879440504389, "modeOfTransport": "Walk" },
-      {
-        "Sekolah Menengah Foon Yew": 0.33676409592128514,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Opp Sekolah Menengah Foon Yew": 0.4110879813015562,
-        "modeOfTransport": "Walk"
-      },
-      { "Stulang Walk": 0.4536925936872802, "modeOfTransport": "Walk" },
+      { "Opp De' Stulang": 0.008644763207306293, "modeOfTransport": ["Walk"] },
       {
         "Opp Istana Pasir Pelangi": 0.9479790735398148,
-        "modeOfTransport": "P102-02"
+        "modeOfTransport": ["P102-02"]
       }
-    ]
+    ],
+    "lat": 1.4695342095051989,
+    "lng": 103.78163137912482,
+    "operating_buses": ["P102-02"]
   },
   "Opp Istana Pasir Pelangi": {
     "edges": [
-      { "Stulang Walk": 0.5457144879870351, "modeOfTransport": "Walk" },
-      { "Block 18": 0.7537819933519909, "modeOfTransport": "Walk" },
-      { "De' Stulang": 0.9479790735398148, "modeOfTransport": "Walk" },
-      { "Opp De' Stulang": 0.9561736112386042, "modeOfTransport": "Walk" },
-      {
-        "Sekolah Menengah Foon Yew": 1.1705131490345906,
-        "modeOfTransport": "Walk"
-      },
+      { "Stulang Walk": 0.5457144879870351, "modeOfTransport": ["Walk"] },
       {
         "The Mall, Mid Valley Southkey": 2.550121988497376,
-        "modeOfTransport": "P102-02"
+        "modeOfTransport": ["P102-02"]
       }
-    ]
+    ],
+    "lat": 1.47802564822168,
+    "lng": 103.78087113857356,
+    "operating_buses": ["P102-02"]
   },
   "The Mall, Mid Valley Southkey": {
     "edges": [
       {
         "aft Jalan Pasir Pelangi": 0.9588324178600677,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "bef Jalan Sultanah Aminah": 1.3507008776563911,
-        "modeOfTransport": "Walk"
-      },
-      { "Hub PPR Sri Stulang": 1.3560561188506652, "modeOfTransport": "Walk" },
-      {
-        "Opp Petronas Kiosk @ Taman Bayu Puteri": 1.4682720953648618,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Petronas Kiosk @ Taman Bayu Puteri": 1.4698095401138276,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "aft Jalan Pasir Pelangi": 0.9588324178600677,
-        "modeOfTransport": "P102-02"
+        "modeOfTransport": ["Walk", "P102-02"]
       }
-    ]
+    ],
+    "lat": 1.5005936801337696,
+    "lng": 103.77679017331387,
+    "operating_buses": ["P102-02"]
   },
   "aft Jalan Pasir Pelangi": {
     "edges": [
-      { "Hub PPR Sri Stulang": 0.40393054524288347, "modeOfTransport": "Walk" },
       {
-        "bef Jalan Sultanah Aminah": 0.49629092135988884,
-        "modeOfTransport": "Walk"
-      },
-      { "PPR Sri Stulang": 0.5763221251400595, "modeOfTransport": "Walk" },
-      {
-        "Opp Petronas Kiosk @ Taman Bayu Puteri": 0.5890554335787319,
-        "modeOfTransport": "Walk"
+        "Hub PPR Sri Stulang": 0.40393054524288347,
+        "modeOfTransport": ["Walk"]
       },
       {
         "Petronas Kiosk @ Taman Bayu Puteri": 0.6053304749785229,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Petronas Kiosk @ Taman Bayu Puteri": 0.6053304749785229,
-        "modeOfTransport": "P102-02"
-      },
-      {
-        "Petronas Kiosk @ Taman Bayu Puteri": 0.6053304749785229,
-        "modeOfTransport": "P106-loop"
+        "modeOfTransport": ["P102-02", "P106-loop"]
       }
-    ]
+    ],
+    "lat": 1.4961999552580305,
+    "lng": 103.7842123533323,
+    "operating_buses": ["P102-02", "P106-loop"]
   },
   "Petronas Kiosk @ Taman Bayu Puteri": {
     "edges": [
       {
         "Opp Petronas Kiosk @ Taman Bayu Puteri": 0.035798215619255544,
-        "modeOfTransport": "Walk"
-      },
-      { "PPR Sri Stulang": 0.22147165970360747, "modeOfTransport": "Walk" },
-      { "Hub PPR Sri Stulang": 0.3169677120177577, "modeOfTransport": "Walk" },
-      {
-        "aft Jalan Pasir Pelangi": 0.6053304749785229,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "bef Jalan Sultanah Aminah": 0.764577574189855,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Opp Petronas Kiosk @ Taman Bayu Puteri": 0.035798215619255544,
-        "modeOfTransport": "P102-02"
+        "modeOfTransport": ["Walk", "P102-02"]
       },
       {
         "BHPetrol Kiosk @ Permas Jaya": 2.61864003724716,
-        "modeOfTransport": "P106-loop"
+        "modeOfTransport": ["P106-loop"]
       }
-    ]
+    ],
+    "lat": 1.4971903071581996,
+    "lng": 103.78956720733493,
+    "operating_buses": ["P102-02", "P106-loop"]
   },
   "Opp Petronas Kiosk @ Taman Bayu Puteri": {
     "edges": [
       {
         "Petronas Kiosk @ Taman Bayu Puteri": 0.035798215619255544,
-        "modeOfTransport": "Walk"
-      },
-      { "PPR Sri Stulang": 0.18638098057059485, "modeOfTransport": "Walk" },
-      { "Hub PPR Sri Stulang": 0.2845711267980498, "modeOfTransport": "Walk" },
-      {
-        "aft Jalan Pasir Pelangi": 0.5890554335787319,
-        "modeOfTransport": "Walk"
+        "modeOfTransport": ["Walk"]
       },
       {
-        "bef Jalan Sultanah Aminah": 0.7312740006697476,
-        "modeOfTransport": "Walk"
-      },
-      { "PPR Sri Stulang": 0.18638098057059485, "modeOfTransport": "P102-02" },
-      { "PPR Sri Stulang": 0.18638098057059485, "modeOfTransport": "P106-loop" }
-    ]
+        "PPR Sri Stulang": 0.18638098057059485,
+        "modeOfTransport": ["P102-02", "P106-loop"]
+      }
+    ],
+    "lat": 1.4968842607355726,
+    "lng": 103.78946726500905,
+    "operating_buses": ["P102-02", "P106-loop"]
   },
   "PPR Sri Stulang": {
     "edges": [
-      { "Hub PPR Sri Stulang": 0.18282674995029927, "modeOfTransport": "Walk" },
-      {
-        "Opp Petronas Kiosk @ Taman Bayu Puteri": 0.18638098057059485,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Petronas Kiosk @ Taman Bayu Puteri": 0.22147165970360747,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "aft Jalan Pasir Pelangi": 0.5763221251400595,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "bef Jalan Sultanah Aminah": 0.5871863840066468,
-        "modeOfTransport": "Walk"
-      },
       {
         "Hub PPR Sri Stulang": 0.18282674995029927,
-        "modeOfTransport": "P102-02"
-      },
-      {
-        "Hub PPR Sri Stulang": 0.18282674995029927,
-        "modeOfTransport": "P106-loop"
+        "modeOfTransport": ["Walk", "P102-02", "P106-loop"]
       }
-    ]
+    ],
+    "lat": 1.495216173514998,
+    "lng": 103.78930285504046,
+    "operating_buses": ["P102-02", "P106-loop"]
   },
   "BHPetrol Kiosk @ Permas Jaya": {
     "edges": [
       {
         "Opp BHPetrol Kiosk @ Permas Jaya": 0.040742999082591894,
-        "modeOfTransport": "Walk"
-      },
-      { "AEON Permas Jaya": 0.7801894106231692, "modeOfTransport": "Walk" },
-      {
-        "bef Shell Kiosk @ Permas Jaya": 0.9148275464248643,
-        "modeOfTransport": "Walk"
+        "modeOfTransport": ["Walk"]
       },
       {
-        "Sekolah Kebangsaan Taman Permas Jaya 3": 1.0698820193798217,
-        "modeOfTransport": "Walk"
-      },
-      { "Jalan Permas 5/6": 1.1912956831080845, "modeOfTransport": "Walk" },
-      { "AEON Permas Jaya": 0.7801894106231692, "modeOfTransport": "P106-loop" }
-    ]
+        "AEON Permas Jaya": 0.7801894106231692,
+        "modeOfTransport": ["P106-loop"]
+      }
+    ],
+    "lat": 1.4942010877822336,
+    "lng": 103.81293468220896,
+    "operating_buses": ["P106-loop"]
   },
   "AEON Permas Jaya": {
     "edges": [
       {
         "Sekolah Kebangsaan Taman Permas Jaya 3": 0.4640768511079119,
-        "modeOfTransport": "Walk"
+        "modeOfTransport": ["Walk"]
       },
       {
         "Dewan Serbaguna Permas Jaya": 0.5283376743351985,
-        "modeOfTransport": "Walk"
-      },
-      { "Pan Vista": 0.5291894409744685, "modeOfTransport": "Walk" },
-      { "Mon Glori Apartment": 0.5292708610012241, "modeOfTransport": "Walk" },
-      {
-        "Opp BHPetrol Kiosk @ Permas Jaya": 0.7707372272671165,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Dewan Serbaguna Permas Jaya": 0.5283376743351985,
-        "modeOfTransport": "P106-loop"
+        "modeOfTransport": ["P106-loop"]
       }
-    ]
+    ],
+    "lat": 1.4960852287704014,
+    "lng": 103.81969568579773,
+    "operating_buses": ["P106-loop"]
   },
   "Dewan Serbaguna Permas Jaya": {
     "edges": [
       {
         "aft Jalan Permas 8/14": 0.3319153340035008,
-        "modeOfTransport": "Walk"
+        "modeOfTransport": ["Walk"]
       },
-      { "Pan Vista": 0.3451771096202066, "modeOfTransport": "Walk" },
-      { "Mon Glori Apartment": 0.345403994421343, "modeOfTransport": "Walk" },
-      {
-        "Sekolah Kebangsaan Taman Permas Jaya 3": 0.4927658207386855,
-        "modeOfTransport": "Walk"
-      },
-      { "AEON Permas Jaya": 0.5283376743351985, "modeOfTransport": "Walk" },
       {
         "Mon Glori Apartment": 0.345403994421343,
-        "modeOfTransport": "P106-loop"
+        "modeOfTransport": ["P106-loop"]
       }
-    ]
+    ],
+    "lat": 1.4977243949059944,
+    "lng": 103.82415696808461,
+    "operating_buses": ["P106-loop"]
   },
   "Mon Glori Apartment": {
     "edges": [
-      { "Pan Vista": 0.00022699969295073087, "modeOfTransport": "Walk" },
+      { "Pan Vista": 0.00022699969295073087, "modeOfTransport": ["Walk"] },
       {
-        "Sekolah Kebangsaan Taman Permas Jaya 3": 0.1920005014580986,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Dewan Serbaguna Permas Jaya": 0.345403994421343,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "aft Jalan Permas 8/14": 0.4097300007832662,
-        "modeOfTransport": "Walk"
-      },
-      { "AEON Permas Jaya": 0.5292708610012241, "modeOfTransport": "Walk" },
-      { "Opp Best Ku Motor": 2.335374272311074, "modeOfTransport": "P106-loop" }
-    ]
+        "Opp Best Ku Motor": 2.335374272311074,
+        "modeOfTransport": ["P106-loop"]
+      }
+    ],
+    "lat": 1.500135152236701,
+    "lng": 103.82219739383686,
+    "operating_buses": ["P106-loop"]
   },
   "Opp Best Ku Motor": {
     "edges": [
-      { "Best Ku Motor": 0.02813083142906142, "modeOfTransport": "Walk" },
-      {
-        "Lotus Plentong (Tesco Extra)": 0.609530622845262,
-        "modeOfTransport": "Walk"
-      },
-      { "Kia Motors": 0.6868654288623026, "modeOfTransport": "Walk" },
-      { "Opp Kia Motors": 0.7277507141398378, "modeOfTransport": "Walk" },
-      {
-        "House No. 63 Jalan Permas 1/1": 0.7415245201512403,
-        "modeOfTransport": "Walk"
-      },
-      { "Opp Kia Motors": 0.7277507141398378, "modeOfTransport": "P106-loop" }
-    ]
+      { "Best Ku Motor": 0.02813083142906142, "modeOfTransport": ["Walk"] },
+      { "Opp Kia Motors": 0.7277507141398378, "modeOfTransport": ["P106-loop"] }
+    ],
+    "lat": 1.5210770997516314,
+    "lng": 103.820602817106,
+    "operating_buses": ["P106-loop"]
   },
   "Opp Kia Motors": {
     "edges": [
-      { "Kia Motors": 0.050302044476403476, "modeOfTransport": "Walk" },
-      { "Giant Plentong": 0.190722727965479, "modeOfTransport": "Walk" },
-      { "bef Jalan Masai Baru": 0.5203253177219737, "modeOfTransport": "Walk" },
-      { "aft Jalan Masai Baru": 0.5570331593911861, "modeOfTransport": "Walk" },
-      {
-        "Hse No. 1 Jalan Seroja 22": 0.5784879335187774,
-        "modeOfTransport": "Walk"
-      },
+      { "Kia Motors": 0.050302044476403476, "modeOfTransport": ["Walk"] },
       {
         "bef Jalan Masai Baru": 0.5203253177219737,
-        "modeOfTransport": "P106-loop"
+        "modeOfTransport": ["P106-loop"]
       }
-    ]
+    ],
+    "lat": 1.5263136695996888,
+    "lng": 103.81667548941742,
+    "operating_buses": ["P106-loop"]
   },
   "bef Jalan Masai Baru": {
     "edges": [
       {
         "aft Jalan Masai Baru": 0.044708008360256166,
-        "modeOfTransport": "Walk"
+        "modeOfTransport": ["Walk"]
       },
       {
         "Lotus Plentong (Tesco Extra)": 0.3692005742717797,
-        "modeOfTransport": "Walk"
-      },
-      { "Opp Kia Motors": 0.5203253177219737, "modeOfTransport": "Walk" },
-      { "Kia Motors": 0.549299887623025, "modeOfTransport": "Walk" },
-      { "Giant Plentong": 0.6007277837112878, "modeOfTransport": "Walk" },
-      {
-        "Lotus Plentong (Tesco Extra)": 0.3692005742717797,
-        "modeOfTransport": "P106-loop"
+        "modeOfTransport": ["P106-loop"]
       }
-    ]
+    ],
+    "lat": 1.5234081864988613,
+    "lng": 103.81300609325264,
+    "operating_buses": ["P106-loop"]
   },
   "Lotus Plentong (Tesco Extra)": {
     "edges": [
-      { "bef Jalan Masai Baru": 0.3692005742717797, "modeOfTransport": "Walk" },
-      { "aft Jalan Masai Baru": 0.3979562698711105, "modeOfTransport": "Walk" },
-      { "Opp Best Ku Motor": 0.609530622845262, "modeOfTransport": "Walk" },
-      { "Kia Motors": 0.6310133371559917, "modeOfTransport": "Walk" },
-      { "Opp Kia Motors": 0.6314951126527322, "modeOfTransport": "Walk" },
+      {
+        "bef Jalan Masai Baru": 0.3692005742717797,
+        "modeOfTransport": ["Walk"]
+      },
       {
         "aft Jalan Masai Baru": 0.3979562698711105,
-        "modeOfTransport": "P106-loop"
+        "modeOfTransport": ["P106-loop"]
       }
-    ]
+    ],
+    "lat": 1.5208503941324885,
+    "lng": 103.81512393616983,
+    "operating_buses": ["P106-loop"]
   },
   "aft Jalan Masai Baru": {
     "edges": [
       {
         "bef Jalan Masai Baru": 0.044708008360256166,
-        "modeOfTransport": "Walk"
+        "modeOfTransport": ["Walk"]
       },
-      {
-        "Lotus Plentong (Tesco Extra)": 0.3979562698711105,
-        "modeOfTransport": "Walk"
-      },
-      { "Opp Kia Motors": 0.5570331593911861, "modeOfTransport": "Walk" },
-      { "Kia Motors": 0.5877758984434356, "modeOfTransport": "Walk" },
-      { "Giant Plentong": 0.6280573960802642, "modeOfTransport": "Walk" },
-      { "Giant Plentong": 0.6280573960802642, "modeOfTransport": "P106-loop" }
-    ]
+      { "Giant Plentong": 0.6280573960802642, "modeOfTransport": ["P106-loop"] }
+    ],
+    "lat": 1.5233928073879512,
+    "lng": 103.81260417664944,
+    "operating_buses": ["P106-loop"]
   },
   "Giant Plentong": {
     "edges": [
-      { "Opp Kia Motors": 0.190722727965479, "modeOfTransport": "Walk" },
-      { "Kia Motors": 0.22711488625209494, "modeOfTransport": "Walk" },
+      { "Opp Kia Motors": 0.190722727965479, "modeOfTransport": ["Walk"] },
       {
         "Hse No. 1 Jalan Seroja 22": 0.38791125747842936,
-        "modeOfTransport": "Walk"
-      },
-      { "bef Jalan Masai Baru": 0.6007277837112878, "modeOfTransport": "Walk" },
-      { "aft Jalan Masai Baru": 0.6280573960802642, "modeOfTransport": "Walk" },
-      {
-        "Hse No. 1 Jalan Seroja 22": 0.38791125747842936,
-        "modeOfTransport": "P106-loop"
+        "modeOfTransport": ["P106-loop"]
       }
-    ]
+    ],
+    "lat": 1.5278964005623548,
+    "lng": 103.81601426255317,
+    "operating_buses": ["P106-loop"]
   },
   "Hse No. 1 Jalan Seroja 22": {
     "edges": [
-      { "Giant Plentong": 0.38791125747842936, "modeOfTransport": "Walk" },
-      { "Opp Kia Motors": 0.5784879335187774, "modeOfTransport": "Walk" },
-      { "Kia Motors": 0.6140080199490082, "modeOfTransport": "Walk" },
-      { "bef Jalan Masai Baru": 0.8659088764081561, "modeOfTransport": "Walk" },
-      { "aft Jalan Masai Baru": 0.8773305362890539, "modeOfTransport": "Walk" },
+      { "Giant Plentong": 0.38791125747842936, "modeOfTransport": ["Walk"] },
       {
         "Opp Jalan Keembong 43": 1.0124860672997043,
-        "modeOfTransport": "P106-loop"
+        "modeOfTransport": ["P106-loop"]
       }
-    ]
+    ],
+    "lat": 1.5310476061988132,
+    "lng": 103.8145170588567,
+    "operating_buses": ["P106-loop"]
   },
   "Opp Jalan Keembong 43": {
     "edges": [
       {
         "Opp Suntoyo Enterprise": 0.17628696459778492,
-        "modeOfTransport": "Walk"
+        "modeOfTransport": ["Walk"]
       },
-      { "Jalan Seroja 54": 0.7664088814526379, "modeOfTransport": "Walk" },
-      { "Jalan Bakawali 86": 0.9278922947569187, "modeOfTransport": "Walk" },
       {
-        "Hse No. 1 Jalan Seroja 22": 1.0124860672997043,
-        "modeOfTransport": "Walk"
-      },
-      { "Giant Plentong": 1.296317630690629, "modeOfTransport": "Walk" },
-      { "Jalan Seroja 54": 0.7664088814526379, "modeOfTransport": "P106-loop" }
-    ]
+        "Jalan Seroja 54": 0.7664088814526379,
+        "modeOfTransport": ["P106-loop"]
+      }
+    ],
+    "lat": 1.5333407999575837,
+    "lng": 103.80570189815187,
+    "operating_buses": ["P106-loop"]
   },
   "Jalan Seroja 54": {
     "edges": [
-      { "Jalan Bakawali 86": 0.17360764312726293, "modeOfTransport": "Walk" },
-      {
-        "Opp Suntoyo Enterprise": 0.5903210014493009,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Opp Jalan Keembong 43": 0.7664088814526379,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Opp Pasar Awam Johor Jaya": 0.8028438750091289,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Hospital Sultan Ismail 2": 1.5590651554725097,
-        "modeOfTransport": "Walk"
-      },
       {
         "Jalan Bakawali 86": 0.17360764312726293,
-        "modeOfTransport": "P106-loop"
+        "modeOfTransport": ["Walk", "P106-loop"]
       }
-    ]
+    ],
+    "lat": 1.5370755247775638,
+    "lng": 103.79990688093852,
+    "operating_buses": ["P106-loop"]
   },
   "Jalan Bakawali 86": {
     "edges": [
-      { "Jalan Seroja 54": 0.17360764312726293, "modeOfTransport": "Walk" },
+      { "Jalan Seroja 54": 0.17360764312726293, "modeOfTransport": ["Walk"] },
       {
         "Opp Pasar Awam Johor Jaya": 0.6588472938995806,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Opp Suntoyo Enterprise": 0.7530996623043502,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Opp Jalan Keembong 43": 0.9278922947569187,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Hospital Sultan Ismail 2": 1.3933537193418541,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Opp Pasar Awam Johor Jaya": 0.6588472938995806,
-        "modeOfTransport": "P106-loop"
+        "modeOfTransport": ["P106-loop"]
       }
-    ]
+    ],
+    "lat": 1.5383792496951987,
+    "lng": 103.79904754232605,
+    "operating_buses": ["P106-loop"]
   },
   "Opp Pasar Awam Johor Jaya": {
     "edges": [
-      { "Jalan Bakawali 86": 0.6588472938995806, "modeOfTransport": "Walk" },
-      { "Jalan Seroja 54": 0.8028438750091289, "modeOfTransport": "Walk" },
-      { "AEON Tebrau City": 0.872785639540195, "modeOfTransport": "Walk" },
+      { "Jalan Bakawali 86": 0.6588472938995806, "modeOfTransport": ["Walk"] },
       {
-        "Hospital Sultan Ismail 2": 1.1654176563523855,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Hospital Sultan Ismail": 1.1964736484521628,
-        "modeOfTransport": "Walk"
-      },
-      { "AEON Tebrau City": 0.872785639540195, "modeOfTransport": "P106-loop" }
-    ]
+        "AEON Tebrau City": 0.872785639540195,
+        "modeOfTransport": ["P106-loop"]
+      }
+    ],
+    "lat": 1.5442854061651363,
+    "lng": 103.79952183431531,
+    "operating_buses": ["P106-loop"]
   },
   "AEON Tebrau City": {
     "edges": [
       {
         "Hospital Sultan Ismail": 0.7254166703186111,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Opp Pasar Awam Johor Jaya": 0.872785639540195,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Hospital Sultan Ismail 2": 1.0312973171986661,
-        "modeOfTransport": "Walk"
-      },
-      { "Jalan Bakawali 86": 1.494002700908555, "modeOfTransport": "Walk" },
-      { "Jalan Seroja 54": 1.654888283197055, "modeOfTransport": "Walk" },
-      {
-        "Hospital Sultan Ismail": 0.7254166703186111,
-        "modeOfTransport": "P106-loop"
+        "modeOfTransport": ["Walk", "P106-loop"]
       }
-    ]
+    ],
+    "lat": 1.551607288125913,
+    "lng": 103.79669251653316,
+    "operating_buses": ["P106-loop"]
   },
   "Hospital Sultan Ismail": {
     "edges": [
       {
         "Hospital Sultan Ismail 2": 0.4451414937961116,
-        "modeOfTransport": "Walk"
-      },
-      { "AEON Tebrau City": 0.7254166703186111, "modeOfTransport": "Walk" },
-      {
-        "Opp Pasar Awam Johor Jaya": 1.1964736484521628,
-        "modeOfTransport": "Walk"
-      },
-      { "Jalan Bakawali 86": 1.6085650170150998, "modeOfTransport": "Walk" },
-      { "Jalan Seroja 54": 1.781892570316497, "modeOfTransport": "Walk" },
-      {
-        "Hospital Sultan Ismail 2": 0.4451414937961116,
-        "modeOfTransport": "P106-loop"
+        "modeOfTransport": ["Walk", "P106-loop"]
       }
-    ]
+    ],
+    "lat": 1.5499616635265265,
+    "lng": 103.7903773386306,
+    "operating_buses": ["P106-loop"]
   },
   "Hospital Sultan Ismail 2": {
     "edges": [
       {
         "Hospital Sultan Ismail": 0.4451414937961116,
-        "modeOfTransport": "Walk"
+        "modeOfTransport": ["Walk"]
       },
-      { "AEON Tebrau City": 1.0312973171986661, "modeOfTransport": "Walk" },
-      {
-        "Opp Pasar Awam Johor Jaya": 1.1654176563523855,
-        "modeOfTransport": "Walk"
-      },
-      { "Jalan Bakawali 86": 1.3933537193418541, "modeOfTransport": "Walk" },
-      { "Jalan Seroja 54": 1.5590651554725097, "modeOfTransport": "Walk" },
       {
         "Opp Suntoyo Enterprise": 2.1464366585026,
-        "modeOfTransport": "P106-loop"
+        "modeOfTransport": ["P106-loop"]
       }
-    ]
+    ],
+    "lat": 1.5461347994301888,
+    "lng": 103.78920168581082,
+    "operating_buses": ["P106-loop"]
   },
   "Opp Suntoyo Enterprise": {
     "edges": [
       {
         "Opp Jalan Keembong 43": 0.17628696459778492,
-        "modeOfTransport": "Walk"
+        "modeOfTransport": ["Walk"]
       },
-      { "Jalan Seroja 54": 0.5903210014493009, "modeOfTransport": "Walk" },
-      { "Jalan Bakawali 86": 0.7530996623043502, "modeOfTransport": "Walk" },
-      {
-        "Hse No. 1 Jalan Seroja 22": 1.1830625428027226,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Opp Pasar Awam Johor Jaya": 1.248161191074977,
-        "modeOfTransport": "Walk"
-      },
-      { "Kia Motors": 1.6736638845647842, "modeOfTransport": "P106-loop" }
-    ]
+      { "Kia Motors": 1.6736638845647842, "modeOfTransport": ["P106-loop"] }
+    ],
+    "lat": 1.5341435435769857,
+    "lng": 103.80433427473359,
+    "operating_buses": ["P106-loop"]
   },
   "Kia Motors": {
     "edges": [
-      { "Opp Kia Motors": 0.050302044476403476, "modeOfTransport": "Walk" },
-      { "Giant Plentong": 0.22711488625209494, "modeOfTransport": "Walk" },
-      { "bef Jalan Masai Baru": 0.549299887623025, "modeOfTransport": "Walk" },
-      { "aft Jalan Masai Baru": 0.5877758984434356, "modeOfTransport": "Walk" },
-      {
-        "Hse No. 1 Jalan Seroja 22": 0.6140080199490082,
-        "modeOfTransport": "Walk"
-      },
-      { "Best Ku Motor": 0.6862282885862134, "modeOfTransport": "P106-loop" }
-    ]
+      { "Opp Kia Motors": 0.050302044476403476, "modeOfTransport": ["Walk"] },
+      { "Best Ku Motor": 0.6862282885862134, "modeOfTransport": ["P106-loop"] }
+    ],
+    "lat": 1.526168775593852,
+    "lng": 103.8171041865054,
+    "operating_buses": ["P106-loop"]
   },
   "Best Ku Motor": {
     "edges": [
-      { "Opp Best Ku Motor": 0.02813083142906142, "modeOfTransport": "Walk" },
-      {
-        "Lotus Plentong (Tesco Extra)": 0.632891652576247,
-        "modeOfTransport": "Walk"
-      },
-      { "Kia Motors": 0.6862282885862134, "modeOfTransport": "Walk" },
-      { "Opp Kia Motors": 0.7282469770922483, "modeOfTransport": "Walk" },
+      { "Opp Best Ku Motor": 0.02813083142906142, "modeOfTransport": ["Walk"] },
       {
         "House No. 63 Jalan Permas 1/1": 0.7653606675452971,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "House No. 63 Jalan Permas 1/1": 0.7653606675452971,
-        "modeOfTransport": "P106-loop"
+        "modeOfTransport": ["P106-loop"]
       }
-    ]
+    ],
+    "lat": 1.521229194565067,
+    "lng": 103.82080505021621,
+    "operating_buses": ["P106-loop"]
   },
   "House No. 63 Jalan Permas 1/1": {
     "edges": [
-      { "Opp Best Ku Motor": 0.7415245201512403, "modeOfTransport": "Walk" },
+      { "Opp Best Ku Motor": 0.7415245201512403, "modeOfTransport": ["Walk"] },
       {
-        "Lotus Plentong (Tesco Extra)": 0.7560435017324428,
-        "modeOfTransport": "Walk"
-      },
-      { "Best Ku Motor": 0.7653606675452971, "modeOfTransport": "Walk" },
-      { "bef Jalan Masai Baru": 1.1198226358022698, "modeOfTransport": "Walk" },
-      { "aft Jalan Masai Baru": 1.142409173592963, "modeOfTransport": "Walk" },
-      { "Jalan Permas 5/6": 1.2254575220996733, "modeOfTransport": "P106-loop" }
-    ]
+        "Jalan Permas 5/6": 1.2254575220996733,
+        "modeOfTransport": ["P106-loop"]
+      }
+    ],
+    "lat": 1.5148264261333237,
+    "lng": 103.81827810186249,
+    "operating_buses": ["P106-loop"]
   },
   "Jalan Permas 5/6": {
     "edges": [
       {
         "Sekolah Kebangsaan Taman Permas Jaya 3": 0.5120198281319914,
-        "modeOfTransport": "Walk"
-      },
-      { "Mon Glori Apartment": 0.6512488615435693, "modeOfTransport": "Walk" },
-      { "Pan Vista": 0.6514694131526694, "modeOfTransport": "Walk" },
-      { "AEON Permas Jaya": 0.8901206635748206, "modeOfTransport": "Walk" },
-      {
-        "Dewan Serbaguna Permas Jaya": 0.991815739559552,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Sekolah Kebangsaan Taman Permas Jaya 3": 0.5120198281319914,
-        "modeOfTransport": "P106-loop"
+        "modeOfTransport": ["Walk", "P106-loop"]
       }
-    ]
+    ],
+    "lat": 1.5038237251409665,
+    "lng": 103.8176464576763,
+    "operating_buses": ["P106-loop"]
   },
   "Sekolah Kebangsaan Taman Permas Jaya 3": {
     "edges": [
-      { "Mon Glori Apartment": 0.1920005014580986, "modeOfTransport": "Walk" },
-      { "Pan Vista": 0.1921433396779205, "modeOfTransport": "Walk" },
-      { "AEON Permas Jaya": 0.4640768511079119, "modeOfTransport": "Walk" },
       {
-        "Dewan Serbaguna Permas Jaya": 0.4927658207386855,
-        "modeOfTransport": "Walk"
+        "Mon Glori Apartment": 0.1920005014580986,
+        "modeOfTransport": ["Walk"]
       },
-      { "Jalan Permas 5/6": 0.5120198281319914, "modeOfTransport": "Walk" },
-      { "Pan Vista": 0.1921433396779205, "modeOfTransport": "P106-loop" }
-    ]
+      { "Pan Vista": 0.1921433396779205, "modeOfTransport": ["P106-loop"] }
+    ],
+    "lat": 1.5001862028022683,
+    "lng": 103.8204708549044,
+    "operating_buses": ["P106-loop"]
   },
   "Pan Vista": {
     "edges": [
       {
         "Mon Glori Apartment": 0.00022699969295073087,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Sekolah Kebangsaan Taman Permas Jaya 3": 0.1921433396779205,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Dewan Serbaguna Permas Jaya": 0.3451771096202066,
-        "modeOfTransport": "Walk"
+        "modeOfTransport": ["Walk"]
       },
       {
         "aft Jalan Permas 8/14": 0.4095937813441458,
-        "modeOfTransport": "Walk"
-      },
-      { "AEON Permas Jaya": 0.5291894409744685, "modeOfTransport": "Walk" },
-      {
-        "aft Jalan Permas 8/14": 0.4095937813441458,
-        "modeOfTransport": "P106-loop"
+        "modeOfTransport": ["P106-loop"]
       }
-    ]
+    ],
+    "lat": 1.5001335277464176,
+    "lng": 103.82219863061796,
+    "operating_buses": ["P106-loop"]
   },
   "aft Jalan Permas 8/14": {
     "edges": [
       {
         "Dewan Serbaguna Permas Jaya": 0.3319153340035008,
-        "modeOfTransport": "Walk"
+        "modeOfTransport": ["Walk"]
       },
-      { "Pan Vista": 0.4095937813441458, "modeOfTransport": "Walk" },
-      { "Mon Glori Apartment": 0.4097300007832662, "modeOfTransport": "Walk" },
-      {
-        "Sekolah Kebangsaan Taman Permas Jaya 3": 0.6016444170745336,
-        "modeOfTransport": "Walk"
-      },
-      { "AEON Permas Jaya": 0.8236251933914382, "modeOfTransport": "Walk" },
       {
         "Opp BHPetrol Kiosk @ Permas Jaya": 1.5809739295336087,
-        "modeOfTransport": "P106-loop"
+        "modeOfTransport": ["P106-loop"]
       }
-    ]
+    ],
+    "lat": 1.5001599109500323,
+    "lng": 103.82588336441847,
+    "operating_buses": ["P106-loop"]
   },
   "Opp BHPetrol Kiosk @ Permas Jaya": {
     "edges": [
       {
         "BHPetrol Kiosk @ Permas Jaya": 0.040742999082591894,
-        "modeOfTransport": "Walk"
+        "modeOfTransport": ["Walk"]
       },
-      { "AEON Permas Jaya": 0.7707372272671165, "modeOfTransport": "Walk" },
       {
         "bef Shell Kiosk @ Permas Jaya": 0.9280732230173286,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Sekolah Kebangsaan Taman Permas Jaya 3": 1.076318770223337,
-        "modeOfTransport": "Walk"
-      },
-      { "Jalan Permas 5/6": 1.2142396759681664, "modeOfTransport": "Walk" },
-      {
-        "bef Shell Kiosk @ Permas Jaya": 0.9280732230173286,
-        "modeOfTransport": "P106-loop"
+        "modeOfTransport": ["P106-loop"]
       }
-    ]
+    ],
+    "lat": 1.4938852204096618,
+    "lng": 103.81312044545798,
+    "operating_buses": ["P106-loop"]
   },
   "bef Shell Kiosk @ Permas Jaya": {
     "edges": [
       {
         "BHPetrol Kiosk @ Permas Jaya": 0.9148275464248643,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Opp BHPetrol Kiosk @ Permas Jaya": 0.9280732230173286,
-        "modeOfTransport": "Walk"
-      },
-      { "AEON Permas Jaya": 1.6944794332601414, "modeOfTransport": "Walk" },
-      { "PPR Sri Stulang": 1.7624824802016434, "modeOfTransport": "Walk" },
-      {
-        "Petronas Kiosk @ Taman Bayu Puteri": 1.7863916566481584,
-        "modeOfTransport": "Walk"
+        "modeOfTransport": ["Walk"]
       },
       {
         "Opp Petronas Kiosk @ Taman Bayu Puteri": 1.7871951007142912,
-        "modeOfTransport": "P106-loop"
+        "modeOfTransport": ["P106-loop"]
       }
-    ]
+    ],
+    "lat": 1.4923948683016146,
+    "lng": 103.80490543187601,
+    "operating_buses": ["P106-loop"]
   },
   "Taman Universiti Terminal": {
     "edges": [
       {
         "Jalan Kebudayaan 27 / 24 Intersection": 0.325887129082397,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Opp AEON Taman Universiti": 0.3836896416905215,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Aeon Taman Universiti": 0.43232913566197173,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Sekolah Kebangsaan Taman Universiti 4": 0.4955640745212205,
-        "modeOfTransport": "Walk"
+        "modeOfTransport": ["Walk"]
       },
       {
         "opp Sekolah Kebangsaan Taman Universiti 4": 0.5112035155284891,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "opp Sekolah Kebangsaan Taman Universiti 4": 0.5112035155284891,
-        "modeOfTransport": "P202-loop"
+        "modeOfTransport": ["P202-loop"]
       },
       {
         "Aeon Taman Universiti": 0.43232913566197173,
-        "modeOfTransport": "P211-01"
+        "modeOfTransport": ["P211-01"]
       }
-    ]
+    ],
+    "lat": 1.5386151368910133,
+    "lng": 103.62871889454172,
+    "operating_buses": ["P202-loop", "P211-01", "P211-02"]
   },
   "opp Sekolah Kebangsaan Taman Universiti 4": {
     "edges": [
       {
         "Sekolah Kebangsaan Taman Universiti 4": 0.017266413411069353,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Jalan Kebudayaan 27 / 24 Intersection": 0.1975329599901653,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Taman Universiti Terminal": 0.5112035155284891,
-        "modeOfTransport": "Walk"
-      },
-      { "Surau As Syakirin": 0.5269012566007739, "modeOfTransport": "Walk" },
-      {
-        "Opp Surau As Syakirin": 0.5627054169771284,
-        "modeOfTransport": "Walk"
+        "modeOfTransport": ["Walk"]
       },
       {
         "Surau As Syakirin": 0.5269012566007739,
-        "modeOfTransport": "P202-loop"
+        "modeOfTransport": ["P202-loop"]
       }
-    ]
+    ],
+    "lat": 1.534308506240654,
+    "lng": 103.62710937673535,
+    "operating_buses": ["P202-loop"]
   },
   "Surau As Syakirin": {
     "edges": [
       {
         "Opp Surau As Syakirin": 0.03641914857891268,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "opp Sekolah Kebangsaan Taman Universiti 4": 0.5269012566007739,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Sekolah Kebangsaan Taman Universiti 4": 0.5429543305991328,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Jalan Kebudayaan 27 / 24 Intersection": 0.6422167055411512,
-        "modeOfTransport": "Walk"
+        "modeOfTransport": ["Walk"]
       },
       {
         "Opp SMK Taman Mutiara Rini": 0.9015760480178284,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Opp SMK Taman Mutiara Rini": 0.9015760480178284,
-        "modeOfTransport": "P202-loop"
+        "modeOfTransport": ["P202-loop"]
       }
-    ]
+    ],
+    "lat": 1.5300540567469194,
+    "lng": 103.62919660110482,
+    "operating_buses": ["P202-loop"]
   },
   "Opp SMK Taman Mutiara Rini": {
     "edges": [
-      { "Opp Jalan Utama 34": 0.5287226672222655, "modeOfTransport": "Walk" },
-      {
-        "Opp Surau As Syakirin": 0.8709977008725136,
-        "modeOfTransport": "Walk"
-      },
-      { "Surau As Syakirin": 0.9015760480178284, "modeOfTransport": "Walk" },
-      { "KFC (Road side)": 1.1355695935121228, "modeOfTransport": "Walk" },
-      {
-        "Tesco Lotus (Road side)": 1.3134122386938683,
-        "modeOfTransport": "Walk"
-      },
       {
         "Opp Jalan Utama 34": 0.5287226672222655,
-        "modeOfTransport": "P202-loop"
+        "modeOfTransport": ["Walk", "P202-loop"]
       }
-    ]
+    ],
+    "lat": 1.5245751999325976,
+    "lng": 103.63517558879529,
+    "operating_buses": ["P202-loop"]
   },
   "Opp Jalan Utama 34": {
     "edges": [
       {
         "Opp SMK Taman Mutiara Rini": 0.5287226672222655,
-        "modeOfTransport": "Walk"
-      },
-      { "KFC (Road side)": 0.8410878964842288, "modeOfTransport": "Walk" },
-      {
-        "Tesco Lotus (Road side)": 1.0020233947713582,
-        "modeOfTransport": "Walk"
+        "modeOfTransport": ["Walk"]
       },
       {
-        "Opp Hutan Bandar MBIP": 1.0773779534172194,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Opp Bahagian Teknologi Pendidikan Negeri Johor": 1.2719094934620399,
-        "modeOfTransport": "Walk"
-      },
-      { "KFC (Road side)": 0.8410878964842288, "modeOfTransport": "P202-loop" }
-    ]
+        "KFC (Road side)": 0.8410878964842288,
+        "modeOfTransport": ["P202-loop"]
+      }
+    ],
+    "lat": 1.5209523625266286,
+    "lng": 103.6382563336594,
+    "operating_buses": ["P202-loop"]
   },
   "KFC (Road side)": {
     "edges": [
       {
         "Tesco Lotus (Road side)": 0.17791354127584774,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Opp Hutan Bandar MBIP": 0.2705989560811718,
-        "modeOfTransport": "Walk"
-      },
-      { "Opp Jalan Utama 34": 0.8410878964842288, "modeOfTransport": "Walk" },
-      {
-        "Shop No. 81 Jalan Seri Orkid 17": 0.9721263698146622,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Opp SMK Taman Mutiara Rini": 1.1355695935121228,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Tesco Lotus (Road side)": 0.17791354127584774,
-        "modeOfTransport": "P202-loop"
+        "modeOfTransport": ["Walk", "P202-loop"]
       }
-    ]
+    ],
+    "lat": 1.514385,
+    "lng": 103.634502,
+    "operating_buses": ["P202-loop"]
   },
   "Tesco Lotus (Road side)": {
     "edges": [
       {
         "Opp Hutan Bandar MBIP": 0.09519979842421991,
-        "modeOfTransport": "Walk"
-      },
-      { "KFC (Road side)": 0.17791354127584774, "modeOfTransport": "Walk" },
-      {
-        "Shop No. 81 Jalan Seri Orkid 17": 0.9064794417760613,
-        "modeOfTransport": "Walk"
-      },
-      { "Opp Jalan Utama 34": 1.0020233947713582, "modeOfTransport": "Walk" },
-      {
-        "Opp SMK Taman Mutiara Rini": 1.3134122386938683,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Opp Hutan Bandar MBIP": 0.09519979842421991,
-        "modeOfTransport": "P202-loop"
+        "modeOfTransport": ["Walk", "P202-loop"]
       }
-    ]
+    ],
+    "lat": 1.512786,
+    "lng": 103.634445,
+    "operating_buses": ["P202-loop"]
   },
   "Opp Hutan Bandar MBIP": {
     "edges": [
       {
         "Tesco Lotus (Road side)": 0.09519979842421991,
-        "modeOfTransport": "Walk"
-      },
-      { "KFC (Road side)": 0.2705989560811718, "modeOfTransport": "Walk" },
-      {
-        "Shop No. 81 Jalan Seri Orkid 17": 0.85857988191509,
-        "modeOfTransport": "Walk"
-      },
-      { "Opp Jalan Utama 34": 1.0773779534172194, "modeOfTransport": "Walk" },
-      {
-        "Opp SMK Taman Mutiara Rini": 1.4043386196391552,
-        "modeOfTransport": "Walk"
+        "modeOfTransport": ["Walk"]
       },
       {
         "Shop No. 81 Jalan Seri Orkid 17": 0.85857988191509,
-        "modeOfTransport": "P202-loop"
+        "modeOfTransport": ["P202-loop"]
       }
-    ]
+    ],
+    "lat": 1.511956346715004,
+    "lng": 103.63465643183984,
+    "operating_buses": ["P202-loop"]
   },
   "Shop No. 81 Jalan Seri Orkid 17": {
     "edges": [
-      { "Opp Hutan Bandar MBIP": 0.85857988191509, "modeOfTransport": "Walk" },
       {
-        "Tesco Lotus (Road side)": 0.9064794417760613,
-        "modeOfTransport": "Walk"
+        "Opp Hutan Bandar MBIP": 0.85857988191509,
+        "modeOfTransport": ["Walk"]
       },
-      { "KFC (Road side)": 0.9721263698146622, "modeOfTransport": "Walk" },
       {
         "Opp Bahagian Teknologi Pendidikan Negeri Johor": 1.1307440118351617,
-        "modeOfTransport": "Walk"
-      },
-      { "Opp Jalan Utama 34": 1.2733438746188064, "modeOfTransport": "Walk" },
-      {
-        "Opp Bahagian Teknologi Pendidikan Negeri Johor": 1.1307440118351617,
-        "modeOfTransport": "P202-loop"
+        "modeOfTransport": ["P202-loop"]
       }
-    ]
+    ],
+    "lat": 1.5101921953830588,
+    "lng": 103.64217620731986,
+    "operating_buses": ["P202-loop"]
   },
   "Opp Bahagian Teknologi Pendidikan Negeri Johor": {
     "edges": [
-      { "Union Inn": 0.9094246135779089, "modeOfTransport": "Walk" },
       {
-        "Shophouses @ Jalan Nakhoda 2": 1.105114613904559,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Shop No. 81 Jalan Seri Orkid 17": 1.1307440118351617,
-        "modeOfTransport": "Walk"
-      },
-      { "Opp Jalan Utama 34": 1.2719094934620399, "modeOfTransport": "Walk" },
-      { "bef Terminal TUTA": 1.3195558858603338, "modeOfTransport": "Walk" },
-      { "Union Inn": 0.9094246135779089, "modeOfTransport": "P202-loop" }
-    ]
+        "Union Inn": 0.9094246135779089,
+        "modeOfTransport": ["Walk", "P202-loop"]
+      }
+    ],
+    "lat": 1.5175625167281073,
+    "lng": 103.64918489637948,
+    "operating_buses": ["P202-loop"]
   },
   "Union Inn": {
     "edges": [
       {
         "Shophouses @ Jalan Nakhoda 2": 0.31213711202121075,
-        "modeOfTransport": "Walk"
-      },
-      { "bef Terminal TUTA": 0.5915987250131355, "modeOfTransport": "Walk" },
-      {
-        "Opp Bahagian Teknologi Pendidikan Negeri Johor": 0.9094246135779089,
-        "modeOfTransport": "Walk"
-      },
-      { "Polilkinik Yap": 1.0087524441964288, "modeOfTransport": "Walk" },
-      { "bef Jalan Tun Teja": 1.279112767212364, "modeOfTransport": "Walk" },
-      {
-        "Shophouses @ Jalan Nakhoda 2": 0.31213711202121075,
-        "modeOfTransport": "P202-loop"
+        "modeOfTransport": ["Walk", "P202-loop"]
       }
-    ]
+    ],
+    "lat": 1.5158966494768213,
+    "lng": 103.65719490175148,
+    "operating_buses": ["P202-loop"]
   },
   "Shophouses @ Jalan Nakhoda 2": {
     "edges": [
-      { "bef Terminal TUTA": 0.2794627012317497, "modeOfTransport": "Walk" },
-      { "Union Inn": 0.31213711202121075, "modeOfTransport": "Walk" },
-      { "Polilkinik Yap": 0.6966199423164079, "modeOfTransport": "Walk" },
-      { "bef Jalan Tun Teja": 0.9669844410416534, "modeOfTransport": "Walk" },
-      {
-        "Opp Bahagian Teknologi Pendidikan Negeri Johor": 1.105114613904559,
-        "modeOfTransport": "Walk"
-      },
       {
         "bef Terminal TUTA": 0.2794627012317497,
-        "modeOfTransport": "P202-loop"
+        "modeOfTransport": ["Walk", "P202-loop"]
       }
-    ]
+    ],
+    "lat": 1.51794055733978,
+    "lng": 103.65911972380891,
+    "operating_buses": ["P202-loop"]
   },
   "bef Terminal TUTA": {
     "edges": [
       {
         "Shophouses @ Jalan Nakhoda 2": 0.2794627012317497,
-        "modeOfTransport": "Walk"
+        "modeOfTransport": ["Walk"]
       },
-      { "Polilkinik Yap": 0.4171823921478712, "modeOfTransport": "Walk" },
-      { "Union Inn": 0.5915987250131355, "modeOfTransport": "Walk" },
-      { "bef Jalan Tun Teja": 0.6875523060608066, "modeOfTransport": "Walk" },
-      {
-        "Shophouses @ Jalan Perwira 9": 0.981111071688322,
-        "modeOfTransport": "Walk"
-      },
-      { "Polilkinik Yap": 0.4171823921478712, "modeOfTransport": "P202-loop" }
-    ]
+      { "Polilkinik Yap": 0.4171823921478712, "modeOfTransport": ["P202-loop"] }
+    ],
+    "lat": 1.5197638759318781,
+    "lng": 103.66085007960669,
+    "operating_buses": ["P202-loop"]
   },
   "Polilkinik Yap": {
     "edges": [
-      { "bef Jalan Tun Teja": 0.2703699358491234, "modeOfTransport": "Walk" },
-      { "bef Terminal TUTA": 0.4171823921478712, "modeOfTransport": "Walk" },
-      {
-        "Shophouses @ Jalan Perwira 9": 0.588570064967419,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Shophouses @ Jalan Nakhoda 2": 0.6966199423164079,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Sin Kok Soon Motor (JB) Sdn Bhd": 0.8113967364313136,
-        "modeOfTransport": "Walk"
-      },
       {
         "bef Jalan Tun Teja": 0.2703699358491234,
-        "modeOfTransport": "P202-loop"
+        "modeOfTransport": ["Walk", "P202-loop"]
       }
-    ]
+    ],
+    "lat": 1.5225300824672,
+    "lng": 103.66338557173337,
+    "operating_buses": ["P202-loop"]
   },
   "bef Jalan Tun Teja": {
     "edges": [
-      { "Polilkinik Yap": 0.2703699358491234, "modeOfTransport": "Walk" },
+      { "Polilkinik Yap": 0.2703699358491234, "modeOfTransport": ["Walk"] },
       {
         "Shophouses @ Jalan Perwira 9": 0.36456740759343964,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Sin Kok Soon Motor (JB) Sdn Bhd": 0.5855469468230257,
-        "modeOfTransport": "Walk"
-      },
-      { "bef Terminal TUTA": 0.6875523060608066, "modeOfTransport": "Walk" },
-      { "SJK (C) Kuo Kuang": 0.7323878069941248, "modeOfTransport": "Walk" },
-      {
-        "Shophouses @ Jalan Perwira 9": 0.36456740759343964,
-        "modeOfTransport": "P202-loop"
+        "modeOfTransport": ["P202-loop"]
       }
-    ]
+    ],
+    "lat": 1.5243236689609123,
+    "lng": 103.66502786371659,
+    "operating_buses": ["P202-loop"]
   },
   "Shophouses @ Jalan Perwira 9": {
     "edges": [
       {
         "Sin Kok Soon Motor (JB) Sdn Bhd": 0.22399132358457766,
-        "modeOfTransport": "Walk"
-      },
-      { "bef Jalan Tun Teja": 0.36456740759343964, "modeOfTransport": "Walk" },
-      { "Polilkinik Yap": 0.588570064967419, "modeOfTransport": "Walk" },
-      { "SJK (C) Kuo Kuang": 0.6195673590143911, "modeOfTransport": "Walk" },
-      {
-        "Opp SJK (C) Kuo Kuang": 0.6775669042719765,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Sin Kok Soon Motor (JB) Sdn Bhd": 0.22399132358457766,
-        "modeOfTransport": "P202-loop"
+        "modeOfTransport": ["Walk", "P202-loop"]
       }
-    ]
+    ],
+    "lat": 1.5276000687198807,
+    "lng": 103.66490681659525,
+    "operating_buses": ["P202-loop"]
   },
   "Sin Kok Soon Motor (JB) Sdn Bhd": {
     "edges": [
       {
         "Shophouses @ Jalan Perwira 9": 0.22399132358457766,
-        "modeOfTransport": "Walk"
+        "modeOfTransport": ["Walk"]
       },
-      { "bef Jalan Tun Teja": 0.5855469468230257, "modeOfTransport": "Walk" },
-      { "SJK (C) Kuo Kuang": 0.604030495522201, "modeOfTransport": "Walk" },
-      { "aft Jalan Patin": 0.6104018995414094, "modeOfTransport": "Walk" },
       {
-        "Opp SJK (C) Kuo Kuang": 0.6543650955793687,
-        "modeOfTransport": "Walk"
-      },
-      { "aft Jalan Patin": 0.6104018995414094, "modeOfTransport": "P202-loop" }
-    ]
+        "aft Jalan Patin": 0.6104018995414094,
+        "modeOfTransport": ["P202-loop"]
+      }
+    ],
+    "lat": 1.5295849000522657,
+    "lng": 103.66525083069143,
+    "operating_buses": ["P202-loop"]
   },
   "aft Jalan Patin": {
     "edges": [
-      { "SJK(C) Pu Sze": 0.21922186994387688, "modeOfTransport": "Walk" },
       {
-        "Sin Kok Soon Motor (JB) Sdn Bhd": 0.6104018995414094,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "aft Shell Kiosk - Skudai": 0.7019509309283776,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Shophouses @ Jalan Perwira 9": 0.8287173876858817,
-        "modeOfTransport": "Walk"
-      },
-      { "Skudai Parade": 0.9246191382413775, "modeOfTransport": "Walk" },
-      { "SJK(C) Pu Sze": 0.21922186994387688, "modeOfTransport": "P202-loop" },
-      { "SJK(C) Pu Sze": 0.21922186994387688, "modeOfTransport": "P211-02" },
-      { "SJK(C) Pu Sze": 0.21922186994387688, "modeOfTransport": "P411-02" },
-      { "SJK(C) Pu Sze": 0.21922186994387688, "modeOfTransport": "P403-loop" }
-    ]
+        "SJK(C) Pu Sze": 0.21922186994387688,
+        "modeOfTransport": [
+          "Walk",
+          "P202-loop",
+          "P211-02",
+          "P411-02",
+          "P403-loop"
+        ]
+      }
+    ],
+    "lat": 1.5350511809872578,
+    "lng": 103.66474654589447,
+    "operating_buses": ["P202-loop", "P211-02", "P411-02", "P403-loop"]
   },
   "SJK(C) Pu Sze": {
     "edges": [
-      { "aft Jalan Patin": 0.21922186994387688, "modeOfTransport": "Walk" },
+      { "aft Jalan Patin": 0.21922186994387688, "modeOfTransport": ["Walk"] },
       {
         "aft Shell Kiosk - Skudai": 0.4827498834430719,
-        "modeOfTransport": "Walk"
-      },
-      { "Skudai Parade": 0.7057602456516895, "modeOfTransport": "Walk" },
-      {
-        "Sin Kok Soon Motor (JB) Sdn Bhd": 0.7976783004348962,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Shophouses @ Jalan Perwira 9": 1.0058440116427276,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "aft Shell Kiosk - Skudai": 0.4827498834430719,
-        "modeOfTransport": "P202-loop"
-      },
-      {
-        "aft Shell Kiosk - Skudai": 0.4827498834430719,
-        "modeOfTransport": "P211-02"
-      },
-      {
-        "aft Shell Kiosk - Skudai": 0.4827498834430719,
-        "modeOfTransport": "P411-02"
-      },
-      {
-        "aft Shell Kiosk - Skudai": 0.4827498834430719,
-        "modeOfTransport": "P403-loop"
+        "modeOfTransport": ["P202-loop", "P211-02", "P411-02", "P403-loop"]
       }
-    ]
+    ],
+    "lat": 1.5365257998200346,
+    "lng": 103.66343750790784,
+    "operating_buses": ["P202-loop", "P211-02", "P411-02", "P403-loop"]
   },
   "aft Shell Kiosk - Skudai": {
     "edges": [
-      { "Skudai Parade": 0.2281480578306971, "modeOfTransport": "Walk" },
-      { "SJK(C) Pu Sze": 0.4827498834430719, "modeOfTransport": "Walk" },
-      {
-        "Opp Shell Kiosk @ Taman Sri Putri": 0.6213627860899054,
-        "modeOfTransport": "Walk"
-      },
+      { "Skudai Parade": 0.2281480578306971, "modeOfTransport": ["Walk"] },
       {
         "Shell Kiosk @ Taman Sri Putri": 0.6783921929283199,
-        "modeOfTransport": "Walk"
-      },
-      { "aft Jalan Patin": 0.7019509309283776, "modeOfTransport": "Walk" },
-      {
-        "Shell Kiosk @ Taman Sri Putri": 0.6783921929283199,
-        "modeOfTransport": "P202-loop"
-      },
-      {
-        "Shell Kiosk @ Taman Sri Putri": 0.6783921929283199,
-        "modeOfTransport": "P211-02"
-      },
-      {
-        "Shell Kiosk @ Taman Sri Putri": 0.6783921929283199,
-        "modeOfTransport": "P411-02"
-      },
-      {
-        "Shell Kiosk @ Taman Sri Putri": 0.6783921929283199,
-        "modeOfTransport": "P403-loop"
+        "modeOfTransport": ["P202-loop", "P211-02", "P411-02", "P403-loop"]
       }
-    ]
+    ],
+    "lat": 1.5397247249617794,
+    "lng": 103.66050127115842,
+    "operating_buses": ["P202-loop", "P211-02", "P411-02", "P403-loop"]
   },
   "Shell Kiosk @ Taman Sri Putri": {
     "edges": [
       {
         "Opp Shell Kiosk @ Taman Sri Putri": 0.0653041917111057,
-        "modeOfTransport": "Walk"
+        "modeOfTransport": ["Walk"]
       },
-      { "Skudai Parade": 0.45114279956700715, "modeOfTransport": "Walk" },
-      {
-        "Shophouses along Jalan Tembaga Kuning 4": 0.5063618682343834,
-        "modeOfTransport": "Walk"
-      },
-      { "aft Jalan Sri Skudai": 0.5606400378083336, "modeOfTransport": "Walk" },
-      {
-        "aft Shell Kiosk - Skudai": 0.6783921929283199,
-        "modeOfTransport": "Walk"
-      },
-      { "Masjid Abidin": 0.7450411619228269, "modeOfTransport": "P202-loop" },
+      { "Masjid Abidin": 0.7450411619228269, "modeOfTransport": ["P202-loop"] },
       {
         "aft Jalan Sri Skudai": 0.5606400378083336,
-        "modeOfTransport": "P211-02"
+        "modeOfTransport": ["P211-02"]
       },
       {
         "aft Tenaga Nasional Bhd Substation": 1.0328929118377985,
-        "modeOfTransport": "P411-02"
-      },
-      {
-        "aft Tenaga Nasional Bhd Substation": 1.0328929118377985,
-        "modeOfTransport": "P403-loop"
+        "modeOfTransport": ["P411-02", "P403-loop"]
       }
-    ]
+    ],
+    "lat": 1.5449034370227417,
+    "lng": 103.65727484903925,
+    "operating_buses": ["P202-loop", "P211-02", "P411-02", "P403-loop"]
   },
   "Masjid Abidin": {
     "edges": [
       {
         "Shophouses along Jalan Tembaga Kuning 4": 0.3000458467859518,
-        "modeOfTransport": "Walk"
-      },
-      { "aft Jalan Sri Skudai": 0.7428224122402662, "modeOfTransport": "Walk" },
-      {
-        "Shell Kiosk @ Taman Sri Putri": 0.7450411619228269,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Shophouses @ Jalan Suasa 1": 0.7494755223871856,
-        "modeOfTransport": "Walk"
-      },
-      { "bef Jalan Hamoni 14": 0.7855819429439158, "modeOfTransport": "Walk" },
-      {
-        "Shophouses along Jalan Tembaga Kuning 4": 0.3000458467859518,
-        "modeOfTransport": "P202-loop"
+        "modeOfTransport": ["Walk", "P202-loop"]
       }
-    ]
+    ],
+    "lat": 1.5429731311255839,
+    "lng": 103.65085627727618,
+    "operating_buses": ["P202-loop"]
   },
   "Shophouses along Jalan Tembaga Kuning 4": {
     "edges": [
-      { "Masjid Abidin": 0.3000458467859518, "modeOfTransport": "Walk" },
-      { "aft Jalan Sri Skudai": 0.4588784553005416, "modeOfTransport": "Walk" },
-      {
-        "Shell Kiosk @ Taman Sri Putri": 0.5063618682343834,
-        "modeOfTransport": "Walk"
-      },
+      { "Masjid Abidin": 0.3000458467859518, "modeOfTransport": ["Walk"] },
       {
         "Shophouses @ Jalan Suasa 1": 0.5348562156011618,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Opp Shell Kiosk @ Taman Sri Putri": 0.5638518507091109,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Shophouses @ Jalan Suasa 1": 0.5348562156011618,
-        "modeOfTransport": "P202-loop"
+        "modeOfTransport": ["P202-loop"]
       }
-    ]
+    ],
+    "lat": 1.544925677392113,
+    "lng": 103.6527194257566,
+    "operating_buses": ["P202-loop"]
   },
   "Shophouses @ Jalan Suasa 1": {
     "edges": [
-      { "aft Jalan Sri Skudai": 0.2712897395004209, "modeOfTransport": "Walk" },
       {
-        "Shophouses along Jalan Tembaga Kuning 4": 0.5348562156011618,
-        "modeOfTransport": "Walk"
-      },
-      { "Masjid Abidin": 0.7494755223871856, "modeOfTransport": "Walk" },
-      {
-        "Shell Kiosk @ Taman Sri Putri": 0.8053675620941791,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Opp Shell Kiosk @ Taman Sri Putri": 0.8696378140042657,
-        "modeOfTransport": "Walk"
+        "aft Jalan Sri Skudai": 0.2712897395004209,
+        "modeOfTransport": ["Walk"]
       },
       {
         "bef Jalan Hamoni 14": 1.0366235258155259,
-        "modeOfTransport": "P202-loop"
+        "modeOfTransport": ["P202-loop"]
       },
       {
         "UTM Fakulti Alam Bina": 2.1972724975494575,
-        "modeOfTransport": "P211-02"
+        "modeOfTransport": ["P211-02"]
       }
-    ]
+    ],
+    "lat": 1.549647043669743,
+    "lng": 103.65179955454633,
+    "operating_buses": ["P202-loop", "P211-02"]
   },
   "bef Jalan Hamoni 14": {
     "edges": [
       {
         "Opp Apartment Pasti Asli": 0.48085162913472806,
-        "modeOfTransport": "Walk"
-      },
-      { "Masjid Abidin": 0.7855819429439158, "modeOfTransport": "Walk" },
-      {
-        "Shophouses along Jalan Tembaga Kuning 4": 0.9729405875173233,
-        "modeOfTransport": "Walk"
-      },
-      { "UTM Rumah Alumni": 0.980590657264778, "modeOfTransport": "Walk" },
-      {
-        "Shophouses @ Jalan Suasa 1": 1.0366235258155259,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Opp Apartment Pasti Asli": 0.48085162913472806,
-        "modeOfTransport": "P202-loop"
+        "modeOfTransport": ["Walk", "P202-loop"]
       }
-    ]
+    ],
+    "lat": 1.5445769961776104,
+    "lng": 103.64397333250112,
+    "operating_buses": ["P202-loop"]
   },
   "Opp Apartment Pasti Asli": {
     "edges": [
-      { "bef Jalan Hamoni 14": 0.48085162913472806, "modeOfTransport": "Walk" },
-      { "Masjid Abidin": 1.086611105656987, "modeOfTransport": "Walk" },
       {
-        "Opp AEON Taman Universiti": 1.2830586886376771,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Aeon Taman Universiti": 1.2889848437261473,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Shophouses along Jalan Tembaga Kuning 4": 1.3408551511702151,
-        "modeOfTransport": "Walk"
+        "bef Jalan Hamoni 14": 0.48085162913472806,
+        "modeOfTransport": ["Walk"]
       },
       {
         "Opp Surau As Syakirin": 1.8433550344735776,
-        "modeOfTransport": "P202-loop"
+        "modeOfTransport": ["P202-loop"]
       }
-    ]
+    ],
+    "lat": 1.5412268239025178,
+    "lng": 103.6412379663487,
+    "operating_buses": ["P202-loop"]
   },
   "Opp Surau As Syakirin": {
     "edges": [
-      { "Surau As Syakirin": 0.03641914857891268, "modeOfTransport": "Walk" },
-      {
-        "opp Sekolah Kebangsaan Taman Universiti 4": 0.5627054169771284,
-        "modeOfTransport": "Walk"
-      },
+      { "Surau As Syakirin": 0.03641914857891268, "modeOfTransport": ["Walk"] },
       {
         "Sekolah Kebangsaan Taman Universiti 4": 0.5788317521963042,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Jalan Kebudayaan 27 / 24 Intersection": 0.6785074870339656,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Opp SMK Taman Mutiara Rini": 0.8709977008725136,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Sekolah Kebangsaan Taman Universiti 4": 0.5788317521963042,
-        "modeOfTransport": "P202-loop"
+        "modeOfTransport": ["P202-loop"]
       }
-    ]
+    ],
+    "lat": 1.5297380248680652,
+    "lng": 103.62928263558307,
+    "operating_buses": ["P202-loop"]
   },
   "Sekolah Kebangsaan Taman Universiti 4": {
     "edges": [
       {
         "opp Sekolah Kebangsaan Taman Universiti 4": 0.017266413411069353,
-        "modeOfTransport": "Walk"
+        "modeOfTransport": ["Walk"]
       },
       {
         "Jalan Kebudayaan 27 / 24 Intersection": 0.18477525536974937,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Taman Universiti Terminal": 0.4955640745212205,
-        "modeOfTransport": "Walk"
-      },
-      { "Surau As Syakirin": 0.5429543305991328, "modeOfTransport": "Walk" },
-      {
-        "Opp Surau As Syakirin": 0.5788317521963042,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Jalan Kebudayaan 27 / 24 Intersection": 0.18477525536974937,
-        "modeOfTransport": "P202-loop"
+        "modeOfTransport": ["P202-loop"]
       }
-    ]
+    ],
+    "lat": 1.534463375001581,
+    "lng": 103.62709807102706,
+    "operating_buses": ["P202-loop"]
   },
   "Jalan Kebudayaan 27 / 24 Intersection": {
     "edges": [
       {
         "Sekolah Kebangsaan Taman Universiti 4": 0.18477525536974937,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "opp Sekolah Kebangsaan Taman Universiti 4": 0.1975329599901653,
-        "modeOfTransport": "Walk"
+        "modeOfTransport": ["Walk"]
       },
       {
         "Taman Universiti Terminal": 0.325887129082397,
-        "modeOfTransport": "Walk"
-      },
-      { "Surau As Syakirin": 0.6422167055411512, "modeOfTransport": "Walk" },
-      {
-        "Opp Surau As Syakirin": 0.6785074870339656,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Taman Universiti Terminal": 0.325887129082397,
-        "modeOfTransport": "P202-loop"
+        "modeOfTransport": ["P202-loop"]
       }
-    ]
+    ],
+    "lat": 1.535736987403005,
+    "lng": 103.6281658048895,
+    "operating_buses": ["P202-loop"]
   },
   "Aeon Taman Universiti": {
     "edges": [
       {
         "Opp AEON Taman Universiti": 0.051071171315827044,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Taman Universiti Terminal": 0.43232913566197173,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Jalan Kebudayaan 27 / 24 Intersection": 0.7578245470647444,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Sekolah Kebangsaan Taman Universiti 4": 0.9263037163336308,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "opp Sekolah Kebangsaan Taman Universiti 4": 0.9422948394242381,
-        "modeOfTransport": "Walk"
+        "modeOfTransport": ["Walk"]
       },
       {
         "UTM Fakulti Alam Bina": 2.0243943293976128,
-        "modeOfTransport": "P211-01"
+        "modeOfTransport": ["P211-01"]
       }
-    ]
+    ],
+    "lat": 1.5423777121603113,
+    "lng": 103.62969894227055,
+    "operating_buses": ["P211-01"]
   },
   "UTM Fakulti Alam Bina": {
     "edges": [
-      { "Opp Block D10": 0.3729820752738702, "modeOfTransport": "Walk" },
-      { "UTM Main Gate (Exit)": 0.4425097642163738, "modeOfTransport": "Walk" },
-      { "bef UTM Main Gate": 0.4894816420917069, "modeOfTransport": "Walk" },
-      { "Opp C.I.C.T.": 0.5796184966038048, "modeOfTransport": "Walk" },
       {
-        "aft Block P19A - Fakulti Kejuruteraan Elektrik": 0.6328027864306647,
-        "modeOfTransport": "Walk"
-      },
-      { "Opp Block D10": 0.3729820752738702, "modeOfTransport": "P211-01" },
-      { "Opp Block D10": 0.3729820752738702, "modeOfTransport": "P211-02" }
-    ]
+        "Opp Block D10": 0.3729820752738702,
+        "modeOfTransport": ["Walk", "P211-01", "P211-02"]
+      }
+    ],
+    "lat": 1.5598595502801802,
+    "lng": 103.63478382209261,
+    "operating_buses": ["P211-01", "P211-02"]
   },
   "Opp Block D10": {
     "edges": [
-      { "Opp C.I.C.T.": 0.29991812847106636, "modeOfTransport": "Walk" },
       {
-        "UTM Fakulti Alam Bina": 0.3729820752738702,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Block P07 - Fakulti Kejuruteraan Elektrik": 0.6315936845654101,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "aft Block P19A - Fakulti Kejuruteraan Elektrik": 0.661182842476025,
-        "modeOfTransport": "Walk"
-      },
-      { "UTM Main Gate (Exit)": 0.6732596184171579, "modeOfTransport": "Walk" },
-      { "Opp C.I.C.T.": 0.29991812847106636, "modeOfTransport": "P211-01" },
-      { "Opp C.I.C.T.": 0.29991812847106636, "modeOfTransport": "P211-02" }
-    ]
+        "Opp C.I.C.T.": 0.29991812847106636,
+        "modeOfTransport": ["Walk", "P211-01", "P211-02"]
+      }
+    ],
+    "lat": 1.5627697345949043,
+    "lng": 103.63645243799397,
+    "operating_buses": ["P211-01", "P211-02"]
   },
   "Opp C.I.C.T.": {
     "edges": [
-      { "Opp Block D10": 0.29991812847106636, "modeOfTransport": "Walk" },
+      { "Opp Block D10": 0.29991812847106636, "modeOfTransport": ["Walk"] },
       {
         "Block P07 - Fakulti Kejuruteraan Elektrik": 0.3733748095502121,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "aft Block P19A - Fakulti Kejuruteraan Elektrik": 0.5188000133253291,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "UTM Fakulti Alam Bina": 0.5796184966038048,
-        "modeOfTransport": "Walk"
-      },
-      { "bef UTM Main Gate": 0.6618304655486015, "modeOfTransport": "Walk" },
-      {
-        "Block P07 - Fakulti Kejuruteraan Elektrik": 0.3733748095502121,
-        "modeOfTransport": "P211-01"
-      },
-      {
-        "Block P07 - Fakulti Kejuruteraan Elektrik": 0.3733748095502121,
-        "modeOfTransport": "P211-02"
+        "modeOfTransport": ["P211-01", "P211-02"]
       }
-    ]
+    ],
+    "lat": 1.5627095018015627,
+    "lng": 103.63914999722523,
+    "operating_buses": ["P211-01", "P211-02"]
   },
   "Block P07 - Fakulti Kejuruteraan Elektrik": {
     "edges": [
       {
         "aft Block P19A - Fakulti Kejuruteraan Elektrik": 0.2999436171976393,
-        "modeOfTransport": "Walk"
-      },
-      { "Opp C.I.C.T.": 0.3733748095502121, "modeOfTransport": "Walk" },
-      { "bef UTM Main Gate": 0.5677745874569625, "modeOfTransport": "Walk" },
-      { "UTM Equine Park": 0.5738081073697687, "modeOfTransport": "Walk" },
-      { "Opp Block D10": 0.6315936845654101, "modeOfTransport": "Walk" },
-      {
-        "aft Block P19A - Fakulti Kejuruteraan Elektrik": 0.2999436171976393,
-        "modeOfTransport": "P211-01"
-      },
-      {
-        "aft Block P19A - Fakulti Kejuruteraan Elektrik": 0.2999436171976393,
-        "modeOfTransport": "P211-02"
+        "modeOfTransport": ["Walk", "P211-01", "P211-02"]
       }
-    ]
+    ],
+    "lat": 1.5604593962896607,
+    "lng": 103.64164333508509,
+    "operating_buses": ["P211-01", "P211-02"]
   },
   "aft Block P19A - Fakulti Kejuruteraan Elektrik": {
     "edges": [
-      { "bef UTM Main Gate": 0.2847171002478053, "modeOfTransport": "Walk" },
       {
-        "Block P07 - Fakulti Kejuruteraan Elektrik": 0.2999436171976393,
-        "modeOfTransport": "Walk"
+        "bef UTM Main Gate": 0.2847171002478053,
+        "modeOfTransport": ["Walk", "P211-02"]
       },
-      { "UTM Equine Park": 0.3267672728892514, "modeOfTransport": "Walk" },
-      { "UTM Main Gate (Exit)": 0.3597831046716723, "modeOfTransport": "Walk" },
-      { "Opp C.I.C.T.": 0.5188000133253291, "modeOfTransport": "Walk" },
-      { "UTM Equine Park": 0.3267672728892514, "modeOfTransport": "P211-01" },
-      { "bef UTM Main Gate": 0.2847171002478053, "modeOfTransport": "P211-02" }
-    ]
+      { "UTM Equine Park": 0.3267672728892514, "modeOfTransport": ["P211-01"] }
+    ],
+    "lat": 1.558167973564592,
+    "lng": 103.64021955093295,
+    "operating_buses": ["P211-01", "P211-02"]
   },
   "UTM Equine Park": {
     "edges": [
-      { "UTM Rumah Alumni": 0.2946598087665299, "modeOfTransport": "Walk" },
       {
-        "aft Block P19A - Fakulti Kejuruteraan Elektrik": 0.3267672728892514,
-        "modeOfTransport": "Walk"
-      },
-      { "bef UTM Main Gate": 0.37409727241036883, "modeOfTransport": "Walk" },
-      { "UTM Main Gate (Exit)": 0.4425272585397133, "modeOfTransport": "Walk" },
-      {
-        "Block P07 - Fakulti Kejuruteraan Elektrik": 0.5738081073697687,
-        "modeOfTransport": "Walk"
-      },
-      { "UTM Rumah Alumni": 0.2946598087665299, "modeOfTransport": "P211-01" }
-    ]
+        "UTM Rumah Alumni": 0.2946598087665299,
+        "modeOfTransport": ["Walk", "P211-01"]
+      }
+    ],
+    "lat": 1.5553378482590166,
+    "lng": 103.6410112229101,
+    "operating_buses": ["P211-01"]
   },
   "UTM Rumah Alumni": {
     "edges": [
-      { "UTM Equine Park": 0.2946598087665299, "modeOfTransport": "Walk" },
-      {
-        "aft Block P19A - Fakulti Kejuruteraan Elektrik": 0.6075655740785466,
-        "modeOfTransport": "Walk"
-      },
-      { "bef UTM Main Gate": 0.6554511568811918, "modeOfTransport": "Walk" },
-      { "UTM Main Gate (Exit)": 0.7147615197981502, "modeOfTransport": "Walk" },
-      {
-        "Block P07 - Fakulti Kejuruteraan Elektrik": 0.8043457775897994,
-        "modeOfTransport": "Walk"
-      },
+      { "UTM Equine Park": 0.2946598087665299, "modeOfTransport": ["Walk"] },
       {
         "Opp Shell Kiosk @ Taman Sri Putri": 1.9342855225740008,
-        "modeOfTransport": "P211-01"
+        "modeOfTransport": ["P211-01"]
       }
-    ]
+    ],
+    "lat": 1.5533050263979893,
+    "lng": 103.6427117938282,
+    "operating_buses": ["P211-01"]
   },
   "Opp Shell Kiosk @ Taman Sri Putri": {
     "edges": [
       {
         "Shell Kiosk @ Taman Sri Putri": 0.0653041917111057,
-        "modeOfTransport": "Walk"
-      },
-      { "Skudai Parade": 0.3933129993917878, "modeOfTransport": "Walk" },
-      {
-        "Shophouses along Jalan Tembaga Kuning 4": 0.5638518507091109,
-        "modeOfTransport": "Walk"
+        "modeOfTransport": ["Walk"]
       },
       {
-        "aft Shell Kiosk - Skudai": 0.6213627860899054,
-        "modeOfTransport": "Walk"
-      },
-      { "aft Jalan Sri Skudai": 0.6221900311310553, "modeOfTransport": "Walk" },
-      { "Skudai Parade": 0.3933129993917878, "modeOfTransport": "P211-01" },
-      { "Skudai Parade": 0.3933129993917878, "modeOfTransport": "P411-01" },
-      { "Skudai Parade": 0.3933129993917878, "modeOfTransport": "P403-loop" }
-    ]
+        "Skudai Parade": 0.3933129993917878,
+        "modeOfTransport": ["P211-01", "P411-01", "P403-loop"]
+      }
+    ],
+    "lat": 1.5446071130881212,
+    "lng": 103.65778209077513,
+    "operating_buses": ["P211-01", "P411-01", "P403-loop"]
   },
   "Skudai Parade": {
     "edges": [
       {
         "aft Shell Kiosk - Skudai": 0.2281480578306971,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Opp Shell Kiosk @ Taman Sri Putri": 0.3933129993917878,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Shell Kiosk @ Taman Sri Putri": 0.45114279956700715,
-        "modeOfTransport": "Walk"
-      },
-      { "SJK(C) Pu Sze": 0.7057602456516895, "modeOfTransport": "Walk" },
-      {
-        "Shophouses along Jalan Tembaga Kuning 4": 0.8469523951488848,
-        "modeOfTransport": "Walk"
+        "modeOfTransport": ["Walk"]
       },
       {
         "Opp SJK (C) Kuo Kuang": 1.9528152281376352,
-        "modeOfTransport": "P211-01"
+        "modeOfTransport": ["P211-01", "P411-01"]
       },
       {
-        "Opp SJK (C) Kuo Kuang": 1.9528152281376352,
-        "modeOfTransport": "P411-01"
-      },
-      { "aft Jalan Patin": 0.9246191382413775, "modeOfTransport": "P403-loop" }
-    ]
+        "aft Jalan Patin": 0.9246191382413775,
+        "modeOfTransport": ["P403-loop"]
+      }
+    ],
+    "lat": 1.541540224027169,
+    "lng": 103.65954500502208,
+    "operating_buses": ["P211-01", "P411-01", "P403-loop"]
   },
   "Opp SJK (C) Kuo Kuang": {
     "edges": [
-      { "SJK (C) Kuo Kuang": 0.059221113273559965, "modeOfTransport": "Walk" },
       {
-        "Sin Kok Soon Motor (JB) Sdn Bhd": 0.6543650955793687,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Shophouses @ Jalan Perwira 9": 0.6775669042719765,
-        "modeOfTransport": "Walk"
-      },
-      { "bef Jalan Tun Teja": 0.7890331651508049, "modeOfTransport": "Walk" },
-      { "aft Jalan Patin": 1.029132974889888, "modeOfTransport": "Walk" },
-      {
-        "bef Jalan Kempas Lama": 1.1450709673410595,
-        "modeOfTransport": "P211-01"
+        "SJK (C) Kuo Kuang": 0.059221113273559965,
+        "modeOfTransport": ["Walk"]
       },
       {
         "bef Jalan Kempas Lama": 1.1450709673410595,
-        "modeOfTransport": "P411-01"
+        "modeOfTransport": ["P211-01", "P411-01"]
       }
-    ]
+    ],
+    "lat": 1.528201281584724,
+    "lng": 103.67097274711804,
+    "operating_buses": ["P211-01", "P411-01"]
   },
   "bef Jalan Kempas Lama": {
     "edges": [
-      { "bef McDonald's": 0.09124841570550803, "modeOfTransport": "Walk" },
-      { "bef Paradigm Mall": 0.45960582844196346, "modeOfTransport": "Walk" },
-      { "Opp Paradigm Mall": 0.8259309658633566, "modeOfTransport": "Walk" },
-      { "Paradigm Mall": 1.0669809181977798, "modeOfTransport": "Walk" },
-      {
-        "Opp SJK (C) Kuo Kuang": 1.1450709673410595,
-        "modeOfTransport": "Walk"
-      },
+      { "bef McDonald's": 0.09124841570550803, "modeOfTransport": ["Walk"] },
       {
         "bef Paradigm Mall": 0.45960582844196346,
-        "modeOfTransport": "P211-01"
-      },
-      { "bef Paradigm Mall": 0.45960582844196346, "modeOfTransport": "P411-01" }
-    ]
+        "modeOfTransport": ["P211-01", "P411-01"]
+      }
+    ],
+    "lat": 1.522586,
+    "lng": 103.679608,
+    "operating_buses": ["P211-01", "P411-01"]
   },
   "bef Paradigm Mall": {
     "edges": [
-      { "Opp Paradigm Mall": 0.3676795526244264, "modeOfTransport": "Walk" },
+      { "Opp Paradigm Mall": 0.3676795526244264, "modeOfTransport": ["Walk"] },
       {
-        "bef Jalan Kempas Lama": 0.45960582844196346,
-        "modeOfTransport": "Walk"
-      },
-      { "bef McDonald's": 0.547998909439545, "modeOfTransport": "Walk" },
-      { "Paradigm Mall": 0.6074149500176637, "modeOfTransport": "Walk" },
-      { "Opp Saksama Otomobil": 0.9676682623577983, "modeOfTransport": "Walk" },
-      { "Paradigm Mall": 0.6074149500176637, "modeOfTransport": "P211-01" },
-      { "Paradigm Mall": 0.6074149500176637, "modeOfTransport": "P411-01" }
-    ]
+        "Paradigm Mall": 0.6074149500176637,
+        "modeOfTransport": ["P211-01", "P411-01"]
+      }
+    ],
+    "lat": 1.51926239182888,
+    "lng": 103.68206611709597,
+    "operating_buses": ["P211-01", "P411-01"]
   },
   "Paradigm Mall": {
     "edges": [
-      { "Opp Paradigm Mall": 0.24413917729765305, "modeOfTransport": "Walk" },
-      { "Opp Saksama Otomobil": 0.3602979803645203, "modeOfTransport": "Walk" },
-      { "bef Paradigm Mall": 0.6074149500176637, "modeOfTransport": "Walk" },
-      {
-        "Opp Petron Kiosk @ Taman Tampoi Indah": 0.800835111960601,
-        "modeOfTransport": "Walk"
-      },
-      { "bef KIP Mart": 0.8535899262887705, "modeOfTransport": "Walk" },
+      { "Opp Paradigm Mall": 0.24413917729765305, "modeOfTransport": ["Walk"] },
       {
         "Opp Saksama Otomobil": 0.3602979803645203,
-        "modeOfTransport": "P211-01"
-      },
-      {
-        "Opp Saksama Otomobil": 0.3602979803645203,
-        "modeOfTransport": "P411-01"
+        "modeOfTransport": ["P211-01", "P411-01"]
       }
-    ]
+    ],
+    "lat": 1.514813892563429,
+    "lng": 103.6852375606564,
+    "operating_buses": ["P211-01", "P411-01"]
   },
   "Opp Saksama Otomobil": {
     "edges": [
-      { "Paradigm Mall": 0.3602979803645203, "modeOfTransport": "Walk" },
+      { "Paradigm Mall": 0.3602979803645203, "modeOfTransport": ["Walk"] },
       {
         "Opp Petron Kiosk @ Taman Tampoi Indah": 0.44053855693769006,
-        "modeOfTransport": "Walk"
-      },
-      { "bef KIP Mart": 0.49452761347286806, "modeOfTransport": "Walk" },
-      { "Opp Paradigm Mall": 0.6024008637595119, "modeOfTransport": "Walk" },
-      { "bef Paradigm Mall": 0.9676682623577983, "modeOfTransport": "Walk" },
-      {
-        "Opp Petron Kiosk @ Taman Tampoi Indah": 0.44053855693769006,
-        "modeOfTransport": "P211-01"
-      },
-      {
-        "Opp Petron Kiosk @ Taman Tampoi Indah": 0.44053855693769006,
-        "modeOfTransport": "P411-01"
+        "modeOfTransport": ["P211-01", "P411-01"]
       }
-    ]
+    ],
+    "lat": 1.5121383386574008,
+    "lng": 103.68706591589486,
+    "operating_buses": ["P211-01", "P411-01"]
   },
   "Opp Petron Kiosk @ Taman Tampoi Indah": {
     "edges": [
-      { "bef KIP Mart": 0.07293495548690011, "modeOfTransport": "Walk" },
-      {
-        "Opp Saksama Otomobil": 0.44053855693769006,
-        "modeOfTransport": "Walk"
-      },
-      { "Paradigm Mall": 0.800835111960601, "modeOfTransport": "Walk" },
-      { "Opp Paradigm Mall": 1.0422918542684, "modeOfTransport": "Walk" },
-      { "Opp Pulai View Condo": 1.1087173714562493, "modeOfTransport": "Walk" },
+      { "bef KIP Mart": 0.07293495548690011, "modeOfTransport": ["Walk"] },
       {
         "Kompleks Pekan Rabu Johor Bahru": 1.1581424450022744,
-        "modeOfTransport": "P211-01"
-      },
-      {
-        "Kompleks Pekan Rabu Johor Bahru": 1.1581424450022744,
-        "modeOfTransport": "P411-01"
+        "modeOfTransport": ["P211-01", "P411-01"]
       }
-    ]
+    ],
+    "lat": 1.5088584686178155,
+    "lng": 103.68928902381539,
+    "operating_buses": ["P211-01", "P411-01"]
   },
   "Kompleks Pekan Rabu Johor Bahru": {
     "edges": [
       {
         "Opp Pulai View Condo": 0.07556416373122082,
-        "modeOfTransport": "Walk"
+        "modeOfTransport": ["Walk"]
       },
-      { "SK Kampung Pasir": 0.30908317332864105, "modeOfTransport": "Walk" },
-      { "Giant Tampoi": 0.38938543958956146, "modeOfTransport": "Walk" },
-      { "aft Lorong Betik": 0.7811184128325798, "modeOfTransport": "Walk" },
       {
-        "Batu 5 Johor Street Market": 1.015607764916944,
-        "modeOfTransport": "Walk"
-      },
-      { "Giant Tampoi": 0.38938543958956146, "modeOfTransport": "P211-01" },
-      { "Giant Tampoi": 0.38938543958956146, "modeOfTransport": "P411-01" }
-    ]
+        "Giant Tampoi": 0.38938543958956146,
+        "modeOfTransport": ["P211-01", "P411-01"]
+      }
+    ],
+    "lat": 1.5008855908671468,
+    "lng": 103.69599314953071,
+    "operating_buses": ["P211-01", "P411-01"]
   },
   "Giant Tampoi": {
     "edges": [
-      { "SK Kampung Pasir": 0.09336112730346122, "modeOfTransport": "Walk" },
+      { "SK Kampung Pasir": 0.09336112730346122, "modeOfTransport": ["Walk"] },
       {
-        "Kompleks Pekan Rabu Johor Bahru": 0.38938543958956146,
-        "modeOfTransport": "Walk"
-      },
-      { "aft Lorong Betik": 0.3917927695342619, "modeOfTransport": "Walk" },
-      { "Opp Pulai View Condo": 0.4547717042349293, "modeOfTransport": "Walk" },
-      {
-        "Batu 5 Johor Street Market": 0.626260870943746,
-        "modeOfTransport": "Walk"
-      },
-      { "aft Lorong Betik": 0.3917927695342619, "modeOfTransport": "P211-01" },
-      { "aft Lorong Betik": 0.3917927695342619, "modeOfTransport": "P411-01" }
-    ]
+        "aft Lorong Betik": 0.3917927695342619,
+        "modeOfTransport": ["P211-01", "P411-01"]
+      }
+    ],
+    "lat": 1.498877450327011,
+    "lng": 103.69886295948693,
+    "operating_buses": ["P211-01", "P411-01"]
   },
   "aft Lorong Betik": {
     "edges": [
       {
         "Batu 5 Johor Street Market": 0.2344924915302492,
-        "modeOfTransport": "Walk"
-      },
-      { "Giant Tampoi": 0.3917927695342619, "modeOfTransport": "Walk" },
-      { "SK Kampung Pasir": 0.4777281330323757, "modeOfTransport": "Walk" },
-      { "Plaza Angsana": 0.5349208177546396, "modeOfTransport": "Walk" },
-      {
-        "bef Shell Kiosk @ Kampung Pasir": 0.763031538016053,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Batu 5 Johor Street Market": 0.2344924915302492,
-        "modeOfTransport": "P211-01"
-      },
-      {
-        "Batu 5 Johor Street Market": 0.2344924915302492,
-        "modeOfTransport": "P411-01"
+        "modeOfTransport": ["Walk", "P211-01", "P411-01"]
       }
-    ]
+    ],
+    "lat": 1.4969289341746932,
+    "lng": 103.70179963586516,
+    "operating_buses": ["P211-01", "P411-01"]
   },
   "Batu 5 Johor Street Market": {
     "edges": [
-      { "aft Lorong Betik": 0.2344924915302492, "modeOfTransport": "Walk" },
-      { "Plaza Angsana": 0.30043500856495475, "modeOfTransport": "Walk" },
+      { "aft Lorong Betik": 0.2344924915302492, "modeOfTransport": ["Walk"] },
       {
-        "bef Shell Kiosk @ Kampung Pasir": 0.5299445367460891,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Klinik Kesihatan Tampoi": 0.5314716922064086,
-        "modeOfTransport": "Walk"
-      },
-      { "Giant Tampoi": 0.626260870943746, "modeOfTransport": "Walk" },
-      { "Plaza Angsana": 0.30043500856495475, "modeOfTransport": "P211-01" },
-      { "Plaza Angsana": 0.30043500856495475, "modeOfTransport": "P411-01" }
-    ]
+        "Plaza Angsana": 0.30043500856495475,
+        "modeOfTransport": ["P211-01", "P411-01"]
+      }
+    ],
+    "lat": 1.4957308782478185,
+    "lng": 103.70353570332152,
+    "operating_buses": ["P211-01", "P411-01"]
   },
   "Plaza Angsana": {
     "edges": [
       {
         "bef Shell Kiosk @ Kampung Pasir": 0.23456450135694631,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Klinik Kesihatan Tampoi": 0.23592332613966285,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Batu 5 Johor Street Market": 0.30043500856495475,
-        "modeOfTransport": "Walk"
-      },
-      { "aft Lorong Betik": 0.5349208177546396, "modeOfTransport": "Walk" },
-      {
-        "Klinik Utama @ Jalan Padi 1": 0.8795133605344527,
-        "modeOfTransport": "Walk"
+        "modeOfTransport": ["Walk"]
       },
       {
         "Klinik Utama @ Jalan Padi 1": 0.8795133605344527,
-        "modeOfTransport": "P211-01"
-      },
-      {
-        "Klinik Utama @ Jalan Padi 1": 0.8795133605344527,
-        "modeOfTransport": "P411-01"
+        "modeOfTransport": ["P211-01", "P411-01"]
       }
-    ]
+    ],
+    "lat": 1.494173589831715,
+    "lng": 103.70574439346098,
+    "operating_buses": ["P211-01", "P411-01"]
   },
   "Klinik Utama @ Jalan Padi 1": {
     "edges": [
-      { "CIMB Bank": 0.08438895498779121, "modeOfTransport": "Walk" },
-      {
-        "Klinik Kesihatan Tampoi": 0.6549905048677866,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "bef Shell Kiosk @ Kampung Pasir": 0.6566894521808918,
-        "modeOfTransport": "Walk"
-      },
-      { "Plaza Angsana": 0.8795133605344527, "modeOfTransport": "Walk" },
-      {
-        "Batu 5 Johor Street Market": 1.1799463390345175,
-        "modeOfTransport": "Walk"
-      },
+      { "CIMB Bank": 0.08438895498779121, "modeOfTransport": ["Walk"] },
       {
         "Opp Amitabha Centre": 1.3828936236851819,
-        "modeOfTransport": "P211-01"
-      },
-      {
-        "Opp Amitabha Centre": 1.3828936236851819,
-        "modeOfTransport": "P411-01"
+        "modeOfTransport": ["P211-01", "P411-01"]
       }
-    ]
+    ],
+    "lat": 1.489587186962772,
+    "lng": 103.71219076437811,
+    "operating_buses": ["P211-01", "P411-01"]
   },
   "Opp Amitabha Centre": {
     "edges": [
-      { "Amitabha Centre": 0.03866849861952268, "modeOfTransport": "Walk" },
-      {
-        "aft Shell Kiosk @ Jalan Tun Abdul Razak": 0.38901298017129443,
-        "modeOfTransport": "Walk"
-      },
+      { "Amitabha Centre": 0.03866849861952268, "modeOfTransport": ["Walk"] },
       {
         "Opp Shell Kiosk @ Jalan Tun Abdul Razak": 0.406336626090415,
-        "modeOfTransport": "Walk"
-      },
-      { "CIMB Bank": 1.343956042992996, "modeOfTransport": "Walk" },
-      {
-        "Klinik Utama @ Jalan Padi 1": 1.3828936236851819,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Opp Shell Kiosk @ Jalan Tun Abdul Razak": 0.406336626090415,
-        "modeOfTransport": "P211-01"
-      },
-      {
-        "Opp Shell Kiosk @ Jalan Tun Abdul Razak": 0.406336626090415,
-        "modeOfTransport": "P411-01"
+        "modeOfTransport": ["P211-01", "P411-01"]
       }
-    ]
+    ],
+    "lat": 1.4871255056128097,
+    "lng": 103.72438547599789,
+    "operating_buses": ["P211-01", "P411-01"]
   },
   "Opp Shell Kiosk @ Jalan Tun Abdul Razak": {
     "edges": [
       {
         "aft Shell Kiosk @ Jalan Tun Abdul Razak": 0.03184107015037061,
-        "modeOfTransport": "Walk"
-      },
-      { "Opp Amitabha Centre": 0.406336626090415, "modeOfTransport": "Walk" },
-      { "Amitabha Centre": 0.4329772180656805, "modeOfTransport": "Walk" },
-      {
-        "RTM Jabatan Penyiaran Negeri Johor": 1.3980573275504706,
-        "modeOfTransport": "Walk"
+        "modeOfTransport": ["Walk"]
       },
       {
-        "Pejabat Daerah Tanah Johor Bahru": 1.511305146164644,
-        "modeOfTransport": "Walk"
-      },
-      { "Larkin Terminal": 1.9829373103741064, "modeOfTransport": "P211-01" },
-      { "Larkin Terminal": 1.9829373103741064, "modeOfTransport": "P411-01" }
-    ]
+        "Larkin Terminal": 1.9829373103741064,
+        "modeOfTransport": ["P211-01", "P411-01"]
+      }
+    ],
+    "lat": 1.4887834830210198,
+    "lng": 103.72764307910049,
+    "operating_buses": ["P211-01", "P411-01"]
   },
   "aft Shell Kiosk @ Jalan Tun Abdul Razak": {
     "edges": [
       {
         "Opp Shell Kiosk @ Jalan Tun Abdul Razak": 0.03184107015037061,
-        "modeOfTransport": "Walk"
-      },
-      { "Opp Amitabha Centre": 0.38901298017129443, "modeOfTransport": "Walk" },
-      { "Amitabha Centre": 0.4138181061182026, "modeOfTransport": "Walk" },
-      {
-        "RTM Jabatan Penyiaran Negeri Johor": 1.3799111497678638,
-        "modeOfTransport": "Walk"
+        "modeOfTransport": ["Walk"]
       },
       {
-        "Pejabat Daerah Tanah Johor Bahru": 1.5226946083365058,
-        "modeOfTransport": "Walk"
-      },
-      { "Amitabha Centre": 0.4138181061182026, "modeOfTransport": "P211-02" },
-      { "Amitabha Centre": 0.4138181061182026, "modeOfTransport": "P411-02" }
-    ]
+        "Amitabha Centre": 0.4138181061182026,
+        "modeOfTransport": ["P211-02", "P411-02"]
+      }
+    ],
+    "lat": 1.4884998356693775,
+    "lng": 103.72760379017922,
+    "operating_buses": ["P211-02", "P411-02"]
   },
   "Amitabha Centre": {
     "edges": [
-      { "Opp Amitabha Centre": 0.03866849861952268, "modeOfTransport": "Walk" },
       {
-        "aft Shell Kiosk @ Jalan Tun Abdul Razak": 0.4138181061182026,
-        "modeOfTransport": "Walk"
+        "Opp Amitabha Centre": 0.03866849861952268,
+        "modeOfTransport": ["Walk"]
       },
       {
-        "Opp Shell Kiosk @ Jalan Tun Abdul Razak": 0.4329772180656805,
-        "modeOfTransport": "Walk"
-      },
-      { "CIMB Bank": 1.3402301112151993, "modeOfTransport": "Walk" },
-      {
-        "Klinik Utama @ Jalan Padi 1": 1.3812724643633048,
-        "modeOfTransport": "Walk"
-      },
-      { "CIMB Bank": 1.3402301112151993, "modeOfTransport": "P211-02" },
-      { "CIMB Bank": 1.3402301112151993, "modeOfTransport": "P411-02" }
-    ]
+        "CIMB Bank": 1.3402301112151993,
+        "modeOfTransport": ["P211-02", "P411-02"]
+      }
+    ],
+    "lat": 1.4867890112545767,
+    "lng": 103.72429767112283,
+    "operating_buses": ["P211-02", "P411-02"]
   },
   "CIMB Bank": {
     "edges": [
       {
         "Klinik Utama @ Jalan Padi 1": 0.08438895498779121,
-        "modeOfTransport": "Walk"
+        "modeOfTransport": ["Walk"]
       },
       {
         "Klinik Kesihatan Tampoi": 0.7195547144155205,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "bef Shell Kiosk @ Kampung Pasir": 0.7211981934445301,
-        "modeOfTransport": "Walk"
-      },
-      { "Plaza Angsana": 0.9483228354324308, "modeOfTransport": "Walk" },
-      {
-        "Batu 5 Johor Street Market": 1.2483773283828101,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Klinik Kesihatan Tampoi": 0.7195547144155205,
-        "modeOfTransport": "P211-02"
-      },
-      {
-        "Klinik Kesihatan Tampoi": 0.7195547144155205,
-        "modeOfTransport": "P411-02"
+        "modeOfTransport": ["P211-02", "P411-02"]
       }
-    ]
+    ],
+    "lat": 1.4888638795941063,
+    "lng": 103.71242062086549,
+    "operating_buses": ["P211-02", "P411-02"]
   },
   "Klinik Kesihatan Tampoi": {
     "edges": [
       {
         "bef Shell Kiosk @ Kampung Pasir": 0.001813556557718257,
-        "modeOfTransport": "Walk"
-      },
-      { "Plaza Angsana": 0.23592332613966285, "modeOfTransport": "Walk" },
-      {
-        "Batu 5 Johor Street Market": 0.5314716922064086,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Klinik Utama @ Jalan Padi 1": 0.6549905048677866,
-        "modeOfTransport": "Walk"
-      },
-      { "CIMB Bank": 0.7195547144155205, "modeOfTransport": "Walk" },
-      {
-        "bef Shell Kiosk @ Kampung Pasir": 0.001813556557718257,
-        "modeOfTransport": "P211-02"
-      },
-      {
-        "bef Shell Kiosk @ Kampung Pasir": 0.001813556557718257,
-        "modeOfTransport": "P411-02"
+        "modeOfTransport": ["Walk", "P211-02", "P411-02"]
       }
-    ]
+    ],
+    "lat": 1.4925296181173713,
+    "lng": 103.70708612019975,
+    "operating_buses": ["P211-02", "P411-02"]
   },
   "bef Shell Kiosk @ Kampung Pasir": {
     "edges": [
       {
         "Klinik Kesihatan Tampoi": 0.001813556557718257,
-        "modeOfTransport": "Walk"
-      },
-      { "Plaza Angsana": 0.23456450135694631, "modeOfTransport": "Walk" },
-      {
-        "Batu 5 Johor Street Market": 0.5299445367460891,
-        "modeOfTransport": "Walk"
+        "modeOfTransport": ["Walk"]
       },
       {
-        "Klinik Utama @ Jalan Padi 1": 0.6566894521808918,
-        "modeOfTransport": "Walk"
-      },
-      { "CIMB Bank": 0.7211981934445301, "modeOfTransport": "Walk" },
-      { "SK Kampung Pasir": 1.2352465614714285, "modeOfTransport": "P211-02" },
-      { "SK Kampung Pasir": 1.2352465614714285, "modeOfTransport": "P411-02" }
-    ]
+        "SK Kampung Pasir": 1.2352465614714285,
+        "modeOfTransport": ["P211-02", "P411-02"]
+      }
+    ],
+    "lat": 1.4925322994125712,
+    "lng": 103.70707002694427,
+    "operating_buses": ["P211-02", "P411-02"]
   },
   "SK Kampung Pasir": {
     "edges": [
-      { "Giant Tampoi": 0.09336112730346122, "modeOfTransport": "Walk" },
-      {
-        "Kompleks Pekan Rabu Johor Bahru": 0.30908317332864105,
-        "modeOfTransport": "Walk"
-      },
-      { "Opp Pulai View Condo": 0.369718039937839, "modeOfTransport": "Walk" },
-      { "aft Lorong Betik": 0.4777281330323757, "modeOfTransport": "Walk" },
-      {
-        "Batu 5 Johor Street Market": 0.7113929825651389,
-        "modeOfTransport": "Walk"
-      },
+      { "Giant Tampoi": 0.09336112730346122, "modeOfTransport": ["Walk"] },
       {
         "Opp Pulai View Condo": 0.369718039937839,
-        "modeOfTransport": "P211-02"
-      },
-      {
-        "Opp Pulai View Condo": 0.369718039937839,
-        "modeOfTransport": "P411-02"
+        "modeOfTransport": ["P211-02", "P411-02"]
       }
-    ]
+    ],
+    "lat": 1.4989947483511965,
+    "lng": 103.6980312919993,
+    "operating_buses": ["P211-02", "P411-02"]
   },
   "Opp Pulai View Condo": {
     "edges": [
       {
         "Kompleks Pekan Rabu Johor Bahru": 0.07556416373122082,
-        "modeOfTransport": "Walk"
+        "modeOfTransport": ["Walk"]
       },
-      { "SK Kampung Pasir": 0.369718039937839, "modeOfTransport": "Walk" },
-      { "Giant Tampoi": 0.4547717042349293, "modeOfTransport": "Walk" },
-      { "aft Lorong Betik": 0.846115908275686, "modeOfTransport": "Walk" },
-      { "bef KIP Mart": 1.061681572184007, "modeOfTransport": "Walk" },
-      { "bef KIP Mart": 1.061681572184007, "modeOfTransport": "P211-02" },
-      { "bef KIP Mart": 1.061681572184007, "modeOfTransport": "P411-02" }
-    ]
+      {
+        "bef KIP Mart": 1.061681572184007,
+        "modeOfTransport": ["P211-02", "P411-02"]
+      }
+    ],
+    "lat": 1.500912032218495,
+    "lng": 103.69531386622876,
+    "operating_buses": ["P211-02", "P411-02"]
   },
   "bef KIP Mart": {
     "edges": [
       {
         "Opp Petron Kiosk @ Taman Tampoi Indah": 0.07293495548690011,
-        "modeOfTransport": "Walk"
+        "modeOfTransport": ["Walk"]
       },
       {
-        "Opp Saksama Otomobil": 0.49452761347286806,
-        "modeOfTransport": "Walk"
-      },
-      { "Paradigm Mall": 0.8535899262887705, "modeOfTransport": "Walk" },
-      { "Opp Pulai View Condo": 1.061681572184007, "modeOfTransport": "Walk" },
-      { "Opp Paradigm Mall": 1.092703209444441, "modeOfTransport": "Walk" },
-      { "Opp Paradigm Mall": 1.092703209444441, "modeOfTransport": "P211-02" },
-      { "Opp Paradigm Mall": 1.092703209444441, "modeOfTransport": "P411-02" }
-    ]
+        "Opp Paradigm Mall": 1.092703209444441,
+        "modeOfTransport": ["P211-02", "P411-02"]
+      }
+    ],
+    "lat": 1.5082150994789085,
+    "lng": 103.68916128086431,
+    "operating_buses": ["P211-02", "P411-02"]
   },
   "Opp Paradigm Mall": {
     "edges": [
-      { "Paradigm Mall": 0.24413917729765305, "modeOfTransport": "Walk" },
-      { "bef Paradigm Mall": 0.3676795526244264, "modeOfTransport": "Walk" },
-      { "Opp Saksama Otomobil": 0.6024008637595119, "modeOfTransport": "Walk" },
+      { "Paradigm Mall": 0.24413917729765305, "modeOfTransport": ["Walk"] },
       {
-        "bef Jalan Kempas Lama": 0.8259309658633566,
-        "modeOfTransport": "Walk"
-      },
-      { "bef McDonald's": 0.9128528319174697, "modeOfTransport": "Walk" },
-      { "bef McDonald's": 0.9128528319174697, "modeOfTransport": "P211-02" },
-      { "bef McDonald's": 0.9128528319174697, "modeOfTransport": "P411-02" }
-    ]
+        "bef McDonald's": 0.9128528319174697,
+        "modeOfTransport": ["P211-02", "P411-02"]
+      }
+    ],
+    "lat": 1.516395250789313,
+    "lng": 103.6837138895428,
+    "operating_buses": ["P211-02", "P411-02"]
   },
   "bef McDonald's": {
     "edges": [
       {
         "bef Jalan Kempas Lama": 0.09124841570550803,
-        "modeOfTransport": "Walk"
+        "modeOfTransport": ["Walk"]
       },
-      { "bef Paradigm Mall": 0.547998909439545, "modeOfTransport": "Walk" },
-      { "Opp Paradigm Mall": 0.9128528319174697, "modeOfTransport": "Walk" },
-      { "Opp SJK (C) Kuo Kuang": 1.054164171929628, "modeOfTransport": "Walk" },
-      { "SJK (C) Kuo Kuang": 1.0936018941611845, "modeOfTransport": "Walk" },
-      { "SJK (C) Kuo Kuang": 1.0936018941611845, "modeOfTransport": "P211-02" },
-      { "SJK (C) Kuo Kuang": 1.0936018941611845, "modeOfTransport": "P411-02" }
-    ]
+      {
+        "SJK (C) Kuo Kuang": 1.0936018941611845,
+        "modeOfTransport": ["P211-02", "P411-02"]
+      }
+    ],
+    "lat": 1.5230889877416085,
+    "lng": 103.67895937664424,
+    "operating_buses": ["P211-02", "P411-02"]
   },
   "SJK (C) Kuo Kuang": {
     "edges": [
       {
         "Opp SJK (C) Kuo Kuang": 0.059221113273559965,
-        "modeOfTransport": "Walk"
+        "modeOfTransport": ["Walk"]
       },
       {
-        "Sin Kok Soon Motor (JB) Sdn Bhd": 0.604030495522201,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Shophouses @ Jalan Perwira 9": 0.6195673590143911,
-        "modeOfTransport": "Walk"
-      },
-      { "bef Jalan Tun Teja": 0.7323878069941248, "modeOfTransport": "Walk" },
-      { "Polilkinik Yap": 0.9976015259953636, "modeOfTransport": "Walk" },
-      { "aft Jalan Patin": 1.0051016200640812, "modeOfTransport": "P211-02" },
-      { "aft Jalan Patin": 1.0051016200640812, "modeOfTransport": "P411-02" }
-    ]
+        "aft Jalan Patin": 1.0051016200640812,
+        "modeOfTransport": ["P211-02", "P411-02"]
+      }
+    ],
+    "lat": 1.5280473244911534,
+    "lng": 103.67046271528375,
+    "operating_buses": ["P211-02", "P411-02"]
   },
   "aft Jalan Sri Skudai": {
     "edges": [
       {
         "Shophouses @ Jalan Suasa 1": 0.2712897395004209,
-        "modeOfTransport": "Walk"
+        "modeOfTransport": ["Walk"]
       },
-      {
-        "Shophouses along Jalan Tembaga Kuning 4": 0.4588784553005416,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Shell Kiosk @ Taman Sri Putri": 0.5606400378083336,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Opp Shell Kiosk @ Taman Sri Putri": 0.6221900311310553,
-        "modeOfTransport": "Walk"
-      },
-      { "Masjid Abidin": 0.7428224122402662, "modeOfTransport": "Walk" },
       {
         "Shophouses @ Jalan Suasa 1": 0.2783660564661862,
-        "modeOfTransport": "P211-02"
+        "modeOfTransport": ["P211-02"]
       }
-    ]
+    ],
+    "lat": 1.548816799334225,
+    "lng": 103.65409455093105,
+    "operating_buses": ["P211-02"]
   },
   "bef UTM Main Gate": {
     "edges": [
-      { "UTM Main Gate (Exit)": 0.0801366531273453, "modeOfTransport": "Walk" },
-      {
-        "aft Block P19A - Fakulti Kejuruteraan Elektrik": 0.2847171002478053,
-        "modeOfTransport": "Walk"
-      },
-      { "UTM Equine Park": 0.37409727241036883, "modeOfTransport": "Walk" },
-      {
-        "UTM Fakulti Alam Bina": 0.4894816420917069,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Block P07 - Fakulti Kejuruteraan Elektrik": 0.5677745874569625,
-        "modeOfTransport": "Walk"
-      },
       {
         "UTM Main Gate (Exit)": 0.0801366531273453,
-        "modeOfTransport": "P211-02"
+        "modeOfTransport": ["Walk", "P211-02"]
       }
-    ]
+    ],
+    "lat": 1.5568669736349259,
+    "lng": 103.63801336191919,
+    "operating_buses": ["P211-02"]
   },
   "UTM Main Gate (Exit)": {
     "edges": [
-      { "bef UTM Main Gate": 0.0801366531273453, "modeOfTransport": "Walk" },
-      {
-        "aft Block P19A - Fakulti Kejuruteraan Elektrik": 0.3597831046716723,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "UTM Fakulti Alam Bina": 0.4425097642163738,
-        "modeOfTransport": "Walk"
-      },
-      { "UTM Equine Park": 0.4425272585397133, "modeOfTransport": "Walk" },
-      {
-        "Block P07 - Fakulti Kejuruteraan Elektrik": 0.6333662496903254,
-        "modeOfTransport": "Walk"
-      },
+      { "bef UTM Main Gate": 0.0801366531273453, "modeOfTransport": ["Walk"] },
       {
         "Opp AEON Taman Universiti": 1.854466976543814,
-        "modeOfTransport": "P211-02"
+        "modeOfTransport": ["P211-02"]
       }
-    ]
+    ],
+    "lat": 1.5567743097422382,
+    "lng": 103.63729839383352,
+    "operating_buses": ["P211-02"]
   },
   "Opp AEON Taman Universiti": {
     "edges": [
       {
         "Aeon Taman Universiti": 0.051071171315827044,
-        "modeOfTransport": "Walk"
+        "modeOfTransport": ["Walk"]
       },
       {
         "Taman Universiti Terminal": 0.3836896416905215,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Jalan Kebudayaan 27 / 24 Intersection": 0.7086391682320207,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Sekolah Kebangsaan Taman Universiti 4": 0.8785769318555279,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "opp Sekolah Kebangsaan Taman Universiti 4": 0.8944361038564138,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Taman Universiti Terminal": 0.3836896416905215,
-        "modeOfTransport": "P211-02"
+        "modeOfTransport": ["P211-02"]
       }
-    ]
+    ],
+    "lat": 1.5419187249489392,
+    "lng": 103.62971573495227,
+    "operating_buses": ["P211-02"]
   },
   "Kulai Terminal": {
     "edges": [
-      { "Kulai Centre Point": 0.5571779614110575, "modeOfTransport": "Walk" },
-      { "Opp Arked Kulai": 0.6252240887254624, "modeOfTransport": "Walk" },
       {
-        "SBS Enterprises (M) Sdn Bhd": 1.5009929049618518,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Opp SBS Enterprises (M) Sdn Bhd": 1.5300929816551012,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Persatuan Hokkien Kulai": 1.8282233329945863,
-        "modeOfTransport": "Walk"
-      },
-      { "Kulai Centre Point": 0.5571779614110575, "modeOfTransport": "P411-01" }
-    ]
+        "Kulai Centre Point": 0.5571779614110575,
+        "modeOfTransport": ["Walk", "P411-01"]
+      }
+    ],
+    "lat": 1.6626828053288385,
+    "lng": 103.59889110796522,
+    "operating_buses": ["P411-01", "P411-02"]
   },
   "Kulai Centre Point": {
     "edges": [
-      { "Opp Arked Kulai": 0.07576862190550744, "modeOfTransport": "Walk" },
-      { "Kulai Terminal": 0.5571779614110575, "modeOfTransport": "Walk" },
-      {
-        "SBS Enterprises (M) Sdn Bhd": 1.0115518496239988,
-        "modeOfTransport": "Walk"
-      },
+      { "Opp Arked Kulai": 0.07576862190550744, "modeOfTransport": ["Walk"] },
       {
         "Opp SBS Enterprises (M) Sdn Bhd": 1.0398932308710604,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Persatuan Hokkien Kulai": 1.361899433641032,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Opp SBS Enterprises (M) Sdn Bhd": 1.0398932308710604,
-        "modeOfTransport": "P411-01"
+        "modeOfTransport": ["P411-01"]
       }
-    ]
+    ],
+    "lat": 1.6613642865126417,
+    "lng": 103.60372737912934,
+    "operating_buses": ["P411-01"]
   },
   "Opp SBS Enterprises (M) Sdn Bhd": {
     "edges": [
       {
         "SBS Enterprises (M) Sdn Bhd": 0.029103794666776574,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Persatuan Hokkien Kulai": 0.3333095017178631,
-        "modeOfTransport": "Walk"
+        "modeOfTransport": ["Walk"]
       },
       {
         "Opp Public Bank @ Jalan Susur Kulai 2": 0.4111571298287339,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "aft Persiaran Indahpura 4": 0.8423798736943392,
-        "modeOfTransport": "Walk"
-      },
-      { "Opp Arked Kulai": 0.9647745580835647, "modeOfTransport": "Walk" },
-      {
-        "Opp Public Bank @ Jalan Susur Kulai 2": 0.4111571298287339,
-        "modeOfTransport": "P411-01"
+        "modeOfTransport": ["P411-01"]
       }
-    ]
+    ],
+    "lat": 1.6541744853842373,
+    "lng": 103.60971038276091,
+    "operating_buses": ["P411-01"]
   },
   "Opp Public Bank @ Jalan Susur Kulai 2": {
     "edges": [
       {
         "Persatuan Hokkien Kulai": 0.08724714133825565,
-        "modeOfTransport": "Walk"
+        "modeOfTransport": ["Walk"]
       },
-      {
-        "Opp SBS Enterprises (M) Sdn Bhd": 0.4111571298287339,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "aft Persiaran Indahpura 4": 0.4318784752047528,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "SBS Enterprises (M) Sdn Bhd": 0.4378978028078273,
-        "modeOfTransport": "Walk"
-      },
-      { "SMK Kulai Besar": 0.7577528725015402, "modeOfTransport": "Walk" },
       {
         "Opp Pertubuhan Peladang Kawasan Kulai": 0.8414448560925443,
-        "modeOfTransport": "P411-01"
+        "modeOfTransport": ["P411-01"]
       }
-    ]
+    ],
+    "lat": 1.6509304328430152,
+    "lng": 103.61148553732649,
+    "operating_buses": ["P411-01"]
   },
   "Opp Pertubuhan Peladang Kawasan Kulai": {
     "edges": [
-      { "SMK Kulai Besar": 0.09370426096109881, "modeOfTransport": "Walk" },
-      {
-        "aft Persiaran Indahpura 4": 0.4186388100851274,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Opp Public Bank @ Jalan Susur Kulai 2": 0.8414448560925443,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Persatuan Hokkien Kulai": 0.9271896960428807,
-        "modeOfTransport": "Walk"
-      },
+      { "SMK Kulai Besar": 0.09370426096109881, "modeOfTransport": ["Walk"] },
       {
         "Opp Hospital Temenggong Seri Maharaja Tun Ibrahim Kulaijaya": 1.0907751436098498,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Opp Hospital Temenggong Seri Maharaja Tun Ibrahim Kulaijaya": 1.0907751436098498,
-        "modeOfTransport": "P411-01"
+        "modeOfTransport": ["P411-01"]
       }
-    ]
+    ],
+    "lat": 1.6452580216482706,
+    "lng": 103.61649637358444,
+    "operating_buses": ["P411-01"]
   },
   "Opp Hospital Temenggong Seri Maharaja Tun Ibrahim Kulaijaya": {
     "edges": [
       {
         "bef Hospital Temenggong Seri Maharaja Tun Ibrahim Kulaijaya": 0.02608854339388413,
-        "modeOfTransport": "Walk"
+        "modeOfTransport": ["Walk"]
       },
-      { "Opp Jalan Cermai": 0.7266747921726827, "modeOfTransport": "Walk" },
-      { "aft Jalan Cermai 7": 0.7787026425353764, "modeOfTransport": "Walk" },
-      {
-        "Opp Pertubuhan Peladang Kawasan Kulai": 1.0907751436098498,
-        "modeOfTransport": "Walk"
-      },
-      { "TJ Mart": 1.1052136712159153, "modeOfTransport": "Walk" },
-      { "Opp Jalan Cermai": 0.7266747921726827, "modeOfTransport": "P411-01" }
-    ]
+      { "Opp Jalan Cermai": 0.7266747921726827, "modeOfTransport": ["P411-01"] }
+    ],
+    "lat": 1.6398209133282802,
+    "lng": 103.62466463309562,
+    "operating_buses": ["P411-01"]
   },
   "Opp Jalan Cermai": {
     "edges": [
-      { "aft Jalan Cermai 7": 0.06944766743615233, "modeOfTransport": "Walk" },
-      { "TJ Mart": 0.3804554768890887, "modeOfTransport": "Walk" },
       {
-        "Opp Stor JKR (D) Kulaijaya": 0.5134761962623433,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Stor JKR (D) Kulaijaya": 0.5299325102954694,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "bef Hospital Temenggong Seri Maharaja Tun Ibrahim Kulaijaya": 0.7050020303252197,
-        "modeOfTransport": "Walk"
+        "aft Jalan Cermai 7": 0.06944766743615233,
+        "modeOfTransport": ["Walk"]
       },
       {
         "Opp Stor JKR (D) Kulaijaya": 0.5134761962623433,
-        "modeOfTransport": "P411-01"
+        "modeOfTransport": ["P411-01"]
       }
-    ]
+    ],
+    "lat": 1.6359493158863123,
+    "lng": 103.62993165279192,
+    "operating_buses": ["P411-01"]
   },
   "Opp Stor JKR (D) Kulaijaya": {
     "edges": [
       {
         "Stor JKR (D) Kulaijaya": 0.03996994904849382,
-        "modeOfTransport": "Walk"
+        "modeOfTransport": ["Walk"]
       },
-      { "TJ Mart": 0.13649316672850031, "modeOfTransport": "Walk" },
-      { "aft Jalan Cermai 7": 0.46254889870741395, "modeOfTransport": "Walk" },
-      { "Opp Jalan Cermai": 0.5134761962623433, "modeOfTransport": "Walk" },
-      { "aft Jalan Kelah": 0.5404605988936924, "modeOfTransport": "Walk" },
       {
         "Opp Wang Loo Motor Sdn Bhd": 0.7028402938659479,
-        "modeOfTransport": "P411-01"
+        "modeOfTransport": ["P411-01"]
       }
-    ]
+    ],
+    "lat": 1.633014316152999,
+    "lng": 103.63349819512037,
+    "operating_buses": ["P411-01"]
   },
   "Opp Wang Loo Motor Sdn Bhd": {
     "edges": [
-      { "aft Jalan Kelah": 0.16279740515880897, "modeOfTransport": "Walk" },
-      {
-        "Stor JKR (D) Kulaijaya": 0.6859796669720153,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Opp Stor JKR (D) Kulaijaya": 0.7028402938659479,
-        "modeOfTransport": "Walk"
-      },
-      { "TJ Mart": 0.8352952383618457, "modeOfTransport": "Walk" },
-      { "aft Jalan Cermai 7": 1.1613993415617396, "modeOfTransport": "Walk" },
+      { "aft Jalan Kelah": 0.16279740515880897, "modeOfTransport": ["Walk"] },
       {
         "Opp Pejabat Lembaga Lebuhraya Malaysia": 1.2857955213062966,
-        "modeOfTransport": "P411-01"
+        "modeOfTransport": ["P411-01"]
       }
-    ]
+    ],
+    "lat": 1.628655062754551,
+    "lng": 103.63807709630609,
+    "operating_buses": ["P411-01"]
   },
   "Opp Pejabat Lembaga Lebuhraya Malaysia": {
     "edges": [
       {
         "Pejabat Lembaga Lebuhraya Malaysia": 0.08358328869194766,
-        "modeOfTransport": "Walk"
+        "modeOfTransport": ["Walk"]
       },
       {
-        "Opp Deway Motor Trading": 0.8046910025704888,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Opp Wang Loo Motor Sdn Bhd": 1.2857955213062966,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Kawasan Perindustrian Senai 3": 1.2989381102698718,
-        "modeOfTransport": "Walk"
-      },
-      { "aft Jalan Kelah": 1.4478672412479159, "modeOfTransport": "Walk" },
-      { "Medan Selera Senai": 2.114217466634089, "modeOfTransport": "P411-01" }
-    ]
+        "Medan Selera Senai": 2.114217466634089,
+        "modeOfTransport": ["P411-01"]
+      }
+    ],
+    "lat": 1.6203723172849367,
+    "lng": 103.64614936801505,
+    "operating_buses": ["P411-01"]
   },
   "Medan Selera Senai": {
     "edges": [
       {
         "Opp Medan Selera Senai": 0.13952523718000248,
-        "modeOfTransport": "Walk"
+        "modeOfTransport": ["Walk"]
       },
       {
         "Opp Sekolah Kebangsaan Senai": 0.516003940214883,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Masjid Jamek Pekan Senai": 0.5751878901460129,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "bef Sekolah Kebangsaan Senai": 0.61039228533649,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Opp BHPetrol Kiosk @ Taman Aman": 1.1938997267942164,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Opp Sekolah Kebangsaan Senai": 0.516003940214883,
-        "modeOfTransport": "P411-01"
-      },
-      {
-        "Opp Sekolah Kebangsaan Senai": 0.516003940214883,
-        "modeOfTransport": "P403-loop"
+        "modeOfTransport": ["P411-01", "P403-loop"]
       }
-    ]
+    ],
+    "lat": 1.6013846087875712,
+    "lng": 103.64515677546767,
+    "operating_buses": ["P411-01", "P403-loop"]
   },
   "Opp Sekolah Kebangsaan Senai": {
     "edges": [
       {
         "bef Sekolah Kebangsaan Senai": 0.09931027739048146,
-        "modeOfTransport": "Walk"
-      },
-      { "Opp Medan Selera Senai": 0.4045691271474, "modeOfTransport": "Walk" },
-      { "Medan Selera Senai": 0.516003940214883, "modeOfTransport": "Walk" },
-      {
-        "Opp BHPetrol Kiosk @ Taman Aman": 0.6910262923449502,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "bef BHPetrol Kiosk @ Taman Aman": 0.7143467825024742,
-        "modeOfTransport": "Walk"
+        "modeOfTransport": ["Walk"]
       },
       {
         "Opp BHPetrol Kiosk @ Taman Aman": 0.6910262923449502,
-        "modeOfTransport": "P411-01"
-      },
-      {
-        "Opp BHPetrol Kiosk @ Taman Aman": 0.6910262923449502,
-        "modeOfTransport": "P403-loop"
+        "modeOfTransport": ["P411-01", "P403-loop"]
       }
-    ]
+    ],
+    "lat": 1.596764420712483,
+    "lng": 103.64559102580564,
+    "operating_buses": ["P411-01", "P403-loop"]
   },
   "Opp BHPetrol Kiosk @ Taman Aman": {
     "edges": [
       {
         "bef BHPetrol Kiosk @ Taman Aman": 0.04670100639065602,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "bef Sekolah Kebangsaan Senai": 0.6144583195820659,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Opp Sekolah Kebangsaan Senai": 0.6910262923449502,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Opp Medan Selera Senai": 1.0939254319042666,
-        "modeOfTransport": "Walk"
-      },
-      { "Medan Selera Senai": 1.1938997267942164, "modeOfTransport": "Walk" },
-      {
-        "aft Lebuhraya Utara-Selatan": 2.64613384759101,
-        "modeOfTransport": "P411-01"
+        "modeOfTransport": ["Walk"]
       },
       {
         "aft Lebuhraya Utara-Selatan": 2.64613384759101,
-        "modeOfTransport": "P403-loop"
+        "modeOfTransport": ["P411-01", "P403-loop"]
       }
-    ]
+    ],
+    "lat": 1.5910215647537664,
+    "lng": 103.64796686012346,
+    "operating_buses": ["P411-01", "P403-loop"]
   },
   "aft Lebuhraya Utara-Selatan": {
     "edges": [
       {
         "aft Tenaga Nasional Bhd Substation": 1.904900740649489,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Block P07 - Fakulti Kejuruteraan Elektrik": 2.447891496043555,
-        "modeOfTransport": "Walk"
-      },
-      { "aft Jalan Sri Skudai": 2.5886102136858513, "modeOfTransport": "Walk" },
-      {
-        "Shophouses @ Jalan Suasa 1": 2.58956921145258,
-        "modeOfTransport": "Walk"
-      },
-      { "Opp C.I.C.T.": 2.594255512405626, "modeOfTransport": "Walk" },
-      {
-        "Opp Shell Kiosk @ Taman Sri Putri": 2.963212903378566,
-        "modeOfTransport": "P411-01"
+        "modeOfTransport": ["Walk"]
       },
       {
         "Opp Shell Kiosk @ Taman Sri Putri": 2.963212903378566,
-        "modeOfTransport": "P403-loop"
+        "modeOfTransport": ["P411-01", "P403-loop"]
       }
-    ]
+    ],
+    "lat": 1.5710682887829601,
+    "lng": 103.66094006994001,
+    "operating_buses": ["P411-01", "P403-loop"]
   },
   "aft Tenaga Nasional Bhd Substation": {
     "edges": [
-      { "aft Jalan Sri Skudai": 0.7677082834801404, "modeOfTransport": "Walk" },
       {
-        "Shophouses @ Jalan Suasa 1": 0.8977989520580363,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Shell Kiosk @ Taman Sri Putri": 1.0328929118377985,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Opp Shell Kiosk @ Taman Sri Putri": 1.0596267461154811,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Shophouses along Jalan Tembaga Kuning 4": 1.208214674359836,
-        "modeOfTransport": "Walk"
+        "aft Jalan Sri Skudai": 0.7677082834801404,
+        "modeOfTransport": ["Walk"]
       },
       {
         "bef BHPetrol Kiosk @ Taman Aman": 4.242939477459811,
-        "modeOfTransport": "P411-02"
-      },
-      {
-        "bef BHPetrol Kiosk @ Taman Aman": 4.242939477459811,
-        "modeOfTransport": "P403-loop"
+        "modeOfTransport": ["P411-02", "P403-loop"]
       }
-    ]
+    ],
+    "lat": 1.554106991277451,
+    "lng": 103.65853254841942,
+    "operating_buses": ["P411-02", "P403-loop"]
   },
   "bef BHPetrol Kiosk @ Taman Aman": {
     "edges": [
       {
         "Opp BHPetrol Kiosk @ Taman Aman": 0.04670100639065602,
-        "modeOfTransport": "Walk"
+        "modeOfTransport": ["Walk"]
       },
       {
         "bef Sekolah Kebangsaan Senai": 0.6339684933878348,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Opp Sekolah Kebangsaan Senai": 0.7143467825024742,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Opp Medan Selera Senai": 1.1184988719900542,
-        "modeOfTransport": "Walk"
-      },
-      { "Medan Selera Senai": 1.2216723961163123, "modeOfTransport": "Walk" },
-      {
-        "bef Sekolah Kebangsaan Senai": 0.6339684933878348,
-        "modeOfTransport": "P411-02"
-      },
-      {
-        "bef Sekolah Kebangsaan Senai": 0.6339684933878348,
-        "modeOfTransport": "P403-loop"
+        "modeOfTransport": ["P411-02", "P403-loop"]
       }
-    ]
+    ],
+    "lat": 1.5906962752714202,
+    "lng": 103.64770108827454,
+    "operating_buses": ["P411-02", "P403-loop"]
   },
   "bef Sekolah Kebangsaan Senai": {
     "edges": [
       {
         "Opp Sekolah Kebangsaan Senai": 0.09931027739048146,
-        "modeOfTransport": "Walk"
+        "modeOfTransport": ["Walk"]
       },
       {
         "Opp Medan Selera Senai": 0.4928663301346548,
-        "modeOfTransport": "Walk"
-      },
-      { "Medan Selera Senai": 0.61039228533649, "modeOfTransport": "Walk" },
-      {
-        "Opp BHPetrol Kiosk @ Taman Aman": 0.6144583195820659,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "bef BHPetrol Kiosk @ Taman Aman": 0.6339684933878348,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Opp Medan Selera Senai": 0.4928663301346548,
-        "modeOfTransport": "P411-02"
-      },
-      {
-        "Opp Medan Selera Senai": 0.4928663301346548,
-        "modeOfTransport": "P403-loop"
+        "modeOfTransport": ["P411-02", "P403-loop"]
       }
-    ]
+    ],
+    "lat": 1.595899319482502,
+    "lng": 103.64536899139767,
+    "operating_buses": ["P411-02", "P403-loop"]
   },
   "Opp Medan Selera Senai": {
     "edges": [
-      { "Medan Selera Senai": 0.13952523718000248, "modeOfTransport": "Walk" },
       {
-        "Opp Sekolah Kebangsaan Senai": 0.4045691271474,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "bef Sekolah Kebangsaan Senai": 0.4928663301346548,
-        "modeOfTransport": "Walk"
+        "Medan Selera Senai": 0.13952523718000248,
+        "modeOfTransport": ["Walk"]
       },
       {
         "Masjid Jamek Pekan Senai": 0.7146647801485004,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Opp BHPetrol Kiosk @ Taman Aman": 1.0939254319042666,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Masjid Jamek Pekan Senai": 0.7146647801485004,
-        "modeOfTransport": "P411-02"
+        "modeOfTransport": ["P411-02"]
       },
       {
         "bef Econsave @ Senai": 1.7804347705531218,
-        "modeOfTransport": "P403-loop"
+        "modeOfTransport": ["P403-loop"]
       }
-    ]
+    ],
+    "lat": 1.6002634055808034,
+    "lng": 103.64459319263067,
+    "operating_buses": ["P411-02", "P403-loop"]
   },
   "Masjid Jamek Pekan Senai": {
     "edges": [
-      { "Medan Selera Senai": 0.5751878901460129, "modeOfTransport": "Walk" },
-      {
-        "Opp Medan Selera Senai": 0.7146647801485004,
-        "modeOfTransport": "Walk"
-      },
+      { "Medan Selera Senai": 0.5751878901460129, "modeOfTransport": ["Walk"] },
       {
         "Opp Deway Motor Trading": 0.8095319014300277,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Opp Sekolah Kebangsaan Senai": 1.0444113072973153,
-        "modeOfTransport": "Walk"
-      },
-      { "Taman Mewah": 1.0910360296641581, "modeOfTransport": "Walk" },
-      {
-        "Opp Deway Motor Trading": 0.8095319014300277,
-        "modeOfTransport": "P411-02"
+        "modeOfTransport": ["P411-02"]
       }
-    ]
+    ],
+    "lat": 1.6059365939653953,
+    "lng": 103.64761480488822,
+    "operating_buses": ["P411-02"]
   },
   "Opp Deway Motor Trading": {
     "edges": [
       {
         "Opp Pejabat Lembaga Lebuhraya Malaysia": 0.8046910025704888,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Masjid Jamek Pekan Senai": 0.8095319014300277,
-        "modeOfTransport": "Walk"
+        "modeOfTransport": ["Walk"]
       },
       {
         "Pejabat Lembaga Lebuhraya Malaysia": 0.8620406586200263,
-        "modeOfTransport": "Walk"
-      },
-      { "Econsave Senai": 1.049723881724215, "modeOfTransport": "Walk" },
-      { "Taman Mewah": 1.1617724740351487, "modeOfTransport": "Walk" },
-      {
-        "Pejabat Lembaga Lebuhraya Malaysia": 0.8620406586200263,
-        "modeOfTransport": "P411-02"
+        "modeOfTransport": ["P411-02"]
       }
-    ]
+    ],
+    "lat": 1.6131991987249765,
+    "lng": 103.64710738509358,
+    "operating_buses": ["P411-02"]
   },
   "Pejabat Lembaga Lebuhraya Malaysia": {
     "edges": [
       {
         "Opp Pejabat Lembaga Lebuhraya Malaysia": 0.08358328869194766,
-        "modeOfTransport": "Walk"
+        "modeOfTransport": ["Walk"]
       },
-      {
-        "Opp Deway Motor Trading": 0.8620406586200263,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Opp Wang Loo Motor Sdn Bhd": 1.204214952931203,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Kawasan Perindustrian Senai 3": 1.3387698280514828,
-        "modeOfTransport": "Walk"
-      },
-      { "aft Jalan Kelah": 1.3660669953235813, "modeOfTransport": "Walk" },
-      { "aft Jalan Kelah": 1.3660669953235813, "modeOfTransport": "P411-02" }
-    ]
+      { "aft Jalan Kelah": 1.3660669953235813, "modeOfTransport": ["P411-02"] }
+    ],
+    "lat": 1.6207882154385622,
+    "lng": 103.64552297418207,
+    "operating_buses": ["P411-02"]
   },
   "aft Jalan Kelah": {
     "edges": [
       {
         "Opp Wang Loo Motor Sdn Bhd": 0.16279740515880897,
-        "modeOfTransport": "Walk"
+        "modeOfTransport": ["Walk"]
       },
       {
         "Stor JKR (D) Kulaijaya": 0.5231942951590135,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Opp Stor JKR (D) Kulaijaya": 0.5404605988936924,
-        "modeOfTransport": "Walk"
-      },
-      { "TJ Mart": 0.6725374733601812, "modeOfTransport": "Walk" },
-      { "aft Jalan Cermai 7": 0.9986036830802738, "modeOfTransport": "Walk" },
-      {
-        "Stor JKR (D) Kulaijaya": 0.5231942951590135,
-        "modeOfTransport": "P411-02"
+        "modeOfTransport": ["P411-02"]
       }
-    ]
+    ],
+    "lat": 1.6295962449739738,
+    "lng": 103.63695517790576,
+    "operating_buses": ["P411-02"]
   },
   "Stor JKR (D) Kulaijaya": {
     "edges": [
       {
         "Opp Stor JKR (D) Kulaijaya": 0.03996994904849382,
-        "modeOfTransport": "Walk"
+        "modeOfTransport": ["Walk"]
       },
-      { "TJ Mart": 0.1494772877116911, "modeOfTransport": "Walk" },
-      { "aft Jalan Cermai 7": 0.47560599921149904, "modeOfTransport": "Walk" },
-      { "aft Jalan Kelah": 0.5231942951590135, "modeOfTransport": "Walk" },
-      { "Opp Jalan Cermai": 0.5299325102954694, "modeOfTransport": "Walk" },
-      { "TJ Mart": 0.1494772877116911, "modeOfTransport": "P411-02" }
-    ]
+      { "TJ Mart": 0.1494772877116911, "modeOfTransport": ["P411-02"] }
+    ],
+    "lat": 1.6326708725405026,
+    "lng": 103.63339205387095,
+    "operating_buses": ["P411-02"]
   },
   "TJ Mart": {
     "edges": [
       {
         "Opp Stor JKR (D) Kulaijaya": 0.13649316672850031,
-        "modeOfTransport": "Walk"
+        "modeOfTransport": ["Walk"]
       },
       {
-        "Stor JKR (D) Kulaijaya": 0.1494772877116911,
-        "modeOfTransport": "Walk"
-      },
-      { "aft Jalan Cermai 7": 0.3269666096142337, "modeOfTransport": "Walk" },
-      { "Opp Jalan Cermai": 0.3804554768890887, "modeOfTransport": "Walk" },
-      { "aft Jalan Kelah": 0.6725374733601812, "modeOfTransport": "Walk" },
-      { "aft Jalan Cermai 7": 0.3269666096142337, "modeOfTransport": "P411-02" }
-    ]
+        "aft Jalan Cermai 7": 0.3269666096142337,
+        "modeOfTransport": ["P411-02"]
+      }
+    ],
+    "lat": 1.6335971426643172,
+    "lng": 103.63241743186276,
+    "operating_buses": ["P411-02"]
   },
   "aft Jalan Cermai 7": {
     "edges": [
-      { "Opp Jalan Cermai": 0.06944766743615233, "modeOfTransport": "Walk" },
-      { "TJ Mart": 0.3269666096142337, "modeOfTransport": "Walk" },
-      {
-        "Opp Stor JKR (D) Kulaijaya": 0.46254889870741395,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Stor JKR (D) Kulaijaya": 0.47560599921149904,
-        "modeOfTransport": "Walk"
-      },
+      { "Opp Jalan Cermai": 0.06944766743615233, "modeOfTransport": ["Walk"] },
       {
         "bef Hospital Temenggong Seri Maharaja Tun Ibrahim Kulaijaya": 0.7561620603415922,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "bef Hospital Temenggong Seri Maharaja Tun Ibrahim Kulaijaya": 0.7561620603415922,
-        "modeOfTransport": "P411-02"
+        "modeOfTransport": ["P411-02"]
       }
-    ]
+    ],
+    "lat": 1.635335030874363,
+    "lng": 103.63004451042003,
+    "operating_buses": ["P411-02"]
   },
   "bef Hospital Temenggong Seri Maharaja Tun Ibrahim Kulaijaya": {
     "edges": [
       {
         "Opp Hospital Temenggong Seri Maharaja Tun Ibrahim Kulaijaya": 0.02608854339388413,
-        "modeOfTransport": "Walk"
+        "modeOfTransport": ["Walk"]
       },
-      { "Opp Jalan Cermai": 0.7050020303252197, "modeOfTransport": "Walk" },
-      { "aft Jalan Cermai 7": 0.7561620603415922, "modeOfTransport": "Walk" },
-      { "TJ Mart": 1.0828893895111447, "modeOfTransport": "Walk" },
-      {
-        "Opp Pertubuhan Peladang Kawasan Kulai": 1.1120085756994202,
-        "modeOfTransport": "Walk"
-      },
-      { "SMK Kulai Besar": 1.2040808247918058, "modeOfTransport": "P411-02" }
-    ]
+      { "SMK Kulai Besar": 1.2040808247918058, "modeOfTransport": ["P411-02"] }
+    ],
+    "lat": 1.6396010400006824,
+    "lng": 103.62474653372412,
+    "operating_buses": ["P411-02"]
   },
   "SMK Kulai Besar": {
     "edges": [
       {
         "Opp Pertubuhan Peladang Kawasan Kulai": 0.09370426096109881,
-        "modeOfTransport": "Walk"
+        "modeOfTransport": ["Walk"]
       },
       {
         "aft Persiaran Indahpura 4": 0.3300153195940746,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Opp Public Bank @ Jalan Susur Kulai 2": 0.7577528725015402,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Persatuan Hokkien Kulai": 0.8426034212607404,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Opp SBS Enterprises (M) Sdn Bhd": 1.1650595111735464,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "aft Persiaran Indahpura 4": 0.3300153195940746,
-        "modeOfTransport": "P411-02"
+        "modeOfTransport": ["P411-02"]
       }
-    ]
+    ],
+    "lat": 1.6455913464676681,
+    "lng": 103.61572207605488,
+    "operating_buses": ["P411-02"]
   },
   "aft Persiaran Indahpura 4": {
     "edges": [
-      { "SMK Kulai Besar": 0.3300153195940746, "modeOfTransport": "Walk" },
-      {
-        "Opp Pertubuhan Peladang Kawasan Kulai": 0.4186388100851274,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Opp Public Bank @ Jalan Susur Kulai 2": 0.4318784752047528,
-        "modeOfTransport": "Walk"
-      },
+      { "SMK Kulai Besar": 0.3300153195940746, "modeOfTransport": ["Walk"] },
       {
         "Persatuan Hokkien Kulai": 0.5149755565769519,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Opp SBS Enterprises (M) Sdn Bhd": 0.8423798736943392,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Persatuan Hokkien Kulai": 0.5149755565769519,
-        "modeOfTransport": "P411-02"
+        "modeOfTransport": ["P411-02"]
       }
-    ]
+    ],
+    "lat": 1.6476804172092263,
+    "lng": 103.61361307604972,
+    "operating_buses": ["P411-02"]
   },
   "Persatuan Hokkien Kulai": {
     "edges": [
       {
         "Opp Public Bank @ Jalan Susur Kulai 2": 0.08724714133825565,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Opp SBS Enterprises (M) Sdn Bhd": 0.3333095017178631,
-        "modeOfTransport": "Walk"
+        "modeOfTransport": ["Walk"]
       },
       {
         "SBS Enterprises (M) Sdn Bhd": 0.3587772067624917,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "aft Persiaran Indahpura 4": 0.5149755565769519,
-        "modeOfTransport": "Walk"
-      },
-      { "SMK Kulai Besar": 0.8426034212607404, "modeOfTransport": "Walk" },
-      {
-        "SBS Enterprises (M) Sdn Bhd": 0.3587772067624917,
-        "modeOfTransport": "P411-02"
+        "modeOfTransport": ["P411-02"]
       }
-    ]
+    ],
+    "lat": 1.651406692568061,
+    "lng": 103.61086172023629,
+    "operating_buses": ["P411-02"]
   },
   "SBS Enterprises (M) Sdn Bhd": {
     "edges": [
       {
         "Opp SBS Enterprises (M) Sdn Bhd": 0.029103794666776574,
-        "modeOfTransport": "Walk"
+        "modeOfTransport": ["Walk"]
       },
-      {
-        "Persatuan Hokkien Kulai": 0.3587772067624917,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Opp Public Bank @ Jalan Susur Kulai 2": 0.4378978028078273,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "aft Persiaran Indahpura 4": 0.8694841525717252,
-        "modeOfTransport": "Walk"
-      },
-      { "Opp Arked Kulai": 0.9365027764167596, "modeOfTransport": "Walk" },
-      { "Opp Arked Kulai": 0.9365027764167596, "modeOfTransport": "P411-02" }
-    ]
+      { "Opp Arked Kulai": 0.9365027764167596, "modeOfTransport": ["P411-02"] }
+    ],
+    "lat": 1.6543330452855867,
+    "lng": 103.60950205361249,
+    "operating_buses": ["P411-02"]
   },
   "Opp Arked Kulai": {
     "edges": [
-      { "Kulai Centre Point": 0.07576862190550744, "modeOfTransport": "Walk" },
-      { "Kulai Terminal": 0.6252240887254624, "modeOfTransport": "Walk" },
       {
-        "SBS Enterprises (M) Sdn Bhd": 0.9365027764167596,
-        "modeOfTransport": "Walk"
+        "Kulai Centre Point": 0.07576862190550744,
+        "modeOfTransport": ["Walk"]
       },
-      {
-        "Opp SBS Enterprises (M) Sdn Bhd": 0.9647745580835647,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Persatuan Hokkien Kulai": 1.28770629097337,
-        "modeOfTransport": "Walk"
-      },
-      { "Kulai Terminal": 0.6252240887254624, "modeOfTransport": "P411-02" }
-    ]
+      { "Kulai Terminal": 0.6252240887254624, "modeOfTransport": ["P411-02"] }
+    ],
+    "lat": 1.6608994486573931,
+    "lng": 103.60422582209408,
+    "operating_buses": ["P411-02"]
   },
   "Econsave Senai": {
     "edges": [
       {
         "bef Econsave @ Senai": 0.13098092352258628,
-        "modeOfTransport": "Walk"
+        "modeOfTransport": ["Walk"]
       },
-      { "Taman Mewah": 0.19429463808628616, "modeOfTransport": "Walk" },
       {
         "Opp Pusat Hemodialisis Rotary Kulai": 0.26660240779139494,
-        "modeOfTransport": "Walk"
-      },
-      { "Opp Taman Bintang": 0.4652702839891056, "modeOfTransport": "Walk" },
-      { "Taman Bintang": 0.5806174186488152, "modeOfTransport": "Walk" },
-      {
-        "Opp Pusat Hemodialisis Rotary Kulai": 0.26660240779139494,
-        "modeOfTransport": "P403-loop"
+        "modeOfTransport": ["P403-loop"]
       }
-    ]
+    ],
+    "lat": 1.6110068446478472,
+    "lng": 103.65629332000914,
+    "operating_buses": ["P403-loop"]
   },
   "Opp Pusat Hemodialisis Rotary Kulai": {
     "edges": [
-      { "Opp Taman Bintang": 0.2305220255652751, "modeOfTransport": "Walk" },
-      { "Econsave Senai": 0.26660240779139494, "modeOfTransport": "Walk" },
-      { "bef Econsave @ Senai": 0.2795998036608919, "modeOfTransport": "Walk" },
-      { "Taman Bintang": 0.34916864434092676, "modeOfTransport": "Walk" },
-      { "Taman Mewah": 0.3820274988748905, "modeOfTransport": "Walk" },
       {
         "Opp Taman Bintang": 0.2305220255652751,
-        "modeOfTransport": "P403-loop"
+        "modeOfTransport": ["Walk", "P403-loop"]
       }
-    ]
+    ],
+    "lat": 1.6125013180073793,
+    "lng": 103.65816892145304,
+    "operating_buses": ["P403-loop"]
   },
   "Opp Taman Bintang": {
     "edges": [
-      { "Taman Bintang": 0.11909366140255946, "modeOfTransport": "Walk" },
-      {
-        "Opp Pusat Hemodialisis Rotary Kulai": 0.2305220255652751,
-        "modeOfTransport": "Walk"
-      },
-      { "Econsave Senai": 0.4652702839891056, "modeOfTransport": "Walk" },
-      { "bef Econsave @ Senai": 0.5064930668679686, "modeOfTransport": "Walk" },
-      { "Taman Mewah": 0.6088476035564887, "modeOfTransport": "Walk" },
+      { "Taman Bintang": 0.11909366140255946, "modeOfTransport": ["Walk"] },
       {
         "Kawasan Perindustrian Senai 3": 1.3123093940875448,
-        "modeOfTransport": "P403-loop"
+        "modeOfTransport": ["P403-loop"]
       }
-    ]
+    ],
+    "lat": 1.6145424343173105,
+    "lng": 103.658532012215,
+    "operating_buses": ["P403-loop"]
   },
   "Kawasan Perindustrian Senai 3": {
     "edges": [
-      { "NSTP Senai": 0.2598788305417743, "modeOfTransport": "Walk" },
-      { "Taman Bintang": 1.2074280021841286, "modeOfTransport": "Walk" },
-      {
-        "Opp Pejabat Lembaga Lebuhraya Malaysia": 1.2989381102698718,
-        "modeOfTransport": "Walk"
-      },
-      { "Opp Taman Bintang": 1.3123093940875448, "modeOfTransport": "Walk" },
-      {
-        "Pejabat Lembaga Lebuhraya Malaysia": 1.3387698280514828,
-        "modeOfTransport": "Walk"
-      },
+      { "NSTP Senai": 0.2598788305417743, "modeOfTransport": ["Walk"] },
       {
         "Senai Airport Terminal": 1.4804292657829552,
-        "modeOfTransport": "P403-loop"
+        "modeOfTransport": ["P403-loop"]
       }
-    ]
+    ],
+    "lat": 1.6261343968296889,
+    "lng": 103.65631508831991,
+    "operating_buses": ["P403-loop"]
   },
   "Senai Airport Terminal": {
     "edges": [
-      { "NSTP Senai": 1.273785305203168, "modeOfTransport": "Walk" },
       {
-        "Kawasan Perindustrian Senai 3": 1.4804292657829552,
-        "modeOfTransport": "Walk"
-      },
-      { "Taman Bintang": 2.308266786519447, "modeOfTransport": "Walk" },
-      { "Opp Taman Bintang": 2.426946150725557, "modeOfTransport": "Walk" },
-      {
-        "Opp Pusat Hemodialisis Rotary Kulai": 2.653752700754507,
-        "modeOfTransport": "Walk"
-      },
-      { "NSTP Senai": 1.273785305203168, "modeOfTransport": "P403-loop" }
-    ]
+        "NSTP Senai": 1.273785305203168,
+        "modeOfTransport": ["Walk", "P403-loop"]
+      }
+    ],
+    "lat": 1.6349379250179437,
+    "lng": 103.66630691168017,
+    "operating_buses": ["P403-loop"]
   },
   "NSTP Senai": {
     "edges": [
       {
         "Kawasan Perindustrian Senai 3": 0.2598788305417743,
-        "modeOfTransport": "Walk"
+        "modeOfTransport": ["Walk"]
       },
-      {
-        "Senai Airport Terminal": 1.273785305203168,
-        "modeOfTransport": "Walk"
-      },
-      { "Taman Bintang": 1.4423553454862552, "modeOfTransport": "Walk" },
-      {
-        "Opp Pejabat Lembaga Lebuhraya Malaysia": 1.491219383677441,
-        "modeOfTransport": "Walk"
-      },
-      {
-        "Pejabat Lembaga Lebuhraya Malaysia": 1.5213636565489939,
-        "modeOfTransport": "Walk"
-      },
-      { "Taman Bintang": 1.4423553454862552, "modeOfTransport": "P403-loop" }
-    ]
+      { "Taman Bintang": 1.4423553454862552, "modeOfTransport": ["P403-loop"] }
+    ],
+    "lat": 1.6283976940465283,
+    "lng": 103.65689819511196,
+    "operating_buses": ["P403-loop"]
   },
   "Taman Bintang": {
     "edges": [
-      { "Opp Taman Bintang": 0.11909366140255946, "modeOfTransport": "Walk" },
-      {
-        "Opp Pusat Hemodialisis Rotary Kulai": 0.34916864434092676,
-        "modeOfTransport": "Walk"
-      },
-      { "Econsave Senai": 0.5806174186488152, "modeOfTransport": "Walk" },
-      { "bef Econsave @ Senai": 0.6255571336186354, "modeOfTransport": "Walk" },
-      { "Taman Mewah": 0.727880213688231, "modeOfTransport": "Walk" },
-      { "Taman Mewah": 0.727880213688231, "modeOfTransport": "P403-loop" }
-    ]
+      { "Opp Taman Bintang": 0.11909366140255946, "modeOfTransport": ["Walk"] },
+      { "Taman Mewah": 0.727880213688231, "modeOfTransport": ["P403-loop"] }
+    ],
+    "lat": 1.615570955439796,
+    "lng": 103.65883089562581,
+    "operating_buses": ["P403-loop"]
   },
   "Taman Mewah": {
     "edges": [
       {
         "bef Econsave @ Senai": 0.10251225366288921,
-        "modeOfTransport": "Walk"
+        "modeOfTransport": ["Walk"]
       },
-      { "Econsave Senai": 0.19429463808628616, "modeOfTransport": "Walk" },
-      {
-        "Opp Pusat Hemodialisis Rotary Kulai": 0.3820274988748905,
-        "modeOfTransport": "Walk"
-      },
-      { "Opp Taman Bintang": 0.6088476035564887, "modeOfTransport": "Walk" },
-      { "Taman Bintang": 0.727880213688231, "modeOfTransport": "Walk" },
       {
         "Medan Selera Senai": 1.569570247215223,
-        "modeOfTransport": "P403-loop"
+        "modeOfTransport": ["P403-loop"]
       }
-    ]
+    ],
+    "lat": 1.6093409706514916,
+    "lng": 103.65682082209246,
+    "operating_buses": ["P403-loop"]
   },
   "bef Econsave @ Senai": {
     "edges": [
-      { "Taman Mewah": 0.10251225366288921, "modeOfTransport": "Walk" },
-      { "Econsave Senai": 0.13098092352258628, "modeOfTransport": "Walk" },
+      { "Taman Mewah": 0.10251225366288921, "modeOfTransport": ["Walk"] },
       {
-        "Opp Pusat Hemodialisis Rotary Kulai": 0.2795998036608919,
-        "modeOfTransport": "Walk"
-      },
-      { "Opp Taman Bintang": 0.5064930668679686, "modeOfTransport": "Walk" },
-      { "Taman Bintang": 0.6255571336186354, "modeOfTransport": "Walk" },
-      { "Econsave Senai": 0.13098092352258628, "modeOfTransport": "P403-loop" }
-    ]
+        "Econsave Senai": 0.13098092352258628,
+        "modeOfTransport": ["P403-loop"]
+      }
+    ],
+    "lat": 1.6102010601670786,
+    "lng": 103.65715287633772,
+    "operating_buses": ["P403-loop"]
   }
 }

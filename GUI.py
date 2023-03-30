@@ -104,6 +104,8 @@ def createPath(left_frame):
     #Clear markers and polygons on map
     clearMap()
 
+    routesHeight = 280
+    routesWidth = 550
     startLocation = getLatLngFromUserInput(userStartInputField, True) # get start location from input field
     endLocation = getLatLngFromUserInput(userEndInputField, False) # Get end location from input field
 
@@ -118,7 +120,7 @@ def createPath(left_frame):
     tab1 = routes_tabview.add("Least Walk")
     label1 = ctk.CTkLabel(tab1, justify="left", text="Directions for Least Walk:")
     label1.grid(column=0, row=8, sticky="w", padx=10)
-    routes = ctk.CTkTextbox(tab1, width=280, height=300, scrollbar_button_color="white")
+    routes = ctk.CTkTextbox(tab1, width=routesHeight, height=routesWidth, scrollbar_button_color="white")
     routes.grid(column=0, row=10, sticky="nsew")
 
 
@@ -126,7 +128,7 @@ def createPath(left_frame):
     tab2 = routes_tabview.add("Least Transfer")
     label2 = ctk.CTkLabel(tab2, justify="left", text="Directions for Least Transfer:")
     label2.grid(column=0, row=8, sticky="w", padx=10)
-    routes2 = ctk.CTkTextbox(tab2, width=280, height=300, scrollbar_button_color="white")
+    routes2 = ctk.CTkTextbox(tab2, width=routesHeight, height=routesWidth, scrollbar_button_color="white")
     routes2.grid(column=0, row=10)
 
 
@@ -134,7 +136,7 @@ def createPath(left_frame):
     tab3 = routes_tabview.add("Fastest")
     label3 = ctk.CTkLabel(tab3, justify="left", text="Directions for Fastest:")
     label3.grid(column=0, row=8, sticky="w", padx=10)
-    routes3 = ctk.CTkTextbox(tab3, width=280, height=300, scrollbar_button_color="white")
+    routes3 = ctk.CTkTextbox(tab3, width=routesHeight, height=routesWidth, scrollbar_button_color="white")
     routes3.grid(column=0, row=10)
 
 
@@ -191,6 +193,7 @@ def createPath(left_frame):
                     del eachBusOfStop
 
             res, test = re.subn("[\[\]\']","",str(buses))
+            print("EAch stop is : {}".format(eachStop))
             busToTake = eachStop["bus_stop_name"] + " via \n" + res + "\n\n"
             routes.insert(END, busToTake)
             path_list.append((float(eachStop["coordinates"][0]),float(eachStop["coordinates"][1])))
