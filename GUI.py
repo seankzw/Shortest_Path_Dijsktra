@@ -155,6 +155,8 @@ def createPath(left_frame):
 
     start_bus_stop = findNearestStop(Coordinates(startLocation[0], startLocation[1])) # Get nearest bus stop from start location
     end_bus_stops = findNearest5Stop(Coordinates(endLocation[0],endLocation[1])) # Get nearest bus stop from end location
+    # get the address of end location based on geopy api
+    endDestinationAddress = (geolocator.geocode(userEndInputField.get()).address).split(",")
 
     # Get distance between start and end
     distBetweenLoc = distanceBetween(Coordinates(startLocation[0], startLocation[1]), Coordinates(endLocation[0], endLocation[1]))
@@ -188,32 +190,31 @@ def createPath(left_frame):
         #Get all bus stops and append to path_list
         for eachStop in path_to_destination:
             buses = eachStop["bus"]
-            for eachBusOfStop in range(len(buses)):
-                if eachBusOfStop not in buses:
-                    del eachBusOfStop
+            #for eachBusOfStop in range(len(buses)):
+            #    if eachBusOfStop not in buses:
+            #        del eachBusOfStop
 
-            res, test = re.subn("[\[\]\']","",str(buses))
-            print("EAch stop is : {}".format(eachStop))
-            busToTake = eachStop["bus_stop_name"] + " via \n" + res + "\n\n"
+            #res, test = re.subn("[\[\]\']","",str(buses))
+            #print("EAch stop is : {}".format(eachStop))
+            busToTake = eachStop["bus_stop_name"] + " via \n" + " , ".join(buses)+ "\n\n"
             routes.insert(END, busToTake)
             path_list.append((float(eachStop["coordinates"][0]),float(eachStop["coordinates"][1])))
 
             # create marker with custom colors and font for this stop
-            polygon_name = eachStop["bus_stop_name"] + "\n" + res
+            polygon_name = eachStop["bus_stop_name"] + "\n" + ",".join(buses)
 
             # Set polygon markers for all bus stops
             mapview.set_polygon([(eachStop["coordinates"][0], eachStop["coordinates"][1]), (eachStop["coordinates"][0], eachStop["coordinates"][1])], outline_color="red", border_width=12, command=polygonClicked, name=polygon_name)
 
-            # get the address of end location based on geopy api
-            Desintation = (geolocator.geocode(userEndInputField.get()).address).split(",")
+
 
             # Set marker from start and end location to start and end bus stop
             mapview.set_marker(path_to_destination[0]["coordinates"][0], path_to_destination[0]["coordinates"][1], "Walk to " + path_to_destination[0]["bus_stop_name"], marker_color_circle="white", marker_color_outside="blue" )
-            mapview.set_marker(path_to_destination[-1]["coordinates"][0], path_to_destination[-1]["coordinates"][1], "Walk to " + Desintation[0], marker_color_circle="white", marker_color_outside="blue")
+            mapview.set_marker(path_to_destination[-1]["coordinates"][0], path_to_destination[-1]["coordinates"][1], "Walk to " + endDestinationAddress[0], marker_color_circle="white", marker_color_outside="blue")
 
         # Distance between bus stop and end location
         distanceFromStopToDest = distanceBetween(Coordinates(path_to_destination[-1]['coordinates'][0], path_to_destination[-1]['coordinates'][1]), Coordinates(endLocation[0], endLocation[1]))
-        routes.insert(END, "Walk {:.2f}km from {} to {}".format(distanceFromStopToDest, path_to_destination[-1]["bus_stop_name"], Desintation[0]))
+        routes.insert(END, "Walk {:.2f}km from {} to {}".format(distanceFromStopToDest, path_to_destination[-1]["bus_stop_name"], endDestinationAddress[0]))
 
         # calculate the time taken for the route
         totalTimeTaken = getTimeTaken(distanceFromLocToStop, 5.0) + getTimeTaken(length, 20.5) + getTimeTaken(distanceFromStopToDest, 5.0)

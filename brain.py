@@ -223,6 +223,7 @@ def getShortestPathFromList(previous_nodes, start, end_stops, toReach):
             eachEdgesOfNode = collated_data[previous_nodes[destination]]["edges"]
             for eachEdges in range(len(eachEdgesOfNode)):
                  if destination in eachEdgesOfNode[eachEdges]:
+                    #Check what bus you can take
                     path.append({
                         "bus_stop_name": destination,
                         "coordinates" : (collated_data[destination]["lat"], collated_data[destination]["lng"]),
