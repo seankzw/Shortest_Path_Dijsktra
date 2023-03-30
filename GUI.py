@@ -15,41 +15,20 @@ windows = ctk.CTk() # Main Windows
 
 #? ===== Frames =====
 window_frame = ctk.CTkFrame(windows)
+
+# ===== Tabview
 window_tabview = ctk.CTkTabview(window_frame)
 window_tabview.pack(padx=10)
 mapTab = window_tabview.add("Map")
+timingTab = window_tabview.add("Bus Timing")
 
-left_frame = ctk.CTkFrame(mapTab, width=550) # Create the left column for the input/label field
+left_frame = ctk.CTkFrame(mapTab) # Create the left column for the input/label field
 buttonFrame=ctk.CTkFrame(mapTab) # Buttom frame for Toggle and Create Path
 
-right_frame = ctk.CTkFrame(mapTab, width=800) # Create the right column for the map
+right_frame = ctk.CTkFrame(mapTab) # Create the right column for the map
 
 # Create mapview with right click options
 mapview = tkmv.TkinterMapView(right_frame, width=800, height=900, corner_radius=0)
-
-#? ===== Tabview
-timingTab = window_tabview.add("Bus Timing")# Create three tabviews to switch between different routes
-
-# to show direction :
-routesWidth = 550
-routesHeight= 280
-routes_tabview = ctk.CTkTabview(left_frame)
-routes_tabview.grid(column=0, row=9, padx=10, pady=10, sticky="nsew")
-tab1 = routes_tabview.add("Best route")
-routes = ctk.CTkTextbox(tab1, width=routesHeight, height=routesWidth, scrollbar_button_color="white")
-
-tab2 = routes_tabview.add("Least Walk")
-routes2 = ctk.CTkTextbox(tab2, width=routesHeight, height=routesWidth, scrollbar_button_color="white")
-
-tab3 = routes_tabview.add("Least Transfer")
-routes3 = ctk.CTkTextbox(tab3, width=routesHeight, height=routesWidth, scrollbar_button_color="white")
-
-#? ==== Routes configuration (colors)
-routes.tag_config("path", foreground="#00e5ff")
-routes.tag_config("buses", foreground="#d9c702")
-routes.tag_config("walk", foreground="#ffbd66")
-routes.tag_config("arrow", foreground="#a19c97")
-routes.configure(state=tk.DISABLED)
 
 #? ===== Labels =====
 userStartInputField = ctk.CTkEntry(left_frame, placeholder_text="Johor Zoo", width=250)
@@ -64,36 +43,9 @@ chosenFromMap = False
 counter = 1
 
 #? ===== Helper method for the buttons =====
-#To reset the view to JB
-def resetView():
-    mapview.set_address("JB, MY")
-    mapview.set_zoom(12)
-
-#Switch between start and end location
-def switchLocation():
-    temp_start = userStartInputField.get()
-    temp_end = userEndInputField.get()
-    if userStartInputField.get() != "":
-        userStartInputField.delete(0,END)
-        userStartInputField.insert(0, temp_end)
-
-    if userEndInputField.get() != "":
-        userEndInputField.delete(0,END)
-        userEndInputField.insert(0, temp_start)
-
 # This method is a helper for the toggle button
 def change_appearance_mode():
     ctk.set_appearance_mode(switch_var.get())
-    if switch_var.get() == "dark":
-        routes.tag_config("path", foreground="#00e5ff")
-        routes.tag_config("buses", foreground="#d9c702")
-        routes.tag_config("walk", foreground="#ffbd66")
-        routes.tag_config("arrow", foreground="#a19c97")
-    else:
-        routes.tag_config("path", foreground="#01434a")
-        routes.tag_config("buses", foreground="#7a050f")
-        routes.tag_config("walk", foreground="#5c5240")
-        routes.tag_config("arrow", foreground="#211f3b")
 
 #This method is a helper for polygon clicked on the map
 def polygonClicked(polygon):
@@ -117,7 +69,6 @@ def add_end_loc(coord):
     userEndInputField.insert(0,(str(coord[0]) + "," + str(coord[1])))
     return
 
-#? ========================== Where shit gets real ==========================
 def getLatLngFromUserInput(textField, isStartLocation):
     inputField = textField.get()
 
@@ -203,19 +154,44 @@ def createPath(left_frame):
     #Clear markers and polygons on map
     clearMap()
 
-    #Clear routes before inserting
-    routes.delete(1.0,END)
-    routes2.delete(1.0,END)
-    routes3.delete(1.0,END)
-    routes.configure(state=tk.NORMAL)
-
-
+    routesHeight = 280
+    routesWidth = 550
     startLocation = getLatLngFromUserInput(userStartInputField, True) # get start location from input field
     endLocation = getLatLngFromUserInput(userEndInputField, False) # Get end location from input field
 
     overviewData = getCollatedData() # To gather all the data for retrieval
     path_list = [] # Contains the path to show in the routes display
 
+    # Create three tabviews to switch between different routes
+    routes_tabview = ctk.CTkTabview(left_frame)
+    routes_tabview.grid(column=0, row=9, padx=10, pady=10, sticky="nsew")
+
+    # Tab 1 - Route 1
+    tab1 = routes_tabview.add("Least Walk")
+    label1 = ctk.CTkLabel(tab1, justify="left", text="Directions for Least Walk:")
+    label1.grid(column=0, row=8, sticky="w", padx=10)
+    routes = ctk.CTkTextbox(tab1, width=routesHeight, height=routesWidth, scrollbar_button_color="white")
+    routes.grid(column=0, row=10, sticky="nsew")
+    routes.tag_config("path", foreground="#00e5ff" if switch_var.get() == "dark" else "#01434a")
+    routes.tag_config("buses", foreground="#d9c702" if switch_var.get() == "dark" else "#7a050f")
+    routes.tag_config("walk", foreground="#ffbd66" if switch_var.get()== "dark" else "#5c5240")
+    routes.tag_config("arrow", foreground="#a19c97" if switch_var.get() == "dark" else "#211f3b")
+
+
+    # Tab 2 - Route 2
+    tab2 = routes_tabview.add("Least Transfer")
+    label2 = ctk.CTkLabel(tab2, justify="left", text="Directions for Least Transfer:")
+    label2.grid(column=0, row=8, sticky="w", padx=10)
+    routes2 = ctk.CTkTextbox(tab2, width=routesHeight, height=routesWidth, scrollbar_button_color="white")
+    routes2.grid(column=0, row=10)
+
+
+    # Tab 3 - Route 3
+    tab3 = routes_tabview.add("Fastest")
+    label3 = ctk.CTkLabel(tab3, justify="left", text="Directions for Fastest:")
+    label3.grid(column=0, row=8, sticky="w", padx=10)
+    routes3 = ctk.CTkTextbox(tab3, width=routesHeight, height=routesWidth, scrollbar_button_color="white")
+    routes3.grid(column=0, row=10)
 
 
 
@@ -322,11 +298,32 @@ def createPath(left_frame):
         routes.insert(END, "Walk {:.2f}km to {} \n\n".format(distBetweenStartAndStop, walkTo), "walk")
 
     # set routes to be disabled state so text field cannot be edited
+    routes.configure(state=tk.DISABLED)
+
+def button_event():
+    mapview.set_address("JB, MY")
+    mapview.set_zoom(12)
+    #global counter
+    #if counter < 5:
+    #    busTiming = getBusTiming()
+    #    displayTime = "Bus timing of the first bus stop of every bus number\n\n"
+    #    for i in busTiming:
+    #        displayTime += i + " : " + ", ".join(busTiming[i]) + "\n\n"
+    #    top = ctk.CTkToplevel()
+    #    top.title('Bus Timings')
+    #    label = ctk.CTkLabel(top, text=displayTime)
+    #    label.grid(column=0, row=0, padx=10, sticky="w")
+
+    #    counter += 1
+
+
+    #else:
+    #    messagebox.showinfo("Error", "You have opened too many windows")
 
 #Initialising Windows Configuration
 def initWindows():
     #windows = ctk.CTk()
-    windows.geometry("1200x900") # Size of window
+    windows.geometry("900x900") # Size of window
     windows.title("CSC1108 Johor Bahru Maps") # Title of the window
     # windows.resizable(0,0) # prevent the resize of window
     windows.iconphoto(False, tk.PhotoImage(file="compass.png")) # Custom image icon for the project
@@ -358,40 +355,17 @@ def initWindows():
     userEndInputField.grid(column=0, row=3, padx=10, pady=10, sticky="w")
 
     # Toggle button for apperance mode
-    toggleAndPath= ctk.CTkSwitch(left_frame,  text="Dark Mode",command=change_appearance_mode, variable=switch_var, onvalue="dark",offvalue="light")
+    toggleAndPath= ctk.CTkSwitch(left_frame, state="disabled", text="Dark Mode",command=change_appearance_mode, variable=switch_var, onvalue="dark",offvalue="light")
     toggleAndPath.grid(row=5, column=0, sticky="w", padx=10, pady=10)
 
     #Create path button
     action_with_arg= partial(createPath, left_frame)
     button3 = ctk.CTkButton(left_frame, text="Create Path", command=action_with_arg)
-    button3.grid(column=0, row=5, columnspan=8,sticky="e", padx=10)
+    button3.grid(column=0, row=5, columnspan=8,sticky="e")
 
-    # Button to resetView
-    resetViewBtn = ctk.CTkButton(master=windows, text="Reset view",bg_color="transparent",command=resetView, width=120, height=32, border_width=0, corner_radius=8)
-    resetViewBtn.place(relx=0.9, rely=0.05, anchor=tk.CENTER)
-
-    #swithcLocation
-    switchBtn = ctk.CTkButton(left_frame, text="⇅", command=switchLocation, width=20, height=20)
-    switchBtn.grid(column=0, row=2, sticky="e", padx=10)
-
-
-    # Tab 1 - Route 1
-    label1 = ctk.CTkLabel(tab1, justify="left", text="Directions for Best Route:")
-    label1.grid(column=0, row=8, sticky="w", padx=10)
-    routes.grid(column=0, row=10, sticky="nsew")
-
-
-    # Tab 2 - Route 2
-    label2 = ctk.CTkLabel(tab2, justify="left", text="Directions for Least Walk:")
-    label2.grid(column=0, row=8, sticky="w", padx=10)
-    routes2.grid(column=0, row=10)
-
-
-    # Tab 3 - Route 3
-    label3 = ctk.CTkLabel(tab3, justify="left", text="Directions for Least Transfer:")
-    label3.grid(column=0, row=8, sticky="w", padx=10)
-    routes3.grid(column=0, row=10)
-
+    # Button for bus timings
+    button = ctk.CTkButton(master=windows, text="Reset view", command=button_event, width=120, height=32, border_width=0, corner_radius=8)
+    button.place(relx=0.9, rely=0.05, anchor=tk.CENTER)
 
     # Map view configurations
     mapview.add_right_click_menu_command(label="Add start location", command=add_start_loc, pass_coords=True)
