@@ -253,7 +253,32 @@ def getLeastTransferFromList(previous_nodes, start, end_stops, toReach):
 
 def getTimeTaken(distance, speed):
     return distance / speed
-    
+
+def TimeFormatter(totalTime):
+    # totalTime will be in hours since speed is in km/h and distance is in km
+    # converting hours to seconds
+    totalTime *= 3600
+    # from seconds, convert to hours, minutes and seconds (if needed)
+    hours = int(totalTime // 3600) # getting the hours 
+    seconds = totalTime % 3600
+    minutes = int(seconds // 60) # getting the minutes
+    seconds %= 60 # getting the seconds
+
+    timeFormatter = "" # a string format for the time
+
+    if hours != 0:
+        if hours > 1:
+            timeFormatter += str(hours) + " hrs"
+        else:
+            timeFormatter += str(hours) + " hr"
+
+    if minutes != 0:
+        if minutes > 1:
+            timeFormatter += str(minutes) + " mins"
+        else:
+            timeFormatter += str(minutes) + " min"
+
+    return timeFormatter
 
 def getAmountOfTrf(path):
     for i in path:
