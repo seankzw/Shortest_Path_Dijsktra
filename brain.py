@@ -114,7 +114,7 @@ def getBoundingBox(loc1, loc2):
 
 	return (topLeftX, topLeftY),(botRightX, botRightY)
 def getCollatedData():
-    f = open("collated_datav2.json")
+    f = open("collated_data.json")
     data = json.loads(f.read())
     return data
 
@@ -222,7 +222,7 @@ def getShortestPathFromList(previous_nodes, start, end_stops, toReach):
             curr_length+= collated_data[prev_dest]["edgeTo"][destination]
             destination = previous_nodes[destination]
 
-        if shortest_length > curr_length or distanceBetween(eachDestCoord, toReach) < distance_to_end:
+        if shortest_length > curr_length and distanceBetween(eachDestCoord, toReach) < distance_to_end:
             shortest_length = curr_length
             #print("getShotrtestPathFromList method; eachDestCoord = {}, toReach = {}".format(eachDestCoord, toReach))
             distance_to_end = distanceBetween(eachDestCoord, toReach)
@@ -310,3 +310,44 @@ def getAmountOfTrf(path):
          print(i["bus"])
          print("---")
 
+#! ================= NEW VERSION =============================
+
+def findNearestStopWithDatav2(userLoc, data):
+    shortestDistance = 1000
+    for i in data:
+        dataCoord = Coordinates(data[i]["lat"],data[i]["lng"])
+        if(distanceBetween(dataCoord, userLoc) < shortestDistance) and not isSameCoord(userLoc, dataCoord):
+            shortestDistance = distanceBetween(dataCoord ,userLoc)
+            index = i
+    startBus = index
+    return startBus
+
+def findNearest5StopV2(userLoc):
+	f = open("excel_overview.json")
+	all_bus_stops = json.load(f)
+	counter = 0
+	shortest5=[]
+
+	while counter < 5:
+		nearest_stop = findNearestStopWithDatav2(userLoc, all_bus_stops)
+		shortest5.append(nearest_stop)
+		del all_bus_stops[nearest_stop]
+		counter +=1
+
+	return shortest5
+
+# Find nearest location to busstop from User Location
+def findNearestStopV2(userLoc):
+    f = open("excel_overview.json")
+    data = json.load(f)
+    index = ""
+    shortestDistance = 1000
+    for i in data:
+        dataCoord = Coordinates(data[i]["lat"],data[i]["lng"])
+        #print(dataCoord, userLoc , " It IS {}".format(dataCoord == userLoc))
+        if(distanceBetween(dataCoord, userLoc) < shortestDistance) and not isSameCoord(userLoc, dataCoord):
+            shortestDistance = distanceBetween(dataCoord ,userLoc)
+            index = i
+
+    startBus = index
+    return (startBus)

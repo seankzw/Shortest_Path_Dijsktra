@@ -254,7 +254,7 @@ def button_event():
 #Initialising Windows Configuration
 def initWindows():
     #windows = ctk.CTk()
-    windows.geometry("900x1000") # Size of window
+    windows.geometry("900x900") # Size of window
     windows.title("CSC1108 Johor Bahru Maps") # Title of the window
     windows.resizable(0,0) # prevent the resize of window
     windows.iconphoto(False, tk.PhotoImage(file="compass.png")) # Custom image icon for the project

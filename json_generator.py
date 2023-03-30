@@ -88,42 +88,96 @@ def collate_datav2():
         for eachIndex, currStop in df.iterrows():
             total_len = len(df.index)
             gps_location = currStop["GPS Location"].split(",")
+            busStopName = currStop["Bus stop"]
+            busNumber = eachBusNumber
             currStopCoord = Coordinates(float(gps_location[0]),float(gps_location[1]))
-            destination = {}
-            curr_bus_number = []
+            edges = []
 
-            nearestBusStop = findNearestStopTest(currStopCoord)
-            destination[nearestBusStop] = distanceBetween(currStopCoord, getCoordFromBusStopName(nearestBusStop))
-            curr_bus_number.append("Walk")
+            # Initialise the data
+            if busStopName not in dict:
+                #nearestStop = findNearestStopTest(currStopCoord)
+                nearestStops = findNearest5StopV2(currStopCoord)
 
+                for i in range(len(nearestStops)):
+                    print(nearestStops[i])
+                    edges.append({
+                        nearestStops[i] : distanceBetween(currStopCoord, getCoordFromBusStopName(nearestStops[i])),
+                        "modeOfTransport": "Walk"
+                    })
+                dict[busStopName] = {
+                    "edges": edges
+                }
+            else:
+                edges = dict[busStopName]["edges"]
 
+            # Add the next stop in the sheet
             if eachIndex + 1 < total_len:
                 # Add next stop
                 nextStop = df.iloc[eachIndex+1]
                 nextStopGPS = nextStop["GPS Location"].split(",")
+                nextStopName = nextStop["Bus stop"]
                 nextStopCoord = Coordinates(float(nextStopGPS[0]), float(nextStopGPS[1]))
+                edges.append({
+                    nextStopName: distanceBetween(currStopCoord, nextStopCoord),
+                    "modeOfTransport" : eachBusNumber
+                })
 
-                if nextStop["Bus stop"] not in destination:
-                    destination[nextStop["Bus stop"]] = distanceBetween(currStopCoord,nextStopCoord)
 
 
 
-                #newDestination = {
-                #        "bus_stop": nextStop["Bus stop"],
-                #        "distance":distanceBetween(currStopCoord,nextStopCoord)
-                #}
+            # "Larkin Terminal": {
+            #   "edges": [
+            #       {
+            #           "Perjabad ..": 0.6,
+            #           "modeOfTransport": "Walk"
+            #       },
+            #       {
+            #           "nextBusStop..": 0.6,
+            #           "modeOfTransport": "P411"
+            #       },
+            #       {
+            #           "nextBusStop..": 0.6,
+            #           "modeOfTransport": "P101"
+            #       }
+            #   ]
+            # }
 
-            if eachBusNumber not in curr_bus_number:
-                curr_bus_number.append(eachBusNumber)
 
-            dict[currStop["Bus stop"]] = {
-                "bus_number": curr_bus_number,
-                "edgeTo": destination
-            }
+
+
+            #nearestBusStop = findNearestStopTest(currStopCoord)
+            #destination[nearestBusStop] = distanceBetween(currStopCoord, getCoordFromBusStopName(nearestBusStop))
+            #curr_bus_number.append("Walk")
+
+
+            #if eachIndex + 1 < total_len:
+            #    # Add next stop
+            #    nextStop = df.iloc[eachIndex+1]
+            #    nextStopGPS = nextStop["GPS Location"].split(",")
+            #    nextStopCoord = Coordinates(float(nextStopGPS[0]), float(nextStopGPS[1]))
+
+            #    if nextStop["Bus stop"] not in destination:
+            #        destination[nextStop["Bus stop"]] = distanceBetween(currStopCoord,nextStopCoord)
+
+
+
+            #    #newDestination = {
+            #    #        "bus_stop": nextStop["Bus stop"],
+            #    #        "distance":distanceBetween(currStopCoord,nextStopCoord)
+            #    #}
+
+            #if eachBusNumber not in curr_bus_number:
+            #    curr_bus_number.append(eachBusNumber)
+
+            dict[currStop["Bus stop"]]["edges"] = edges
+
+            #dict[currStop["Bus stop"]] = {
+            #    "bus_number": curr_bus_number,
+            #    "edgeTo": destination
+            #}
 
     with open("collated_datav2.json", "w") as outfile:
         json.dump(dict, outfile)
-
 
 collate_datav2()
 #print(reader("Opp Shell Kiosk @ Taman Sri Putri"))
