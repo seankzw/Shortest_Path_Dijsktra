@@ -7,8 +7,7 @@ import tkintermapview as tkmv
 from Coordinates import Coordinates
 from brain import *
 from CollatedDataHelper import *
-
-
+from PIL import Image, ImageTk
 
 #? ===== Windows =====
 windows = ctk.CTk() # Main Windows
@@ -309,6 +308,11 @@ def initWindows():
 
     left_frame.pack(side="left", fill="both", expand=True, padx=10) # Place left_frame position
 
+    # bus timing image creation and displaying
+    busTimingImage = ctk.CTkImage(Image.open("busTiming.jpg"), size=(500,600))
+    busTimingLabel = ctk.CTkLabel(timingTab, text="",image=busTimingImage)
+    busTimingLabel.grid(column=0, row=0, padx=10, sticky="n")
+
     # Right frame configuration
     right_frame.pack(side="left", fill="both", expand=True)
     right_frame.columnconfigure(0, weight=1)
@@ -336,7 +340,7 @@ def initWindows():
     button3.grid(column=0, row=5, columnspan=8,sticky="e", padx=10)
 
     # Button to resetView
-    resetViewBtn = ctk.CTkButton(master=windows, text="Reset view",bg_color="transparent",command=resetView, width=120, height=32, border_width=0, corner_radius=8)
+    resetViewBtn = ctk.CTkButton(mapTab, text="Reset view",bg_color="transparent",command=resetView, width=120, height=32, border_width=0, corner_radius=8)
     resetViewBtn.place(relx=0.9, rely=0.05, anchor=tk.CENTER)
 
     #swithcLocation
