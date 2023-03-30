@@ -20,7 +20,7 @@ buttonFrame=ctk.CTkFrame(windows) # Buttom frame for Toggle and Create Path
 right_frame = tk.Frame(windows) # Create the right column for the map
 
 # Create mapview with right click options
-mapview = tkmv.TkinterMapView(right_frame, width=800, height=600, corner_radius=0)
+mapview = tkmv.TkinterMapView(right_frame, width=800, height=900, corner_radius=0)
 
 #? ===== Labels =====
 userStartInputField = ctk.CTkEntry(left_frame, placeholder_text="Johor Zoo", width=250)
@@ -104,10 +104,12 @@ def createPath(left_frame):
     #Clear markers and polygons on map
     clearMap()
 
+    routesHeight = 280
+    routesWidth = 550
     startLocation = getLatLngFromUserInput(userStartInputField, True) # get start location from input field
     endLocation = getLatLngFromUserInput(userEndInputField, False) # Get end location from input field
 
-    overviewData = getOverviewData() # To gather all the data for retrieval
+    overviewData = getCollatedData() # To gather all the data for retrieval
     path_list = [] # Contains the path to show in the routes display
 
     # Create three tabviews to switch between different routes
@@ -118,24 +120,24 @@ def createPath(left_frame):
     tab1 = routes_tabview.add("Least Walk")
     label1 = ctk.CTkLabel(tab1, justify="left", text="Directions for Least Walk:")
     label1.grid(column=0, row=8, sticky="w", padx=10)
-    routes = ctk.CTkTextbox(tab1, width=280, height=300, scrollbar_button_color="white")
-    routes.grid(column=0, row=9, sticky="nsew")
+    routes = ctk.CTkTextbox(tab1, width=routesHeight, height=routesWidth, scrollbar_button_color="white")
+    routes.grid(column=0, row=10, sticky="nsew")
 
 
     # Tab 2 - Route 2
     tab2 = routes_tabview.add("Least Transfer")
     label2 = ctk.CTkLabel(tab2, justify="left", text="Directions for Least Transfer:")
     label2.grid(column=0, row=8, sticky="w", padx=10)
-    routes2 = ctk.CTkTextbox(tab2, width=280, height=300, scrollbar_button_color="white")
-    routes2.grid(column=0, row=9)
+    routes2 = ctk.CTkTextbox(tab2, width=routesHeight, height=routesWidth, scrollbar_button_color="white")
+    routes2.grid(column=0, row=10)
 
 
     # Tab 3 - Route 3
     tab3 = routes_tabview.add("Fastest")
     label3 = ctk.CTkLabel(tab3, justify="left", text="Directions for Fastest:")
     label3.grid(column=0, row=8, sticky="w", padx=10)
-    routes3 = ctk.CTkTextbox(tab3, width=280, height=300, scrollbar_button_color="white")
-    routes3.grid(column=0, row=9)
+    routes3 = ctk.CTkTextbox(tab3, width=routesHeight, height=routesWidth, scrollbar_button_color="white")
+    routes3.grid(column=0, row=10)
 
 
 
@@ -153,6 +155,8 @@ def createPath(left_frame):
 
     start_bus_stop = findNearestStop(Coordinates(startLocation[0], startLocation[1])) # Get nearest bus stop from start location
     end_bus_stops = findNearest5Stop(Coordinates(endLocation[0],endLocation[1])) # Get nearest bus stop from end location
+    # get the address of end location based on geopy api
+    endDestinationAddress = (geolocator.geocode(userEndInputField.get()).address).split(",")
 
     # Get distance between start and end
     distBetweenLoc = distanceBetween(Coordinates(startLocation[0], startLocation[1]), Coordinates(endLocation[0], endLocation[1]))
@@ -186,31 +190,38 @@ def createPath(left_frame):
         #Get all bus stops and append to path_list
         for eachStop in path_to_destination:
             buses = eachStop["bus"]
-            for eachBusOfStop in range(len(buses)):
-                if eachBusOfStop not in buses:
-                    del eachBusOfStop
+            #for eachBusOfStop in range(len(buses)):
+            #    if eachBusOfStop not in buses:
+            #        del eachBusOfStop
 
-            res, test = re.subn("[\[\]\']","",str(buses))
-            busToTake = eachStop["bus_stop_name"] + " via \n" + res + "\n\n"
+            #res, test = re.subn("[\[\]\']","",str(buses))
+            #print("EAch stop is : {}".format(eachStop))
+            busToTake = eachStop["bus_stop_name"] + " via \n" + " , ".join(buses)+ "\n\n"
             routes.insert(END, busToTake)
             path_list.append((float(eachStop["coordinates"][0]),float(eachStop["coordinates"][1])))
 
             # create marker with custom colors and font for this stop
-            polygon_name = eachStop["bus_stop_name"] + "\n" + res
+            polygon_name = eachStop["bus_stop_name"] + "\n" + ",".join(buses)
 
             # Set polygon markers for all bus stops
             mapview.set_polygon([(eachStop["coordinates"][0], eachStop["coordinates"][1]), (eachStop["coordinates"][0], eachStop["coordinates"][1])], outline_color="red", border_width=12, command=polygonClicked, name=polygon_name)
 
+
+
             # Set marker from start and end location to start and end bus stop
             mapview.set_marker(path_to_destination[0]["coordinates"][0], path_to_destination[0]["coordinates"][1], "Walk to " + path_to_destination[0]["bus_stop_name"], marker_color_circle="white", marker_color_outside="blue" )
-            mapview.set_marker(path_to_destination[-1]["coordinates"][0], path_to_destination[-1]["coordinates"][1], "Walk to " + userEndInputField.get(), marker_color_circle="white", marker_color_outside="blue")
+            mapview.set_marker(path_to_destination[-1]["coordinates"][0], path_to_destination[-1]["coordinates"][1], "Walk to " + endDestinationAddress[0], marker_color_circle="white", marker_color_outside="blue")
 
         # Distance between bus stop and end location
         distanceFromStopToDest = distanceBetween(Coordinates(path_to_destination[-1]['coordinates'][0], path_to_destination[-1]['coordinates'][1]), Coordinates(endLocation[0], endLocation[1]))
-        routes.insert(END, "Walk {:.2f}km to {}".format(distanceFromStopToDest, path_to_destination[-1]["bus_stop_name"]))
-        totalTimeTaken = getTimeTaken(distanceFromLocToStop, 5.0) + getTimeTaken(length, 50.0) + getTimeTaken(distanceFromStopToDest, 5.0)
-        labelTime = ctk.CTkLabel(tab1, justify="right", text=totalTimeTaken * 60)
-        labelTime.grid(column=0, row=8, sticky="e", padx=10)
+        routes.insert(END, "Walk {:.2f}km from {} to {}".format(distanceFromStopToDest, path_to_destination[-1]["bus_stop_name"], endDestinationAddress[0]))
+
+        # calculate the time taken for the route
+        totalTimeTaken = getTimeTaken(distanceFromLocToStop, 5.0) + getTimeTaken(length, 20.5) + getTimeTaken(distanceFromStopToDest, 5.0)
+        timeTakenFormat = TimeFormatter(totalTimeTaken)
+        labelTimeTaken = ctk.CTkLabel(tab1, justify="left", text="Time taken: " + timeTakenFormat)
+        labelTimeTaken.grid(column=0, row=9, sticky="w", padx=10)
+
         path_list.append(endLocation)
     else:
         print("=============== Walk is nearer ===============")
@@ -247,7 +258,7 @@ def button_event():
 #Initialising Windows Configuration
 def initWindows():
     #windows = ctk.CTk()
-    windows.geometry("800x600") # Size of window
+    windows.geometry("900x900") # Size of window
     windows.title("CSC1108 Johor Bahru Maps") # Title of the window
     windows.resizable(0,0) # prevent the resize of window
     windows.iconphoto(False, tk.PhotoImage(file="compass.png")) # Custom image icon for the project
@@ -279,7 +290,7 @@ def initWindows():
     # Toggle button for apperance mode
     toggleAndPath= ctk.CTkSwitch(left_frame, text="Dark Mode",command=change_appearance_mode, variable=switch_var, onvalue="dark",offvalue="light")
     toggleAndPath.grid(row=5, column=0, sticky="w", padx=10, pady=10)
-    
+
     #Create path button
     action_with_arg= partial(createPath, left_frame)
     button3 = ctk.CTkButton(left_frame, text="Create Path", command=action_with_arg)

@@ -7,6 +7,9 @@ from math import radians, cos, sin, asin, sqrt
 from Coordinates import Coordinates
 #from main import getOverviewData
 
+def isSameCoord(coordinate1, coordinate2):
+    return coordinate1.getLat() == coordinate2.getLat() and coordinate1.getLng() == coordinate2.getLng()
+
 def distanceBetween(currLoc, userLoc):
 
     # The math module contains a function named
@@ -32,7 +35,7 @@ def distanceBetween(currLoc, userLoc):
 
 # Find nearest location to busstop from User Location
 def findNearestStop(userLoc):
-	f = open("excel_overview.json")
+	f = open("collated_datav2.json")
 	data = json.load(f)
 
 	shortestDistance = 1000
@@ -46,6 +49,22 @@ def findNearestStop(userLoc):
 	return (startBus)
 
 # Find nearest location to busstop from User Location
+def findNearestStopTest(userLoc):
+    f = open("collated_datav2.json")
+    data = json.load(f)
+    index = ""
+    shortestDistance = 1000
+    for i in data:
+        dataCoord = Coordinates(data[i]["lat"],data[i]["lng"])
+        #print(dataCoord, userLoc , " It IS {}".format(dataCoord == userLoc))
+        if(distanceBetween(dataCoord, userLoc) < shortestDistance) and not isSameCoord(userLoc, dataCoord):
+            shortestDistance = distanceBetween(dataCoord ,userLoc)
+            index = i
+
+    startBus = index
+    return (startBus)
+
+# Find nearest location to busstop from User Location
 def findNearestStopWithData(userLoc, data):
 	shortestDistance = 1000
 	for i in data:
@@ -57,7 +76,7 @@ def findNearestStopWithData(userLoc, data):
 	return startBus
 
 def findNearest5Stop(userLoc):
-	f = open("excel_overview.json")
+	f = open("collated_datav2.json")
 	all_bus_stops = json.load(f)
 	counter = 0
 	shortest5=[]
@@ -71,7 +90,7 @@ def findNearest5Stop(userLoc):
 	return shortest5
 
 def getCoordFromBusStopName(busStopName):
-	data = getOverviewData()
+	data = getCollatedData()
 	coord = Coordinates(data[busStopName]["lat"], data[busStopName]["lng"])
 	return coord
 
@@ -94,13 +113,9 @@ def getBoundingBox(loc1, loc2):
 	botRightY = max(y1,y2)
 
 	return (topLeftX, topLeftY),(botRightX, botRightY)
-def getCollatedData():
-    f = open("collated_data.json")
-    data = json.loads(f.read())
-    return data
 
-def getOverviewData():
-    f = open("excel_overview.json")
+def getCollatedData():
+    f = open("collated_datav2.json")
     data = json.loads(f.read())
     return data
 
@@ -130,16 +145,21 @@ def dijkstra(start_node):
             elif shortest_path[eachStop] < shortest_path[curr_shortest_route]:
                 curr_shortest_route = eachStop
         # get destinations :
-        edges = data[curr_shortest_route]["edgeTo"]
+        edges = data[curr_shortest_route]["edges"]
+        # for eachDestination in edges:
         for eachDestination in edges:
-            tent_val = shortest_path[curr_shortest_route] + data[curr_shortest_route]["edgeTo"][eachDestination]
+            for index, (destination, distanceCost) in enumerate(eachDestination.items()):
+                if index == 0:
+                    tent_val = shortest_path[curr_shortest_route] + distanceCost
+            # tent_val = shortest_path[curr_shortest_route] + data[curr_shortest_route]["edgeTo"][eachDestination]
             #print("Unvisited node = {}".format(unvisited_nodes))
-            if tent_val < shortest_path[eachDestination]:
-                shortest_path[eachDestination] = tent_val
-                previous_nodes[eachDestination] = curr_shortest_route
+                    if tent_val < shortest_path[destination]:
+                        shortest_path[destination] = tent_val
+                        previous_nodes[destination] = curr_shortest_route
 
 
         unvisited_nodes.remove(curr_shortest_route)
+
     return previous_nodes, shortest_path
 
 
@@ -180,38 +200,46 @@ def getShortestPath(previous_nodes, shortest_path, start, end):
 
 
 def getShortestPathFromList(previous_nodes, start, end_stops, toReach):
-    data = getOverviewData()
     collated_data = getCollatedData()
     shortest_path = []
     shortest_length = float('inf')
     distance_to_end = float('inf')
 
+    # Loops through 5 bus stop (Given as argument as end_stops)
     for i in range(len(end_stops)):
         destination = end_stops[i]
         curr_length = 0
         path = []
-        eachDestCoord = Coordinates(data[destination]["lat"], data[destination]["lng"])
+        eachDestCoord = Coordinates(collated_data[destination]["lat"], collated_data[destination]["lng"])
         while destination != start:
-            path.append({
-                "bus_stop_name": destination,
-                "coordinates" : (data[destination]["lat"], data[destination]["lng"]),
-                "bus": data[destination]["operating_buses"]
-            })
+            # append start bus stop, coordinates and buses to path
+            #print("destination = {}".format(destination))
+            #print("Collated data destination = {}".format(collated_data[previous_nodes[destination]]["edges"]))
 
-            prev_dest = previous_nodes[destination]
-            curr_length+= collated_data[prev_dest]["edgeTo"][destination]
+            eachEdgesOfNode = collated_data[previous_nodes[destination]]["edges"]
+            for eachEdges in range(len(eachEdgesOfNode)):
+                 if destination in eachEdgesOfNode[eachEdges]:
+                    #Check what bus you can take
+                    path.append({
+                        "bus_stop_name": destination,
+                        "coordinates" : (collated_data[destination]["lat"], collated_data[destination]["lng"]),
+                        "bus": eachEdgesOfNode[eachEdges]["modeOfTransport"]
+                    })
+                    curr_length += eachEdgesOfNode[eachEdges][destination]
+
             destination = previous_nodes[destination]
 
-        if shortest_length > curr_length or distanceBetween(eachDestCoord, toReach) < distance_to_end:
+        if shortest_length > curr_length and distanceBetween(eachDestCoord, toReach) < distance_to_end:
             shortest_length = curr_length
             #print("getShotrtestPathFromList method; eachDestCoord = {}, toReach = {}".format(eachDestCoord, toReach))
             distance_to_end = distanceBetween(eachDestCoord, toReach)
             shortest_path= path
 
+    # Aadd in the ending bus stop
     shortest_path.append({
         "bus_stop_name": start,
-        "coordinates" : (data[start]["lat"], data[start]["lng"]),
-        "bus": data[start]["operating_buses"],
+        "coordinates" : (collated_data[start]["lat"], collated_data[start]["lng"]),
+        "bus": collated_data[start]["operating_buses"],
     })
 
     shortest_path.reverse()
@@ -258,10 +286,76 @@ def getLeastTransferFromList(previous_nodes, start, end_stops, toReach):
 
 def getTimeTaken(distance, speed):
     return distance / speed
-    
+
+def TimeFormatter(totalTime):
+    # totalTime will be in hours since speed is in km/h and distance is in km
+    # converting hours to seconds
+    totalTime *= 3600
+    # from seconds, convert to hours, minutes and seconds (if needed)
+    hours = int(totalTime // 3600) # getting the hours
+    seconds = totalTime % 3600
+    minutes = int(seconds // 60) # getting the minutes
+    seconds %= 60 # getting the seconds
+
+    timeFormatter = "" # a string format for the time
+
+    if hours != 0:
+        if hours > 1:
+            timeFormatter += str(hours) + " hrs "
+        else:
+            timeFormatter += str(hours) + " hr "
+
+    if minutes != 0:
+        if minutes > 1:
+            timeFormatter += str(minutes) + " mins"
+        else:
+            timeFormatter += str(minutes) + " min"
+
+    return timeFormatter
 
 def getAmountOfTrf(path):
     for i in path:
          print(i["bus"])
          print("---")
 
+#! ================= NEW VERSION =============================
+
+def findNearestStopWithDatav2(userLoc, data):
+    shortestDistance = 1000
+    for i in data:
+        dataCoord = Coordinates(data[i]["lat"],data[i]["lng"])
+        if(distanceBetween(dataCoord, userLoc) < shortestDistance) and not isSameCoord(userLoc, dataCoord):
+            shortestDistance = distanceBetween(dataCoord ,userLoc)
+            index = i
+    startBus = index
+    return startBus
+
+def findNearest5StopV2(userLoc):
+	f = open("collated_datav2.json")
+	all_bus_stops = json.load(f)
+	counter = 0
+	shortest5=[]
+
+	while counter < 5:
+		nearest_stop = findNearestStopWithDatav2(userLoc, all_bus_stops)
+		shortest5.append(nearest_stop)
+		del all_bus_stops[nearest_stop]
+		counter +=1
+
+	return shortest5
+
+# Find nearest location to busstop from User Location
+def findNearestStopV2(userLoc):
+    f = open("collated_datav2.json")
+    data = json.load(f)
+    index = ""
+    shortestDistance = 1000
+    for i in data:
+        dataCoord = Coordinates(data[i]["lat"],data[i]["lng"])
+        #print(dataCoord, userLoc , " It IS {}".format(dataCoord == userLoc))
+        if(distanceBetween(dataCoord, userLoc) < shortestDistance) and not isSameCoord(userLoc, dataCoord):
+            shortestDistance = distanceBetween(dataCoord ,userLoc)
+            index = i
+
+    startBus = index
+    return (startBus)
