@@ -14,3 +14,5 @@ class Coordinates:
 
     def setLng(self, lng):
         self.lng = lng
+
+

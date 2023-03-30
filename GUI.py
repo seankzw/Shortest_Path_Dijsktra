@@ -20,7 +20,7 @@ buttonFrame=ctk.CTkFrame(windows) # Buttom frame for Toggle and Create Path
 right_frame = tk.Frame(windows) # Create the right column for the map
 
 # Create mapview with right click options
-mapview = tkmv.TkinterMapView(right_frame, width=800, height=600, corner_radius=0)
+mapview = tkmv.TkinterMapView(right_frame, width=800, height=900, corner_radius=0)
 
 #? ===== Labels =====
 userStartInputField = ctk.CTkEntry(left_frame, placeholder_text="Johor Zoo", width=250)
@@ -247,7 +247,7 @@ def button_event():
 #Initialising Windows Configuration
 def initWindows():
     #windows = ctk.CTk()
-    windows.geometry("800x600") # Size of window
+    windows.geometry("900x1000") # Size of window
     windows.title("CSC1108 Johor Bahru Maps") # Title of the window
     windows.resizable(0,0) # prevent the resize of window
     windows.iconphoto(False, tk.PhotoImage(file="compass.png")) # Custom image icon for the project
@@ -279,7 +279,7 @@ def initWindows():
     # Toggle button for apperance mode
     toggleAndPath= ctk.CTkSwitch(left_frame, text="Dark Mode",command=change_appearance_mode, variable=switch_var, onvalue="dark",offvalue="light")
     toggleAndPath.grid(row=5, column=0, sticky="w", padx=10, pady=10)
-    
+
     #Create path button
     action_with_arg= partial(createPath, left_frame)
     button3 = ctk.CTkButton(left_frame, text="Create Path", command=action_with_arg)

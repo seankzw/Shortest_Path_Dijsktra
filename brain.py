@@ -7,6 +7,9 @@ from math import radians, cos, sin, asin, sqrt
 from Coordinates import Coordinates
 #from main import getOverviewData
 
+def isSameCoord(coordinate1, coordinate2):
+    return coordinate1.getLat() == coordinate2.getLat() and coordinate1.getLng() == coordinate2.getLng()
+
 def distanceBetween(currLoc, userLoc):
 
     # The math module contains a function named
@@ -44,6 +47,22 @@ def findNearestStop(userLoc):
 
 	startBus = index
 	return (startBus)
+
+# Find nearest location to busstop from User Location
+def findNearestStopTest(userLoc):
+    f = open("excel_overview.json")
+    data = json.load(f)
+    index = ""
+    shortestDistance = 1000
+    for i in data:
+        dataCoord = Coordinates(data[i]["lat"],data[i]["lng"])
+        #print(dataCoord, userLoc , " It IS {}".format(dataCoord == userLoc))
+        if(distanceBetween(dataCoord, userLoc) < shortestDistance) and not isSameCoord(userLoc, dataCoord):
+            shortestDistance = distanceBetween(dataCoord ,userLoc)
+            index = i
+
+    startBus = index
+    return (startBus)
 
 # Find nearest location to busstop from User Location
 def findNearestStopWithData(userLoc, data):
@@ -95,7 +114,7 @@ def getBoundingBox(loc1, loc2):
 
 	return (topLeftX, topLeftY),(botRightX, botRightY)
 def getCollatedData():
-    f = open("collated_data.json")
+    f = open("collated_datav2.json")
     data = json.loads(f.read())
     return data
 
@@ -186,6 +205,7 @@ def getShortestPathFromList(previous_nodes, start, end_stops, toReach):
     shortest_length = float('inf')
     distance_to_end = float('inf')
 
+    print(end_stops)
     for i in range(len(end_stops)):
         destination = end_stops[i]
         curr_length = 0
@@ -258,7 +278,7 @@ def getLeastTransferFromList(previous_nodes, start, end_stops, toReach):
 
 def getTimeTaken(distance, speed):
     return distance / speed
-    
+
 
 def getAmountOfTrf(path):
     for i in path:

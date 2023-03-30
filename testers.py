@@ -35,4 +35,14 @@ def getAmountOfTransfer():
     path2, length = getShortestPathFromList(previous_node, start_node, end_bus_stops, larkin_terminal)
     getAmountOfTrf(path2)
 
-getAmountOfTransfer()
+def nearestBusStop():
+    kampung_melayu_kulai = Coordinates(1.6616744, 103.5975579)
+    start_node = findNearestStop(kampung_melayu_kulai)
+    senai_airpot = Coordinates(1.6359642, 103.66680084847599)
+    end_bus_stops = findNearest5Stop(senai_airpot)
+    previous_node, length = dijkstra(start_node)
+    #print(end_bus_stops)
+    path = getShortestPathFromList(previous_node, start_node, end_bus_stops, senai_airpot)
+
+
+nearestBusStop()
