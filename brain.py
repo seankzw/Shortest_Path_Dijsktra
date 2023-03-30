@@ -114,7 +114,7 @@ def getBoundingBox(loc1, loc2):
 
 	return (topLeftX, topLeftY),(botRightX, botRightY)
 def getCollatedData():
-    f = open("collated_data.json")
+    f = open("collated_datav2.json")
     data = json.loads(f.read())
     return data
 
@@ -149,13 +149,17 @@ def dijkstra(start_node):
             elif shortest_path[eachStop] < shortest_path[curr_shortest_route]:
                 curr_shortest_route = eachStop
         # get destinations :
-        edges = data[curr_shortest_route]["edgeTo"]
+        edges = data[curr_shortest_route]["edges"]
+        # for eachDestination in edges:
         for eachDestination in edges:
-            tent_val = shortest_path[curr_shortest_route] + data[curr_shortest_route]["edgeTo"][eachDestination]
+            for index, (destination, distanceCost) in enumerate(eachDestination.items()):
+                if index == 0:
+                    tent_val = shortest_path[curr_shortest_route] + distanceCost
+            # tent_val = shortest_path[curr_shortest_route] + data[curr_shortest_route]["edgeTo"][eachDestination]
             #print("Unvisited node = {}".format(unvisited_nodes))
-            if tent_val < shortest_path[eachDestination]:
-                shortest_path[eachDestination] = tent_val
-                previous_nodes[eachDestination] = curr_shortest_route
+                    if tent_val < shortest_path[destination]:
+                        shortest_path[destination] = tent_val
+                        previous_nodes[destination] = curr_shortest_route
 
 
         unvisited_nodes.remove(curr_shortest_route)
@@ -219,7 +223,19 @@ def getShortestPathFromList(previous_nodes, start, end_stops, toReach):
             })
 
             prev_dest = previous_nodes[destination]
-            curr_length+= collated_data[prev_dest]["edgeTo"][destination]
+            edges = collated_data[prev_dest]["edges"]
+            shortestCost = 0
+            for eachEdgesIndex in range (len(edges)):
+                if eachEdgesIndex == 0:
+                    for index, (destinationName, distanceCost) in enumerate(edges[eachEdgesIndex].items()):
+                        if index == 0:
+                            shortestCost = distanceCost
+                else:
+                    for index, (destinationName, distanceCost) in enumerate(edges[eachEdgesIndex].items()):
+                        if index == 0 and distanceCost < shortestCost:
+                            shortestCost = distanceCost
+                        
+            curr_length+= shortestCost
             destination = previous_nodes[destination]
 
         if shortest_length > curr_length and distanceBetween(eachDestCoord, toReach) < distance_to_end:
