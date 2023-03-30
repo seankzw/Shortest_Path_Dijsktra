@@ -33,7 +33,7 @@ timingTab = window_tabview.add("Bus Timing")# Create three tabviews to switch be
 # to show direction :
 routesWidth = 550
 routesHeight= 280
-routes_tabview = ctk.CTkTabview(left_frame)
+routes_tabview = ctk.CTkTabview(left_frame,)
 routes_tabview.grid(column=0, row=9, padx=10, pady=10, sticky="nsew")
 tab1 = routes_tabview.add("Best route")
 routes = ctk.CTkTextbox(tab1, width=routesHeight, height=routesWidth, scrollbar_button_color="white")
@@ -64,6 +64,16 @@ chosenFromMap = False
 counter = 1
 
 #? ===== Helper method for the buttons =====
+#helper for route clicking event checker
+def onRouteClicked():
+    selected = routes_tabview.get()
+    if selected == "Best route":
+        print("Best route")
+    elif selected == "Least Walk":
+        print("Least Walk")
+    elif selected == "Least Transfer":
+        print("Least Transfer")
+
 #To reset the view to JB
 def resetView():
     mapview.set_address("JB, MY")
@@ -281,6 +291,8 @@ def createPath():
 
     # set routes to be disabled state so text field cannot be edited
 
+def test():
+    print("hi")
 #Initialising Windows Configuration
 def initWindows():
     #windows = ctk.CTk()
@@ -332,20 +344,25 @@ def initWindows():
     switchBtn.grid(column=0, row=2, sticky="e", padx=10)
 
 
+    routes_tabview.configure(command=onRouteClicked)
+
     # Tab 1 - Route 1
     label1 = ctk.CTkLabel(tab1, justify="left", text="Directions for Best Route:")
+    tab1.bind(test)
     label1.grid(column=0, row=8, sticky="w", padx=10)
     routes.grid(column=0, row=10, sticky="nsew")
 
 
     # Tab 2 - Route 2
     label2 = ctk.CTkLabel(tab2, justify="left", text="Directions for Least Walk:")
+    tab2.bind(test)
     label2.grid(column=0, row=8, sticky="w", padx=10)
     routes2.grid(column=0, row=10)
 
 
     # Tab 3 - Route 3
     label3 = ctk.CTkLabel(tab3, justify="left", text="Directions for Least Transfer:")
+    tab3.bind(test)
     label3.grid(column=0, row=8, sticky="w", padx=10)
     routes3.grid(column=0, row=10)
 
