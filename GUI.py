@@ -14,10 +14,18 @@ from brain import *
 windows = ctk.CTk() # Main Windows
 
 #? ===== Frames =====
-left_frame = ctk.CTkFrame(windows) # Create the left column for the input/label field
-buttonFrame=ctk.CTkFrame(windows) # Buttom frame for Toggle and Create Path
+window_frame = ctk.CTkFrame(windows)
 
-right_frame = tk.Frame(windows) # Create the right column for the map
+# ===== Tabview
+window_tabview = ctk.CTkTabview(window_frame)
+window_tabview.pack(padx=10)
+mapTab = window_tabview.add("Map")
+timingTab = window_tabview.add("Bus Timing")
+
+left_frame = ctk.CTkFrame(mapTab) # Create the left column for the input/label field
+buttonFrame=ctk.CTkFrame(mapTab) # Buttom frame for Toggle and Create Path
+
+right_frame = ctk.CTkFrame(mapTab) # Create the right column for the map
 
 # Create mapview with right click options
 mapview = tkmv.TkinterMapView(right_frame, width=800, height=900, corner_radius=0)
@@ -267,7 +275,9 @@ def initWindows():
     ctk.set_default_color_theme("green") # Green apperance accent colour
     ctk.set_appearance_mode("dark") # Apperance mode of the program
 
-    left_frame.pack(side="left", fill="both", expand=True, padx=10, pady=10) # Place left_frame position
+    window_frame.pack(side="left", expand=True, fill="both")
+
+    left_frame.pack(side="left", fill="both", expand=True, padx=10) # Place left_frame position
 
     # Right frame configuration
     right_frame.pack(side="left", fill="both", expand=True)
@@ -294,7 +304,7 @@ def initWindows():
     #Create path button
     action_with_arg= partial(createPath, left_frame)
     button3 = ctk.CTkButton(left_frame, text="Create Path", command=action_with_arg)
-    button3.grid(column=0, row=5, columnspan=10,sticky="e")
+    button3.grid(column=0, row=5, columnspan=8,sticky="e")
 
     # Button for bus timings
     button = ctk.CTkButton(master=windows, text="Bus Timings", command=button_event, width=120, height=32, border_width=0, corner_radius=8)
