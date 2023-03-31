@@ -117,7 +117,7 @@ def getBusTiming():
      data = json.loads(f.read())
      return data
 
-def dijkstra(start_node):
+def dijkstra(start_node, gettingLeastWalk):
     data = getCollatedData()
     unvisited_nodes = list(data.keys())
     shortest_path = {}
@@ -139,18 +139,33 @@ def dijkstra(start_node):
                 curr_shortest_route = eachStop
         # get destinations :
         edges = data[curr_shortest_route]["edges"]
-        print(edges)
+        #print("Edges = {}".format(edges))
         # for eachDestination in edges:
-        for eachDestination in edges:
-            for index, (destination, distanceCost) in enumerate(eachDestination.items()):
 
-                if index == 0:
+        for eachDestination in edges:
+            #print("Each destination = {}".format(eachDestination))
+            for index, (k, v) in enumerate(eachDestination.items()):
+                destination, distanceCost = list(eachDestination.items())[0]
+                modeOfTransport, transportMethod = list(eachDestination.items())[1]
+
+                if not gettingLeastWalk:
                     tent_val = shortest_path[curr_shortest_route] + distanceCost
-            # tent_val = shortest_path[curr_shortest_route] + data[curr_shortest_route]["edgeTo"][eachDestination]
-            #print("Unvisited node = {}".format(unvisited_nodes))
+                    # tent_val = shortest_path[curr_shortest_route] + data[curr_shortest_route]["edgeTo"][eachDestination]
+                    #print("Unvisited node = {}".format(unvisited_nodes))
                     if tent_val < shortest_path[destination]:
                         shortest_path[destination] = tent_val
                         previous_nodes[destination] = curr_shortest_route
+                else:
+                    if len(transportMethod) == 1 and transportMethod[0] == "Walk":
+                         pass
+                    else:
+                        tent_val = shortest_path[curr_shortest_route] + distanceCost
+                        # tent_val = shortest_path[curr_shortest_route] + data[curr_shortest_route]["edgeTo"][eachDestination]
+                        #print("Unvisited node = {}".format(unvisited_nodes))
+                        if tent_val < shortest_path[destination]:
+                            shortest_path[destination] = tent_val
+                            previous_nodes[destination] = curr_shortest_route
+
 
 
         unvisited_nodes.remove(curr_shortest_route)
@@ -182,6 +197,7 @@ def getShortestPathFromList(previous_nodes, start, end_stops, toReach):
                     transportChoice = eachEdgesOfNode[eachEdges]["modeOfTransport"]
                     if len(transportChoice) > 1 and "Walk" in transportChoice:
                         transportChoice.remove("Walk")
+
 
 
                     path.append({
