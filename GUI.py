@@ -346,6 +346,11 @@ def createPath():
 
         # Set marker from start and end location to start and end bus stop
         routes.insert(END, "Walk {:.2f}km to {} \n\n".format(distBetweenStartAndStop, walkTo), "walk")
+        # calculate the time taken for the route
+        totalTimeTaken = getTimeTaken(distBetweenStartAndStop, 5.0)
+        timeTakenFormat = TimeFormatter(totalTimeTaken)
+        labelTimeTaken = ctk.CTkLabel(tab1, justify="left", text="Time taken: " + timeTakenFormat)
+        labelTimeTaken.grid(column=0, row=9, sticky="w", padx=10)
 
     # set routes to be disabled state so text field cannot be edited
 
