@@ -190,12 +190,12 @@ def createPath():
     print("gettingLeasWalk = {}".format(gettingLeastWalk.get()))
 
     #Clear routes before inserting
-    if gettingLeastWalk.get() == True:
-        routes.delete(1.0,END)
-        routes.configure(state=tk.NORMAL)
-    else:
-        routes2.delete(1.0,END)
-        routes2.configure(state=tk.NORMAL)
+    # if gettingLeastWalk.get() == True:
+    routes.delete(1.0,END)
+    routes.configure(state=tk.NORMAL)
+    # else:
+    routes2.delete(1.0,END)
+    routes2.configure(state=tk.NORMAL)
 
     startLocation = getLatLngFromUserInput(userStartInputField, True) # get start location from input field
     endLocation = getLatLngFromUserInput(userEndInputField, False) # Get end location from input field
@@ -337,7 +337,7 @@ def initWindows():
     # Create an object of tkinter ImageTk
     img = ImageTk.PhotoImage(Image.open("busTiming.jpg"))
 
-    busTiming_frame = ctk.CTkScrollableFrame(timingTab, width=1000, height=600, corner_radius=0)
+    busTiming_frame = ctk.CTkScrollableFrame(timingTab, width=1200, height=800, corner_radius=0)
     busTiming_frame.grid(column=0, row=0, sticky="w", padx=10)
 
     # Create a Label Widget to display the text or Image
