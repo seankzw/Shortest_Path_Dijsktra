@@ -237,7 +237,7 @@ def TimeFormatter(totalTime):
     hours = int(totalTime // 3600) # getting the hours
     seconds = totalTime % 3600
     minutes = int(seconds // 60) # getting the minutes
-    seconds %= 60 # getting the seconds
+    seconds = int(seconds % 60) # getting the seconds
 
     timeFormatter = "" # a string format for the time
 
@@ -252,6 +252,12 @@ def TimeFormatter(totalTime):
             timeFormatter += str(minutes) + " mins"
         else:
             timeFormatter += str(minutes) + " min"
+    else:
+        if seconds != 0:
+            if seconds > 1:
+                timeFormatter += str(seconds) + " secs"
+            else:
+                timeFormatter += str(seconds) + " sec"
 
     return timeFormatter
 

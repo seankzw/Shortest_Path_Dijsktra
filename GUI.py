@@ -344,10 +344,11 @@ def createPath():
         else:
             walkTo = endstop
 
+        distBetweenStartAndEnd = distanceBetween(Coordinates(startLocation[0], startLocation[1]), Coordinates(endLocation[0], endLocation[1]))
         # Set marker from start and end location to start and end bus stop
-        routes.insert(END, "Walk {:.2f}km to {} \n\n".format(distBetweenStartAndStop, walkTo), "walk")
+        routes.insert(END, "Walk {:.2f}km to {} \n\n".format(distBetweenStartAndEnd, walkTo), "walk")
         # calculate the time taken for the route
-        totalTimeTaken = getTimeTaken(distBetweenStartAndStop, 5.0)
+        totalTimeTaken = getTimeTaken(distBetweenStartAndEnd, 5.0)
         timeTakenFormat = TimeFormatter(totalTimeTaken)
         labelTimeTaken = ctk.CTkLabel(tab1, justify="left", text="Time taken: " + timeTakenFormat)
         labelTimeTaken.grid(column=0, row=9, sticky="w", padx=10)
