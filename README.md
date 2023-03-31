@@ -38,3 +38,5 @@ _To run the project, run **GUI.py**_
 **CollatedDataHelper.py** define a class named 'CollatedDataHelper' with methods that read and retrieve the data from the json file we generated at json_generator.py;
 
 **collated_datav2.json** is a json file that contain data that will be used in the project.
+
+> Create by Veleon Lim, Siong Yu, Peter Goh, Jasper Tan, Sean Koh
