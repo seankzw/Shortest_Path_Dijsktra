@@ -46,6 +46,11 @@ routes_tabview.grid(column=0, row=9, padx=10, pady=10, sticky="nsew")
 tab1 = routes_tabview.add("Best route")
 tab2 = routes_tabview.add("Least Walk")
 
+labelTimeTaken = ctk.CTkLabel(tab1, justify="left", text="")
+labelTimeTaken.grid(column=0, row=9, sticky="w", padx=10)
+labelTimeTaken2 = ctk.CTkLabel(tab2, justify="left", text="")
+labelTimeTaken2.grid(column=0, row=9, sticky="w", padx=10)
+
 # routes = ctk.CTkTextbox(tab1, width=routesHeight, height=routesWidth, scrollbar_button_color="white")
 
 routes = ctk.CTkTextbox(tab1, width=routesHeight, height=routesWidth, scrollbar_button_color="white")
@@ -193,11 +198,10 @@ def getLatLngFromUserInput(textField, isStartLocation):
 def clearMap():
     mapview.delete_all_marker()
     mapview.delete_all_polygon()
-    labelTimeTaken = ctk.CTkLabel(tab1, justify="left", text="")
-    labelTimeTaken.grid(column=0, row=9, sticky="w", padx=10)
-    labelTimeTaken = ctk.CTkLabel(tab2, justify="left", text="")
-    labelTimeTaken.grid(column=0, row=9, sticky="w", padx=10)
+    
 
+def clearText(widget):
+    widget.configure(text='')
 
 def createPath():
     #Clear markers and polygons on map
@@ -313,15 +317,13 @@ def createPath():
             # calculate the time taken for the route
             totalTimeTaken = getTimeTaken(distanceFromLocToStop, 5.0) + getTimeTaken(length, 20.5) + getTimeTaken(distanceFromStopToDest, 5.0)
             timeTakenFormat = TimeFormatter(totalTimeTaken)
-            labelTimeTaken = ctk.CTkLabel(tab2, justify="left", text="Time taken: " + timeTakenFormat)
-            labelTimeTaken.grid(column=0, row=9, sticky="w", padx=10)
+            labelTimeTaken2.configure(text="Time taken: " + timeTakenFormat)
         else:
             routes.insert(END, "Walk {:.2f}km from {} to {}".format(distanceFromStopToDest, path_to_destination[-1]["bus_stop_name"], endDestinationAddress[0]),"walk")
             # calculate the time taken for the route
             totalTimeTaken = getTimeTaken(distanceFromLocToStop, 5.0) + getTimeTaken(length, 20.5) + getTimeTaken(distanceFromStopToDest, 5.0)
             timeTakenFormat = TimeFormatter(totalTimeTaken)
-            labelTimeTaken = ctk.CTkLabel(tab1, justify="left", text="Time taken: " + timeTakenFormat)
-            labelTimeTaken.grid(column=0, row=9, sticky="w", padx=10)
+            labelTimeTaken.configure(text="Time taken: " + timeTakenFormat)
 
         # routes.insert(END, "Walk {:.2f}km from {} to {}".format(distanceFromStopToDest, path_to_destination[-1]["bus_stop_name"], endDestinationAddress[0]),"walk")
         # # calculate the time taken for the route
@@ -350,8 +352,8 @@ def createPath():
         # calculate the time taken for the route
         totalTimeTaken = getTimeTaken(distBetweenStartAndEnd, 5.0)
         timeTakenFormat = TimeFormatter(totalTimeTaken)
-        labelTimeTaken = ctk.CTkLabel(tab1, justify="left", text="Time taken: " + timeTakenFormat)
-        labelTimeTaken.grid(column=0, row=9, sticky="w", padx=10)
+        labelTimeTaken.configure(text="Time taken: " + timeTakenFormat)
+        labelTimeTaken2.configure(text="")
 
     # set routes to be disabled state so text field cannot be edited
 
