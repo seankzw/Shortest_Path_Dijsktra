@@ -139,9 +139,11 @@ def dijkstra(start_node):
                 curr_shortest_route = eachStop
         # get destinations :
         edges = data[curr_shortest_route]["edges"]
+        print(edges)
         # for eachDestination in edges:
         for eachDestination in edges:
             for index, (destination, distanceCost) in enumerate(eachDestination.items()):
+
                 if index == 0:
                     tent_val = shortest_path[curr_shortest_route] + distanceCost
             # tent_val = shortest_path[curr_shortest_route] + data[curr_shortest_route]["edgeTo"][eachDestination]
