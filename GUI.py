@@ -29,6 +29,9 @@ mapview = tkmv.TkinterMapView(right_frame, width=800, height=900, corner_radius=
 #? ===== Tabview
 timingTab = window_tabview.add("Bus Timing")# Create three tabviews to switch between different routes
 
+# humanMarkerImage
+humanMarkerImage = ImageTk.PhotoImage(Image.open("busTiming.jpg"))
+
 # to show direction :
 routesWidth = 550
 routesHeight= 280
@@ -110,7 +113,6 @@ def polygonClicked(polygon):
 
 # This method is a helper for the right click add start location
 def add_start_loc(coord):
-    clearMap()
     mapview.set_marker(coord[0],coord[1], text_color="red",
                                  marker_color_circle="white", marker_color_outside="green", font=("Helvetica Bold", 10))
     userStartInputField.delete(0,END)
@@ -119,7 +121,6 @@ def add_start_loc(coord):
 
 # This method is a helper for the right click add end location
 def add_end_loc(coord):
-    clearMap()
     mapview.set_marker(coord[0],coord[1], text_color="red",
                                  marker_color_circle="white", marker_color_outside="blue", font=("Helvetica Bold", 10))
     userEndInputField.delete(0,END)
@@ -137,7 +138,13 @@ def getLatLngFromUserInput(textField, isStartLocation):
         else:
             messagebox.showinfo("Error", "Enter End Location")
     elif re.match("^-?[0-9].+$",inputField):
-        return tuple(float(x) for x in inputField.split(","))
+        coordinatesTup = tuple(float(x) for x in inputField.split(","))
+        color = 'green'
+        if not isStartLocation:
+            color = 'red'
+        mapview.set_marker(coordinatesTup[0], coordinatesTup[1], text_color="red",
+                                 marker_color_circle="white", marker_color_outside=color, font=("Helvetica Bold", 10))
+        return coordinatesTup
     else:
         inputLocation = geolocator.geocode(inputField, country_codes="MY")
 
@@ -164,6 +171,8 @@ def getLatLngFromUserInput(textField, isStartLocation):
 def clearMap():
     mapview.delete_all_marker()
     mapview.delete_all_polygon()
+    labelTimeTaken = ctk.CTkLabel(tab1, justify="left", text="")
+    labelTimeTaken.grid(column=0, row=9, sticky="w", padx=10)
 
 
 def createPath():
@@ -268,12 +277,6 @@ def createPath():
         distanceFromStopToDest = distanceBetween(Coordinates(path_to_destination[-1]['coordinates'][0], path_to_destination[-1]['coordinates'][1]), Coordinates(endLocation[0], endLocation[1]))
         routes.insert(END, "Walk {:.2f}km from {} to {}".format(distanceFromStopToDest, path_to_destination[-1]["bus_stop_name"], endDestinationAddress[0]),"walk")
 
-        # calculate the time taken for the route
-        totalTimeTaken = getTimeTaken(distanceFromLocToStop, 5.0) + getTimeTaken(length, 20.5) + getTimeTaken(distanceFromStopToDest, 5.0)
-        timeTakenFormat = TimeFormatter(totalTimeTaken)
-        labelTimeTaken = ctk.CTkLabel(tab1, justify="left", text="Time taken: " + timeTakenFormat)
-        labelTimeTaken.grid(column=0, row=9, sticky="w", padx=10)
-
         path_list.append(endLocation)
     else:
         print("=============== Walk is nearer ===============")
@@ -287,6 +290,11 @@ def createPath():
 
         # Set marker from start and end location to start and end bus stop
         routes.insert(END, "Walk {:.2f}km to {} \n\n".format(distBetweenStartAndStop, walkTo), "walk")
+    # calculate the time taken for the route
+    totalTimeTaken = getTimeTaken(distanceFromLocToStop, 5.0) + getTimeTaken(length, 20.5) + getTimeTaken(distanceFromStopToDest, 5.0)
+    timeTakenFormat = TimeFormatter(totalTimeTaken)
+    labelTimeTaken = ctk.CTkLabel(tab1, justify="left", text="Time taken: " + timeTakenFormat)
+    labelTimeTaken.grid(column=0, row=9, sticky="w", padx=10)
 
     # set routes to be disabled state so text field cannot be edited
 
