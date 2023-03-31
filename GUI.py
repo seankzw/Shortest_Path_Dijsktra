@@ -309,9 +309,20 @@ def initWindows():
     left_frame.pack(side="left", fill="both", expand=True, padx=10) # Place left_frame position
 
     # bus timing image creation and displaying
-    busTimingImage = ctk.CTkImage(Image.open("busTiming.jpg"), size=(500,600))
-    busTimingLabel = ctk.CTkLabel(timingTab, text="",image=busTimingImage)
-    busTimingLabel.grid(column=0, row=0, padx=10, sticky="n")
+    # Bus timing tab
+    # Create an object of tkinter ImageTk
+    img = ImageTk.PhotoImage(Image.open("busTiming.jpg"))
+
+    busTiming_frame = ctk.CTkScrollableFrame(timingTab, width=1000, height=600, corner_radius=0)
+    busTiming_frame.grid(column=0, row=0, sticky="w", padx=10)
+
+    # Create a Label Widget to display the text or Image
+    label = ctk.CTkLabel(busTiming_frame, image = img,text=None)
+    label.pack_configure(fill="both",expand=True)
+
+    # busTimingImage = ctk.CTkImage(Image.open("busTiming.jpg"), size=(500,600))
+    # busTimingLabel = ctk.CTkLabel(timingTab, text="",image=busTimingImage)
+    # busTimingLabel.grid(column=0, row=0, padx=10, sticky="n")
 
     # Right frame configuration
     right_frame.pack(side="left", fill="both", expand=True)
