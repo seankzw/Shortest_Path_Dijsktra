@@ -32,15 +32,25 @@ timingTab = window_tabview.add("Bus Timing")# Create three tabviews to switch be
 # humanMarkerImage
 humanMarkerImage = ImageTk.PhotoImage(Image.open("busTiming.jpg"))
 
+#? ===== Global variables =====
+switch_var = ctk.StringVar(value="dark") # For switching appearance mode
+gettingLeastWalk = ctk.BooleanVar(value="False")
+chosenFromMap = False
+counter = 1
+
 # to show direction :
 routesWidth = 550
 routesHeight= 280
-routes_tabview = ctk.CTkTabview(left_frame,)
+routes_tabview = ctk.CTkTabview(left_frame)
 routes_tabview.grid(column=0, row=9, padx=10, pady=10, sticky="nsew")
 tab1 = routes_tabview.add("Best route")
+tab2 = routes_tabview.add("Least Walk")
+
+# routes = ctk.CTkTextbox(tab1, width=routesHeight, height=routesWidth, scrollbar_button_color="white")
+
 routes = ctk.CTkTextbox(tab1, width=routesHeight, height=routesWidth, scrollbar_button_color="white")
 
-tab2 = routes_tabview.add("Least Walk")
+# tab2 = routes_tabview.add("Least Walk")
 routes2 = ctk.CTkTextbox(tab2, width=routesHeight, height=routesWidth, scrollbar_button_color="white")
 
 #? ==== Routes configuration (colors)
@@ -62,12 +72,6 @@ userEndInputField = ctk.CTkEntry(left_frame, placeholder_text="Paradigm Mall", w
 
 #? ===== Utilities =====
 geolocator = Nominatim(user_agent="myApp") # For map
-
-#? ===== Global variables =====
-switch_var = ctk.StringVar(value="dark") # For switching appearance mode
-gettingLeastWalk = ctk.BooleanVar(value="False")
-chosenFromMap = False
-counter = 1
 
 #? ===== Helper method for the buttons =====
 #helper for route clicking event checker
@@ -109,11 +113,21 @@ def change_appearance_mode():
         routes.tag_config("buses", foreground="#d9c702")
         routes.tag_config("walk", foreground="#ffbd66")
         routes.tag_config("arrow", foreground="#a19c97")
+
+        routes2.tag_config("path", foreground="#00e5ff")
+        routes2.tag_config("buses", foreground="#d9c702")
+        routes2.tag_config("walk", foreground="#ffbd66")
+        routes2.tag_config("arrow", foreground="#a19c97")
     else:
         routes.tag_config("path", foreground="#01434a")
         routes.tag_config("buses", foreground="#7a050f")
         routes.tag_config("walk", foreground="#5c5240")
         routes.tag_config("arrow", foreground="#211f3b")
+
+        routes2.tag_config("path", foreground="#01434a")
+        routes2.tag_config("buses", foreground="#7a050f")
+        routes2.tag_config("walk", foreground="#5c5240")
+        routes2.tag_config("arrow", foreground="#211f3b")
 
 #This method is a helper for polygon clicked on the map
 def polygonClicked(polygon):
@@ -181,6 +195,8 @@ def clearMap():
     mapview.delete_all_polygon()
     labelTimeTaken = ctk.CTkLabel(tab1, justify="left", text="")
     labelTimeTaken.grid(column=0, row=9, sticky="w", padx=10)
+    labelTimeTaken = ctk.CTkLabel(tab2, justify="left", text="")
+    labelTimeTaken.grid(column=0, row=9, sticky="w", padx=10)
 
 
 def createPath():
@@ -191,11 +207,11 @@ def createPath():
 
     #Clear routes before inserting
     if gettingLeastWalk.get() == True:
-        routes.delete(1.0,END)
-        routes.configure(state=tk.NORMAL)
-    else:
         routes2.delete(1.0,END)
         routes2.configure(state=tk.NORMAL)
+    else:
+        routes.delete(1.0,END)
+        routes.configure(state=tk.NORMAL)
 
     startLocation = getLatLngFromUserInput(userStartInputField, True) # get start location from input field
     endLocation = getLatLngFromUserInput(userEndInputField, False) # Get end location from input field
@@ -237,10 +253,9 @@ def createPath():
         # Distance from start location to bus stop
         distanceFromLocToStop = distanceBetween(Coordinates(startLocation[0], startLocation[1]), CollatedDataHelper.getCoordFromBusStopName(start_bus_stop))
         if gettingLeastWalk.get() == True:
-            routes.insert(END, "Walk {:.2f}km to {} \n↓\n".format(distanceFromLocToStop, start_bus_stop), "walk")
-        else:
             routes2.insert(END, "Walk {:.2f}km to {} \n↓\n".format(distanceFromLocToStop, start_bus_stop), "walk")
-
+        else:
+            routes.insert(END, "Walk {:.2f}km to {} \n↓\n".format(distanceFromLocToStop, start_bus_stop), "walk")
 
         # Push the start location in the path list first
         path_list.append(startLocation)
@@ -259,16 +274,20 @@ def createPath():
 
             bus = eachStop["bus_stop_name"]
 
+            # routes.insert(END, bus, "path")
+            # routes.insert(END, "\n" + "/".join(buses), "buses")
+            # routes.insert(END, "\n↓\n", "arrow")
+
             if gettingLeastWalk.get() == True:
-                #print("adding path : gettingLeastWalk = {}".format(gettingLeastWalk.get()))
-                routes.insert(END, bus, "path")
-                routes.insert(END, "\n" + "/".join(buses), "buses")
-                routes.insert(END, "\n↓\n", "arrow")
-            else:
                 #print("adding path : gettingLeastWalk = {}".format(gettingLeastWalk.get()))
                 routes2.insert(END, bus, "path")
                 routes2.insert(END, "\n" + "/".join(buses), "buses")
                 routes2.insert(END, "\n↓\n", "arrow")
+            else:
+                #print("adding path : gettingLeastWalk = {}".format(gettingLeastWalk.get()))
+                routes.insert(END, bus, "path")
+                routes.insert(END, "\n" + "/".join(buses), "buses")
+                routes.insert(END, "\n↓\n", "arrow")
 
 
 
@@ -290,15 +309,29 @@ def createPath():
         distanceFromStopToDest = distanceBetween(Coordinates(path_to_destination[-1]['coordinates'][0], path_to_destination[-1]['coordinates'][1]), Coordinates(endLocation[0], endLocation[1]))
 
         if gettingLeastWalk.get() == True:
-            routes.insert(END, "Walk {:.2f}km from {} to {}".format(distanceFromStopToDest, path_to_destination[-1]["bus_stop_name"], endDestinationAddress[0]),"walk")
-        else:
             routes2.insert(END, "Walk {:.2f}km from {} to {}".format(distanceFromStopToDest, path_to_destination[-1]["bus_stop_name"], endDestinationAddress[0]),"walk")
+            # calculate the time taken for the route
+            totalTimeTaken = getTimeTaken(distanceFromLocToStop, 5.0) + getTimeTaken(length, 20.5) + getTimeTaken(distanceFromStopToDest, 5.0)
+            timeTakenFormat = TimeFormatter(totalTimeTaken)
+            labelTimeTaken = ctk.CTkLabel(tab2, justify="left", text="Time taken: " + timeTakenFormat)
+            labelTimeTaken.grid(column=0, row=9, sticky="w", padx=10)
+        else:
+            routes.insert(END, "Walk {:.2f}km from {} to {}".format(distanceFromStopToDest, path_to_destination[-1]["bus_stop_name"], endDestinationAddress[0]),"walk")
+            # calculate the time taken for the route
+            totalTimeTaken = getTimeTaken(distanceFromLocToStop, 5.0) + getTimeTaken(length, 20.5) + getTimeTaken(distanceFromStopToDest, 5.0)
+            timeTakenFormat = TimeFormatter(totalTimeTaken)
+            labelTimeTaken = ctk.CTkLabel(tab1, justify="left", text="Time taken: " + timeTakenFormat)
+            labelTimeTaken.grid(column=0, row=9, sticky="w", padx=10)
 
-        # calculate the time taken for the route
-        totalTimeTaken = getTimeTaken(distanceFromLocToStop, 5.0) + getTimeTaken(length, 20.5) + getTimeTaken(distanceFromStopToDest, 5.0)
-        timeTakenFormat = TimeFormatter(totalTimeTaken)
-        labelTimeTaken = ctk.CTkLabel(tab1, justify="left", text="Time taken: " + timeTakenFormat)
-        labelTimeTaken.grid(column=0, row=9, sticky="w", padx=10)
+        # routes.insert(END, "Walk {:.2f}km from {} to {}".format(distanceFromStopToDest, path_to_destination[-1]["bus_stop_name"], endDestinationAddress[0]),"walk")
+        # # calculate the time taken for the route
+        # totalTimeTaken = getTimeTaken(distanceFromLocToStop, 5.0) + getTimeTaken(length, 20.5) + getTimeTaken(distanceFromStopToDest, 5.0)
+        # timeTakenFormat = TimeFormatter(totalTimeTaken)
+        # if gettingLeastWalk.get() == True:
+        #     labelTimeTaken = ctk.CTkLabel(tab2, justify="left", text="Time taken: " + timeTakenFormat)
+        # else:
+        #     labelTimeTaken = ctk.CTkLabel(tab1, justify="left", text="Time taken: " + timeTakenFormat)
+        # labelTimeTaken.grid(column=0, row=9, sticky="w", padx=10)
 
         path_list.append(endLocation)
     else:
@@ -385,16 +418,35 @@ def initWindows():
 
     routes_tabview.configure(command=onRouteClicked)
 
+    # if gettingLeastWalk.get() == True:
+    #     titleLabel = ctk.CTkLabel(tab2, justify="left", text="Directions for Least Walk:")
+    # else:
+    #     titleLabel = ctk.CTkLabel(tab1, justify="left", text="Directions for Best Route:")
+    # titleLabel.grid(column=0, row=8, sticky='w', padx=10)
+    # routes.grid(column=0, row=10, sticky='nsew')
+
     # Tab 1 - Route 1
-    label1 = ctk.CTkLabel(tab1, justify="left", text="Directions for Best Route:")
-    label1.grid(column=0, row=8, sticky="w", padx=10)
-    routes.grid(column=0, row=10, sticky="nsew")
+    # label1 = ctk.CTkLabel(tab1, justify="left", text="Directions for Best Route:")
+    # label1.grid(column=0, row=8, sticky="w", padx=10)
+    # # routes.grid(column=0, row=10, sticky="nsew")
 
 
     # Tab 2 - Route 2
-    label2 = ctk.CTkLabel(tab2, justify="left", text="Directions for Least Walk:")
-    label2.grid(column=0, row=8, sticky="w", padx=10)
-    routes2.grid(column=0, row=10)
+    # label2 = ctk.CTkLabel(tab2, justify="left", text="Directions for Least Walk:")
+    # label2.grid(column=0, row=8, sticky="w", padx=10)
+    # routes2.grid(column=0, row=10, sticky="nsew")
+
+    bestRouteLabel = ctk.CTkLabel(tab1, justify="left", text="Directions for Best Route:")
+    bestRouteLabel.grid(column=0, row=8, sticky="w", padx=10)
+    # routes.grid(column=0, row=10, sticky="nsew")
+
+
+    # # Tab 2 - Route 2
+    leastWalklabel = ctk.CTkLabel(tab2, justify="left", text="Directions for Least Walk:")
+    leastWalklabel.grid(column=0, row=8, sticky="w", padx=10)
+
+    routes.grid(column=0, row=10, sticky="nsew")
+    routes2.grid(column=0, row=10, sticky="nsew")
 
     # Map view configurations
     mapview.add_right_click_menu_command(label="Add start location", command=add_start_loc, pass_coords=True)
