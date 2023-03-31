@@ -370,7 +370,7 @@ def initWindows():
     # Create an object of tkinter ImageTk
     img = ImageTk.PhotoImage(Image.open("busTiming.jpg"))
 
-    busTiming_frame = ctk.CTkScrollableFrame(timingTab, width=1000, height=600, corner_radius=0)
+    busTiming_frame = ctk.CTkScrollableFrame(timingTab, width=1200, height=800, corner_radius=0)
     busTiming_frame.grid(column=0, row=0, sticky="w", padx=10)
 
     # Create a Label Widget to display the text or Image
