@@ -39,4 +39,17 @@ _To run the project, run **GUI.py**_
 
 **collated_datav2.json** is a json file that contain data that will be used in the project.
 
-> Create by Veleon Lim, Siong Yu, Peter Goh, Jasper Tan, Sean Koh
+#### Screenshots
+Main screen:
+![Main Screen](20230417165009.png)
+
+Example of best route:
+![Output 1](20230417165156.png)
+
+Example of least walk:
+![Output 2](20230417165250.png)
+
+
+
+
+> This project is developed by Veleon Lim, Siong Yu, Peter Goh, Jasper Tan, Sean Koh as part of our school project.
